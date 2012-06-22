@@ -1,0 +1,21 @@
+strict digraph class_diagram {
+  rankdir=LR;
+  TypeStringifier[
+    label="Stringifier",
+    URL="Stringifier.html",
+    tooltip="com.sekati.reflect.Stringifier",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeReflection[
+    label="Reflection",
+    URL="Reflection.html",
+    tooltip="com.sekati.reflect.Reflection",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+}

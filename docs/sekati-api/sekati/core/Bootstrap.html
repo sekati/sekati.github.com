@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="Bootstrap,sekati.core.Bootstrap,RETRY_ATTEMPT,RETRY_MAX,sequenceChain,sequenceCount,loadConfig,loadData,loadStyle,retry,run" name="keywords">
+<title>sekati.core.Bootstrap</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Bootstrap - Sekati API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Sekati API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?sekati/core/Bootstrap.html&amp;sekati/core/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Bootstrap</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Bootstrap"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">sekati.core</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Bootstrap</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">Bootstrap <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+</table>
+<p></p>
+  Bootstrap provides a common bootstrapping command & load sequencer used to initialize API based applications. 
+  
+  <p>Bootstrap is one of the three core components comprising the base API; along side <code>sekati.display.Document</code>
+  (which instatiates <code>Bootstrap</code>) and <code>sekati.core.App</code> (which stores the data that 
+  <code>Bootstrap</code> loads).</p>
+  
+  <p>By default <code>Bootstrap</code> loads a core configuration XML file, a data XML file, a CSS stylesheet
+  & a Crossdomain Policy File; storing configuration settings and data in <code>sekati.core.App</code>. for later 
+  storage & retrieval. The XML data, CSS stylesheet & crossdomain policy locations, as well as other API settings, are 
+  defined in the core configuration XML file.</p>
+  
+  <p>Each step in the <code>Bootstrap</code> sequence fires a <i>"staging"</i> <code>BootstrapEvent</code> to notify 
+  the application of its <i>"boot phase"</i>. If any boot phase in the <code>sequenceChain</code> fails its execution 
+  it will be retried until the <code>RETRY_MAX</code> limit has been exceeded at which point a the 
+  <code>BootstrapEvent.APP_FAIL</code> event will be dispatched to notify the application of boot failure.</p>
+  
+  <p><b>Customizations</b> may be made by extending and  overriding the <code>Bootstrap</code> methods and 
+  <code>sequenceChain</code>.</p>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../core/App.html" target="">sekati.core.App</a>
+<br>
+<a href="../display/Document.html" target="">sekati.display.Document</a>
+<br>
+<a href="../events/BootstrapEvent.html" target="">sekati.events.BootstrapEvent</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a><a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#RETRY_ATTEMPT">RETRY_ATTEMPT</a> : uint = 0<div class="summaryTableDescription">[static]
+   The <code>RETRY_ATTEMPT</code> tracks bootstrap rety attempts.</div>
+</td><td class="summaryTableOwnerCol">Bootstrap</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#RETRY_MAX">RETRY_MAX</a> : uint<div class="summaryTableDescription">[static]
+   <code>RETRY_MAX</code> maximum retries before Bootstrap errors out.</div>
+</td><td class="summaryTableOwnerCol">Bootstrap</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#sequenceChain">sequenceChain</a> : Array<div class="summaryTableDescription">[static]
+   The <code>sequenceChain</code> defines a set of method references which are executed in sequence to prepare the API framework core.</div>
+</td><td class="summaryTableOwnerCol">Bootstrap</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#sequenceCount">sequenceCount</a> : uint = 0<div class="summaryTableDescription">[static]
+   The <code>sequenceCount</code> bootstrap stage counter.</div>
+</td><td class="summaryTableOwnerCol">Bootstrap</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Bootstrap()">Bootstrap</a>(maxRetryAttempts:uint = 5)</div>
+<div class="summaryTableDescription">
+   Bootstrap Constructor
+   </div>
+</td><td class="summaryTableOwnerCol">Bootstrap</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a><a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadConfig()">loadConfig</a>():void</div>
+<div class="summaryTableDescription">
+   Loads & parse <code>config.xml</code> to <code>App.config</code>
+   & dispatch <code>BootstrapEvent.APP_CONFIG</code>.</div>
+</td><td class="summaryTableOwnerCol">Bootstrap</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadData()">loadData</a>():void</div>
+<div class="summaryTableDescription">
+   Loads & parse data from <code>App.DATA_URI</code> provided in <code>config.xml</code>.</div>
+</td><td class="summaryTableOwnerCol">Bootstrap</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadStyle()">loadStyle</a>():void</div>
+<div class="summaryTableDescription">
+   Loads & parse the stylesheet from <code>App.CSS_URI</code> provided in <code>config.xml</code>.</div>
+</td><td class="summaryTableOwnerCol">Bootstrap</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#retry()">retry</a>():void</div>
+<div class="summaryTableDescription">
+   A method in the sequence chain failed - make retry attempts at each phase or dispatch the <code>BootstrapEvent.APP_FAILURE</code> event.</div>
+</td><td class="summaryTableOwnerCol">Bootstrap</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#run()">run</a>():void</div>
+<div class="summaryTableDescription">
+   Iterate through the <code>sequenceChain</code> method & fire the <code>BootstrapEvent.APP_INIT</code> event on completion.</div>
+</td><td class="summaryTableOwnerCol">Bootstrap</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="RETRY_ATTEMPT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RETRY_ATTEMPT</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static var RETRY_ATTEMPT:uint = 0</code><p>
+   The <code>RETRY_ATTEMPT</code> tracks bootstrap rety attempts.
+   </p></div>
+<a name="RETRY_MAX"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RETRY_MAX</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static var RETRY_MAX:uint</code><p>
+   <code>RETRY_MAX</code> maximum retries before Bootstrap errors out.
+   </p></div>
+<a name="sequenceChain"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">sequenceChain</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static var sequenceChain:Array</code><p>
+   The <code>sequenceChain</code> defines a set of method references which are executed in sequence to prepare the API framework core.
+   </p></div>
+<a name="sequenceCount"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">sequenceCount</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static var sequenceCount:uint = 0</code><p>
+   The <code>sequenceCount</code> bootstrap stage counter.
+   </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Bootstrap()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Bootstrap</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Bootstrap(maxRetryAttempts:uint = 5)</code><p>
+   Bootstrap Constructor
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">maxRetryAttempts</span>:uint</code> (default = <code>5</code>)<code></code> &mdash;  Number of times to retry each method in bootstrap before fatal error.
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="loadConfig()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadConfig</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function loadConfig():void</code><p>
+   Loads & parse <code>config.xml</code> to <code>App.config</code>
+   & dispatch <code>BootstrapEvent.APP_CONFIG</code>.
+   </p></div>
+<a name="loadData()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadData</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function loadData():void</code><p>
+   Loads & parse data from <code>App.DATA_URI</code> provided in <code>config.xml</code>.
+   Store it in <code>App.db.data</code> & dispatch <code>BootstrapEvent.APP_DATA</code>.
+   </p></div>
+<a name="loadStyle()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadStyle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function loadStyle():void</code><p>
+   Loads & parse the stylesheet from <code>App.CSS_URI</code> provided in <code>config.xml</code>.
+   Store it in <code>App.css</code> & dispatch <code>BootstrapEvent.APP_STYLE</code>.
+   </p><br>
+<span class="label">Example</span>
+<br><div class='listing'><pre>
+   tf.styleSheet = App.css;
+   tf.htmlText = "<span class='test''>Hello World</span>";
+   </pre></div>
+   <p></p>
+</div>
+<a name="retry()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">retry</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function retry():void</code><p>
+   A method in the sequence chain failed - make retry attempts at each phase or dispatch the <code>BootstrapEvent.APP_FAILURE</code> event.
+   </p><br>
+<span class="label">Throws</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code></code> &mdash; if <code>RETRY_MAX</code> is reached.
+   </td>
+</tr>
+</table>
+</div>
+<a name="run()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">run</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function run():void</code><p>
+   Iterate through the <code>sequenceChain</code> method & fire the <code>BootstrapEvent.APP_INIT</code> event on completion.
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../events/BootstrapEvent.html" target="">sekati.events.BootstrapEvent</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Copyright &copy; 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.</center>
+</div>
+</body>
+</html>
+<!--Copyright © 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.-->

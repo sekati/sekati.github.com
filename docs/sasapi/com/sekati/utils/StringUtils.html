@@ -1,0 +1,117 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>com.sekati.utils.StringUtils - SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><link href="package-summary.html" title="Package com.sekati.utils" rel="up"/><link href="../../../com/sekati/utils/TextUtils.html" title="Class com.sekati.utils.TextUtils" rel="prev"/><link href="../../../com/sekati/utils/MovieClipUtils.html" title="Class com.sekati.utils.MovieClipUtils" rel="next"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><h1>Class com.sekati.utils.StringUtils</h1><div class="type_hierachy"><ul><li><strong>com.sekati.utils.StringUtils</strong></li></ul></div><div class="type_description"><h2>Description</h2><p>
+ Static class wrapping various String utilities.
+ </p></div><div class="type_indexes"><div class="method_index"><h2>Method Index</h2><a href="#commaFormatNumber" title="static public function commaFormatNumber(inNum:Object):String">commaFormatNumber()</a>, <a href="#detectBr" title="static public function detectBr(str:String):Boolean">detectBr()</a>, <a href="#firstToUpper" title="static public function firstToUpper(str:String):String">firstToUpper()</a>, <a href="#floatToString" title="static public function floatToString(n:Number):String">floatToString()</a>, <a href="#htmlDecode" title="static public function htmlDecode(t:String):String">htmlDecode()</a>, <a href="#htmlEncode" title="static public function htmlEncode(str:String):String">htmlEncode()</a>, <a href="#padZeroOnFloat" title="static public function padZeroOnFloat(n:Number):String">padZeroOnFloat()</a>, <a href="#randChar" title="static public function randChar(amount:Number):String">randChar()</a>, <a href="#randLowerChar" title="static public function randLowerChar(amount:Number):String">randLowerChar()</a>, <a href="#randNum" title="static public function randNum(amount:Number):String">randNum()</a>, <a href="#randSpecialChar" title="static public function randSpecialChar(amount:Number):String">randSpecialChar()</a>, <a href="#removeSpaces" title="static public function removeSpaces(str:String):String">removeSpaces()</a>, <a href="#removeTabs" title="static public function removeTabs(str:String):String">removeTabs()</a>, <a href="#replace" title="static public function replace(str:String, oldChar:String, newChar:String):String">replace()</a>, <a href="#search" title="static public function search(str:String, key:String):Boolean">search()</a>, <a href="#searchCaseInsensitive" title="static public function searchCaseInsensitive(str:String, key:String):Boolean">searchCaseInsensitive()</a>, <a href="#stripTags" title="static public function stripTags(str:String):String">stripTags()</a>, <a href="#stripZeroAndRepairFloat" title="static public function stripZeroAndRepairFloat(n:Number):String">stripZeroAndRepairFloat()</a>, <a href="#stripZeroOnFloat" title="static public function stripZeroOnFloat(n:Number):String">stripZeroOnFloat()</a>, <a href="#toDoubleQuote" title="static public function toDoubleQuote(str:String):String">toDoubleQuote()</a>, <a href="#toNumeric" title="static public function toNumeric(str:String):String">toNumeric()</a>, <a href="#toSingleQuote" title="static public function toSingleQuote(str:String):String">toSingleQuote()</a>, <a href="#trim" title="static public function trim(str:String):String">trim()</a>, <a href="#trimCamel" title="static public function trimCamel(str:String):String">trimCamel()</a>, <a href="#xtrim" title="static public function xtrim(str:String):String">xtrim()</a></div></div><div class="type_details"><div class="method_detail_list"><h2>Method Detail</h2><div class="method_details alt_row"><a name="search"></a><h3>search</h3><code class="method_synopsis">static public function <strong class="method_name">search</strong>(str:<span class="unresolved_type_name">String</span>, key:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ search for key in string
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr><tr><td><code>key</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+	 </p></div></div><div class="method_details"><a name="searchCaseInsensitive"></a><h3>searchCaseInsensitive</h3><code class="method_synopsis">static public function <strong class="method_name">searchCaseInsensitive</strong>(str:<span class="unresolved_type_name">String</span>, key:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ search for key in string - case insensitive.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr><tr><td><code>key</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+	 </p></div></div><div class="method_details alt_row"><a name="replace"></a><h3>replace</h3><code class="method_synopsis">static public function <strong class="method_name">replace</strong>(str:<span class="unresolved_type_name">String</span>, oldChar:<span class="unresolved_type_name">String</span>, newChar:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ replace every instance of a string with something else
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr><tr><td><code>oldChar</code></td><td>(String)
+ </td></tr><tr><td><code>newChar</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details"><a name="removeSpaces"></a><h3>removeSpaces</h3><code class="method_synopsis">static public function <strong class="method_name">removeSpaces</strong>(str:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ remove spaces
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details alt_row"><a name="removeTabs"></a><h3>removeTabs</h3><code class="method_synopsis">static public function <strong class="method_name">removeTabs</strong>(str:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ remove tabs
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details"><a name="trim"></a><h3>trim</h3><code class="method_synopsis">static public function <strong class="method_name">trim</strong>(str:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ remove spaces at end and beginning of the string only
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details alt_row"><a name="xtrim"></a><h3>xtrim</h3><code class="method_synopsis">static public function <strong class="method_name">xtrim</strong>(str:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ remove spaces  tabs, line feeds, carrige returns from string
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details"><a name="trimCamel"></a><h3>trimCamel</h3><code class="method_synopsis">static public function <strong class="method_name">trimCamel</strong>(str:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ trim spaces and camel notate string
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details alt_row"><a name="commaFormatNumber"></a><h3>commaFormatNumber</h3><code class="method_synopsis">static public function <strong class="method_name">commaFormatNumber</strong>(inNum:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ format a number with commas - ie. 10000 -> 10,000
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>inNum</code></td><td>(Object) String or Number
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details"><a name="firstToUpper"></a><h3>firstToUpper</h3><code class="method_synopsis">static public function <strong class="method_name">firstToUpper</strong>(str:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Capitalize the first character in the string.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details alt_row"><a name="htmlEncode"></a><h3>htmlEncode</h3><code class="method_synopsis">static public function <strong class="method_name">htmlEncode</strong>(str:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ encode html
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details"><a name="htmlDecode"></a><h3>htmlDecode</h3><code class="method_synopsis">static public function <strong class="method_name">htmlDecode</strong>(t:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ decode html
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details alt_row"><a name="stripZeroOnFloat"></a><h3>stripZeroOnFloat</h3><code class="method_synopsis">static public function <strong class="method_name">stripZeroOnFloat</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ strip the zero off floated numbers
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details"><a name="padZeroOnFloat"></a><h3>padZeroOnFloat</h3><code class="method_synopsis">static public function <strong class="method_name">padZeroOnFloat</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ add zero in front of floated number
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details alt_row"><a name="floatToString"></a><h3>floatToString</h3><code class="method_synopsis">static public function <strong class="method_name">floatToString</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Remove scientific notation from very small floats when casting to String.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+ <pre> Usage: 
+ 	trace( String(<span class="num_const">0</span>.<span class="num_const">0000001</span>) ); <span class="comment">// returns 1e-7</span>
+ 	trace( floatToString(<span class="num_const">0</span>.<span class="num_const">0000001</span>) ); <span class="comment">// returns .00000001</span>
+ </pre>
+	 </p></div></div><div class="method_details"><a name="stripZeroAndRepairFloat"></a><h3>stripZeroAndRepairFloat</h3><code class="method_synopsis">static public function <strong class="method_name">stripZeroAndRepairFloat</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ strip the zero off floated numbers and remove Scientific Notation
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details alt_row"><a name="randChar"></a><h3>randChar</h3><code class="method_synopsis">static public function <strong class="method_name">randChar</strong>(amount:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Generate a set of random characters
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>amount</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details"><a name="randLowerChar"></a><h3>randLowerChar</h3><code class="method_synopsis">static public function <strong class="method_name">randLowerChar</strong>(amount:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Generate a set of random LowerCase characters
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>amount</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details alt_row"><a name="randNum"></a><h3>randNum</h3><code class="method_synopsis">static public function <strong class="method_name">randNum</strong>(amount:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Generate a set of random Number characters
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>amount</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details"><a name="randSpecialChar"></a><h3>randSpecialChar</h3><code class="method_synopsis">static public function <strong class="method_name">randSpecialChar</strong>(amount:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Generate a set of random Special and Number characters
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>amount</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details alt_row"><a name="stripTags"></a><h3>stripTags</h3><code class="method_synopsis">static public function <strong class="method_name">stripTags</strong>(str:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ strip html markup tags
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details"><a name="detectBr"></a><h3>detectBr</h3><code class="method_synopsis">static public function <strong class="method_name">detectBr</strong>(str:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ detect html breaks
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+	 </p></div></div><div class="method_details alt_row"><a name="toDoubleQuote"></a><h3>toDoubleQuote</h3><code class="method_synopsis">static public function <strong class="method_name">toDoubleQuote</strong>(str:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ convert single quotes to double quotes
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details"><a name="toSingleQuote"></a><h3>toSingleQuote</h3><code class="method_synopsis">static public function <strong class="method_name">toSingleQuote</strong>(str:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ convert double quotes to single quotes
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details alt_row"><a name="toNumeric"></a><h3>toNumeric</h3><code class="method_synopsis">static public function <strong class="method_name">toNumeric</strong>(str:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Remove all formatting and return cleaned numbers from string.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>str</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+ <pre> Usage: 
+ 	StringUtils.toNumeric(<span class="str_const">"123-123-1234"</span>); <span class="comment">// returns 1221231234 </span>
+ </pre>
+	 </p></div></div></div></div><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.utils" class="button">Package</a></li><li><span class="button nav_current">Class</span></li><li><a href="StringUtils.as.html" title="Source code of com.sekati.utils.StringUtils" class="button">Source</a></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

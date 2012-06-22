@@ -1,0 +1,132 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>caurina.transitions.Tweener - SASAPI</title><script src="../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../index-files";
+//--></script><link href="../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../overview-summary.html" title="Overview" rel="top"/><link href="package-summary.html" title="Package caurina.transitions" rel="up"/><link href="../../caurina/transitions/TweenListObj.html" title="Class caurina.transitions.TweenListObj" rel="prev"/><link href="../../caurina/transitions/SpecialPropertySplitter.html" title="Class caurina.transitions.SpecialPropertySplitter" rel="next"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><h1>Class caurina.transitions.Tweener</h1><div class="type_hierachy"><ul><li><strong>caurina.transitions.Tweener</strong></li></ul></div><div class="type_description"></div><div class="type_indexes"><div class="method_index"><h2>Method Index</h2><div><code>new <a href="#Tweener" title="public function Tweener()">Tweener()</a></code></div><a href="#addCaller" title="static public function addCaller(p_scopes:Object, p_parameters:Object):Boolean">addCaller()</a>, <a href="#addTween" title="static public function addTween(p_scopes:Object, p_parameters:Object):Boolean">addTween()</a>, <a href="#getControllerName" title="static public function getControllerName():String">getControllerName()</a>, <a href="#getCurrentTweeningTime" title="static public function getCurrentTweeningTime(p_tweening:Object):Number">getCurrentTweeningTime()</a>, <a href="#getTweenCount" title="static public function getTweenCount(p_scope:Object):Number">getTweenCount()</a>, <a href="#getTweens" title="static public function getTweens(p_scope:Object):Array">getTweens()</a>, <a href="#getVersion" title="static public function getVersion():String">getVersion()</a>, <a href="#isTweening" title="static public function isTweening(p_scope:Object):Boolean">isTweening()</a>, <a href="#onEnterFrame" title="static public function onEnterFrame():Void">onEnterFrame()</a>, <a href="#pauseAllTweens" title="static public function pauseAllTweens():Boolean">pauseAllTweens()</a>, <a href="#pauseTweenByIndex" title="static public function pauseTweenByIndex(p_tween:Number):Boolean">pauseTweenByIndex()</a>, <a href="#pauseTweens" title="static public function pauseTweens(p_scope:Object):Boolean">pauseTweens()</a>, <a href="#printError" title="static public function printError(p_message:String):Void">printError()</a>, <a href="#registerSpecialProperty" title="static public function registerSpecialProperty(p_name:String, p_getFunction:Function, p_setFunction:Function, p_parameters:Array, p_preProcessFunction:Function):Void">registerSpecialProperty()</a>, <a href="#registerSpecialPropertyModifier" title="static public function registerSpecialPropertyModifier(p_name:String, p_modifyFunction:Function, p_getFunction:Function):Void">registerSpecialPropertyModifier()</a>, <a href="#registerSpecialPropertySplitter" title="static public function registerSpecialPropertySplitter(p_name:String, p_splitFunction:Function, p_parameters:Array):Void">registerSpecialPropertySplitter()</a>, <a href="#registerTransition" title="static public function registerTransition(p_name:String, p_function:Function):Void">registerTransition()</a>, <a href="#removeAllTweens" title="static public function removeAllTweens():Boolean">removeAllTweens()</a>, <a href="#removeTweenByIndex" title="static public function removeTweenByIndex(p_tween:Number, p_finalRemoval:Boolean):Boolean">removeTweenByIndex()</a>, <a href="#removeTweens" title="static public function removeTweens(p_scope:Object):Boolean">removeTweens()</a>, <a href="#removeTweensByTime" title="static public function removeTweensByTime(p_scope:Object, p_properties:Object, p_timeStart:Number, p_timeComplete:Number):Boolean">removeTweensByTime()</a>, <a href="#resumeAllTweens" title="static public function resumeAllTweens():Boolean">resumeAllTweens()</a>, <a href="#resumeTweenByIndex" title="static public function resumeTweenByIndex(p_tween:Number):Boolean">resumeTweenByIndex()</a>, <a href="#resumeTweens" title="static public function resumeTweens(p_scope:Object):Boolean">resumeTweens()</a>, <a href="#setTimeScale" title="static public function setTimeScale(p_time:Number):Void">setTimeScale()</a>, <a href="#splitTweens" title="static public function splitTweens(p_tween:Number, p_properties:Array):Number">splitTweens()</a>, <a href="#updateFrame" title="static public function updateFrame():Void">updateFrame()</a>, <a href="#updateTime" title="static public function updateTime():Void">updateTime()</a></div></div><div class="type_details"><div class="constructor_detail_list"><h2>Constructor Detail</h2><div class="method_details"><a name="Tweener"></a><h3>Tweener</h3><code class="method_synopsis">public function <strong class="method_name">Tweener</strong>()</code><div class="method_info"><p>
+ There's no constructor.
+	 </p></div></div></div><div class="method_detail_list"><h2>Method Detail</h2><div class="method_details alt_row"><a name="addTween"></a><h3>addTween</h3><code class="method_synopsis">static public function <strong class="method_name">addTween</strong>(p_scopes:<span class="unresolved_type_name">Object</span>, p_parameters:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Adds a new tweening
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""></table><h4>Return</h4><p class="extra_info">							Boolean				TRUE if the tween was successfully added, FALSE if otherwise
+	 </p></div></div><div class="method_details"><a name="addCaller"></a><h3>addCaller</h3><code class="method_synopsis">static public function <strong class="method_name">addCaller</strong>(p_scopes:<span class="unresolved_type_name">Object</span>, p_parameters:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Adds a new *caller* tweening
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""></table><h4>Return</h4><p class="extra_info">							Boolean				TRUE if the tween was successfully added, FALSE if otherwise
+	 </p></div></div><div class="method_details alt_row"><a name="removeTweensByTime"></a><h3>removeTweensByTime</h3><code class="method_synopsis">static public function <strong class="method_name">removeTweensByTime</strong>(p_scope:<span class="unresolved_type_name">Object</span>, p_properties:<span class="unresolved_type_name">Object</span>, p_timeStart:<span class="unresolved_type_name">Number</span>, p_timeComplete:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Remove an specified tweening of a specified object the tweening list, if it conflicts with the given time
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_scope</code></td><td>Object						List of objects affected
+ </td></tr><tr><td><code>p_properties</code></td><td>Object 						List of properties affected (PropertyInfoObj instances)
+ </td></tr><tr><td><code>p_timeStart</code></td><td>Number						Time when the new tween starts
+ </td></tr><tr><td><code>p_timeComplete</code></td><td>Number						Time when the new tween ends
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Boolean						Whether or not it actually deleted something
+	 </p></div></div><div class="method_details"><a name="removeTweens"></a><h3>removeTweens</h3><code class="method_synopsis">static public function <strong class="method_name">removeTweens</strong>(p_scope:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Remove tweenings from a given object from the tweening list
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""></table><h4>Return</h4><p class="extra_info">							Boolean		Whether or not it successfully removed this tweening
+	 </p></div></div><div class="method_details alt_row"><a name="removeAllTweens"></a><h3>removeAllTweens</h3><code class="method_synopsis">static public function <strong class="method_name">removeAllTweens</strong>():<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Remove all tweenings from the engine
+
+ </p><h4>Return</h4><p class="extra_info">							Boolean		Whether or not it successfully removed a tweening
+	 </p></div></div><div class="method_details"><a name="pauseTweens"></a><h3>pauseTweens</h3><code class="method_synopsis">static public function <strong class="method_name">pauseTweens</strong>(p_scope:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Pause tweenings from a given object
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_scope</code></td><td>Object		Object that must have its tweens paused
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Boolean		Whether or not it successfully paused something
+	 </p></div></div><div class="method_details alt_row"><a name="pauseAllTweens"></a><h3>pauseAllTweens</h3><code class="method_synopsis">static public function <strong class="method_name">pauseAllTweens</strong>():<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Pause all tweenings on the engine
+
+ </p><h4>Return</h4><p class="extra_info">							Boolean		Whether or not it successfully paused a tweening
+	 </p></div></div><div class="method_details"><a name="resumeTweens"></a><h3>resumeTweens</h3><code class="method_synopsis">static public function <strong class="method_name">resumeTweens</strong>(p_scope:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Resume tweenings from a given object
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_scope</code></td><td>Object		Object that must have its tweens resumed
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Boolean		Whether or not it successfully resumed something
+	 </p></div></div><div class="method_details alt_row"><a name="resumeAllTweens"></a><h3>resumeAllTweens</h3><code class="method_synopsis">static public function <strong class="method_name">resumeAllTweens</strong>():<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Resume all tweenings on the engine
+
+ </p><h4>Return</h4><p class="extra_info">							Boolean		Whether or not it successfully resumed a tweening
+	 </p></div></div><div class="method_details"><a name="splitTweens"></a><h3>splitTweens</h3><code class="method_synopsis">static public function <strong class="method_name">splitTweens</strong>(p_tween:<span class="unresolved_type_name">Number</span>, p_properties:<span class="unresolved_type_name">Array</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Splits a tweening in two
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_tween</code></td><td>Number		Object that must have its tweens split
+ </td></tr><tr><td><code>p_properties</code></td><td>Array		Array of strings containing the list of properties that must be separated
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The index number of the new tween
+	 </p></div></div><div class="method_details alt_row"><a name="removeTweenByIndex"></a><h3>removeTweenByIndex</h3><code class="method_synopsis">static public function <strong class="method_name">removeTweenByIndex</strong>(p_tween:<span class="unresolved_type_name">Number</span>, p_finalRemoval:<span class="unresolved_type_name">Boolean</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Remove an specific tweening from the tweening list
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_tween</code></td><td>Number		Index of the tween to be removed on the tweenings list
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Boolean		Whether or not it successfully removed this tweening
+	 </p></div></div><div class="method_details"><a name="pauseTweenByIndex"></a><h3>pauseTweenByIndex</h3><code class="method_synopsis">static public function <strong class="method_name">pauseTweenByIndex</strong>(p_tween:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Pauses an specific tween
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_tween</code></td><td>Number		Index of the tween to be paused
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Boolean		Whether or not it successfully paused this tweening
+	 </p></div></div><div class="method_details alt_row"><a name="resumeTweenByIndex"></a><h3>resumeTweenByIndex</h3><code class="method_synopsis">static public function <strong class="method_name">resumeTweenByIndex</strong>(p_tween:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Resumes an specific tween
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_tween</code></td><td>Number		Index of the tween to be resumed
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Boolean		Whether or not it successfully resumed this tweening
+	 </p></div></div><div class="method_details"><a name="registerTransition"></a><h3>registerTransition</h3><code class="method_synopsis">static public function <strong class="method_name">registerTransition</strong>(p_name:<span class="unresolved_type_name">String</span>, p_function:<span class="unresolved_type_name">Function</span>):<span class="void_name">Void</span></code><div class="method_info"><p>
+ Adds a new function to the available transition list "shortcuts"
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_name</code></td><td>String		Shorthand transition name
+ </td></tr><tr><td><code>p_function</code></td><td>Function	The proper equation function
+	 </td></tr></table></div></div><div class="method_details alt_row"><a name="registerSpecialProperty"></a><h3>registerSpecialProperty</h3><code class="method_synopsis">static public function <strong class="method_name">registerSpecialProperty</strong>(p_name:<span class="unresolved_type_name">String</span>, p_getFunction:<span class="unresolved_type_name">Function</span>, p_setFunction:<span class="unresolved_type_name">Function</span>, p_parameters:<span class="unresolved_type_name">Array</span>, p_preProcessFunction:<span class="unresolved_type_name">Function</span>):<span class="void_name">Void</span></code><div class="method_info"><p>
+ Adds a new special property to the available special property list.
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_name</code></td><td>Name of the "special" property.
+ </td></tr><tr><td><code>p_getFunction</code></td><td>Function that gets the value.
+ </td></tr><tr><td><code>p_setFunction</code></td><td>Function that sets the value.
+	 </td></tr></table></div></div><div class="method_details"><a name="registerSpecialPropertyModifier"></a><h3>registerSpecialPropertyModifier</h3><code class="method_synopsis">static public function <strong class="method_name">registerSpecialPropertyModifier</strong>(p_name:<span class="unresolved_type_name">String</span>, p_modifyFunction:<span class="unresolved_type_name">Function</span>, p_getFunction:<span class="unresolved_type_name">Function</span>):<span class="void_name">Void</span></code><div class="method_info"><p>
+ Adds a new special property modifier to the available modifier list.
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_name</code></td><td>Name of the "special" property modifier.
+ </td></tr><tr><td><code>p_modifyFunction</code></td><td>Function that modifies the value.
+ </td></tr><tr><td><code>p_getFunction</code></td><td>Function that gets the value.
+	 </td></tr></table></div></div><div class="method_details alt_row"><a name="registerSpecialPropertySplitter"></a><h3>registerSpecialPropertySplitter</h3><code class="method_synopsis">static public function <strong class="method_name">registerSpecialPropertySplitter</strong>(p_name:<span class="unresolved_type_name">String</span>, p_splitFunction:<span class="unresolved_type_name">Function</span>, p_parameters:<span class="unresolved_type_name">Array</span>):<span class="void_name">Void</span></code><div class="method_info"><p>
+ Adds a new special property splitter to the available splitter list.
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_name</code></td><td>Name of the "special" property splitter.
+ </td></tr><tr><td><code>p_splitFunction</code></td><td>Function that splits the value.
+	 </td></tr></table></div></div><div class="method_details"><a name="updateTime"></a><h3>updateTime</h3><code class="method_synopsis">static public function <strong class="method_name">updateTime</strong>():<span class="void_name">Void</span></code><div class="method_info"><p>
+ Updates the time to enforce time grid-based updates
+	 </p></div></div><div class="method_details alt_row"><a name="updateFrame"></a><h3>updateFrame</h3><code class="method_synopsis">static public function <strong class="method_name">updateFrame</strong>():<span class="void_name">Void</span></code><div class="method_info"><p>
+ Updates the current frame count
+	 </p></div></div><div class="method_details"><a name="onEnterFrame"></a><h3>onEnterFrame</h3><code class="method_synopsis">static public function <strong class="method_name">onEnterFrame</strong>():<span class="void_name">Void</span></code><div class="method_info"><p>
+ Ran once every frame. It's the main engine, updates all existing tweenings.
+	 </p></div></div><div class="method_details alt_row"><a name="setTimeScale"></a><h3>setTimeScale</h3><code class="method_synopsis">static public function <strong class="method_name">setTimeScale</strong>(p_time:<span class="unresolved_type_name">Number</span>):<span class="void_name">Void</span></code><div class="method_info"><p>
+ Sets the new time scale.
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_time</code></td><td>Number		New time scale (0.5 = slow, 1 = normal, 2 = 2x fast forward, etc)
+	 </td></tr></table></div></div><div class="method_details"><a name="isTweening"></a><h3>isTweening</h3><code class="method_synopsis">static public function <strong class="method_name">isTweening</strong>(p_scope:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Finds whether or not an object has any tweening
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_scope</code></td><td>Object		Target object
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Boolean		Whether or not there's a tweening occuring on this object (paused, delayed, or active)
+	 </p></div></div><div class="method_details alt_row"><a name="getTweens"></a><h3>getTweens</h3><code class="method_synopsis">static public function <strong class="method_name">getTweens</strong>(p_scope:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Array</span></code><div class="method_info"><p>
+ Return an array containing a list of the properties being tweened for this object
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_scope</code></td><td>Object		Target object
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Array		List of strings with properties being tweened (including delayed or paused)
+	 </p></div></div><div class="method_details"><a name="getTweenCount"></a><h3>getTweenCount</h3><code class="method_synopsis">static public function <strong class="method_name">getTweenCount</strong>(p_scope:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Return the number of properties being tweened for this object
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_scope</code></td><td>Object		Target object
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		Total count of properties being tweened (including delayed or paused)
+	 </p></div></div><div class="method_details alt_row"><a name="getCurrentTweeningTime"></a><h3>getCurrentTweeningTime</h3><code class="method_synopsis">static public function <strong class="method_name">getCurrentTweeningTime</strong>(p_tweening:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Get the current tweening time (no matter if it uses frames or time as basis), given a specific tweening
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_tweening</code></td><td>TweenListObj		Tween information
+	 </td></tr></table></div></div><div class="method_details"><a name="getVersion"></a><h3>getVersion</h3><code class="method_synopsis">static public function <strong class="method_name">getVersion</strong>():<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Return the current tweener version
+
+ </p><h4>Return</h4><p class="extra_info">							String		The number of the current Tweener version
+	 </p></div></div><div class="method_details alt_row"><a name="getControllerName"></a><h3>getControllerName</h3><code class="method_synopsis">static public function <strong class="method_name">getControllerName</strong>():<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Return the name for the controller movieclip
+
+ </p><h4>Return</h4><p class="extra_info">							String		The number of the current Tweener version
+	 </p></div></div><div class="method_details"><a name="printError"></a><h3>printError</h3><code class="method_synopsis">static public function <strong class="method_name">printError</strong>(p_message:<span class="unresolved_type_name">String</span>):<span class="void_name">Void</span></code><div class="method_info"><p>
+ Output an error message
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>p_message</code></td><td>String		The error message to output
+	 </td></tr></table></div></div></div></div><ul class="main_nav" id="main_nav"><li><a href="../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package caurina.transitions" class="button">Package</a></li><li><span class="button nav_current">Class</span></li><li><a href="Tweener.as.html" title="Source code of caurina.transitions.Tweener" class="button">Source</a></li><li><a href="../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

@@ -1,0 +1,524 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="AbstractCollisionDetector,sekati.collisions.AbstractCollisionDetector,objectArray,objectCheckArray,objectCollisionArray,alphaThreshold,isMonitoring,numChildren,returnAngleType,addItem,checkCollisions,clearArrays,excludeColor,monitor,removeExcludeColor,removeItem,startMonitor,stopMonitor" name="keywords">
+<title>sekati.collisions.AbstractCollisionDetector</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'AbstractCollisionDetector - Sekati API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Sekati API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?sekati/collisions/AbstractCollisionDetector.html&amp;sekati/collisions/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;AbstractCollisionDetector</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class AbstractCollisionDetector"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">sekati.collisions</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class AbstractCollisionDetector</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">AbstractCollisionDetector <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../collisions/CollisionDetector.html">CollisionDetector</a>, <a href="../collisions/GroupCollisionDetector.html">GroupCollisionDetector</a></td>
+</tr>
+</table>
+<p></p>
+  AbstractCollisionDetector provides the core collision detection logic abstract to its subclasses.
+   
+  <p><code>BitmapData</code> generated from the display objects ared used in the detection of 
+  collisions & the collision angle which is calculated based on the display objects' shape 
+  where the collision occurs.</p>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../collisions/Collision.html" target="">sekati.collisions.Collision</a>
+<br>
+<a href="../collisions/CollisionAngle.html" target="">sekati.collisions.CollisionAngle</a>
+<br>
+<a href="../collisions/CollisionDetector.html" target="">sekati.collisions.CollisionDetector</a>
+<br>
+<a href="../collisions/GroupCollisionDetector.html" target="">sekati.collisions.GroupCollisionDetector</a>
+<br>
+<a href="../events/CollisionEvent.html" target="">sekati.events.CollisionEvent</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#alphaThreshold">alphaThreshold</a> : Number<div class="summaryTableDescription">
+   A floating point value from <code>0 - 1</code> that determines the minimum alpha value to check for collisions.</div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#isMonitoring">isMonitoring</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Whether the frame-base collision monitor is running.</div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#numChildren">numChildren</a> : uint<div class="summaryTableDescription">[read-only]
+   The number of <code>DisplayObject</code>s being checked for collision.</div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#returnAngleType">returnAngleType</a> : String<div class="summaryTableDescription">
+   Determines if the angle returned from a collision is in <code>CollisionAngle.RADIAN</code> or 
+   <code>CollisionAngle.DEGREE_ANGLE_TYPE</code> (Default: <code>CollisionAngle.NONE</code>).</div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#objectArray">objectArray</a> : <a href="../collections/TypedArray.html">TypedArray</a>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#objectCheckArray">objectCheckArray</a> : <a href="../collections/TypedArray.html">TypedArray</a>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#objectCollisionArray">objectCollisionArray</a> : <a href="../collections/TypedArray.html">TypedArray</a>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#AbstractCollisionDetector()">AbstractCollisionDetector</a>()</div>
+<div class="summaryTableDescription">
+   AbstractCollisionDetector Constructor
+   </div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addItem()">addItem</a>(obj:DisplayObject):void</div>
+<div class="summaryTableDescription">
+   Add a <code>DisplayObject</code> to the list of objects to check for collisions.</div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#checkCollisions()">checkCollisions</a>():<a href="../collections/TypedArray.html">TypedArray</a>
+</div>
+<div class="summaryTableDescription">
+   Stub function for subclasses which checks for collisions and returns a <code>Collision TypedArray</code> 
+   containing all <code>Collision</code>'s.</div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#excludeColor()">excludeColor</a>(color32:uint, alphaRange:uint = 255, redRange:uint = 20, greenRange:uint = 20, blueRange:uint = 20):void</div>
+<div class="summaryTableDescription">
+   Defines a color or color range to exclude from collision detections.</div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeExcludeColor()">removeExcludeColor</a>(color32:uint):void</div>
+<div class="summaryTableDescription">
+   Removes the color specified from the list of colors to exclude from collision detections.</div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeItem()">removeItem</a>(obj:DisplayObject):void</div>
+<div class="summaryTableDescription">
+   Remove a <code>DisplayObject</code> from the list of objects to check for collisions.</div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#startMonitor()">startMonitor</a>():void</div>
+<div class="summaryTableDescription">
+   Start frame-based automatic collision monitoring.</div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#stopMonitor()">stopMonitor</a>():void</div>
+<div class="summaryTableDescription">
+   Stop frame-based automatic collision monitoring.</div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clearArrays()">clearArrays</a>():void</div>
+<div class="summaryTableDescription">
+   Clear the <code>objectCheckArray</code> and <code>objectCollisionArray</code>.</div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#monitor()">monitor</a>(e:Event):void</div>
+<div class="summaryTableDescription">
+   Frame-based collision monitoring dispatches <code>CollisionEvent</code>'s 
+   when one or more collisions are detected.</div>
+</td><td class="summaryTableOwnerCol">AbstractCollisionDetector</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="alphaThreshold"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">alphaThreshold</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>alphaThreshold:Number</code>&nbsp;&nbsp;[read-write]<p>
+   A floating point value from <code>0 - 1</code> that determines the minimum alpha value to check for collisions. 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get alphaThreshold():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set alphaThreshold(value:Number):void</code>
+<br>
+</div>
+<a name="isMonitoring"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isMonitoring</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>isMonitoring:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Whether the frame-base collision monitor is running.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get isMonitoring():Boolean</code>
+<br>
+</div>
+<a name="numChildren"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">numChildren</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>numChildren:uint</code>&nbsp;&nbsp;[read-only]<p>
+   The number of <code>DisplayObject</code>s being checked for collision. 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get numChildren():uint</code>
+<br>
+</div>
+<a name="objectArray"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">objectArray</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var objectArray:<a href="../collections/TypedArray.html">TypedArray</a></code>
+</div>
+<a name="objectCheckArray"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">objectCheckArray</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var objectCheckArray:<a href="../collections/TypedArray.html">TypedArray</a></code>
+</div>
+<a name="objectCollisionArray"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">objectCollisionArray</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var objectCollisionArray:<a href="../collections/TypedArray.html">TypedArray</a></code>
+</div>
+<a name="returnAngleType"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">returnAngleType</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>returnAngleType:String</code>&nbsp;&nbsp;[read-write]<p>
+   Determines if the angle returned from a collision is in <code>CollisionAngle.RADIAN</code> or 
+   <code>CollisionAngle.DEGREE_ANGLE_TYPE</code> (Default: <code>CollisionAngle.NONE</code>). 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get returnAngleType():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set returnAngleType(value:String):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="AbstractCollisionDetector()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">AbstractCollisionDetector</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function AbstractCollisionDetector()</code><p>
+   AbstractCollisionDetector Constructor
+   </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addItem()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addItem</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addItem(obj:DisplayObject):void</code><p>
+   Add a <code>DisplayObject</code> to the list of objects to check for collisions. 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">obj</span>:DisplayObject</code></td>
+</tr>
+</table>
+</div>
+<a name="checkCollisions()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">checkCollisions</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function checkCollisions():<a href="../collections/TypedArray.html">TypedArray</a></code><p>
+   Stub function for subclasses which checks for collisions and returns a <code>Collision TypedArray</code> 
+   containing all <code>Collision</code>'s.
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../collections/TypedArray.html">TypedArray</a></code></td>
+</tr>
+</table>
+</div>
+<a name="clearArrays()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clearArrays</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function clearArrays():void</code><p>
+   Clear the <code>objectCheckArray</code> and <code>objectCollisionArray</code>.
+   </p></div>
+<a name="excludeColor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">excludeColor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function excludeColor(color32:uint, alphaRange:uint = 255, redRange:uint = 20, greenRange:uint = 20, blueRange:uint = 20):void</code><p>
+   Defines a color or color range to exclude from collision detections. <i>The excludeColor() method expects a 32 bit color value</i>. 
+   Optional ranges based on this color can be specified for all channels using the additional parameters. Each range accepts 
+   integral values from 0 to 255, accounting for all values for each color channel. The ranges move in both directions at the 
+   amount specified for each channel.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">color32</span>:uint</code> &mdash;    The color to exclude. Must be a 32 bit value (E.g. <code>0xFFFFFFFF</code>).
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">alphaRange</span>:uint</code> (default = <code>255</code>)<code></code> &mdash;  The integral range of alpha values to exclude, based on the color's alpha value. Valid values are 0 - 255.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">redRange</span>:uint</code> (default = <code>20</code>)<code></code> &mdash;   The integral range of red values to exclude, based on the color's red value. Valid values are 0 - 255
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">greenRange</span>:uint</code> (default = <code>20</code>)<code></code> &mdash;  The integral range of green values to exclude, based on the color's green value. Valid values are 0 - 255
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">blueRange</span>:uint</code> (default = <code>20</code>)<code></code> &mdash;  The integral range of blue values to exclude, based on the color's blue value. Valid values are 0 - 255
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../collisions/AbstractCollisionDetector.html#removeExcludeColor" target="">removeExcludeColor</a>
+</div>
+</div>
+<a name="monitor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">monitor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function monitor(e:Event):void</code><p>
+   Frame-based collision monitoring dispatches <code>CollisionEvent</code>'s 
+   when one or more collisions are detected. 
+   
+   </p><p>You must explicitly call <code>startMonitor()</code> or <code>stopMonitor()</code> to
+   begin/end monitoring. The status may be checked via <code>isMonitoring</code></p>
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:Event</code></td>
+</tr>
+</table>
+</div>
+<a name="removeExcludeColor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeExcludeColor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeExcludeColor(color32:uint):void</code><p>
+   Removes the color specified from the list of colors to exclude from collision detections. Must be a color previously added 
+   using the <code>excludeColor()</code> method. Expects a 32 bit color value. 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">color32</span>:uint</code> &mdash;    The color to exclude. Must be a 32 bit value (E.g. <code>0xFFFFFFFF</code>).
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../collisions/AbstractCollisionDetector.html#excludeColor" target="">excludeColor</a>
+</div>
+</div>
+<a name="removeItem()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeItem</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeItem(obj:DisplayObject):void</code><p>
+   Remove a <code>DisplayObject</code> from the list of objects to check for collisions.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">obj</span>:DisplayObject</code></td>
+</tr>
+</table>
+</div>
+<a name="startMonitor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">startMonitor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function startMonitor():void</code><p>
+   Start frame-based automatic collision monitoring.
+   </p></div>
+<a name="stopMonitor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stopMonitor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function stopMonitor():void</code><p>
+   Stop frame-based automatic collision monitoring.
+   </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Copyright &copy; 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.</center>
+</div>
+</body>
+</html>
+<!--Copyright © 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.-->

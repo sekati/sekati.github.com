@@ -1,0 +1,9 @@
+<map id="class_diagram" name="class_diagram">
+<area shape="rect" href="Logger.html" title="com.sekati.kernel.Logger" alt="" coords="13,440,85,488" />
+<area shape="rect" href="LogEvent.html" title="com.sekati.kernel.LogEvent" alt="" coords="10,368,88,416" />
+<area shape="rect" href="LCBinding.html" title="com.sekati.kernel.LCBinding" alt="" coords="9,296,89,344" />
+<area shape="rect" href="Kernel.html" title="com.sekati.kernel.Kernel" alt="" coords="13,224,85,272" />
+<area shape="rect" href="Inspector.html" title="com.sekati.kernel.Inspector" alt="" coords="10,152,88,200" />
+<area shape="rect" href="Graph.html" title="com.sekati.kernel.Graph" alt="" coords="13,80,85,128" />
+<area shape="rect" href="Console.html" title="com.sekati.kernel.Console" alt="" coords="13,8,85,56" />
+</map>

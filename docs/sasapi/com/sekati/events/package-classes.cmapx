@@ -1,0 +1,9 @@
+<map id="class_diagram" name="class_diagram">
+<area shape="rect" href="LcBroadcaster.html" title="com.sekati.events.LcBroadcaster" alt="" coords="44,440,150,488" />
+<area shape="rect" href="FramePulse.html" title="com.sekati.events.FramePulse" alt="" coords="52,368,142,416" />
+<area shape="rect" href="EventBroadcaster.html" title="com.sekati.events.EventBroadcaster" alt="" coords="33,296,161,344" />
+<area shape="rect" href="Event.html" title="com.sekati.events.Event" alt="" coords="61,224,133,272" />
+<area shape="rect" href="Dispatcher.html" title="com.sekati.events.Dispatcher" alt="" coords="54,152,140,200" />
+<area shape="rect" href="Broadcaster.html" title="com.sekati.events.Broadcaster" alt="" coords="50,80,144,128" />
+<area shape="rect" href="AbstractEventBroadcaster.html" title="com.sekati.events.AbstractEventBroadcaster" alt="" coords="9,8,185,56" />
+</map>

@@ -1,0 +1,1590 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="ColorUtil,sekati.utils.ColorUtil,HUE_MAX,PCT_MAX,RGB_MAX,HSLtoHSV,HSLtoRGB,HSVtoHSL,HSVtoRGB,HueToRGB,RGBToHue,RGBtoHSL,RGBtoHSV,averageBlue,averageGreen,averageHue,averageLightness,averageRed,averageSaturation,averageValue,changeContrast,componentsFromHex,getColor,getHSLComponent,getHSVComponent,getRGBComponent,getTransform,hexFromComponents,hexFromPercentages,invertColor,randomColor,resetColor,setColor,setHSLComponent,setHSVComponent,setRGBComponent,setTransform,toColor,toHTML,toHexString" name="keywords">
+<title>sekati.utils.ColorUtil</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'ColorUtil - Sekati API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Sekati API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?sekati/utils/ColorUtil.html&amp;sekati/utils/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;ColorUtil</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#methodSummary">Methods</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class ColorUtil"); titleBar_setSubNav(true,false,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">sekati.utils</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class ColorUtil</td>
+</tr>
+</table>
+<p></p>
+  Static class wrapping various Color utilities.
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="http://en.wikipedia.org/wiki/HSV_color_space" target="mm_external">http://en.wikipedia.org/wiki/HSV_color_space</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#ColorUtil()">ColorUtil</a>()</div>
+<div class="summaryTableDescription">
+   ColorUtil Static Constructor
+   </div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#averageBlue()">averageBlue</a>(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):int</div>
+<div class="summaryTableDescription">[static]
+   Sample & average the <i>Blue</i> (RGB) value from a display object or one of its region.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#averageGreen()">averageGreen</a>(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):int</div>
+<div class="summaryTableDescription">[static]
+   Sample & average the <i>Green</i> (RGB) value from a display object or one of its region.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#averageHue()">averageHue</a>(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):int</div>
+<div class="summaryTableDescription">[static]
+   Sample & average the <i>Hue</i> (HSL) value from a display object or one of its region.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#averageLightness()">averageLightness</a>(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):int</div>
+<div class="summaryTableDescription">[static]
+   Sample & average the <i>Lightness</i> (HSL) value from a display object or one of its region.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#averageRed()">averageRed</a>(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):int</div>
+<div class="summaryTableDescription">[static]
+   Sample & average the <i>Red</i> (RGB) value from a display object or one of its region.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#averageSaturation()">averageSaturation</a>(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):Number</div>
+<div class="summaryTableDescription">[static]
+   Sample & average the <i>Saturation</i> (HSL) value from a display object or one of its region.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#averageValue()">averageValue</a>(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):Number</div>
+<div class="summaryTableDescription">[static]
+   Sample & average the <i>Value</i> (HSV) value from a display object or one of its region.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#changeContrast()">changeContrast</a>(hex:Number, inc:Number):Number</div>
+<div class="summaryTableDescription">[static]
+   Change the contrast of a hexidecimal Number by a certain increment
+   </div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#componentsFromHex()">componentsFromHex</a>(hex:uint):Object</div>
+<div class="summaryTableDescription">[static]
+   Convert an RGB hexidecimal value to an object containing its R,G,B components.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getColor()">getColor</a>(src:DisplayObject, x:uint = 0, y:uint = 0, getAlpha:Boolean = false):uint</div>
+<div class="summaryTableDescription">[static]
+   Return the (A)RGB <i>hexadecimal</i> color value of a DisplayObject.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getHSLComponent()">getHSLComponent</a>(src:DisplayObject, x:uint = 0, y:uint = 0):Object</div>
+<div class="summaryTableDescription">[static]
+   Get the HSL components from a DisplayObject.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getHSVComponent()">getHSVComponent</a>(src:DisplayObject, x:uint = 0, y:uint = 0):Object</div>
+<div class="summaryTableDescription">[static]
+   Get the HSV components from a DisplayObject.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getRGBComponent()">getRGBComponent</a>(src:DisplayObject, x:uint = 0, y:uint = 0):Object</div>
+<div class="summaryTableDescription">[static]
+   Get the RGB components from a DisplayObject.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getTransform()">getTransform</a>(src:DisplayObject):Object</div>
+<div class="summaryTableDescription">[static]
+   Returns the transform value set by the last setTransform() call.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hexFromComponents()">hexFromComponents</a>(r:uint, g:uint, b:uint):uint</div>
+<div class="summaryTableDescription">[static]
+   Convert individual R,G,B values to a hexidecimal value.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hexFromPercentages()">hexFromPercentages</a>(rgbObj:Object):uint</div>
+<div class="summaryTableDescription">[static]
+   Convert an RGB Object to a hexidecimal color value.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#HSLtoHSV()">HSLtoHSV</a>(hue:Number, luminance:Number, saturation:Number):Object</div>
+<div class="summaryTableDescription">[static]
+   Convert HSL to HSV using RGB conversions: color preservation may be dubious.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#HSLtoRGB()">HSLtoRGB</a>(hue:Number, luminance:Number, saturation:Number):Object</div>
+<div class="summaryTableDescription">[static]
+   Convert HSL values to RGB values.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#HSVtoHSL()">HSVtoHSL</a>(hue:Number, saturation:Number, value:Number):Object</div>
+<div class="summaryTableDescription">[static]
+   Convert HSV to HLS using RGB conversions: color preservation may be dubious.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#HSVtoRGB()">HSVtoRGB</a>(hue:Number, saturation:Number, value:Number):Object</div>
+<div class="summaryTableDescription">[static]
+   Convert HSV values to RGB values.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#HueToRGB()">HueToRGB</a>(min:Number, max:Number, hue:Number):Object</div>
+<div class="summaryTableDescription">[static]
+   Convert hue to RGB values using a linear transformation.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#invertColor()">invertColor</a>(src:DisplayObject):void</div>
+<div class="summaryTableDescription">[static]
+   Inverts the color of the DisplayObject.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#randomColor()">randomColor</a>():uint</div>
+<div class="summaryTableDescription">[static]
+   Generate a random hexidecimal color.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#resetColor()">resetColor</a>(src:DisplayObject):void</div>
+<div class="summaryTableDescription">[static]
+   Reset the color of the DisplayObject to its original view (pre-ColorTransformed).</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#RGBtoHSL()">RGBtoHSL</a>(red:Number, green:Number, blue:Number):Object</div>
+<div class="summaryTableDescription">[static]
+   Convert an RGB Hexidecimal value to HSL values
+   </div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#RGBtoHSV()">RGBtoHSV</a>(red:Number, green:Number, blue:Number):Object</div>
+<div class="summaryTableDescription">[static]
+   Convert RGB values to HSV values.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#RGBToHue()">RGBToHue</a>(red:Number, green:Number, blue:Number):uint</div>
+<div class="summaryTableDescription">[static]
+   Convert RGB values to a hue using a linear transformation.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setColor()">setColor</a>(src:DisplayObject, hex:uint):void</div>
+<div class="summaryTableDescription">[static]
+   Set the (A)RGB <i>hexadecimal</i> color value of a DisplayObject using ColorTransform.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setHSLComponent()">setHSLComponent</a>(src:DisplayObject, h:Number, l:Number, s:Number):void</div>
+<div class="summaryTableDescription">[static]
+   Set the color of a DisplayObject from HSL components.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setHSVComponent()">setHSVComponent</a>(src:DisplayObject, h:Number, s:Number, v:Number):void</div>
+<div class="summaryTableDescription">[static]
+   Set the color of a DisplayObject from HSV components.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setRGBComponent()">setRGBComponent</a>(src:DisplayObject, r:Number, g:Number, b:Number):void</div>
+<div class="summaryTableDescription">[static]
+   Set the color of a DisplayObject from RGB components.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setTransform()">setTransform</a>(src:DisplayObject, transformObject:Object):void</div>
+<div class="summaryTableDescription">[static]
+   Set ColorTransform information for a DisplayObject.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toColor()">toColor</a>(str:String):uint</div>
+<div class="summaryTableDescription">[static]
+   Parse a String representation of a color (hex or html) to uint.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toHexString()">toHexString</a>(hex:uint):String</div>
+<div class="summaryTableDescription">[static]
+   Convert a hexidecimal number to a string representation with ECMAScript notation: <code>0xrrggbb</code>.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toHTML()">toHTML</a>(hex:uint):String</div>
+<div class="summaryTableDescription">[static]
+   Convert a hexidecimal number to a string representation with HTML notation: <code>#rrggbb</code>.</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<table id="summaryTableConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#HUE_MAX">HUE_MAX</a> : uint = 360<div class="summaryTableDescription">[static]</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#PCT_MAX">PCT_MAX</a> : uint = 100<div class="summaryTableDescription">[static]</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#RGB_MAX">RGB_MAX</a> : uint = 256<div class="summaryTableDescription">[static]</div>
+</td><td class="summaryTableOwnerCol">ColorUtil</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="ColorUtil()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ColorUtil</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function ColorUtil()</code><p>
+   ColorUtil Static Constructor
+   </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="averageBlue()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">averageBlue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function averageBlue(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):int</code><p>
+   Sample & average the <i>Blue</i> (RGB) value from a display object or one of its region.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code> &mdash;    of the display object.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">accuracy</span>:Number</code> (default = <code>0.01</code>)<code></code> &mdash;   percentage of pixels to sample when averaging.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">region</span>:Rectangle</code> (default = <code>null</code>)<code></code> &mdash;   to sample from [Default: null = entire src object].
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>int</code> &mdash;     the sampled average <i>blue</i> value on a scale of 0-255. 
+   </td>
+</tr>
+</table>
+</div>
+<a name="averageGreen()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">averageGreen</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function averageGreen(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):int</code><p>
+   Sample & average the <i>Green</i> (RGB) value from a display object or one of its region.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code> &mdash;    of the display object.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">accuracy</span>:Number</code> (default = <code>0.01</code>)<code></code> &mdash;   percentage of pixels to sample when averaging.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">region</span>:Rectangle</code> (default = <code>null</code>)<code></code> &mdash;   to sample from [Default: null = entire src object].
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>int</code> &mdash;     the sampled average <i>green</i> value on a scale of 0-255. 
+   </td>
+</tr>
+</table>
+</div>
+<a name="averageHue()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">averageHue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function averageHue(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):int</code><p>
+   Sample & average the <i>Hue</i> (HSL) value from a display object or one of its region.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code> &mdash;    of the display object.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">accuracy</span>:Number</code> (default = <code>0.01</code>)<code></code> &mdash;   percentage of pixels to sample when averaging.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">region</span>:Rectangle</code> (default = <code>null</code>)<code></code> &mdash;   to sample from [Default: null = entire src object].
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>int</code> &mdash;     the sampled average <i>hue</i> value on a scale of 0-360. 
+   </td>
+</tr>
+</table>
+</div>
+<a name="averageLightness()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">averageLightness</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function averageLightness(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):int</code><p>
+   Sample & average the <i>Lightness</i> (HSL) value from a display object or one of its region.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code> &mdash;    of the display object.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">accuracy</span>:Number</code> (default = <code>0.01</code>)<code></code> &mdash;   percentage of pixels to sample when averaging.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">region</span>:Rectangle</code> (default = <code>null</code>)<code></code> &mdash;   to sample from [Default: null = entire src object].
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>int</code> &mdash;     the sampled average <i>lightness</i> value on a scale of 0-255. 
+   </td>
+</tr>
+</table>
+</div>
+<a name="averageRed()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">averageRed</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function averageRed(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):int</code><p>
+   Sample & average the <i>Red</i> (RGB) value from a display object or one of its region.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code> &mdash;    of the display object.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">accuracy</span>:Number</code> (default = <code>0.01</code>)<code></code> &mdash;   percentage of pixels to sample when averaging.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">region</span>:Rectangle</code> (default = <code>null</code>)<code></code> &mdash;   to sample from [Default: null = entire src object].
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>int</code> &mdash;     the sampled average <i>red</i> value on a scale of 0-255. 
+   </td>
+</tr>
+</table>
+</div>
+<a name="averageSaturation()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">averageSaturation</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function averageSaturation(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):Number</code><p>
+   Sample & average the <i>Saturation</i> (HSL) value from a display object or one of its region.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code> &mdash;    of the display object.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">accuracy</span>:Number</code> (default = <code>0.01</code>)<code></code> &mdash;   percentage of pixels to sample when averaging.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">region</span>:Rectangle</code> (default = <code>null</code>)<code></code> &mdash;   to sample from [Default: null = entire src object].
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash;     the sampled average <i>saturation</i> value on a scale of 0-1. 
+   </td>
+</tr>
+</table>
+</div>
+<a name="averageValue()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">averageValue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function averageValue(src:DisplayObject, accuracy:Number = 0.01, region:Rectangle = null):Number</code><p>
+   Sample & average the <i>Value</i> (HSV) value from a display object or one of its region.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code> &mdash;    of the display object.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">accuracy</span>:Number</code> (default = <code>0.01</code>)<code></code> &mdash;   percentage of pixels to sample when averaging.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">region</span>:Rectangle</code> (default = <code>null</code>)<code></code> &mdash;   to sample from [Default: null = entire src object].
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash;     the sampled average <i>lightness</i> value on a scale of 0-1. 
+   </td>
+</tr>
+</table>
+</div>
+<a name="changeContrast()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">changeContrast</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function changeContrast(hex:Number, inc:Number):Number</code><p>
+   Change the contrast of a hexidecimal Number by a certain increment
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">hex</span>:Number</code> &mdash;   color value to shift contrast on
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">inc</span>:Number</code> &mdash;   increment value to shift
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; new hex color value
+   </td>
+</tr>
+</table>
+</div>
+<a name="componentsFromHex()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">componentsFromHex</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function componentsFromHex(hex:uint):Object</code><p>
+   Convert an RGB hexidecimal value to an object containing its R,G,B components.
+   TODO - refactor to getRGB or toRGBComponents
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">hex</span>:uint</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code></td>
+</tr>
+</table>
+</div>
+<a name="getColor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getColor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getColor(src:DisplayObject, x:uint = 0, y:uint = 0, getAlpha:Boolean = false):uint</code><p>
+   Return the (A)RGB <i>hexadecimal</i> color value of a DisplayObject.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code> &mdash;   of the display object.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">x</span>:uint</code> (default = <code>0</code>)<code></code> &mdash;   position to sample.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">y</span>:uint</code> (default = <code>0</code>)<code></code> &mdash;   position to sample.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">getAlpha</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash;  if true return is RGBA, else RGB.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>uint</code></td>
+</tr>
+</table>
+</div>
+<a name="getHSLComponent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getHSLComponent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getHSLComponent(src:DisplayObject, x:uint = 0, y:uint = 0):Object</code><p>
+   Get the HSL components from a DisplayObject.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code> &mdash;  to sample color from.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">x</span>:uint</code> (default = <code>0</code>)<code></code> &mdash;  location to sample.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">y</span>:uint</code> (default = <code>0</code>)<code></code> &mdash;  location to sample.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash;   component object.
+   </td>
+</tr>
+</table>
+</div>
+<a name="getHSVComponent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getHSVComponent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getHSVComponent(src:DisplayObject, x:uint = 0, y:uint = 0):Object</code><p>
+   Get the HSV components from a DisplayObject.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code> &mdash;  to sample color from.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">x</span>:uint</code> (default = <code>0</code>)<code></code> &mdash;  location to sample.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">y</span>:uint</code> (default = <code>0</code>)<code></code> &mdash;  location to sample.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash;   component object.
+   </td>
+</tr>
+</table>
+</div>
+<a name="getRGBComponent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getRGBComponent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getRGBComponent(src:DisplayObject, x:uint = 0, y:uint = 0):Object</code><p>
+   Get the RGB components from a DisplayObject.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code> &mdash;  to sample color from.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">x</span>:uint</code> (default = <code>0</code>)<code></code> &mdash;  location to sample.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">y</span>:uint</code> (default = <code>0</code>)<code></code> &mdash;  location to sample.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash;   component object.
+   </td>
+</tr>
+</table>
+</div>
+<a name="getTransform()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getTransform</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getTransform(src:DisplayObject):Object</code><p>
+   Returns the transform value set by the last setTransform() call.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash; An object containing the current offset and percentage values for the color.
+   </td>
+</tr>
+</table>
+</div>
+<a name="hexFromComponents()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hexFromComponents</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function hexFromComponents(r:uint, g:uint, b:uint):uint</code><p>
+   Convert individual R,G,B values to a hexidecimal value.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">r</span>:uint</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">g</span>:uint</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">b</span>:uint</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>uint</code></td>
+</tr>
+</table>
+</div>
+<a name="hexFromPercentages()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hexFromPercentages</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function hexFromPercentages(rgbObj:Object):uint</code><p>
+   Convert an RGB Object to a hexidecimal color value.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">rgbObj</span>:Object</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>uint</code></td>
+</tr>
+</table>
+</div>
+<a name="HSLtoHSV()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">HSLtoHSV</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function HSLtoHSV(hue:Number, luminance:Number, saturation:Number):Object</code><p>
+   Convert HSL to HSV using RGB conversions: color preservation may be dubious.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">hue</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">luminance</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">saturation</span>:Number</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code></td>
+</tr>
+</table>
+</div>
+<a name="HSLtoRGB()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">HSLtoRGB</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function HSLtoRGB(hue:Number, luminance:Number, saturation:Number):Object</code><p>
+   Convert HSL values to RGB values.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">hue</span>:Number</code> &mdash;    0 to 360.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">luminance</span>:Number</code> &mdash;  0 to 1.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">saturation</span>:Number</code> &mdash;  0 to 1.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash;     Object with R,G,B values on 0 to 1 scale.
+   </td>
+</tr>
+</table>
+</div>
+<a name="HSVtoHSL()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">HSVtoHSL</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function HSVtoHSL(hue:Number, saturation:Number, value:Number):Object</code><p>
+   Convert HSV to HLS using RGB conversions: color preservation may be dubious.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">hue</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">saturation</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:Number</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code></td>
+</tr>
+</table>
+</div>
+<a name="HSVtoRGB()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">HSVtoRGB</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function HSVtoRGB(hue:Number, saturation:Number, value:Number):Object</code><p>
+   Convert HSV values to RGB values.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">hue</span>:Number</code> &mdash;    on 0 to 360 scale.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">saturation</span>:Number</code> &mdash;  on 0 to 1 scale.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:Number</code> &mdash;   on 0 to 1 scale.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash;     Object with R,G,B values on 0 to 1 scale.
+   </td>
+</tr>
+</table>
+</div>
+<a name="HueToRGB()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">HueToRGB</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function HueToRGB(min:Number, max:Number, hue:Number):Object</code><p>
+   Convert hue to RGB values using a linear transformation.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">min</span>:Number</code> &mdash;  of R,G,B.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">max</span>:Number</code> &mdash;  of R,G,B.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">hue</span>:Number</code> &mdash;  value angle hue.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash;   Object with R,G,B properties on 0-1 scale.
+   </td>
+</tr>
+</table>
+</div>
+<a name="invertColor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">invertColor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function invertColor(src:DisplayObject):void</code><p>
+   Inverts the color of the DisplayObject.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code></td>
+</tr>
+</table>
+</div>
+<a name="randomColor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">randomColor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function randomColor():uint</code><p>
+   Generate a random hexidecimal color.
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>uint</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../math/Random.html" target="">sekati.math.Random</a>
+</div>
+</div>
+<a name="resetColor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">resetColor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function resetColor(src:DisplayObject):void</code><p>
+   Reset the color of the DisplayObject to its original view (pre-ColorTransformed).
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code></td>
+</tr>
+</table>
+</div>
+<a name="RGBtoHSL()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RGBtoHSL</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function RGBtoHSL(red:Number, green:Number, blue:Number):Object</code><p>
+   Convert an RGB Hexidecimal value to HSL values
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">red</span>:Number</code> &mdash;   0 - 1 scale.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">green</span>:Number</code> &mdash;  0 - 1 scale.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">blue</span>:Number</code> &mdash;   0 - 1 scale.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash; Object with h (hue), l (lightness), s (saturation) values:<ul>
+   <li><code>h</code> on 0 - 360 scale.</li>
+   <li><code>l</code> on 0 - 255 scale.</li>
+   <li><code>s</code> on 0 - 1 scale.</li></ul>
+   </td>
+</tr>
+</table>
+</div>
+<a name="RGBtoHSV()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RGBtoHSV</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function RGBtoHSV(red:Number, green:Number, blue:Number):Object</code><p>
+   Convert RGB values to HSV values.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">red</span>:Number</code> &mdash;   0 to 1 scale.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">green</span>:Number</code> &mdash;  0 to 1 scale.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">blue</span>:Number</code> &mdash;   0 to 1 scale.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash;    Object with H,S,V values:<ul>
+         <li>h - on 0 to 360 scale</li>
+         <li>s - on 0 to 1 scale</li>
+         <li>v - on 0 to 1 scale</li></ul>
+   </td>
+</tr>
+</table>
+</div>
+<a name="RGBToHue()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RGBToHue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function RGBToHue(red:Number, green:Number, blue:Number):uint</code><p>
+   Convert RGB values to a hue using a linear transformation.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">red</span>:Number</code> &mdash;   value on 0 to 1 scale.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">green</span>:Number</code> &mdash;  value on 0 to 1 scale.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">blue</span>:Number</code> &mdash;   value on 0 to 1 scale.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>uint</code> &mdash;    hue degree between 0 and 360.
+   </td>
+</tr>
+</table>
+</div>
+<a name="setColor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setColor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setColor(src:DisplayObject, hex:uint):void</code><p>
+   Set the (A)RGB <i>hexadecimal</i> color value of a DisplayObject using ColorTransform.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">hex</span>:uint</code></td>
+</tr>
+</table>
+</div>
+<a name="setHSLComponent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setHSLComponent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setHSLComponent(src:DisplayObject, h:Number, l:Number, s:Number):void</code><p>
+   Set the color of a DisplayObject from HSL components.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">h</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">l</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">s</span>:Number</code></td>
+</tr>
+</table>
+</div>
+<a name="setHSVComponent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setHSVComponent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setHSVComponent(src:DisplayObject, h:Number, s:Number, v:Number):void</code><p>
+   Set the color of a DisplayObject from HSV components.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">h</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">s</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">v</span>:Number</code></td>
+</tr>
+</table>
+</div>
+<a name="setRGBComponent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setRGBComponent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setRGBComponent(src:DisplayObject, r:Number, g:Number, b:Number):void</code><p>
+   Set the color of a DisplayObject from RGB components.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">r</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">g</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">b</span>:Number</code></td>
+</tr>
+</table>
+</div>
+<a name="setTransform()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setTransform</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setTransform(src:DisplayObject, transformObject:Object):void</code><p>
+   Set ColorTransform information for a DisplayObject.
+   
+   </p><p>The colorTransformObject parameter is a generic object that you create from the new Object constructor. It has parameters specifying the percentage and 
+   offset values for the red, green, blue, and alpha (transparency) components of a color, entered in the format 0xRRGGBBAA.</p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">src</span>:DisplayObject</code> &mdash; An object created with the new Object constructor. This instance of the Object class must have the following properties 
+   that specify color transform values: ra, rb, ga, gb, ba, bb, aa, ab. These properties are explained in the above summary for the setTransform() method. 
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">transformObject</span>:Object</code></td>
+</tr>
+</table>
+</div>
+<a name="toColor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toColor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function toColor(str:String):uint</code><p>
+   Parse a String representation of a color (hex or html) to uint.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">str</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>uint</code></td>
+</tr>
+</table>
+</div>
+<a name="toHexString()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toHexString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function toHexString(hex:uint):String</code><p>
+   Convert a hexidecimal number to a string representation with ECMAScript notation: <code>0xrrggbb</code>.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">hex</span>:uint</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code></td>
+</tr>
+</table>
+</div>
+<a name="toHTML()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toHTML</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function toHTML(hex:uint):String</code><p>
+   Convert a hexidecimal number to a string representation with HTML notation: <code>#rrggbb</code>.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">hex</span>:uint</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code></td>
+</tr>
+</table>
+</div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="HUE_MAX"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">HUE_MAX</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const HUE_MAX:uint = 360</code>
+</div>
+<a name="PCT_MAX"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PCT_MAX</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const PCT_MAX:uint = 100</code>
+</div>
+<a name="RGB_MAX"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RGB_MAX</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const RGB_MAX:uint = 256</code>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Copyright &copy; 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.</center>
+</div>
+</body>
+</html>
+<!--Copyright © 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.-->

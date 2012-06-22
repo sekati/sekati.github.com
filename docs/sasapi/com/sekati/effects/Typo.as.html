@@ -1,0 +1,64 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * com.sekati.effects.Typo
+<span class="lineno" id="3">     3  </span> * @version 1.0.0
+<span class="lineno" id="4">     4  </span> * @author jason m horwitz | sekati.com
+<span class="lineno" id="5">     5  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="6">     6  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="7">     7  </span> */</span>
+<span class="lineno" id="8">     8  </span> 
+<span class="lineno" id="9">     9  </span><span class="comment doc">/**
+<span class="lineno" id="10">    10  </span> * Typo Text Effects
+<span class="lineno" id="11">    11  </span> */</span>
+<span class="lineno" id="12">    12  </span><span class="key">class</span> com.sekati.effects.Typo {
+<span class="lineno" id="13">    13  </span>
+<span class="lineno" id="14">    14  </span>	<span class="comment doc">/**
+<span class="lineno" id="15">    15  </span>	 * Generate a set of random characters
+<span class="lineno" id="16">    16  </span>	 * @param x (Number) of characters to generate
+<span class="lineno" id="17">    17  </span>	 * @param n (Boolean) character set
+<span class="lineno" id="18">    18  </span>	 * @return String
+<span class="lineno" id="19">    19  </span>	 */</span>
+<span class="lineno" id="20">    20  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> genChars(x:Number,n:Boolean):String {
+<span class="lineno" id="21">    21  </span>		<span class="key">var</span> str:String = <span class="str_const">""</span>;
+<span class="lineno" id="22">    22  </span>		<span class="key">var</span> sc:Number,ec:Number;
+<span class="lineno" id="23">    23  </span>		<span class="key">if</span>(n == <span class="key">true</span>) { 
+<span class="lineno" id="24">    24  </span>			sc = <span class="num_const">33</span>; 
+<span class="lineno" id="25">    25  </span>			ec = <span class="num_const">64</span>; 
+<span class="lineno" id="26">    26  </span>		} <span class="key">else</span> { 
+<span class="lineno" id="27">    27  </span>			sc = <span class="num_const">33</span>; 
+<span class="lineno" id="28">    28  </span>			ec = <span class="num_const">126</span>; 
+<span class="lineno" id="29">    29  </span>		}	
+<span class="lineno" id="30">    30  </span>		<span class="key">for</span>(<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; x ; i++) { 
+<span class="lineno" id="31">    31  </span>			str += chr( Math.round( Math.random( ) * (ec - sc) ) + sc ); 
+<span class="lineno" id="32">    32  </span>		}
+<span class="lineno" id="33">    33  </span>		<span class="key">return</span> str;
+<span class="lineno" id="34">    34  </span>	}
+<span class="lineno" id="35">    35  </span>
+<span class="lineno" id="36">    36  </span>	<span class="comment doc">/**
+<span class="lineno" id="37">    37  </span>	 * Detect spaces in one string and insert them into the other
+<span class="lineno" id="38">    38  </span>	 * @param s1 (String) pull spaces from
+<span class="lineno" id="39">    39  </span>	 * @param s2 (String) insert spaces in to
+<span class="lineno" id="40">    40  </span>	 * @return String
+<span class="lineno" id="41">    41  </span>	 * {@code Usage:
+<span class="lineno" id="42">    42  </span>	 * 	var foobar:String = Typo.commonSpace("Foo Foo Foo", "Bar*Bar*Bar"); // returns "Bar Bar Bar"
+<span class="lineno" id="43">    43  </span>	 * }
+<span class="lineno" id="44">    44  </span>	 */</span>
+<span class="lineno" id="45">    45  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> commonSpace(s1:String,s2:String):String {
+<span class="lineno" id="46">    46  </span>		<span class="key">var</span> str:String = <span class="str_const">""</span>;
+<span class="lineno" id="47">    47  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; s2.length ; i++) {
+<span class="lineno" id="48">    48  </span>			str += (s1.charAt( i ) == <span class="str_const">" "</span>) ? <span class="str_const">" "</span> : s2.charAt( i );
+<span class="lineno" id="49">    49  </span>		}
+<span class="lineno" id="50">    50  </span>		<span class="key">return</span> str;
+<span class="lineno" id="51">    51  </span>	}
+<span class="lineno" id="52">    52  </span>
+<span class="lineno" id="53">    53  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> writein():Void {
+<span class="lineno" id="54">    54  </span>	}
+<span class="lineno" id="55">    55  </span>
+<span class="lineno" id="56">    56  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> writeout():Void {
+<span class="lineno" id="57">    57  </span>	}	
+<span class="lineno" id="58">    58  </span>
+<span class="lineno" id="59">    59  </span>	<span class="key">private</span> <span class="key">function</span> Typo() {
+<span class="lineno" id="60">    60  </span>	}
+<span class="lineno" id="61">    61  </span>}</pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.effects" class="button">Package</a></li><li><a href="Typo.html" title="Detail of com.sekati.effects.Typo API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

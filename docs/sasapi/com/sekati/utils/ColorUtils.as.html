@@ -1,0 +1,123 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * com.sekati.utils.ColorUtils
+<span class="lineno" id="3">     3  </span> * @version 1.0.0
+<span class="lineno" id="4">     4  </span> * @author jason m horwitz | sekati.com
+<span class="lineno" id="5">     5  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="6">     6  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="7">     7  </span> * 
+<span class="lineno" id="8">     8  </span> * Some methods adopted from ca.nectere and gskinner for dependencies only
+<span class="lineno" id="9">     9  </span> */</span>
+<span class="lineno" id="10">    10  </span> 
+<span class="lineno" id="11">    11  </span><span class="key">import</span> com.sekati.math.MathBase;
+<span class="lineno" id="12">    12  </span>
+<span class="lineno" id="13">    13  </span><span class="comment doc">/**
+<span class="lineno" id="14">    14  </span> * Static class wrapping various Color utilities.
+<span class="lineno" id="15">    15  </span> */</span>
+<span class="lineno" id="16">    16  </span><span class="key">class</span> com.sekati.utils.ColorUtils {
+<span class="lineno" id="17">    17  </span>
+<span class="lineno" id="18">    18  </span>	<span class="comment doc">/**
+<span class="lineno" id="19">    19  </span>	 * Convert hexadecimal Number to rgb Object
+<span class="lineno" id="20">    20  </span>	 * @return Object - {r,g,b}
+<span class="lineno" id="21">    21  </span>	 */</span>
+<span class="lineno" id="22">    22  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> hex2rgb(hex:Number):Object {
+<span class="lineno" id="23">    23  </span>		<span class="key">return</span> { r: (hex &gt;&gt; <span class="num_const">16</span>) &amp; 0xff, g: (hex &gt;&gt; <span class="num_const">8</span>) &amp; 0xff, b: hex &amp; 0xff};
+<span class="lineno" id="24">    24  </span>	}
+<span class="lineno" id="25">    25  </span>
+<span class="lineno" id="26">    26  </span>	<span class="comment doc">/**
+<span class="lineno" id="27">    27  </span>	 * Convert argb Object to hexidecimal Number
+<span class="lineno" id="28">    28  </span>	 * @return Object - {a,r,g,b}
+<span class="lineno" id="29">    29  </span>	 */</span>
+<span class="lineno" id="30">    30  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> hex2argb(val:Number):Object {
+<span class="lineno" id="31">    31  </span>		<span class="key">return</span> {a: (val &gt;&gt; <span class="num_const">24</span>) &amp; 0xff, r: (val &gt;&gt; <span class="num_const">16</span>) &amp; 0xff, g: (val &gt;&gt; <span class="num_const">8</span>) &amp; 0xff, b: val &amp; 0xff};
+<span class="lineno" id="32">    32  </span>	}	
+<span class="lineno" id="33">    33  </span>
+<span class="lineno" id="34">    34  </span>	<span class="comment doc">/**
+<span class="lineno" id="35">    35  </span>	 * Convert argb to hexadecimal.
+<span class="lineno" id="36">    36  </span>	 * {@code Usage:
+<span class="lineno" id="37">    37  </span>	 * 	hex=argbtohex(255,0,255,0) //outputs a 32-bit red hexadecimal value as a base-10 number
+<span class="lineno" id="38">    38  </span>	 * 	}
+<span class="lineno" id="39">    39  </span>	 */</span>
+<span class="lineno" id="40">    40  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> argb2hex(a:Number, r:Number, g:Number, b:Number):Number {
+<span class="lineno" id="41">    41  </span>		<span class="key">return</span> (a &lt;&lt; <span class="num_const">24</span> | r &lt;&lt; <span class="num_const">16</span> | g &lt;&lt; <span class="num_const">8</span> | b);
+<span class="lineno" id="42">    42  </span>	}
+<span class="lineno" id="43">    43  </span>
+<span class="lineno" id="44">    44  </span>	<span class="comment doc">/**
+<span class="lineno" id="45">    45  </span>	 * Convert rgb to hexadecimal.
+<span class="lineno" id="46">    46  </span>	 * @return Number
+<span class="lineno" id="47">    47  </span>	 */</span>
+<span class="lineno" id="48">    48  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> rgb2hex(r:Number, g:Number, b:Number):Number {
+<span class="lineno" id="49">    49  </span>		<span class="key">return</span> (r &lt;&lt; <span class="num_const">16</span> | g &lt;&lt; <span class="num_const">8</span> | b);
+<span class="lineno" id="50">    50  </span>	}	
+<span class="lineno" id="51">    51  </span>
+<span class="lineno" id="52">    52  </span>	<span class="comment doc">/**
+<span class="lineno" id="53">    53  </span>	 * Convert rgb Object to hexadecimal
+<span class="lineno" id="54">    54  </span>	 * @param o (Object) a color object {r,g,b}
+<span class="lineno" id="55">    55  </span>	 * @return Number
+<span class="lineno" id="56">    56  </span>	 */</span>
+<span class="lineno" id="57">    57  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> rgbObj2hex(o:Object):Number {
+<span class="lineno" id="58">    58  </span>		<span class="key">return</span> (o.r &lt;&lt; <span class="num_const">16</span> | o.g &lt;&lt; <span class="num_const">8</span> | o.b);
+<span class="lineno" id="59">    59  </span>	}		
+<span class="lineno" id="60">    60  </span>
+<span class="lineno" id="61">    61  </span>	<span class="comment doc">/**
+<span class="lineno" id="62">    62  </span>	 * Convert rgb to hexadecimal String
+<span class="lineno" id="63">    63  </span>	 * @param r (Number)
+<span class="lineno" id="64">    64  </span>	 * @param g (Number)
+<span class="lineno" id="65">    65  </span>	 * @param b (Number)
+<span class="lineno" id="66">    66  </span>	 * @param hasPrefix (Boolean) add optional "0x" prefix to return
+<span class="lineno" id="67">    67  </span>	 * @return String
+<span class="lineno" id="68">    68  </span>	 */</span>
+<span class="lineno" id="69">    69  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> rgb2hexString(r:Number, g:Number, b:Number, hasPrefix:Boolean):String {
+<span class="lineno" id="70">    70  </span>		<span class="key">var</span> hex:String = rgb2hex( r, g, b ).toString( <span class="num_const">16</span> );
+<span class="lineno" id="71">    71  </span>		<span class="key">while</span>(hex.length &lt; <span class="num_const">6</span>) hex = <span class="str_const">"0"</span> + hex;
+<span class="lineno" id="72">    72  </span>		<span class="key">return</span> (hasPrefix) ? <span class="str_const">"0x"</span> + hex : hex;
+<span class="lineno" id="73">    73  </span>	}
+<span class="lineno" id="74">    74  </span>
+<span class="lineno" id="75">    75  </span>	<span class="comment doc">/**
+<span class="lineno" id="76">    76  </span>	 * get a random hexidecimal color
+<span class="lineno" id="77">    77  </span>	 * @return String
+<span class="lineno" id="78">    78  </span>	 */</span>
+<span class="lineno" id="79">    79  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> randHex():String {
+<span class="lineno" id="80">    80  </span>		<span class="key">return</span> <span class="str_const">"0x"</span> + Math.floor( Math.random( ) * <span class="num_const">16777215</span> ).toString( <span class="num_const">16</span> ).toUpperCase( );
+<span class="lineno" id="81">    81  </span>	}
+<span class="lineno" id="82">    82  </span>
+<span class="lineno" id="83">    83  </span>	<span class="comment doc">/**
+<span class="lineno" id="84">    84  </span>	 * set color of a movieclip or textfield
+<span class="lineno" id="85">    85  </span>	 * @param obj (Object)
+<span class="lineno" id="86">    86  </span>	 * @param hex (Number)
+<span class="lineno" id="87">    87  </span>	 * @return Void
+<span class="lineno" id="88">    88  </span>	 */</span>
+<span class="lineno" id="89">    89  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> setColor(obj:Object,hex:Number):Void {
+<span class="lineno" id="90">    90  </span>		<span class="key">var</span> c:Color = <span class="key">new</span> Color( obj );
+<span class="lineno" id="91">    91  </span>		c.setRGB( hex );
+<span class="lineno" id="92">    92  </span>	}
+<span class="lineno" id="93">    93  </span>
+<span class="lineno" id="94">    94  </span>	<span class="comment doc">/**
+<span class="lineno" id="95">    95  </span>	 * get color from a movieclip or textfield
+<span class="lineno" id="96">    96  </span>	 * @param obj (Object)
+<span class="lineno" id="97">    97  </span>	 * @return Number
+<span class="lineno" id="98">    98  </span>	 */</span>
+<span class="lineno" id="99">    99  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> getColor(obj:Object):Number {
+<span class="lineno" id="100">   100  </span>		<span class="key">var</span> c:Color = <span class="key">new</span> Color( obj );
+<span class="lineno" id="101">   101  </span>		<span class="key">return</span> c.getRGB( );
+<span class="lineno" id="102">   102  </span>	}
+<span class="lineno" id="103">   103  </span>
+<span class="lineno" id="104">   104  </span>	<span class="comment doc">/**
+<span class="lineno" id="105">   105  </span>	 * Change the contrast of a hexidecimal Number by a certain increment
+<span class="lineno" id="106">   106  </span>	 * @param hex (Number) color value to shift contrast on
+<span class="lineno" id="107">   107  </span>	 * @param inc (Number) increment value to shift
+<span class="lineno" id="108">   108  </span>	 * @return Number - new hex color value
+<span class="lineno" id="109">   109  </span>	 */</span>
+<span class="lineno" id="110">   110  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> changeContrast(hex:Number, inc:Number):Number {
+<span class="lineno" id="111">   111  </span>		<span class="key">var</span> o:Object = ColorUtils.hex2rgb( hex );
+<span class="lineno" id="112">   112  </span>		o.r = MathBase.constrain( o.r + inc, <span class="num_const">0</span>, <span class="num_const">255</span> );
+<span class="lineno" id="113">   113  </span>		o.g = MathBase.constrain( o.g + inc, <span class="num_const">0</span>, <span class="num_const">255</span> );
+<span class="lineno" id="114">   114  </span>		o.b = MathBase.constrain( o.b + inc, <span class="num_const">0</span>, <span class="num_const">255</span> );
+<span class="lineno" id="115">   115  </span>		<span class="key">return</span> ColorUtils.rgb2hex( o.r, o.g, o.b );
+<span class="lineno" id="116">   116  </span>	}	
+<span class="lineno" id="117">   117  </span>
+<span class="lineno" id="118">   118  </span>	<span class="key">private</span> <span class="key">function</span> ColorUtils() {
+<span class="lineno" id="119">   119  </span>	}
+<span class="lineno" id="120">   120  </span>}</pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.utils" class="button">Package</a></li><li><a href="ColorUtils.html" title="Detail of com.sekati.utils.ColorUtils API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

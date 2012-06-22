@@ -1,0 +1,101 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>com.sekati.utils.ClassUtils - SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><link href="package-summary.html" title="Package com.sekati.utils" rel="up"/><link href="../../../com/sekati/utils/Clipboard.html" title="Class com.sekati.utils.Clipboard" rel="prev"/><link href="../../../com/sekati/utils/BitmapUtils.html" title="Class com.sekati.utils.BitmapUtils" rel="next"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><h1>Class com.sekati.utils.ClassUtils</h1><div class="type_hierachy"><ul><li><strong>com.sekati.utils.ClassUtils</strong></li></ul></div><div class="type_description"><h2>Description</h2><p>
+ Static class for wrapping various Class utilities. For example linking 'extend MovieClip' type 
+ classes to MovieClips thru attachMovie, createEmptyMovieClip or MovieClip Instances on stage.<br/><br/>
+ 
+ An initObject param is available in methods: <a href="#createEmptyMovieClip">createEmptyMovieClip</a>, <a href="#attachMovie">attachMovie</a>
+ and <a href="#attachClass">attachClass</a>.  _depth is a custom initObject param which will set the clip to this depth 
+ regardless of method but *will not* store _depth as a MovieClip property; use getDepth if needed.
+
+ <pre> Example Class:
+ <span class="key">class</span> com.sekati.Test <span class="key">extends</span> MovieClip {
+ 	<span class="key">public</span> <span class="key">function</span> Test(){
+ 		trace(<span class="str_const">"Test Class instantiated on: "</span>+<span class="key">this</span>._name);
+ 	}
+ }
+ </pre>
+ 
+ </p></div><div class="type_indexes"><div class="method_index"><h2>Method Index</h2><a href="#attachClass" title="static public function attachClass(classRef:Function, target:MovieClip, initObject:Object):MovieClip">attachClass()</a>, <a href="#attachDllMovie" title="static public function attachDllMovie(dll:String, target:MovieClip, idName:String, instanceName:String, initObject:Object, cb:Function):MovieClip">attachDllMovie()</a>, <a href="#attachMovie" title="static public function attachMovie(classRef:Function, target:MovieClip, idName:String, instanceName:String, initObject:Object):MovieClip">attachMovie()</a>, <a href="#createCleanInstance" title="static public function createCleanInstance(classRef:Function):Object">createCleanInstance()</a>, <a href="#createEmptyMovieClip" title="static public function createEmptyMovieClip(classRef:Function, target:MovieClip, instanceName:String, initObject:Object):MovieClip">createEmptyMovieClip()</a>, <a href="#createInstance" title="static public function createInstance(classRef:Function, args:Array):Object">createInstance()</a>, <a href="#isImplementationOf" title="static public function isImplementationOf(classRef:Function, interfaceRef:Function):Boolean">isImplementationOf()</a>, <a href="#isSubclassOf" title="static public function isSubclassOf(subclassRef:Function, superclassRef:Function):Boolean">isSubclassOf()</a></div></div><div class="type_details"><div class="method_detail_list"><h2>Method Detail</h2><div class="method_details alt_row"><a name="createEmptyMovieClip"></a><h3>createEmptyMovieClip</h3><code class="method_synopsis">static public function <strong class="method_name">createEmptyMovieClip</strong>(classRef:<span class="unresolved_type_name">Function</span>, target:<span class="unresolved_type_name">MovieClip</span>, instanceName:<span class="unresolved_type_name">String</span>, initObject:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">MovieClip</span></code><div class="method_info"><p>
+ create a movieclip with linked class (various init options)
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>classRef</code></td><td>(Function) reference to class to attach
+ </td></tr><tr><td><code>target</code></td><td>(MovieClip) target scope to create MovieClip
+ </td></tr><tr><td><code>instanceName</code></td><td>(String) created MovieClip instance name
+ </td></tr><tr><td><code>initObject</code></td><td>(Object) object of properties to create MovieClip with. Depth will automatically be created if none is specified
+ </td></tr></table><h4>Return</h4><p class="extra_info"> MovieClip
+ <pre> Usage:
+ <span class="key">var</span> mc0:MovieClip = ClassUtils.createEmptyMovieClip (com.sekati.Test, <span class="key">this</span>, <span class="str_const">"mc0"</span>);
+ <span class="key">var</span> mc0:MovieClip = ClassUtils.createEmptyMovieClip (com.sekati.Test, _root, <span class="str_const">"mc0"</span>, {_depth: <span class="num_const">100</span>, _x:<span class="num_const">25</span>, _y:<span class="num_const">25</span>});
+ <span class="key">var</span> mc0:MovieClip = ClassUtils.createEmptyMovieClip (com.sekati.Test, <span class="key">this</span>, <span class="str_const">"mc0"</span>, {_x:<span class="num_const">25</span>, _y:<span class="num_const">25</span>});
+ </pre>
+	 </p></div></div><div class="method_details"><a name="attachMovie"></a><h3>attachMovie</h3><code class="method_synopsis">static public function <strong class="method_name">attachMovie</strong>(classRef:<span class="unresolved_type_name">Function</span>, target:<span class="unresolved_type_name">MovieClip</span>, idName:<span class="unresolved_type_name">String</span>, instanceName:<span class="unresolved_type_name">String</span>, initObject:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">MovieClip</span></code><div class="method_info"><p>
+ attach a MovieClip from library and extend with class (various init options)
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>classRef</code></td><td>(Function) reference to class to attach
+ </td></tr><tr><td><code>target</code></td><td>(MovieClip) target scope to create MovieClip
+ </td></tr><tr><td><code>idName</code></td><td>(String) linkage id for exported MovieClip in library	
+ </td></tr><tr><td><code>instanceName</code></td><td>(String) created MovieClip instance name
+ </td></tr><tr><td><code>initObject</code></td><td>(Object) object of properties to create MovieClip with. Depth will automatically be created if none is specified
+ </td></tr></table><h4>Return</h4><p class="extra_info"> MovieClip
+ <pre> Usage:
+ <span class="key">var</span> mc1:MovieClip = ClassUtils.attachMovie (com.sekati.Test, _root, <span class="str_const">"linkedMc"</span>, <span class="str_const">"mc1"</span>);
+ <span class="key">var</span> mc1:MovieClip = ClassUtils.attachMovie (com.sekati.Test, _root, <span class="str_const">"linkedMc"</span>, <span class="str_const">"mc1"</span>, {_x:<span class="num_const">50</span>, _y:<span class="num_const">50</span>});
+ <span class="key">var</span> mc1:MovieClip = ClassUtils.attachMovie (com.sekati.Test, _root, <span class="str_const">"linkedMc"</span>, <span class="str_const">"mc1"</span>, {_depth:<span class="num_const">200</span>, _x:<span class="num_const">50</span>, _y:<span class="num_const">50</span>});
+ </pre>
+	 </p></div></div><div class="method_details alt_row"><a name="attachDllMovie"></a><h3>attachDllMovie</h3><code class="method_synopsis">static public function <strong class="method_name">attachDllMovie</strong>(dll:<span class="unresolved_type_name">String</span>, target:<span class="unresolved_type_name">MovieClip</span>, idName:<span class="unresolved_type_name">String</span>, instanceName:<span class="unresolved_type_name">String</span>, initObject:<span class="unresolved_type_name">Object</span>, cb:<span class="unresolved_type_name">Function</span>):<span class="unresolved_type_name">MovieClip</span></code><div class="method_info"><p>
+ Attach a movie from a DLL swf's library (loads dll then attaches requested movie).
+ NOTE: you should insert a delay between your callback and methods calls in the shared library as it initializes.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>dll</code></td><td>(Function) url of the dll.swf which contains exported assets in its library
+ </td></tr><tr><td><code>target</code></td><td>(MovieClip) target scope to attachMovie within
+ </td></tr><tr><td><code>idName</code></td><td>(String) linkage id for exported MovieClip in library	
+ </td></tr><tr><td><code>instanceName</code></td><td>(String) created MovieClip instance name
+ </td></tr><tr><td><code>initObject</code></td><td>(Object) object of properties to create MovieClip with. Depth will automatically be created if none is specified
+ </td></tr><tr><td><code>cb</code></td><td>(Function) callback function to fire when dll has been loaded and clip attached
+ </td></tr></table><h4>Return</h4><p class="extra_info"> MovieClip
+ <pre> Usage:
+ <span class="key">var</span> mc0:MovieClip = ClassUtils.attachDllMovie(<span class="str_const">"dll.swf"</span>, _root, <span class="str_const">"myDllExportedItem"</span>, <span class="str_const">"mc0"</span>, {_x:<span class="num_const">50</span>, _y:<span class="num_const">50</span>, _depth:<span class="num_const">20</span>}, myCallBackFn);
+ </pre>
+	 </p></div></div><div class="method_details"><a name="attachClass"></a><h3>attachClass</h3><code class="method_synopsis">static public function <strong class="method_name">attachClass</strong>(classRef:<span class="unresolved_type_name">Function</span>, target:<span class="unresolved_type_name">MovieClip</span>, initObject:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">MovieClip</span></code><div class="method_info"><p>
+ extend a MovieClip instance (on stage) with class (various init options)
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>classRef</code></td><td>(Function) reference to class to attach
+ </td></tr><tr><td><code>target</code></td><td>(MovieClip) target scope to create MovieClip
+ </td></tr><tr><td><code>initObject</code></td><td>(Object) object of properties to create MovieClip with. Depth will automatically be created if none is specified
+ </td></tr></table><h4>Return</h4><p class="extra_info"> MovieClip
+ <pre> Usage:
+ <span class="key">var</span> mc2:MovieClip = ClassUtils.attachClass (com.sekati.Test, mc2);
+ <span class="key">var</span> mc2:MovieClip = ClassUtils.attachClass (com.sekati.Test, _root.mc2, {_x:<span class="num_const">75</span>, _y:<span class="num_const">75</span>});
+ <span class="key">var</span> mc2:MovieClip = ClassUtils.attachClass (com.sekati.Test, mc2, {_depth:<span class="num_const">300</span>, _x:<span class="num_const">75</span>, _y:<span class="num_const">75</span>});
+ </pre>
+	 </p></div></div><div class="method_details alt_row"><a name="createInstance"></a><h3>createInstance</h3><code class="method_synopsis">static public function <strong class="method_name">createInstance</strong>(classRef:<span class="unresolved_type_name">Function</span>, args:<span class="unresolved_type_name">Array</span>):<span class="unresolved_type_name">Object</span></code><div class="method_info"><p>
+ Create and return a new instance of a defined class
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>classRef</code></td><td>(Function) reference to full class namespace
+ </td></tr><tr><td><code>args</code></td><td>(Array) array of constructor arguments
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Object - instantiated class object
+ <pre> Usage:
+ <span class="key">var</span> o:Point = ClassUtils.createInstance (com.sekati.geom.Point, [<span class="num_const">15</span>,<span class="num_const">50</span>]);
+ </pre>
+	 </p></div></div><div class="method_details"><a name="createCleanInstance"></a><h3>createCleanInstance</h3><code class="method_synopsis">static public function <strong class="method_name">createCleanInstance</strong>(classRef:<span class="unresolved_type_name">Function</span>):<span class="unresolved_type_name">Object</span></code><div class="method_info"><p>
+  Create and return a new instance of a defined class without 
+  invoking its constructor
+  @param classRef (Function) reference to full class namespace
+  @return Object - class object
+  <pre> Usage:
+  <span class="key">var</span> scr:Scroll = ClassUtils.createCleanInstance(com.sekati.ui.Scroll);
+  </pre>
+	 </p></div></div><div class="method_details alt_row"><a name="isSubclassOf"></a><h3>isSubclassOf</h3><code class="method_synopsis">static public function <strong class="method_name">isSubclassOf</strong>(subclassRef:<span class="unresolved_type_name">Function</span>, superclassRef:<span class="unresolved_type_name">Function</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Check if a subclass is extended by a superclass
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>subclassRef</code></td><td>(Function) reference to the full subclass namespace
+ </td></tr><tr><td><code>superclassRef</code></td><td>(Function) reference to the full superclass namespace
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+ <pre> Usage:
+ 	trace(ClassUtils.isSubclassOf(com.sekati.display.AbstractClip, com.sekati.display.CoreClip)); <span class="comment">// returns: true</span>
+ </pre>
+	 </p></div></div><div class="method_details"><a name="isImplementationOf"></a><h3>isImplementationOf</h3><code class="method_synopsis">static public function <strong class="method_name">isImplementationOf</strong>(classRef:<span class="unresolved_type_name">Function</span>, interfaceRef:<span class="unresolved_type_name">Function</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Check if a class implements an interface
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>classRef</code></td><td>(Function) reference to the full class namespace
+ </td></tr><tr><td><code>interfaceRef</code></td><td>(Function) reference to the full interface namespace
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+ <pre> Usage:
+ 	trace(ClassUtils.isImplementationOf(com.sekati.display.CoreClip, com.sekati.display.ICoreClip)); <span class="comment">// returns: true</span>
+ </pre>
+	 </p></div></div></div></div><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.utils" class="button">Package</a></li><li><span class="button nav_current">Class</span></li><li><a href="ClassUtils.as.html" title="Source code of com.sekati.utils.ClassUtils" class="button">Source</a></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

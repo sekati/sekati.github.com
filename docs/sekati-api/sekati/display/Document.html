@@ -1,0 +1,511 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="Document,sekati.display.Document,bootstrap,preloader,documentHandler,entryPointHandler,initAPI,initDocument,initEntryPoint,initMovieProperties,initTweenEngine" name="keywords">
+<title>sekati.display.Document</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Document - Sekati API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Sekati API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?sekati/display/Document.html&amp;sekati/display/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Document</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Document"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">sekati.display</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Document</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">Document <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> <a href="Canvas.html">Canvas</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> <a href="CoreSprite.html">CoreSprite</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.display.Sprite</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../../SekatiMain.html">SekatiMain</a></td>
+</tr>
+</table>
+<p></p>
+  This is the API's main <code>Document Class</code>. Any application wishing to implement the core API 
+  should extend their projects <code>Document Class</code> with <code>sekati.display.Document</code> &
+  override with customizations as needed.
+  
+  <p><b>API Initialization Routine:</b><br/>
+  <ol>
+  <li><code>initDocument</code> - initializes the Application <code>Document</code>'s <code>Canvas</code> on <code>ADDED_TO_STAGE</code> (to support the option of loadable API applications), or effectively on SWF initialization as the <code>Document</code> subclass <i>is</i> the <code>Stage</code> itself.</li>
+  <li><code>initMovieProperties</code> - sets SWF movie properties & initializes <code>StageDisplay</code>.</li>
+  <li><code>ApplicationLoader</code> - instantiates & waits for the SWF file to finish loading.</li>
+  <li><code>initTweenEngine</code> - sets up <code>Tweener</code> shortcut properties.</li>
+  <li><code>initAPI</code> - instantiates <code>Boostrap</code> & waits for the queued initialization routines to complete.</li>
+  <li><code>initEntryPoint</code> - the baseline API has been initialized; the developers custom code layer enters here.</li>
+  </ol>
+  </p> 
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../display/DocumentPreloader.html" target="">sekati.display.DocumentPreloader</a>
+<br>
+<a href="../display/Canvas.html" target="">sekati.display.Canvas</a>
+<br>
+<a href="../core/Bootstrap.html" target="">sekati.core.Bootstrap</a>
+<br>
+<a href="../core/App.html" target="">sekati.core.App</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bootstrap">bootstrap</a> : <a href="../core/Bootstrap.html">Bootstrap</a>
+<div class="summaryTableDescription">[read-only]
+   The <code>Boostrap</code> (queued initialization) for adding <code>BootstrapEvent</code> listeners.</div>
+</td><td class="summaryTableOwnerCol">Document</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="CoreSprite.html#enabled">enabled</a> : Boolean<div class="summaryTableDescription">
+   <code>Boolean</code> stub property which subclasses implement to control core 
+   behavor availability such as interactivity, liquidity, drag-drop functionality.</div>
+</td><td class="summaryTableOwnerCol"><a href="CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Canvas.html#flashVars">flashVars</a> : Object<div class="summaryTableDescription">[static]
+   Reference to the object that contains name-value pairs that represent the parameters 
+   provided to the loaded SWF file through the <code>Object Embed Flashvars</code> tags.</div>
+</td><td class="summaryTableOwnerCol"><a href="Canvas.html">Canvas</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Canvas.html#hasParent">hasParent</a> : Boolean<div class="summaryTableDescription">[static]
+   Reference property which defines whether the <code>Canvas</code> has a parent (<i>and has thus been loaded by another 
+   SWF</i>): <code>true</code> or not (<i>is executing under its own FlashPlayer instance</i>): <code>false</code>.</div>
+</td><td class="summaryTableOwnerCol"><a href="Canvas.html">Canvas</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="CoreSprite.html#interactiveMode">interactiveMode</a> : Boolean<div class="summaryTableDescription">
+   Specifies the <i>mouse cursors modal state</i> in the object as an interactive 
+   target via: <code>buttonMode, mouseChildren & tabChildren</code>.</div>
+</td><td class="summaryTableOwnerCol"><a href="CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Canvas.html#loaderInfo">loaderInfo</a> : LoaderInfo<div class="summaryTableDescription">[static]
+   Reference to the <code>LoaderInfo</code> object associated with the SWF file containing 
+   information about loading the file to which this display object belongs.</div>
+</td><td class="summaryTableOwnerCol"><a href="Canvas.html">Canvas</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#preloader">preloader</a> : <a href="../load/ApplicationLoader.html">ApplicationLoader</a>
+<div class="summaryTableDescription">[read-only]
+   The <code>ApplicationLoader</code> instance if load progress checking is desired via <code>BootstrapEvent.APP_LOAD</code> listeners.</div>
+</td><td class="summaryTableOwnerCol">Document</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Canvas.html#root">root</a> : DisplayObject<div class="summaryTableDescription">[static]
+   Reference to the Application <code>root</code> which represents the top-most display object, if this is the first 
+   SWF file loaded (<i>e.g.</div>
+</td><td class="summaryTableOwnerCol"><a href="Canvas.html">Canvas</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="CoreSprite.html#scale">scale</a> : Number<div class="summaryTableDescription">
+   The <code>scale</code> value.</div>
+</td><td class="summaryTableOwnerCol"><a href="CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Canvas.html#stage">stage</a> : Stage<div class="summaryTableDescription">[static]
+   Reference to the Application <code>stage</code> instance which represents the main drawing area.</div>
+</td><td class="summaryTableOwnerCol"><a href="Canvas.html">Canvas</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Document()">Document</a>()</div>
+<div class="summaryTableDescription">
+   Document Constructor begins the sequential API initialization with <code>initMovieProperties()</code> 
+   & instantiating <code>ApplicationLoader</code>.</div>
+</td><td class="summaryTableOwnerCol">Document</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="CoreSprite.html#addChildren()">addChildren</a>(... args):void</div>
+<div class="summaryTableDescription">
+   Add multiple child <code>DisplayObject</code>'s.</div>
+</td><td class="summaryTableOwnerCol"><a href="CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="CoreSprite.html#destroy()">destroy</a>():void</div>
+<div class="summaryTableDescription">
+   Clean up after thy self.</div>
+</td><td class="summaryTableOwnerCol"><a href="CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="CoreSprite.html#toString()">toString</a>():String</div>
+<div class="summaryTableDescription">
+   Return reflective output.</div>
+</td><td class="summaryTableOwnerCol"><a href="CoreSprite.html">CoreSprite</a></td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedProtectedMethod" id="hideInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(false,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Protected Methods</a>
+</div>
+<div class="showInheritedProtectedMethod" id="showInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(true,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Protected Methods</a>
+</div>
+</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#documentHandler()">documentHandler</a>(e:<a href="../events/BootstrapEvent.html">BootstrapEvent</a>):void</div>
+<div class="summaryTableDescription">
+   The SWF has been fully loaded: removed the <code>ApplicationLoader</code> & execute
+   <code>Document</code> setup code: <code>initTweenEngine()</code> & <code>initAPI()</code>.</div>
+</td><td class="summaryTableOwnerCol">Document</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#entryPointHandler()">entryPointHandler</a>(e:<a href="../events/BootstrapEvent.html">BootstrapEvent</a>):void</div>
+<div class="summaryTableDescription">
+   The Application API has been fully initialized; remove the <code>Bootstrap</code> & 
+   call <code>initEntryPoint</code>.</div>
+</td><td class="summaryTableOwnerCol">Document</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initAPI()">initAPI</a>(hasBootstrap:Boolean = true):void</div>
+<div class="summaryTableDescription">
+   Initialize the API <code>Bootstrap</code> queued core initialization routines.</div>
+</td><td class="summaryTableOwnerCol">Document</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initDocument()">initDocument</a>(e:Event):void</div>
+<div class="summaryTableDescription">
+   Initialize the Document & update the <code>Canvas</code> references.</div>
+</td><td class="summaryTableOwnerCol">Document</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initEntryPoint()">initEntryPoint</a>():void</div>
+<div class="summaryTableDescription">
+   Initialize Entry Point: all custom (non-API) application layer code enters.</div>
+</td><td class="summaryTableOwnerCol">Document</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initMovieProperties()">initMovieProperties</a>():void</div>
+<div class="summaryTableDescription">
+   Initializes SWF movie properties & <code>StageDisplay</code>.</div>
+</td><td class="summaryTableOwnerCol">Document</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initTweenEngine()">initTweenEngine</a>():void</div>
+<div class="summaryTableDescription">
+   Initialize <code>Tweener specialProperties</code> shortcuts.</div>
+</td><td class="summaryTableOwnerCol">Document</td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="CoreSprite.html#invalidate()">invalidate</a>():void</div>
+<div class="summaryTableDescription">
+   Request a redraw, use for deferred rendering.</div>
+</td><td class="summaryTableOwnerCol"><a href="CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="CoreSprite.html#offStage()">offStage</a>(e:Event = null):void</div>
+<div class="summaryTableDescription">
+   Stub: Sprite has been removed from stage.</div>
+</td><td class="summaryTableOwnerCol"><a href="CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="CoreSprite.html#onStage()">onStage</a>(e:Event = null):void</div>
+<div class="summaryTableDescription">
+   Stub: Sprite has been added to stage.</div>
+</td><td class="summaryTableOwnerCol"><a href="CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Canvas.html#setReferences()">setReferences</a>():void</div>
+<div class="summaryTableDescription">
+   Initialize or update the core <code>DisplayList</code> reference properties.</div>
+</td><td class="summaryTableOwnerCol"><a href="Canvas.html">Canvas</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="bootstrap"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bootstrap</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bootstrap:<a href="../core/Bootstrap.html">Bootstrap</a></code>&nbsp;&nbsp;[read-only]<p>
+   The <code>Boostrap</code> (queued initialization) for adding <code>BootstrapEvent</code> listeners.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bootstrap():<a href="../core/Bootstrap.html">Bootstrap</a></code>
+<br>
+</div>
+<a name="preloader"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">preloader</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>preloader:<a href="../load/ApplicationLoader.html">ApplicationLoader</a></code>&nbsp;&nbsp;[read-only]<p>
+   The <code>ApplicationLoader</code> instance if load progress checking is desired via <code>BootstrapEvent.APP_LOAD</code> listeners.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get preloader():<a href="../load/ApplicationLoader.html">ApplicationLoader</a></code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Document()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Document</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Document()</code><p>
+   Document Constructor begins the sequential API initialization with <code>initMovieProperties()</code> 
+   & instantiating <code>ApplicationLoader</code>. 
+   </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="documentHandler()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">documentHandler</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function documentHandler(e:<a href="../events/BootstrapEvent.html">BootstrapEvent</a>):void</code><p>
+   The SWF has been fully loaded: removed the <code>ApplicationLoader</code> & execute
+   <code>Document</code> setup code: <code>initTweenEngine()</code> & <code>initAPI()</code>.
+   
+   </p><p><b>Customization:</b> Should not be necessary.</p>
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="../events/BootstrapEvent.html">BootstrapEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="entryPointHandler()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">entryPointHandler</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function entryPointHandler(e:<a href="../events/BootstrapEvent.html">BootstrapEvent</a>):void</code><p>
+   The Application API has been fully initialized; remove the <code>Bootstrap</code> & 
+   call <code>initEntryPoint</code>.
+   
+   </p><p><b>Customization:</b> Should not be necessary.</p>
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="../events/BootstrapEvent.html">BootstrapEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="initAPI()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initAPI</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initAPI(hasBootstrap:Boolean = true):void</code><p>
+   Initialize the API <code>Bootstrap</code> queued core initialization routines.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">hasBootstrap</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; defines whether the Document initializes the API <code>Bootstrap</code> sequence or runs the API <i>"dumb"</i>.
+   
+   <p><b>Customization:</b> Override this method & adjust to point to your <i>custom</i>
+   <code>Bootstrap</code> (extended from <code>sekati.core.Bootstrap</code>) if custom initialization
+   is required or override and alter the default <code>hasBootstrap = true</code> to <code>false</code> if no bootstrapping is needed.</p>
+   
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../core/Bootstrap.html" target="">sekati.core.Bootstrap</a>
+</div>
+<br>
+<span class="label">Example</span>
+<br>If you would like to skip the API Bootstrapping sequence & run the API <i>"dumb"</i>; in your Main
+   Document class (which extends </code>sekati.display.Document</code>):
+   <div class='listing'><pre>
+    override protected function initAPI(hasBootstrap : Boolean = false) : void {
+     super.initAPI( hasBootstrap );
+    }
+   </pre></div>
+   
+   <p></p>
+</div>
+<a name="initDocument()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initDocument</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initDocument(e:Event):void</code><p>
+   Initialize the Document & update the <code>Canvas</code> references.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:Event</code></td>
+</tr>
+</table>
+</div>
+<a name="initEntryPoint()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initEntryPoint</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initEntryPoint():void</code><p>
+   Initialize Entry Point: all custom (non-API) application layer code enters.
+   
+   </p><p><b>Customization:</b> When implementing the API you will most likely extend <code>Document</code> 
+   as your <code>Document Class</code> overriding <code>initEntryPoint</code> to instantiate your manager,
+   ui & other core classes.</p>
+   </div>
+<a name="initMovieProperties()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initMovieProperties</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initMovieProperties():void</code><p>
+   Initializes SWF movie properties & <code>StageDisplay</code>.
+   
+   </p><p><b>Customization:</b> Override this method & adjust to fit your application specification. 
+   Be sure to either call <code>super.initMovieProperties()</code> or 
+   <code>StageDisplay.$.init()</code> to initialize stage management.</p>
+   </div>
+<a name="initTweenEngine()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initTweenEngine</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initTweenEngine():void</code><p>
+   Initialize <code>Tweener specialProperties</code> shortcuts.
+   
+   </p><p><b>Customization:</b> When overriding this method only init the shortcuts 
+   needed by your application to minimize memory usage.</p>
+   
+   <p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="http://hosted.zeh.com.br/tweener/docs/en-us/" target="mm_external">http://hosted.zeh.com.br/tweener/docs/en-us/</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Copyright &copy; 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.</center>
+</div>
+</body>
+</html>
+<!--Copyright © 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.-->

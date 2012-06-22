@@ -1,0 +1,48 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>com.sekati.utils.ColorUtils - SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><link href="package-summary.html" title="Package com.sekati.utils" rel="up"/><link href="../../../com/sekati/utils/DateUtils.html" title="Class com.sekati.utils.DateUtils" rel="prev"/><link href="../../../com/sekati/utils/Clone.html" title="Class com.sekati.utils.Clone" rel="next"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><h1>Class com.sekati.utils.ColorUtils</h1><div class="type_hierachy"><ul><li><strong>com.sekati.utils.ColorUtils</strong></li></ul></div><div class="type_description"><h2>Description</h2><p>
+ Static class wrapping various Color utilities.
+ </p></div><div class="type_indexes"><div class="method_index"><h2>Method Index</h2><a href="#argb2hex" title="static public function argb2hex(a:Number, r:Number, g:Number, b:Number):Number">argb2hex()</a>, <a href="#changeContrast" title="static public function changeContrast(hex:Number, inc:Number):Number">changeContrast()</a>, <a href="#getColor" title="static public function getColor(obj:Object):Number">getColor()</a>, <a href="#hex2argb" title="static public function hex2argb(val:Number):Object">hex2argb()</a>, <a href="#hex2rgb" title="static public function hex2rgb(hex:Number):Object">hex2rgb()</a>, <a href="#randHex" title="static public function randHex():String">randHex()</a>, <a href="#rgb2hex" title="static public function rgb2hex(r:Number, g:Number, b:Number):Number">rgb2hex()</a>, <a href="#rgb2hexString" title="static public function rgb2hexString(r:Number, g:Number, b:Number, hasPrefix:Boolean):String">rgb2hexString()</a>, <a href="#rgbObj2hex" title="static public function rgbObj2hex(o:Object):Number">rgbObj2hex()</a>, <a href="#setColor" title="static public function setColor(obj:Object, hex:Number):Void">setColor()</a></div></div><div class="type_details"><div class="method_detail_list"><h2>Method Detail</h2><div class="method_details alt_row"><a name="hex2rgb"></a><h3>hex2rgb</h3><code class="method_synopsis">static public function <strong class="method_name">hex2rgb</strong>(hex:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Object</span></code><div class="method_info"><p>
+ Convert hexadecimal Number to rgb Object
+ </p><h4>Return</h4><p class="extra_info"> Object - {r,g,b}
+	 </p></div></div><div class="method_details"><a name="hex2argb"></a><h3>hex2argb</h3><code class="method_synopsis">static public function <strong class="method_name">hex2argb</strong>(val:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Object</span></code><div class="method_info"><p>
+ Convert argb Object to hexidecimal Number
+ </p><h4>Return</h4><p class="extra_info"> Object - {a,r,g,b}
+	 </p></div></div><div class="method_details alt_row"><a name="argb2hex"></a><h3>argb2hex</h3><code class="method_synopsis">static public function <strong class="method_name">argb2hex</strong>(a:<span class="unresolved_type_name">Number</span>, r:<span class="unresolved_type_name">Number</span>, g:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Convert argb to hexadecimal.
+ <pre> Usage:
+ 	hex=argbtohex(<span class="num_const">255</span>,<span class="num_const">0</span>,<span class="num_const">255</span>,<span class="num_const">0</span>) <span class="comment">//outputs a 32-bit red hexadecimal value as a base-10 number</span>
+ 	</pre>
+	 </p></div></div><div class="method_details"><a name="rgb2hex"></a><h3>rgb2hex</h3><code class="method_synopsis">static public function <strong class="method_name">rgb2hex</strong>(r:<span class="unresolved_type_name">Number</span>, g:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Convert rgb to hexadecimal.
+ </p><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details alt_row"><a name="rgbObj2hex"></a><h3>rgbObj2hex</h3><code class="method_synopsis">static public function <strong class="method_name">rgbObj2hex</strong>(o:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Convert rgb Object to hexadecimal
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>o</code></td><td>(Object) a color object {r,g,b}
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details"><a name="rgb2hexString"></a><h3>rgb2hexString</h3><code class="method_synopsis">static public function <strong class="method_name">rgb2hexString</strong>(r:<span class="unresolved_type_name">Number</span>, g:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, hasPrefix:<span class="unresolved_type_name">Boolean</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Convert rgb to hexadecimal String
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>r</code></td><td>(Number)
+ </td></tr><tr><td><code>g</code></td><td>(Number)
+ </td></tr><tr><td><code>b</code></td><td>(Number)
+ </td></tr><tr><td><code>hasPrefix</code></td><td>(Boolean) add optional "0x" prefix to return
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details alt_row"><a name="randHex"></a><h3>randHex</h3><code class="method_synopsis">static public function <strong class="method_name">randHex</strong>():<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ get a random hexidecimal color
+ </p><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details"><a name="setColor"></a><h3>setColor</h3><code class="method_synopsis">static public function <strong class="method_name">setColor</strong>(obj:<span class="unresolved_type_name">Object</span>, hex:<span class="unresolved_type_name">Number</span>):<span class="void_name">Void</span></code><div class="method_info"><p>
+ set color of a movieclip or textfield
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>obj</code></td><td>(Object)
+ </td></tr><tr><td><code>hex</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Void
+	 </p></div></div><div class="method_details alt_row"><a name="getColor"></a><h3>getColor</h3><code class="method_synopsis">static public function <strong class="method_name">getColor</strong>(obj:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ get color from a movieclip or textfield
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>obj</code></td><td>(Object)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details"><a name="changeContrast"></a><h3>changeContrast</h3><code class="method_synopsis">static public function <strong class="method_name">changeContrast</strong>(hex:<span class="unresolved_type_name">Number</span>, inc:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Change the contrast of a hexidecimal Number by a certain increment
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>hex</code></td><td>(Number) color value to shift contrast on
+ </td></tr><tr><td><code>inc</code></td><td>(Number) increment value to shift
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number - new hex color value
+	 </p></div></div></div></div><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.utils" class="button">Package</a></li><li><span class="button nav_current">Class</span></li><li><a href="ColorUtils.as.html" title="Source code of com.sekati.utils.ColorUtils" class="button">Source</a></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

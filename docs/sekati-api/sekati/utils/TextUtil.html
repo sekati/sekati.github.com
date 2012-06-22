@@ -1,0 +1,746 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="TextUtil,sekati.utils.TextUtil,clearFields,createField,formatFields,getUsableFonts,hideFields,revealFields,setFormattedText,setStyledText,setTextColor,setTextFont,setTextLeading,setTextLetterSpacing,setTextSpaceWidth,styleFields,truncateMultilineText,truncateText" name="keywords">
+<title>sekati.utils.TextUtil</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'TextUtil - Sekati API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Sekati API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?sekati/utils/TextUtil.html&amp;sekati/utils/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;TextUtil</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class TextUtil"); titleBar_setSubNav(false,false,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">sekati.utils</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class TextUtil</td>
+</tr>
+</table>
+<p></p>
+  Static class wrapping various Text utilities.
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#TextUtil()">TextUtil</a>()</div>
+<div class="summaryTableDescription">
+   TextUtil Static Constructor
+   </div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clearFields()">clearFields</a>(o:DisplayObject):void</div>
+<div class="summaryTableDescription">[static]
+   Clear a <code>TextField</code> text or to all <code>TextField</code>'s texts in a <code>DisplayObject</code>.</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#createField()">createField</a>(str:String, x:Number = 0, y:Number = 0, width:Number = 200, height:Number = 20, multiline:Boolean = false, font:String = "Verdana", size:Number = 9, color:uint = 0, autoSize:String = "left", embedFonts:Boolean = false, selectable:Boolean = false, css:StyleSheet = null):TextField</div>
+<div class="summaryTableDescription">[static]
+   Create a <code>TextField</code> instance and return it.</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#formatFields()">formatFields</a>(o:DisplayObject, textFormat:TextFormat):void</div>
+<div class="summaryTableDescription">[static]
+   Apply a <code>TextFormat</code> to a <code>TextField</code> or to all <code>TextField</code>'s in a <code>DisplayObject</code>.</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getUsableFonts()">getUsableFonts</a>(desiredFontList:Array):Array</div>
+<div class="summaryTableDescription">[static]
+   Searches the client's available fonts to see if any of the Font from the <code>desiredFontList</code> are available.</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hideFields()">hideFields</a>(... args):void</div>
+<div class="summaryTableDescription">[static]
+   Hide a <code>TextField</code> or <code>TextField</code>'s from display (visible false, alpha 0).</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#revealFields()">revealFields</a>(... args):void</div>
+<div class="summaryTableDescription">[static]
+   Reveal a <code>TextField</code> or <code>TextField</code>'s (visible true, alpha 1)
+   </div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setFormattedText()">setFormattedText</a>(tf:TextField, str:String, autoSize:Boolean = true):void</div>
+<div class="summaryTableDescription">[static]
+   Set the text of a <code>TextField</code> while preserving the formatting (leading, kerning, etc).</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setStyledText()">setStyledText</a>(tf:TextField, str:String, stylesheet:StyleSheet = null):void</div>
+<div class="summaryTableDescription">[static]
+   Apply a <code>StyleSheet</code> to a <code>TextField</code> & set its contents.</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setTextColor()">setTextColor</a>(tf:TextField, color:uint, backgroundColor:Number, borderColor:Number):void</div>
+<div class="summaryTableDescription">[static]
+   Set the <code>TextField</code> color formatting.</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setTextFont()">setTextFont</a>(tf:TextField, fontName:String, fontSize:Number, isEmbedFont:Boolean = false, isBold:Boolean = false, isItalic:Boolean = false, isUnderline:Boolean = false):void</div>
+<div class="summaryTableDescription">[static]
+   Set the <code>TextField</code> font formatting.</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setTextLeading()">setTextLeading</a>(tf:TextField, space:Number = 0):void</div>
+<div class="summaryTableDescription">[static]
+   Set the <code>TextField</code> leading formatting.</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setTextLetterSpacing()">setTextLetterSpacing</a>(tf:TextField, spacing:Number = 0):void</div>
+<div class="summaryTableDescription">[static]
+   Set the <code>TextField</code> letter spacing formatting.</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setTextSpaceWidth()">setTextSpaceWidth</a>(tf:TextField, space:Number = 1):void</div>
+<div class="summaryTableDescription">[static]
+   Set the <code>TextField</code>'s width for space characters.</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#styleFields()">styleFields</a>(o:DisplayObject, stylesheet:StyleSheet = null):void</div>
+<div class="summaryTableDescription">[static]
+   Apply the application stylesheet to a <code>TextField</code> or to all <code>TextField</code>'s in a <code>DisplayObject</code>.</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#truncateMultilineText()">truncateMultilineText</a>(tf:TextField, numAlllowedLines:uint, isEllipsed:Boolean = true):void</div>
+<div class="summaryTableDescription">[static]
+   Truncate a multiline <code>TextField</code> after the defined number of lines of text.</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#truncateText()">truncateText</a>(tf:TextField, maxWidth:Number, isEllipsed:Boolean = true, isLineEllipse:Boolean = false):void</div>
+<div class="summaryTableDescription">[static]
+   Truncate a single-line TextField to a specific width.</div>
+</td><td class="summaryTableOwnerCol">TextUtil</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="TextUtil()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TextUtil</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function TextUtil()</code><p>
+   TextUtil Static Constructor
+   </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="clearFields()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clearFields</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function clearFields(o:DisplayObject):void</code><p>
+   Clear a <code>TextField</code> text or to all <code>TextField</code>'s texts in a <code>DisplayObject</code>.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">o</span>:DisplayObject</code> &mdash;   <code>DisplayObject</code> that either <i>is</i> or contains <code>TextField</code>'s.
+   </td>
+</tr>
+</table>
+</div>
+<a name="createField()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">createField</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function createField(str:String, x:Number = 0, y:Number = 0, width:Number = 200, height:Number = 20, multiline:Boolean = false, font:String = "Verdana", size:Number = 9, color:uint = 0, autoSize:String = "left", embedFonts:Boolean = false, selectable:Boolean = false, css:StyleSheet = null):TextField</code><p>
+   Create a <code>TextField</code> instance and return it.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">str</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">x</span>:Number</code> (default = <code>0</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">y</span>:Number</code> (default = <code>0</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">width</span>:Number</code> (default = <code>200</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">height</span>:Number</code> (default = <code>20</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">multiline</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">font</span>:String</code> (default = "<code>Verdana</code>")<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">size</span>:Number</code> (default = <code>9</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">color</span>:uint</code> (default = <code>0</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">autoSize</span>:String</code> (default = "<code>left</code>")<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">embedFonts</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">selectable</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">css</span>:StyleSheet</code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>TextField</code></td>
+</tr>
+</table>
+</div>
+<a name="formatFields()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">formatFields</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function formatFields(o:DisplayObject, textFormat:TextFormat):void</code><p>
+   Apply a <code>TextFormat</code> to a <code>TextField</code> or to all <code>TextField</code>'s in a <code>DisplayObject</code>.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">o</span>:DisplayObject</code> &mdash;    <code>DisplayObject</code> that either <i>is</i> or contains <code>TextField</code>'s.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">textFormat</span>:TextFormat</code> &mdash;  to apply to the <code>TextField</code>'s.
+   </td>
+</tr>
+</table>
+</div>
+<a name="getUsableFonts()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getUsableFonts</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getUsableFonts(desiredFontList:Array):Array</code><p>
+   Searches the client's available fonts to see if any of the Font from the <code>desiredFontList</code> are available.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">desiredFontList</span>:Array</code> &mdash;  array of desired <code>fontName</code>'s.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Array</code> &mdash;      array of desired fonts which are available for use on the client's system.
+   </td>
+</tr>
+</table>
+</div>
+<a name="hideFields()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hideFields</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function hideFields(... args):void</code><p>
+   Hide a <code>TextField</code> or <code>TextField</code>'s from display (visible false, alpha 0).
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code>... <span class="label">args</span></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../utils/TextUtil.html#reveal" target="">reveal</a>
+</div>
+</div>
+<a name="revealFields()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">revealFields</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function revealFields(... args):void</code><p>
+   Reveal a <code>TextField</code> or <code>TextField</code>'s (visible true, alpha 1)
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code>... <span class="label">args</span></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../utils/TextUtil.html#hide" target="">hide</a>
+</div>
+</div>
+<a name="setFormattedText()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setFormattedText</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setFormattedText(tf:TextField, str:String, autoSize:Boolean = true):void</code><p>
+   Set the text of a <code>TextField</code> while preserving the formatting (leading, kerning, etc).
+   XXX - Warning: htmlText and styles can break the formatting: no known fix as of yet.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tf</span>:TextField</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">str</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">autoSize</span>:Boolean</code> (default = <code>true</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="setStyledText()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setStyledText</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setStyledText(tf:TextField, str:String, stylesheet:StyleSheet = null):void</code><p>
+   Apply a <code>StyleSheet</code> to a <code>TextField</code> & set its contents.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tf</span>:TextField</code> &mdash;    <code>TextField</code> to display.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">str</span>:String</code> &mdash;    of text to apply.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">stylesheet</span>:StyleSheet</code> (default = <code>null</code>)<code></code> &mdash;  to apply to the <code>TextField</code>'s (Default: <code>App.css</code>).
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../core/App.html#css" target="">sekati.core.App.css</a>
+</div>
+</div>
+<a name="setTextColor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setTextColor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setTextColor(tf:TextField, color:uint, backgroundColor:Number, borderColor:Number):void</code><p>
+   Set the <code>TextField</code> color formatting.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tf</span>:TextField</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">color</span>:uint</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">backgroundColor</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">borderColor</span>:Number</code></td>
+</tr>
+</table>
+</div>
+<a name="setTextFont()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setTextFont</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setTextFont(tf:TextField, fontName:String, fontSize:Number, isEmbedFont:Boolean = false, isBold:Boolean = false, isItalic:Boolean = false, isUnderline:Boolean = false):void</code><p>
+   Set the <code>TextField</code> font formatting.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tf</span>:TextField</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">fontName</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">fontSize</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">isEmbedFont</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">isBold</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">isItalic</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">isUnderline</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="setTextLeading()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setTextLeading</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setTextLeading(tf:TextField, space:Number = 0):void</code><p>
+   Set the <code>TextField</code> leading formatting.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tf</span>:TextField</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">space</span>:Number</code> (default = <code>0</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="setTextLetterSpacing()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setTextLetterSpacing</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setTextLetterSpacing(tf:TextField, spacing:Number = 0):void</code><p>
+   Set the <code>TextField</code> letter spacing formatting.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tf</span>:TextField</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">spacing</span>:Number</code> (default = <code>0</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="setTextSpaceWidth()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setTextSpaceWidth</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setTextSpaceWidth(tf:TextField, space:Number = 1):void</code><p>
+   Set the <code>TextField</code>'s width for space characters.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tf</span>:TextField</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">space</span>:Number</code> (default = <code>1</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="styleFields()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">styleFields</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function styleFields(o:DisplayObject, stylesheet:StyleSheet = null):void</code><p>
+   Apply the application stylesheet to a <code>TextField</code> or to all <code>TextField</code>'s in a <code>DisplayObject</code>.
+   
+   </p><p><b>Warning</b>: Unlike <code>formatFields</code> you must <i>reset</i> your <code>htmlText</code> to have the style applied.</p>
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">o</span>:DisplayObject</code> &mdash;    <code>DisplayObject</code> that either <i>is</i> or contains <code>TextField</code>'s.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">stylesheet</span>:StyleSheet</code> (default = <code>null</code>)<code></code> &mdash;  to apply to the <code>TextField</code>'s (Default: <code>App.css</code>).
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../core/App.html#css" target="">sekati.core.App.css</a>
+</div>
+</div>
+<a name="truncateMultilineText()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">truncateMultilineText</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function truncateMultilineText(tf:TextField, numAlllowedLines:uint, isEllipsed:Boolean = true):void</code><p>
+   Truncate a multiline <code>TextField</code> after the defined number of lines of text.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tf</span>:TextField</code> &mdash;     <code>TextField</code> to truncate.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">numAlllowedLines</span>:uint</code> &mdash;  before the remaining text is removed.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">isEllipsed</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash;   determines whether the text is ended with "..." or not.
+   </td>
+</tr>
+</table>
+</div>
+<a name="truncateText()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">truncateText</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function truncateText(tf:TextField, maxWidth:Number, isEllipsed:Boolean = true, isLineEllipse:Boolean = false):void</code><p>
+   Truncate a single-line TextField to a specific width.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tf</span>:TextField</code> &mdash;    the textfield to truncate.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">maxWidth</span>:Number</code> &mdash;   the desired text width to truncate at.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">isEllipsed</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash;  denotes whether to truncate with the ellipse char "...".
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">isLineEllipse</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; gives the option to "ellipse" the entire width of the field.
+   </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Copyright &copy; 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.</center>
+</div>
+</body>
+</html>
+<!--Copyright © 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.-->

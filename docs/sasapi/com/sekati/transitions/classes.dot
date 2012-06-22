@@ -1,0 +1,21 @@
+strict digraph class_diagram {
+  rankdir=LR;
+  TypeMousePan[
+    label="MousePan",
+    URL="MousePan.html",
+    tooltip="com.sekati.transitions.MousePan",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeMot[
+    label="Mot",
+    URL="Mot.html",
+    tooltip="com.sekati.transitions.Mot",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+}

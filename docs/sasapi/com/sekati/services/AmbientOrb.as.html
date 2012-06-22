@@ -1,0 +1,250 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span>
+<span class="lineno" id="2">     2  </span><span class="comment doc">/**
+<span class="lineno" id="3">     3  </span> * com.sekati.services.AmbientOrb
+<span class="lineno" id="4">     4  </span> * @version 1.0.5
+<span class="lineno" id="5">     5  </span> * @author jason m horwitz | sekati.com
+<span class="lineno" id="6">     6  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="7">     7  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="8">     8  </span> */</span>
+<span class="lineno" id="9">     9  </span> 
+<span class="lineno" id="10">    10  </span><span class="comment doc">/**
+<span class="lineno" id="11">    11  </span> * Ambient Orb developer channel controller class
+<span class="lineno" id="12">    12  </span> * {@code Usage:
+<span class="lineno" id="13">    13  </span> * var orb:AmbientOrb = new AmbientOrb("AAA-BBB-CCC");
+<span class="lineno" id="14">    14  </span> * orb.config ( getColorByProp("name","red"), getAnimByProp("name","heartbeat"), "Orb Test" );
+<span class="lineno" id="15">    15  </span> * }
+<span class="lineno" id="16">    16  </span> * @see &lt;a href="http://www.ambientdevices.com/developer/Tech%20FAQ.html"&gt;http://www.ambientdevices.com/developer/Tech%20FAQ.html&lt;/a&gt;
+<span class="lineno" id="17">    17  </span> */</span>
+<span class="lineno" id="18">    18  </span><span class="key">class</span> com.sekati.services.AmbientOrb {
+<span class="lineno" id="19">    19  </span>
+<span class="lineno" id="20">    20  </span>	<span class="key">private</span> <span class="key">var</span> _devId:String;
+<span class="lineno" id="21">    21  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _URI:String = <span class="str_const">"http://myambient.com:8080/java/my_devices/submitdata.jsp"</span>;	
+<span class="lineno" id="22">    22  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _SPECTRUM:Array = [ {id:<span class="str_const">"0"</span>, hex:<span class="str_const">"0xFF0000"</span>, name:<span class="str_const">"red"</span>}, 
+<span class="lineno" id="23">    23  </span>								 {id:<span class="str_const">"1"</span>, hex:<span class="str_const">"0xFF2B00"</span>, name:<span class="str_const">"light red"</span>}, 
+<span class="lineno" id="24">    24  </span>								 {id:<span class="str_const">"2"</span>, hex:<span class="str_const">"0xFF5500"</span>, name:<span class="str_const">"dark orange"</span>}, 
+<span class="lineno" id="25">    25  </span>								 {id:<span class="str_const">"3"</span>, hex:<span class="str_const">"0xFF8000"</span>, name:<span class="str_const">"orange"</span>}, 
+<span class="lineno" id="26">    26  </span>								 {id:<span class="str_const">"4"</span>, hex:<span class="str_const">"0xFFAA00"</span>, name:<span class="str_const">"light orange"</span>}, 
+<span class="lineno" id="27">    27  </span>								 {id:<span class="str_const">"5"</span>, hex:<span class="str_const">"0xFFD500"</span>, name:<span class="str_const">"dark yellow"</span>}, 
+<span class="lineno" id="28">    28  </span>								 {id:<span class="str_const">"6"</span>, hex:<span class="str_const">"0xFFFF00"</span>, name:<span class="str_const">"yellow"</span>}, 
+<span class="lineno" id="29">    29  </span>								 {id:<span class="str_const">"7"</span>, hex:<span class="str_const">"0xD4FF00"</span>, name:<span class="str_const">"lime green"</span>}, 
+<span class="lineno" id="30">    30  </span>								 {id:<span class="str_const">"8"</span>, hex:<span class="str_const">"0xAAFF00"</span>, name:<span class="str_const">"pale green"</span>}, 
+<span class="lineno" id="31">    31  </span>								 {id:<span class="str_const">"9"</span>, hex:<span class="str_const">"0x80FF00"</span>, name:<span class="str_const">"green -3"</span>}, 
+<span class="lineno" id="32">    32  </span>								 {id:<span class="str_const">"10"</span>, hex:<span class="str_const">"0x55FF00"</span>, name:<span class="str_const">"green -2"</span>}, 
+<span class="lineno" id="33">    33  </span>								 {id:<span class="str_const">"11"</span>, hex:<span class="str_const">"0x2BFF00"</span>, name:<span class="str_const">"green -1"</span>}, 
+<span class="lineno" id="34">    34  </span>								 {id:<span class="str_const">"12"</span>, hex:<span class="str_const">"0x00FF00"</span>, name:<span class="str_const">"green"</span>}, 
+<span class="lineno" id="35">    35  </span>								 {id:<span class="str_const">"13"</span>, hex:<span class="str_const">"0x00FF2A"</span>, name:<span class="str_const">"green +1"</span>}, 
+<span class="lineno" id="36">    36  </span>								 {id:<span class="str_const">"14"</span>, hex:<span class="str_const">"0x00FF55"</span>, name:<span class="str_const">"green +2"</span>}, 
+<span class="lineno" id="37">    37  </span>								 {id:<span class="str_const">"15"</span>, hex:<span class="str_const">"0x00FF80"</span>, name:<span class="str_const">"pale aqua"</span>}, 
+<span class="lineno" id="38">    38  </span>								 {id:<span class="str_const">"16"</span>, hex:<span class="str_const">"0x00FFAA"</span>, name:<span class="str_const">"aqua"</span>}, 
+<span class="lineno" id="39">    39  </span>								 {id:<span class="str_const">"17"</span>, hex:<span class="str_const">"0x00FFD4"</span>, name:<span class="str_const">"dark aqua"</span>}, 
+<span class="lineno" id="40">    40  </span>								 {id:<span class="str_const">"18"</span>, hex:<span class="str_const">"0x00FFFF"</span>, name:<span class="str_const">"cyan"</span>}, 
+<span class="lineno" id="41">    41  </span>								 {id:<span class="str_const">"19"</span>, hex:<span class="str_const">"0x00D4FF"</span>, name:<span class="str_const">"dark cyan"</span>}, 
+<span class="lineno" id="42">    42  </span>								 {id:<span class="str_const">"20"</span>, hex:<span class="str_const">"0x00AAFF"</span>, name:<span class="str_const">"light blue"</span>}, 
+<span class="lineno" id="43">    43  </span>								 {id:<span class="str_const">"21"</span>, hex:<span class="str_const">"0x0080FF"</span>, name:<span class="str_const">"sky blue"</span>}, 
+<span class="lineno" id="44">    44  </span>								 {id:<span class="str_const">"22"</span>, hex:<span class="str_const">"0x0055FF"</span>, name:<span class="str_const">"blue -2"</span>}, 
+<span class="lineno" id="45">    45  </span>								 {id:<span class="str_const">"23"</span>, hex:<span class="str_const">"0x002AFF"</span>, name:<span class="str_const">"blue -1"</span>}, 
+<span class="lineno" id="46">    46  </span>								 {id:<span class="str_const">"24"</span>, hex:<span class="str_const">"0x0000FF"</span>, name:<span class="str_const">"blue"</span>}, 
+<span class="lineno" id="47">    47  </span>								 {id:<span class="str_const">"25"</span>, hex:<span class="str_const">"0x2A00FF"</span>, name:<span class="str_const">"deep blue"</span>}, 
+<span class="lineno" id="48">    48  </span>								 {id:<span class="str_const">"26"</span>, hex:<span class="str_const">"0x5500FF"</span>, name:<span class="str_const">"very deep blue"</span>}, 
+<span class="lineno" id="49">    49  </span>								 {id:<span class="str_const">"27"</span>, hex:<span class="str_const">"0x8000FF"</span>, name:<span class="str_const">"violet"</span>}, 
+<span class="lineno" id="50">    50  </span>								 {id:<span class="str_const">"28"</span>, hex:<span class="str_const">"0xAA00FF"</span>, name:<span class="str_const">"purple"</span>}, 
+<span class="lineno" id="51">    51  </span>								 {id:<span class="str_const">"29"</span>, hex:<span class="str_const">"0xD500FF"</span>, name:<span class="str_const">"light purple"</span>}, 
+<span class="lineno" id="52">    52  </span>								 {id:<span class="str_const">"30"</span>, hex:<span class="str_const">"0xFF00FF"</span>, name:<span class="str_const">"magenta"</span>}, 
+<span class="lineno" id="53">    53  </span>								 {id:<span class="str_const">"31"</span>, hex:<span class="str_const">"0xFF00D5"</span>, name:<span class="str_const">"magenta +1"</span>}, 
+<span class="lineno" id="54">    54  </span>								 {id:<span class="str_const">"32"</span>, hex:<span class="str_const">"0xFF00AA"</span>, name:<span class="str_const">"magenta +2"</span>}, 
+<span class="lineno" id="55">    55  </span>								 {id:<span class="str_const">"33"</span>, hex:<span class="str_const">"0xFF0080"</span>, name:<span class="str_const">"magenta +3"</span>}, 
+<span class="lineno" id="56">    56  </span>								 {id:<span class="str_const">"34"</span>, hex:<span class="str_const">"0xFF0055"</span>, name:<span class="str_const">"magenta +4"</span>}, 
+<span class="lineno" id="57">    57  </span>								 {id:<span class="str_const">"35"</span>, hex:<span class="str_const">"0xFF002B"</span>, name:<span class="str_const">"magenta +5"</span>}, 
+<span class="lineno" id="58">    58  </span>								 {id:<span class="str_const">"36"</span>, hex:<span class="str_const">"0xFFFFFF"</span>, name:<span class="str_const">"white"</span>} ];
+<span class="lineno" id="59">    59  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _ANIM:Array = [ {id:<span class="str_const">"0"</span>, name:<span class="str_const">"none"</span>}, 
+<span class="lineno" id="60">    60  </span>							 {id:<span class="str_const">"1"</span>, name:<span class="str_const">"very slow"</span>}, 
+<span class="lineno" id="61">    61  </span>							 {id:<span class="str_const">"2"</span>, name:<span class="str_const">"slow"</span>}, 
+<span class="lineno" id="62">    62  </span>							 {id:<span class="str_const">"3"</span>, name:<span class="str_const">"medium slow"</span>}, 
+<span class="lineno" id="63">    63  </span>							 {id:<span class="str_const">"4"</span>, name:<span class="str_const">"medium"</span>}, 
+<span class="lineno" id="64">    64  </span>							 {id:<span class="str_const">"5"</span>, name:<span class="str_const">"medium fast"</span>}, 
+<span class="lineno" id="65">    65  </span>							 {id:<span class="str_const">"6"</span>, name:<span class="str_const">"fast"</span>}, 
+<span class="lineno" id="66">    66  </span>							 {id:<span class="str_const">"7"</span>, name:<span class="str_const">"very fast"</span>}, 
+<span class="lineno" id="67">    67  </span>							 {id:<span class="str_const">"8"</span>, name:<span class="str_const">"crescendo"</span>}, 
+<span class="lineno" id="68">    68  </span>							 {id:<span class="str_const">"9"</span>, name:<span class="str_const">"heartbeat"</span>} ];
+<span class="lineno" id="69">    69  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _CODE:Array = [ {id:<span class="str_const">"0"</span>, type:<span class="str_const">"OK"</span>, desc:<span class="str_const">"data inserted OK"</span>}, 
+<span class="lineno" id="70">    70  </span>							 {id:<span class="str_const">"1"</span>, type:<span class="str_const">"error"</span>, desc:<span class="str_const">"'color' term not defined. Must be number between 0 - 36."</span>}, 
+<span class="lineno" id="71">    71  </span>							 {id:<span class="str_const">"2"</span>, type:<span class="str_const">"error"</span>, desc:<span class="str_const">"error parsing 'color' term. Must be number between 0 - 36."</span>}, 
+<span class="lineno" id="72">    72  </span>							 {id:<span class="str_const">"3"</span>, type:<span class="str_const">"error"</span>, desc:<span class="str_const">"'color' value out of range. . Must be number between 0 - 36."</span>}, 
+<span class="lineno" id="73">    73  </span>							 {id:<span class="str_const">"4"</span>, type:<span class="str_const">"warning"</span>, desc:<span class="str_const">"'anim' term not defined. Must be number between 0 - 9. Assuming 'none'."</span>}, 
+<span class="lineno" id="74">    74  </span>							 {id:<span class="str_const">"5"</span>, type:<span class="str_const">"error"</span>, desc:<span class="str_const">"error parsing 'anim' term. Must be number between 0 - 9."</span>}, 
+<span class="lineno" id="75">    75  </span>							 {id:<span class="str_const">"6"</span>, type:<span class="str_const">"error"</span>, desc:<span class="str_const">"'anim' value out of range. . Must be number between 0 - 9."</span>}, 
+<span class="lineno" id="76">    76  </span>							 {id:<span class="str_const">"7"</span>, type:<span class="str_const">"error"</span>, desc:<span class="str_const">"The term 'devID' was not specified."</span>}, 
+<span class="lineno" id="77">    77  </span>							 {id:<span class="str_const">"8"</span>, type:<span class="str_const">"error"</span>, desc:<span class="str_const">"The specified devID is not a premium account."</span>}, 
+<span class="lineno" id="78">    78  </span>							 {id:<span class="str_const">"9"</span>, type:<span class="str_const">"warning"</span>, desc:<span class="str_const">"The specified devID is not set to the developer channel."</span>}, 
+<span class="lineno" id="79">    79  </span>							 {id:<span class="str_const">"10"</span>, type:<span class="str_const">"error"</span>, desc:<span class="str_const">"The specified devID is not in the Ambient database."</span>}, 
+<span class="lineno" id="80">    80  </span>							 {id:<span class="str_const">"11"</span>, type:<span class="str_const">"warning"</span>, desc:<span class="str_const">"The comment contains invalid characters. Ignoring comment."</span>}, 
+<span class="lineno" id="81">    81  </span>							 {id:<span class="str_const">"12"</span>, type:<span class="str_const">"error"</span>, desc:<span class="str_const">"Unspecific error"</span>}, 
+<span class="lineno" id="82">    82  </span>							 {id:<span class="str_const">"13"</span>, type:<span class="str_const">"error"</span>, desc:<span class="str_const">"You are not authorized to submit data to this account (not yet implemented)"</span>} ];
+<span class="lineno" id="83">    83  </span>
+<span class="lineno" id="84">    84  </span>	<span class="comment doc">/**
+<span class="lineno" id="85">    85  </span>	 * Constructor
+<span class="lineno" id="86">    86  </span>	 * @param devId (String) - orb device id to be controlled by this instance
+<span class="lineno" id="87">    87  </span>	 * @return Void
+<span class="lineno" id="88">    88  </span>	 */</span>
+<span class="lineno" id="89">    89  </span>	<span class="key">public</span> <span class="key">function</span> AmbientOrb(devId:String) {
+<span class="lineno" id="90">    90  </span>		_devId = devId;
+<span class="lineno" id="91">    91  </span>	}
+<span class="lineno" id="92">    92  </span>
+<span class="lineno" id="93">    93  </span>	<span class="comment doc">/**
+<span class="lineno" id="94">    94  </span>	 * devId setter
+<span class="lineno" id="95">    95  </span>	 * @param (String) instance device Id
+<span class="lineno" id="96">    96  </span>	 * @return Void
+<span class="lineno" id="97">    97  </span>	 */</span>
+<span class="lineno" id="98">    98  </span>	<span class="key">public</span> <span class="key">function</span> set devId(devId:String):Void {
+<span class="lineno" id="99">    99  </span>		<span class="key">if</span> (devId) {
+<span class="lineno" id="100">   100  </span>			_devId = devId;
+<span class="lineno" id="101">   101  </span>		}
+<span class="lineno" id="102">   102  </span>	}
+<span class="lineno" id="103">   103  </span>
+<span class="lineno" id="104">   104  </span>	<span class="comment doc">/**
+<span class="lineno" id="105">   105  </span>	 * devId getter
+<span class="lineno" id="106">   106  </span>	 * @return String - instance device id
+<span class="lineno" id="107">   107  </span>	 */</span>
+<span class="lineno" id="108">   108  </span>	<span class="key">public</span> <span class="key">function</span> get devId():String {
+<span class="lineno" id="109">   109  </span>		<span class="key">return</span> _devId;	
+<span class="lineno" id="110">   110  </span>	}
+<span class="lineno" id="111">   111  </span>
+<span class="lineno" id="112">   112  </span>	<span class="comment doc">/**
+<span class="lineno" id="113">   113  </span>	 * spectrum getter
+<span class="lineno" id="114">   114  </span>	 */</span>
+<span class="lineno" id="115">   115  </span>	<span class="key">public</span> <span class="key">function</span> get spectrum():Array {
+<span class="lineno" id="116">   116  </span>		<span class="key">return</span> _SPECTRUM;
+<span class="lineno" id="117">   117  </span>	}
+<span class="lineno" id="118">   118  </span>
+<span class="lineno" id="119">   119  </span>	<span class="comment doc">/**
+<span class="lineno" id="120">   120  </span>	 * anim getter
+<span class="lineno" id="121">   121  </span>	 */</span>
+<span class="lineno" id="122">   122  </span>	<span class="key">public</span> <span class="key">function</span> get anim():Array {
+<span class="lineno" id="123">   123  </span>		<span class="key">return</span> _ANIM;
+<span class="lineno" id="124">   124  </span>	}
+<span class="lineno" id="125">   125  </span>
+<span class="lineno" id="126">   126  </span>	<span class="comment doc">/**
+<span class="lineno" id="127">   127  </span>	 * server code getter
+<span class="lineno" id="128">   128  </span>	 */</span>
+<span class="lineno" id="129">   129  </span>	<span class="key">public</span> <span class="key">function</span> get code():Array {
+<span class="lineno" id="130">   130  </span>		<span class="key">return</span> _CODE;
+<span class="lineno" id="131">   131  </span>	}		
+<span class="lineno" id="132">   132  </span>
+<span class="lineno" id="133">   133  </span>	<span class="comment doc">/**
+<span class="lineno" id="134">   134  </span>	 * locate a color object by one of its properties
+<span class="lineno" id="135">   135  </span>	 * @param prop (String) - acceptable props: "id", "hex", "name"
+<span class="lineno" id="136">   136  </span>	 * @param key (String) - value to match by, e.g: "0xFF00FF"
+<span class="lineno" id="137">   137  </span>	 * @return Object - the matched _SPECTRUM object
+<span class="lineno" id="138">   138  </span>	 * @throws Error on failed match
+<span class="lineno" id="139">   139  </span>	 */</span>
+<span class="lineno" id="140">   140  </span>	<span class="key">public</span> <span class="key">function</span> getColorByProp(prop:String,key:String):Object {
+<span class="lineno" id="141">   141  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; _SPECTRUM.length ; i++) {
+<span class="lineno" id="142">   142  </span>			<span class="key">var</span> o:Object = _SPECTRUM[i];
+<span class="lineno" id="143">   143  </span>			<span class="key">if</span>(o[prop].toUpperCase( ) == key.toUpperCase( )) {
+<span class="lineno" id="144">   144  </span>				<span class="key">return</span> o;	
+<span class="lineno" id="145">   145  </span>			}
+<span class="lineno" id="146">   146  </span>		}
+<span class="lineno" id="147">   147  </span>		<span class="key">throw</span> <span class="key">new</span> Error( <span class="str_const">"@@@ com.sekati.services.AmbientOrb Error: could not find match for "</span> + prop + <span class="str_const">": "</span> + key );
+<span class="lineno" id="148">   148  </span>	}
+<span class="lineno" id="149">   149  </span>
+<span class="lineno" id="150">   150  </span>	<span class="comment doc">/**
+<span class="lineno" id="151">   151  </span>	 * locate an animation by one of its properties
+<span class="lineno" id="152">   152  </span>	 * @param prop (String) - acceptable props: "id", "name"
+<span class="lineno" id="153">   153  </span>	 * @param key (String) - value to match by, e.g: "slow"
+<span class="lineno" id="154">   154  </span>	 * @return Object - the matched _ANIM object
+<span class="lineno" id="155">   155  </span>	 * @throws Error on failed match
+<span class="lineno" id="156">   156  </span>	 */</span>
+<span class="lineno" id="157">   157  </span>	<span class="key">public</span> <span class="key">function</span> getAnimByProp(prop:String,key:String):Object {
+<span class="lineno" id="158">   158  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; _ANIM.length ; i++) {
+<span class="lineno" id="159">   159  </span>			<span class="key">var</span> o:Object = _ANIM[i];
+<span class="lineno" id="160">   160  </span>			<span class="key">if</span>(o[prop].toUpperCase( ) == key.toUpperCase( )) {
+<span class="lineno" id="161">   161  </span>				<span class="key">return</span> o;	
+<span class="lineno" id="162">   162  </span>			}
+<span class="lineno" id="163">   163  </span>		}
+<span class="lineno" id="164">   164  </span>		<span class="key">throw</span> <span class="key">new</span> Error( <span class="str_const">"@@@ com.sekati.services.AmbientOrb Error: could not find match for "</span> + prop + <span class="str_const">": "</span> + key );		
+<span class="lineno" id="165">   165  </span>	}
+<span class="lineno" id="166">   166  </span>
+<span class="lineno" id="167">   167  </span>	<span class="comment doc">/**
+<span class="lineno" id="168">   168  </span>	 * locate a server code by one of its properties
+<span class="lineno" id="169">   169  </span>	 * @param prop (String) - acceptable props: "id", "desc"
+<span class="lineno" id="170">   170  </span>	 * @param key (String) - value to match by, e.g: "Unspecific error"
+<span class="lineno" id="171">   171  </span>	 * @return Object - the matched _CODE object
+<span class="lineno" id="172">   172  </span>	 * @throws Error on failed match
+<span class="lineno" id="173">   173  </span>	 */</span>
+<span class="lineno" id="174">   174  </span>	 
+<span class="lineno" id="175">   175  </span>	<span class="key">public</span> <span class="key">function</span> getCodeByProp(prop:String,key:String):Object {
+<span class="lineno" id="176">   176  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; _CODE.length ; i++) {
+<span class="lineno" id="177">   177  </span>			<span class="key">var</span> o:Object = _CODE[i];
+<span class="lineno" id="178">   178  </span>			<span class="key">if</span>(o[prop].toUpperCase( ) == key.toUpperCase( )) {
+<span class="lineno" id="179">   179  </span>				<span class="key">return</span> o;	
+<span class="lineno" id="180">   180  </span>			}
+<span class="lineno" id="181">   181  </span>		}
+<span class="lineno" id="182">   182  </span>		<span class="key">throw</span> <span class="key">new</span> Error( <span class="str_const">"@@@ com.sekati.services.AmbientOrb Error: could not find match for "</span> + prop + <span class="str_const">": "</span> + key );		
+<span class="lineno" id="183">   183  </span>	}
+<span class="lineno" id="184">   184  </span>
+<span class="lineno" id="185">   185  </span>	<span class="comment doc">/**
+<span class="lineno" id="186">   186  </span>	 * send new configuration to the ambient orb device id
+<span class="lineno" id="187">   187  </span>	 * @param colorId (String)
+<span class="lineno" id="188">   188  </span>	 * @param animId (String)
+<span class="lineno" id="189">   189  </span>	 * @param comment (String)
+<span class="lineno" id="190">   190  </span>	 * @return Void
+<span class="lineno" id="191">   191  </span>	 * @throws Error if instance device id, colorId,animId params have not been set
+<span class="lineno" id="192">   192  </span>	 * {@code Usage:
+<span class="lineno" id="193">   193  </span>	 * orb.config ( getColorByProp("name","red"), getAnimByProp("name","heartbeat"), "Orb Test" );
+<span class="lineno" id="194">   194  </span>	 * }
+<span class="lineno" id="195">   195  </span>	 */</span>
+<span class="lineno" id="196">   196  </span>	<span class="key">public</span> <span class="key">function</span> config(colorId:String, animId:String, comment:String):Void {
+<span class="lineno" id="197">   197  </span>		<span class="key">if</span> (!_devId) {
+<span class="lineno" id="198">   198  </span>			<span class="key">throw</span> <span class="key">new</span> Error( <span class="str_const">"@@@ com.sekati.services.AmbientOrb Error: Device ID not set"</span> );
+<span class="lineno" id="199">   199  </span>			<span class="key">return</span>;
+<span class="lineno" id="200">   200  </span>		}
+<span class="lineno" id="201">   201  </span>		<span class="key">if</span> (!colorId) {
+<span class="lineno" id="202">   202  </span>			<span class="key">throw</span> <span class="key">new</span> Error( <span class="str_const">"@@@ com.sekati.services.AmbientOrb Error: invalid config colorId arg"</span> );
+<span class="lineno" id="203">   203  </span>			<span class="key">return</span>;
+<span class="lineno" id="204">   204  </span>		}
+<span class="lineno" id="205">   205  </span>		<span class="key">if</span> (!animId) {
+<span class="lineno" id="206">   206  </span>			<span class="key">throw</span> <span class="key">new</span> Error( <span class="str_const">"@@@ com.sekati.services.AmbientOrb Error: invalid config animId arg"</span> );
+<span class="lineno" id="207">   207  </span>			<span class="key">return</span>;
+<span class="lineno" id="208">   208  </span>		}
+<span class="lineno" id="209">   209  </span>		<span class="key">if</span> (!comment) {
+<span class="lineno" id="210">   210  </span>			comment = <span class="str_const">"com.sekati.services.AmbientOrb"</span>;
+<span class="lineno" id="211">   211  </span>		}
+<span class="lineno" id="212">   212  </span>		<span class="key">var</span> xm:XML = <span class="key">new</span> XML( );
+<span class="lineno" id="213">   213  </span>		xm.ignoreWhite = <span class="key">true</span>;
+<span class="lineno" id="214">   214  </span>		<span class="key">var</span> query:String = _URI + <span class="str_const">"?devID="</span> + _devId + <span class="str_const">"&amp;anim="</span> + animId + <span class="str_const">"&amp;color="</span> + colorId + <span class="str_const">"&amp;comment="</span> + escape( comment );
+<span class="lineno" id="215">   215  </span>		trace( <span class="str_const">"query string: "</span> + query );
+<span class="lineno" id="216">   216  </span>		xm.onLoad = <span class="key">function</span> (success:Boolean):Void {
+<span class="lineno" id="217">   217  </span>			<span class="key">var</span> xObj:Object = xparse( xm );
+<span class="lineno" id="218">   218  </span>			trace( <span class="str_const">"object returned: "</span> + xObj );
+<span class="lineno" id="219">   219  </span>		};
+<span class="lineno" id="220">   220  </span>		xm.load( query );
+<span class="lineno" id="221">   221  </span>	}
+<span class="lineno" id="222">   222  </span>
+<span class="lineno" id="223">   223  </span>	<span class="comment doc">/**
+<span class="lineno" id="224">   224  </span>	 * xml parser
+<span class="lineno" id="225">   225  </span>	 */</span>
+<span class="lineno" id="226">   226  </span>	<span class="key">private</span> <span class="key">function</span> xparse(n:XML):Object {
+<span class="lineno" id="227">   227  </span>		<span class="key">var</span> o:String = <span class="key">new</span> String( n.firstChild.nodeValue ), s:Object, i:Number, t:Object;
+<span class="lineno" id="228">   228  </span>		<span class="key">for</span> (s = (o == <span class="str_const">"null"</span>) ? n.firstChild : n.childNodes[<span class="num_const">1</span>]; s != <span class="key">null</span> ; s = s.nextSibling) {
+<span class="lineno" id="229">   229  </span>			t = s.childNodes.length &gt; <span class="num_const">0</span> ? arguments.callee( s ) : <span class="key">new</span> String( s.nodeValue );
+<span class="lineno" id="230">   230  </span>			<span class="key">if</span> (s.firstChild.nodeValue != undefined) {
+<span class="lineno" id="231">   231  </span>				t.val = s.firstChild.nodeValue;
+<span class="lineno" id="232">   232  </span>			}
+<span class="lineno" id="233">   233  </span>			<span class="key">for</span> (i <span class="key">in</span> s.attributes) {
+<span class="lineno" id="234">   234  </span>				t[i] = s.attributes[i];
+<span class="lineno" id="235">   235  </span>			}
+<span class="lineno" id="236">   236  </span>			<span class="key">if</span> (o[s.nodeName] != undefined) {
+<span class="lineno" id="237">   237  </span>				<span class="key">if</span> (!(o[s.nodeName] <span class="key">instanceof</span> Array)) {
+<span class="lineno" id="238">   238  </span>					o[s.nodeName] = [ o[s.nodeName] ];
+<span class="lineno" id="239">   239  </span>				}
+<span class="lineno" id="240">   240  </span>				o[s.nodeName].push( t );
+<span class="lineno" id="241">   241  </span>			} <span class="key">else</span> {
+<span class="lineno" id="242">   242  </span>				o[s.nodeName] = t;
+<span class="lineno" id="243">   243  </span>			}
+<span class="lineno" id="244">   244  </span>		}
+<span class="lineno" id="245">   245  </span>		<span class="key">return</span> o;
+<span class="lineno" id="246">   246  </span>	}
+<span class="lineno" id="247">   247  </span>}</pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.services" class="button">Package</a></li><li><a href="AmbientOrb.html" title="Detail of com.sekati.services.AmbientOrb API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

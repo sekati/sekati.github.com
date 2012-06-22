@@ -1,0 +1,30 @@
+strict digraph class_diagram {
+  rankdir=LR;
+  TypeTypo[
+    label="Typo",
+    URL="Typo.html",
+    tooltip="com.sekati.effects.Typo",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeTextEffects[
+    label="TextEffects",
+    URL="TextEffects.html",
+    tooltip="com.sekati.effects.TextEffects",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeAnimHandler[
+    label="AnimHandler",
+    URL="AnimHandler.html",
+    tooltip="com.sekati.effects.AnimHandler",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+}

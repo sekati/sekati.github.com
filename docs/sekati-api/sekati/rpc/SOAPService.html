@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="SOAPService,sekati.rpc.SOAPService,isServiceLoaded,ws,available,service,initFlexCore,serviceFault,serviceLoad,serviceResult" name="keywords">
+<title>sekati.rpc.SOAPService</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'SOAPService - Sekati API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Sekati API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?sekati/rpc/SOAPService.html&amp;sekati/rpc/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;SOAPService</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class SOAPService"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">sekati.rpc</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class SOAPService</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">SOAPService <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+</table>
+<p></p>
+  SOAPService provides a SOAP WebService client interface.
+  
+  <p><b>WARNING</b>: SOAPService cannot be compiled with the flash IDE as of Flash CS3 due to its dependency
+  on the Flex3 SDK core which is required to be initialized to access <code>mx.rpc.WebService</code>. This 
+  means that compilation must take place either within a Flex Project or (thanks to the <code>initFlexCore</code>
+  work-around in a pure actionscript project with mxmlc (e.g. FlexBuilder or FDT).</p>
+  
+  <p></p>
+<br>
+<span class="label">Example</span>
+<br><div class='listing'><pre>
+   ws = new SOAPService( 'http://archive.sekati.com/swsdk/soap_server.php?wsdl', 'SekatiWebServiceKit' );
+   
+   ws.addEventListener( ServiceEvent.LOAD, loadHandler );
+   ws.addEventListener( ServiceEvent.FAULT, faultHandler );
+   ws.addEventListener( ServiceEvent.RESULT, resultHandler );
+   
+   protected function loadHandler(e : ServiceEvent) : void {
+    trace( "LOAD HANDLER:###:::::%%%%->" + e.type );
+    ws.service.serviceTest( );
+    ws.service.helloWorld( 'jason' );
+    ws.service.doPercent( 15, 500 );
+    ws.service.fakeMethodWillFail( );
+   }  
+   
+   protected function resultHandler(e : ServiceEvent) : void {
+    trace( "RESULT.HANDLER:###:::::%%%%=> [" + e.result + "]" );
+   } 
+   
+   protected function faultHandler(e : ServiceEvent) : void {
+    trace( "FAULT.HANDLER:###:::::%%%%=> [" + e.fault + "]" );
+   }   
+  </pre></div>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../events/ServiceEvent.html" target="">sekati.events.ServiceEvent</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#available">available</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Return the WebService availability status.</div>
+</td><td class="summaryTableOwnerCol">SOAPService</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#service">service</a> : WebService<div class="summaryTableDescription">[read-only]
+   Return the WebService reference for direct RPC calls.</div>
+</td><td class="summaryTableOwnerCol">SOAPService</td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#isServiceLoaded">isServiceLoaded</a> : Boolean = false<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">SOAPService</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ws">ws</a> : WebService<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">SOAPService</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#SOAPService()">SOAPService</a>(wsdl:String, service:String = null, port:String = null)</div>
+<div class="summaryTableDescription">
+   SOAPService Constructor
+   </div>
+</td><td class="summaryTableOwnerCol">SOAPService</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a><a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initFlexCore()">initFlexCore</a>():void</div>
+<div class="summaryTableDescription">
+   <code>mx.rpc.soap.WebService</code> dies when built in a pure ActionScript projects as it requires the Flex core be initialized
+   (as it is in a flex project), therefore we must fake it to use flex bound classes: really lame.</div>
+</td><td class="summaryTableOwnerCol">SOAPService</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#serviceFault()">serviceFault</a>(e:FaultEvent):void</div>
+<div class="summaryTableDescription">
+   Dispatch information about failures.</div>
+</td><td class="summaryTableOwnerCol">SOAPService</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#serviceLoad()">serviceLoad</a>(e:LoadEvent):void</div>
+<div class="summaryTableDescription">
+   Mark the WebService WSDL as loaded and accessible for RPC calls.</div>
+</td><td class="summaryTableOwnerCol">SOAPService</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#serviceResult()">serviceResult</a>(e:ResultEvent):void</div>
+<div class="summaryTableDescription">
+   Dispatch the results of a webservice method call.</div>
+</td><td class="summaryTableOwnerCol">SOAPService</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="available"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">available</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>available:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Return the WebService availability status.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get available():Boolean</code>
+<br>
+</div>
+<a name="isServiceLoaded"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isServiceLoaded</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var isServiceLoaded:Boolean = false</code>
+</div>
+<a name="service"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">service</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>service:WebService</code>&nbsp;&nbsp;[read-only]<p>
+   Return the WebService reference for direct RPC calls.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get service():WebService</code>
+<br>
+</div>
+<a name="ws"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ws</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var ws:WebService</code>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="SOAPService()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SOAPService</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function SOAPService(wsdl:String, service:String = null, port:String = null)</code><p>
+   SOAPService Constructor
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">wsdl</span>:String</code> &mdash;   webservice url
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">service</span>:String</code> (default = <code>null</code>)<code></code> &mdash;  webservice name
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">port</span>:String</code> (default = <code>null</code>)<code></code> &mdash;   webservice port
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="initFlexCore()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initFlexCore</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initFlexCore():void</code><p>
+   <code>mx.rpc.soap.WebService</code> dies when built in a pure ActionScript projects as it requires the Flex core be initialized
+   (as it is in a flex project), therefore we must fake it to use flex bound classes: really lame.
+   </p></div>
+<a name="serviceFault()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">serviceFault</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function serviceFault(e:FaultEvent):void</code><p>
+   Dispatch information about failures.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:FaultEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="serviceLoad()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">serviceLoad</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function serviceLoad(e:LoadEvent):void</code><p>
+   Mark the WebService WSDL as loaded and accessible for RPC calls.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:LoadEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="serviceResult()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">serviceResult</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function serviceResult(e:ResultEvent):void</code><p>
+   Dispatch the results of a webservice method call.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:ResultEvent</code></td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Copyright &copy; 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.</center>
+</div>
+</body>
+</html>
+<!--Copyright © 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.-->

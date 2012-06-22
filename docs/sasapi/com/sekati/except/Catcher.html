@@ -1,0 +1,21 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>com.sekati.except.Catcher - SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><link href="package-summary.html" title="Package com.sekati.except" rel="up"/><link href="../../../com/sekati/except/Exception.html" title="Class com.sekati.except.Exception" rel="prev"/><link href="../../../com/sekati/events/LcBroadcaster.html" title="Class com.sekati.events.LcBroadcaster" rel="next"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><h1>Class com.sekati.except.Catcher</h1><div class="type_hierachy"><ul><li><strong>com.sekati.except.Catcher</strong></li></ul></div><div class="type_description"><h2>Description</h2><p>
+ Generic <a href="../../../com/sekati/except/Exception.html" class="class_name" title="Class com.sekati.except.Exception">Exception</a> catch handler.
+ <pre> Usage:
+ 	<span class="key">function</span> test(isOk:Boolean):Void {
+ 		<span class="key">try</span> {
+ 			<span class="key">throw</span> <span class="key">new</span> Exception(<span class="key">this</span>,<span class="str_const">"An unknown Error has occurred"</span>,arguments);
+ 		} <span class="key">catch</span> (e:Exception) {
+ 			Catcher.handle(e);
+ 		}
+ 	}
+ </pre>
+ </p></div><div class="type_indexes"><div class="method_index"><h2>Method Index</h2><a href="#handle" title="static public function handle(e:Exception):String">handle()</a>, <a href="#toString" title="static public function toString():String">toString()</a></div></div><div class="type_details"><div class="method_detail_list"><h2>Method Detail</h2><div class="method_details alt_row"><a name="handle"></a><h3>handle</h3><code class="method_synopsis">static public function <strong class="method_name">handle</strong>(e:<a href="../../../com/sekati/except/Exception.html" class="class_name" title="Class com.sekati.except.Exception">Exception</a>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ A generic Exception handler that returns string data about the Exception for logging or tracing.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>e</code></td><td>(Exception)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details"><a name="toString"></a><h3>toString</h3><code class="method_synopsis">static public function <strong class="method_name">toString</strong>():<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Simple reflection for Static classes.
+	 </p></div></div></div></div><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.except" class="button">Package</a></li><li><span class="button nav_current">Class</span></li><li><a href="Catcher.as.html" title="Source code of com.sekati.except.Catcher" class="button">Source</a></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

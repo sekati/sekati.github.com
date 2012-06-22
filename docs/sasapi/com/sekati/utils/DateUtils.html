@@ -1,0 +1,86 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>com.sekati.utils.DateUtils - SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><link href="package-summary.html" title="Package com.sekati.utils" rel="up"/><link href="../../../com/sekati/utils/Delegate.html" title="Class com.sekati.utils.Delegate" rel="prev"/><link href="../../../com/sekati/utils/ColorUtils.html" title="Class com.sekati.utils.ColorUtils" rel="next"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><h1>Class com.sekati.utils.DateUtils</h1><div class="type_hierachy"><ul><li><strong>com.sekati.utils.DateUtils</strong></li></ul></div><div class="type_description"><h2>Description</h2><p>
+ Static function for handling dates from db and converting them into readable strings. Note that days & months are 0-indexed.
+ 
+ <pre> Usage:
+ <span class="key">var</span> d = DateUtils.dateFromDB(<span class="str_const">"2006-06-01 12:10:45"</span>);
+ trace(DateUtils.days[d.getDay()] + <span class="str_const">", "</span> + DateUtils.months[d.getMonth()] + <span class="str_const">" "</span> + d.getDate() + <span class="str_const">", "</span> + (d.getHours()%<span class="num_const">12</span>) + <span class="str_const">":"</span> + DateUtils.padTime(d.getMinutes()) + ((d.getHours() &gt; <span class="num_const">12</span>) ? <span class="str_const">"pm"</span> :<span class="str_const">"am"</span>));
+ </pre>
+ </p></div><div class="type_indexes"><div class="field_index"><h2>Field Index</h2><a href="#days" title="static public days:Array">days</a>, <a href="#months" title="static public months:Array">months</a>, <a href="#shortdays" title="static public shortdays:Array">shortdays</a>, <a href="#shortmonths" title="static public shortmonths:Array">shortmonths</a></div><div class="method_index"><h2>Method Index</h2><a href="#dateDiff" title="static public function dateDiff(d1:Date, d2:Date):Number">dateDiff()</a>, <a href="#dateFromDB" title="static public function dateFromDB(dbdate:String):Date">dateFromDB()</a>, <a href="#getDay" title="static public function getDay(n:Number):String">getDay()</a>, <a href="#getHoursAmPm" title="static public function getHoursAmPm(hour24:Number):Object">getHoursAmPm()</a>, <a href="#getMonth" title="static public function getMonth(n:Number):String">getMonth()</a>, <a href="#getShortDay" title="static public function getShortDay(n:Number):String">getShortDay()</a>, <a href="#getShortMonth" title="static public function getShortMonth(n:Number):String">getShortMonth()</a>, <a href="#getTotalDaysInMonth" title="static public function getTotalDaysInMonth(year:Number, month:Number):Number">getTotalDaysInMonth()</a>, <a href="#getTotalDaysInYear" title="static public function getTotalDaysInYear(year:Number):Number">getTotalDaysInYear()</a>, <a href="#isValidAge" title="static public function isValidAge(year:Number, month:Number, day:Number, requiredAge:Number):Boolean">isValidAge()</a>, <a href="#isValidDate" title="static public function isValidDate(year:Number, month:Number, day:Number, mustBeInPast:Boolean):Boolean">isValidDate()</a>, <a href="#padTime" title="static public function padTime(n:Number):String">padTime()</a></div></div><div class="type_details"><div class="field_detail_list"><h2>Field Detail</h2><a name="months"></a><h3>months</h3><div class="field_details"><code class="field_synopsis">static public <strong class="field_name">months</strong>:<span class="unresolved_type_name">Array</span> <em class="read_write_only">[Read Only]</em></code><div class="field_info">
+ Gets 0 indexed array of months for use with Date.getMonth()
+ </div></div><a name="shortmonths"></a><h3>shortmonths</h3><div class="field_details"><code class="field_synopsis">static public <strong class="field_name">shortmonths</strong>:<span class="unresolved_type_name">Array</span> <em class="read_write_only">[Read Only]</em></code><div class="field_info">
+ Gets 0 indexed array of short months for use with Date.getMonth()
+ </div></div><a name="days"></a><h3>days</h3><div class="field_details"><code class="field_synopsis">static public <strong class="field_name">days</strong>:<span class="unresolved_type_name">Array</span> <em class="read_write_only">[Read Only]</em></code><div class="field_info">
+ Gets 0 indexed array of days for use with Date.getDay()
+ </div></div><a name="shortdays"></a><h3>shortdays</h3><div class="field_details"><code class="field_synopsis">static public <strong class="field_name">shortdays</strong>:<span class="unresolved_type_name">Array</span> <em class="read_write_only">[Read Only]</em></code><div class="field_info">
+ Get 0 indexed array of days for use with Date.getDay();
+ </div></div></div><div class="method_detail_list"><h2>Method Detail</h2><div class="method_details alt_row"><a name="getMonth"></a><h3>getMonth</h3><code class="method_synopsis">static public function <strong class="method_name">getMonth</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Get the month name by month number.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+ <pre> Usage:
+ 	trace(DateUtils.getMonth(<span class="num_const">0</span>); <span class="comment">// returns "January"</span>
+ </pre>
+	 </p></div></div><div class="method_details"><a name="getShortMonth"></a><h3>getShortMonth</h3><code class="method_synopsis">static public function <strong class="method_name">getShortMonth</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Get the short month name by month number.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+ <pre> Usage:
+ 	trace(DateUtils.getShortMonth(<span class="num_const">0</span>); <span class="comment">// returns "Jan"</span>
+ </pre>
+	 </p></div></div><div class="method_details alt_row"><a name="getDay"></a><h3>getDay</h3><code class="method_synopsis">static public function <strong class="method_name">getDay</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Get the day name by day number.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+ <pre> Usage:
+ 	trace(DateUtils.getDay(<span class="num_const">0</span>); <span class="comment">// returns "Sunday"</span>
+ </pre>
+	 </p></div></div><div class="method_details"><a name="getShortDay"></a><h3>getShortDay</h3><code class="method_synopsis">static public function <strong class="method_name">getShortDay</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Get the short day name by day number.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+ <pre> Usage:
+ 	trace(DateUtils.getShortDay(<span class="num_const">0</span>); <span class="comment">// returns "Sun"</span>
+ </pre>
+	 </p></div></div><div class="method_details alt_row"><a name="padTime"></a><h3>padTime</h3><code class="method_synopsis">static public function <strong class="method_name">padTime</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">String</span></code><div class="method_info"><p>
+ Pads hours, Minutes or Seconds with a leading 0, 12:01 doesn't end up 12:1
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> String
+	 </p></div></div><div class="method_details"><a name="dateFromDB"></a><h3>dateFromDB</h3><code class="method_synopsis">static public function <strong class="method_name">dateFromDB</strong>(dbdate:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">Date</span></code><div class="method_info"><p>
+ converts a DB formatted date string into a Flash Date Object.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""></table><h4>Return</h4><p class="extra_info"> Date
+	 </p></div></div><div class="method_details alt_row"><a name="getHoursAmPm"></a><h3>getHoursAmPm</h3><code class="method_synopsis">static public function <strong class="method_name">getHoursAmPm</strong>(hour24:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Object</span></code><div class="method_info"><p>
+ Takes 24hr hours and converts to 12 hour with am/pm.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>hour24</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Object
+	 </p></div></div><div class="method_details"><a name="dateDiff"></a><h3>dateDiff</h3><code class="method_synopsis">static public function <strong class="method_name">dateDiff</strong>(d1:<span class="unresolved_type_name">Date</span>, d2:<span class="unresolved_type_name">Date</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Get the differences between two Dates in milliseconds.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>d1</code></td><td>(Date) 
+ </td></tr><tr><td><code>d2</code></td><td>(Date) optional [default: now]
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number - difference between two dates in ms
+	 </p></div></div><div class="method_details alt_row"><a name="isValidAge"></a><h3>isValidAge</h3><code class="method_synopsis">static public function <strong class="method_name">isValidAge</strong>(year:<span class="unresolved_type_name">Number</span>, month:<span class="unresolved_type_name">Number</span>, day:<span class="unresolved_type_name">Number</span>, requiredAge:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Check if birthdate entered meets required age.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>year</code></td><td>(Number)
+ </td></tr><tr><td><code>month</code></td><td>(Number)
+ </td></tr><tr><td><code>day</code></td><td>(Number)
+ </td></tr><tr><td><code>requiredAge</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+	 </p></div></div><div class="method_details"><a name="isValidDate"></a><h3>isValidDate</h3><code class="method_synopsis">static public function <strong class="method_name">isValidDate</strong>(year:<span class="unresolved_type_name">Number</span>, month:<span class="unresolved_type_name">Number</span>, day:<span class="unresolved_type_name">Number</span>, mustBeInPast:<span class="unresolved_type_name">Boolean</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Check if a valid date can be created with inputs.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>year</code></td><td>(Number)
+ </td></tr><tr><td><code>month</code></td><td>(Number)
+ </td></tr><tr><td><code>day</code></td><td>(Number)
+ </td></tr><tr><td><code>mustBeInPast</code></td><td>(Boolean)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+	 </p></div></div><div class="method_details alt_row"><a name="getTotalDaysInMonth"></a><h3>getTotalDaysInMonth</h3><code class="method_synopsis">static public function <strong class="method_name">getTotalDaysInMonth</strong>(year:<span class="unresolved_type_name">Number</span>, month:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Return the number of dates in a specific month.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>year</code></td><td>(Number)
+ </td></tr><tr><td><code>month</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details"><a name="getTotalDaysInYear"></a><h3>getTotalDaysInYear</h3><code class="method_synopsis">static public function <strong class="method_name">getTotalDaysInYear</strong>(year:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Returns the number of days in a specific year.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>year</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div></div></div><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.utils" class="button">Package</a></li><li><span class="button nav_current">Class</span></li><li><a href="DateUtils.as.html" title="Source code of com.sekati.utils.DateUtils" class="button">Source</a></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

@@ -1,0 +1,92 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../index-files";
+//--></script><link href="../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * Generic, auxiliary functions
+<span class="lineno" id="3">     3  </span> *
+<span class="lineno" id="4">     4  </span> * @author		Zeh Fernando
+<span class="lineno" id="5">     5  </span> * @version		1.0.0
+<span class="lineno" id="6">     6  </span> */</span>
+<span class="lineno" id="7">     7  </span>
+<span class="lineno" id="8">     8  </span><span class="key">class</span> caurina.transitions.AuxFunctions {
+<span class="lineno" id="9">     9  </span>
+<span class="lineno" id="10">    10  </span>	<span class="comment doc">/**
+<span class="lineno" id="11">    11  </span>	 * Gets the R (xx0000) bits from a number
+<span class="lineno" id="12">    12  </span>	 *
+<span class="lineno" id="13">    13  </span>	 * @param		p_num				Number		Color number (ie, 0xffff00)
+<span class="lineno" id="14">    14  </span>	 * @return							Number		The R value
+<span class="lineno" id="15">    15  </span>	 */</span>
+<span class="lineno" id="16">    16  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> numberToR(p_num:Number):Number {
+<span class="lineno" id="17">    17  </span>		<span class="comment">// The initial &amp; is meant to crop numbers bigger than 0xffffff</span>
+<span class="lineno" id="18">    18  </span>		<span class="key">return</span> (p_num &amp; 0xff0000) &gt;&gt; <span class="num_const">16</span>;
+<span class="lineno" id="19">    19  </span>	}
+<span class="lineno" id="20">    20  </span>
+<span class="lineno" id="21">    21  </span>	<span class="comment doc">/**
+<span class="lineno" id="22">    22  </span>	 * Gets the G (00xx00) bits from a number
+<span class="lineno" id="23">    23  </span>	 *
+<span class="lineno" id="24">    24  </span>	 * @param		p_num				Number		Color number (ie, 0xffff00)
+<span class="lineno" id="25">    25  </span>	 * @return							Number		The G value
+<span class="lineno" id="26">    26  </span>	 */</span>
+<span class="lineno" id="27">    27  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> numberToG(p_num:Number):Number {
+<span class="lineno" id="28">    28  </span>		<span class="key">return</span> (p_num &amp; 0xff00) &gt;&gt; <span class="num_const">8</span>;
+<span class="lineno" id="29">    29  </span>	}
+<span class="lineno" id="30">    30  </span>
+<span class="lineno" id="31">    31  </span>	<span class="comment doc">/**
+<span class="lineno" id="32">    32  </span>	 * Gets the B (0000xx) bits from a number
+<span class="lineno" id="33">    33  </span>	 *
+<span class="lineno" id="34">    34  </span>	 * @param		p_num				Number		Color number (ie, 0xffff00)
+<span class="lineno" id="35">    35  </span>	 * @return							Number		The B value
+<span class="lineno" id="36">    36  </span>	 */</span>
+<span class="lineno" id="37">    37  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> numberToB(p_num:Number):Number {
+<span class="lineno" id="38">    38  </span>		<span class="key">return</span> (p_num &amp; 0xff);
+<span class="lineno" id="39">    39  </span>	}
+<span class="lineno" id="40">    40  </span>
+<span class="lineno" id="41">    41  </span>	<span class="comment doc">/**
+<span class="lineno" id="42">    42  </span>	 * Checks whether a string is on an array
+<span class="lineno" id="43">    43  </span>	 *
+<span class="lineno" id="44">    44  </span>	 * @param		p_string			String		String to search for
+<span class="lineno" id="45">    45  </span>	 * @param		p_array				Array		Array to be searched
+<span class="lineno" id="46">    46  </span>	 * @return							Boolean		Whether the array contains the string or not
+<span class="lineno" id="47">    47  </span>	 */</span>
+<span class="lineno" id="48">    48  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> isInArray(p_string:String, p_array:Array):Boolean {
+<span class="lineno" id="49">    49  </span>		<span class="key">var</span> l:Number = p_array.length;
+<span class="lineno" id="50">    50  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; l; i++) {
+<span class="lineno" id="51">    51  </span>			<span class="key">if</span> (p_array[i] == p_string) <span class="key">return</span> <span class="key">true</span>;
+<span class="lineno" id="52">    52  </span>		}
+<span class="lineno" id="53">    53  </span>		<span class="key">return</span> <span class="key">false</span>;
+<span class="lineno" id="54">    54  </span>	}
+<span class="lineno" id="55">    55  </span>
+<span class="lineno" id="56">    56  </span>	<span class="comment doc">/**
+<span class="lineno" id="57">    57  </span>	 * Returns the number of properties an object has
+<span class="lineno" id="58">    58  </span>	 *
+<span class="lineno" id="59">    59  </span>	 * @param		p_object			Object		Target object with a number of properties
+<span class="lineno" id="60">    60  </span>	 * @return							Number		Number of total properties the object has
+<span class="lineno" id="61">    61  </span>	 */</span>
+<span class="lineno" id="62">    62  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> getObjectLength(p_object:Object):Number {
+<span class="lineno" id="63">    63  </span>		<span class="key">var</span> totalProperties:Number = <span class="num_const">0</span>;
+<span class="lineno" id="64">    64  </span>		<span class="key">for</span> (<span class="key">var</span> pName:String <span class="key">in</span> p_object) totalProperties ++;
+<span class="lineno" id="65">    65  </span>		<span class="key">return</span> totalProperties;
+<span class="lineno" id="66">    66  </span>	}
+<span class="lineno" id="67">    67  </span>
+<span class="lineno" id="68">    68  </span>	<span class="comment">/* Takes a variable number of objects as parameters and "adds" their properties, from left to right. If a latter object defines a property as null, it will be removed from the final object
+<span class="lineno" id="69">    69  </span>	* @param		args				Object(s)	A variable number of objects
+<span class="lineno" id="70">    70  </span>	* @return							Object		An object with the sum of all paremeters added as properties.
+<span class="lineno" id="71">    71  </span>	*/</span>
+<span class="lineno" id="72">    72  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> concatObjects(<span class="comment">/*objects to concat*/</span>) : Object{
+<span class="lineno" id="73">    73  </span>		<span class="key">var</span> finalObject : Object = {};
+<span class="lineno" id="74">    74  </span>		<span class="key">var</span> currentObject : Object;
+<span class="lineno" id="75">    75  </span>		<span class="key">for</span> (<span class="key">var</span> i : Number = <span class="num_const">0</span>; i &lt; arguments.length; i++){
+<span class="lineno" id="76">    76  </span>			currentObject = arguments[i];
+<span class="lineno" id="77">    77  </span>			<span class="key">for</span> (<span class="key">var</span> prop : String <span class="key">in</span> currentObject){
+<span class="lineno" id="78">    78  </span>				<span class="key">if</span> (currentObject[prop] == <span class="key">null</span>){
+<span class="lineno" id="79">    79  </span>				    <span class="comment">// delete in case is null</span>
+<span class="lineno" id="80">    80  </span>					<span class="key">delete</span> finalObject[prop];
+<span class="lineno" id="81">    81  </span>				}<span class="key">else</span>{
+<span class="lineno" id="82">    82  </span>					finalObject[prop] = currentObject[prop]
+<span class="lineno" id="83">    83  </span>				}
+<span class="lineno" id="84">    84  </span>			}
+<span class="lineno" id="85">    85  </span>		}
+<span class="lineno" id="86">    86  </span>		<span class="key">return</span> finalObject;
+<span class="lineno" id="87">    87  </span>	}
+<span class="lineno" id="88">    88  </span>}
+<span class="lineno" id="89">    89  </span></pre><ul class="main_nav" id="main_nav"><li><a href="../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package caurina.transitions" class="button">Package</a></li><li><a href="AuxFunctions.html" title="Detail of caurina.transitions.AuxFunctions API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

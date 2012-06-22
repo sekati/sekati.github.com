@@ -1,0 +1,40 @@
+strict digraph class_diagram {
+  rankdir=LR;
+  TypeTrigoBase[
+    label="TrigoBase",
+    URL="TrigoBase.html",
+    tooltip="com.sekati.geom.TrigoBase",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeSort[
+    label="Sort",
+    URL="Sort.html",
+    tooltip="com.sekati.geom.Sort",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypePoint3D[
+    label="Point3D",
+    URL="Point3D.html",
+    tooltip="com.sekati.geom.Point3D",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypePoint[
+    label="Point",
+    URL="Point.html",
+    tooltip="com.sekati.geom.Point",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypePoint -> TypePoint3D;
+}

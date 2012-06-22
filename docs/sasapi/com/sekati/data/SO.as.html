@@ -1,0 +1,134 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * com.sekati.data.SO
+<span class="lineno" id="3">     3  </span> * @version 1.1.1
+<span class="lineno" id="4">     4  </span> * @author jason m horwitz | sekati.com
+<span class="lineno" id="5">     5  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="6">     6  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="7">     7  </span> */</span>
+<span class="lineno" id="8">     8  </span>
+<span class="lineno" id="9">     9  </span><span class="key">import</span> com.sekati.core.CoreObject;
+<span class="lineno" id="10">    10  </span><span class="key">import</span> com.sekati.events.Dispatcher;
+<span class="lineno" id="11">    11  </span><span class="key">import</span> com.sekati.events.Event;
+<span class="lineno" id="12">    12  </span><span class="key">import</span> com.sekati.utils.Delegate;
+<span class="lineno" id="13">    13  </span>
+<span class="lineno" id="14">    14  </span><span class="comment doc">/**
+<span class="lineno" id="15">    15  </span> * SharedObject wrapper class.
+<span class="lineno" id="16">    16  </span> */</span>
+<span class="lineno" id="17">    17  </span><span class="key">class</span> com.sekati.data.SO <span class="key">extends</span> CoreObject {
+<span class="lineno" id="18">    18  </span>
+<span class="lineno" id="19">    19  </span>	<span class="key">private</span> <span class="key">var</span> _this:SO;
+<span class="lineno" id="20">    20  </span>	<span class="key">private</span> <span class="key">var</span> _so:SharedObject;
+<span class="lineno" id="21">    21  </span>	<span class="key">private</span> <span class="key">var</span> _name:String;
+<span class="lineno" id="22">    22  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> onSOStatusEVENT:String = <span class="str_const">"onSOStatus"</span>;
+<span class="lineno" id="23">    23  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> onSOSyncEVENT:String = <span class="str_const">"onSOSync"</span>;
+<span class="lineno" id="24">    24  </span>
+<span class="lineno" id="25">    25  </span>	<span class="comment doc">/**
+<span class="lineno" id="26">    26  </span>	 * SO Constructor
+<span class="lineno" id="27">    27  </span>	 * @param so_name (String) shared object name
+<span class="lineno" id="28">    28  </span>	 * @return Void
+<span class="lineno" id="29">    29  </span>	 * @throws Error if no so_name was passed.
+<span class="lineno" id="30">    30  </span>	 */</span>
+<span class="lineno" id="31">    31  </span>	<span class="key">public</span> <span class="key">function</span> SO(so_name:String) {
+<span class="lineno" id="32">    32  </span>		<span class="key">super</span>( );
+<span class="lineno" id="33">    33  </span>		<span class="key">if</span>(!so_name) {
+<span class="lineno" id="34">    34  </span>			<span class="key">throw</span> <span class="key">new</span> Error( <span class="str_const">"@@@ "</span> + <span class="key">this</span>.toString( ) + <span class="str_const">" Error: instance Constructor expects so_name param."</span> );
+<span class="lineno" id="35">    35  </span>			<span class="key">return</span>;	
+<span class="lineno" id="36">    36  </span>		}
+<span class="lineno" id="37">    37  </span>		_name = so_name;
+<span class="lineno" id="38">    38  </span>		_this = <span class="key">this</span>;
+<span class="lineno" id="39">    39  </span>		_so = SharedObject.getLocal( _name );
+<span class="lineno" id="40">    40  </span>		_so.onStatus = Delegate.create( _this, so_onStatus );
+<span class="lineno" id="41">    41  </span>		_so.onSync = Delegate.create( _this, so_onSync );
+<span class="lineno" id="42">    42  </span>	}
+<span class="lineno" id="43">    43  </span>
+<span class="lineno" id="44">    44  </span>	<span class="comment doc">/**
+<span class="lineno" id="45">    45  </span>	 * onStatus event handler dispatches event
+<span class="lineno" id="46">    46  </span>	 * @param info (Object)
+<span class="lineno" id="47">    47  </span>	 * @return Void
+<span class="lineno" id="48">    48  </span>	 */</span>
+<span class="lineno" id="49">    49  </span>	<span class="key">public</span> <span class="key">function</span> so_onStatus(info:Object):Void {
+<span class="lineno" id="50">    50  </span>		trace( <span class="str_const">"status info: "</span> + info );
+<span class="lineno" id="51">    51  </span>		<span class="key">var</span> e:Event = <span class="key">new</span> Event( onSOStatusEVENT, <span class="key">this</span>, {info:info} );
+<span class="lineno" id="52">    52  </span>		Dispatcher.$.dispatchEvent( e );
+<span class="lineno" id="53">    53  </span>	}
+<span class="lineno" id="54">    54  </span>
+<span class="lineno" id="55">    55  </span>	<span class="comment doc">/**
+<span class="lineno" id="56">    56  </span>	 * onSync event handler dispatches event
+<span class="lineno" id="57">    57  </span>	 */</span>
+<span class="lineno" id="58">    58  </span>	<span class="key">public</span> <span class="key">function</span> so_onSync(obj:Object):Void {
+<span class="lineno" id="59">    59  </span>		trace( <span class="str_const">"sync obj: "</span> + obj );
+<span class="lineno" id="60">    60  </span>		<span class="key">var</span> e:Event = <span class="key">new</span> Event( onSOSyncEVENT, <span class="key">this</span>, {obj:obj} );
+<span class="lineno" id="61">    61  </span>		Dispatcher.$.dispatchEvent( e );
+<span class="lineno" id="62">    62  </span>	}
+<span class="lineno" id="63">    63  </span>
+<span class="lineno" id="64">    64  </span>	<span class="comment doc">/**
+<span class="lineno" id="65">    65  </span>	 * write a property value to the shared object
+<span class="lineno" id="66">    66  </span>	 * @param prop (String) property name
+<span class="lineno" id="67">    67  </span>	 * @param val (Object) value to wrote to property
+<span class="lineno" id="68">    68  </span>	 * @return Void
+<span class="lineno" id="69">    69  </span>	 */</span>
+<span class="lineno" id="70">    70  </span>	<span class="key">public</span> <span class="key">function</span> write(prop:String, val:Object):Void {
+<span class="lineno" id="71">    71  </span>		_so.data[prop] = val;
+<span class="lineno" id="72">    72  </span>		_so.flush( );
+<span class="lineno" id="73">    73  </span>	}
+<span class="lineno" id="74">    74  </span>
+<span class="lineno" id="75">    75  </span>	<span class="comment doc">/**
+<span class="lineno" id="76">    76  </span>	 * read a property value from the shared object
+<span class="lineno" id="77">    77  </span>	 * @param prop (String) property to read
+<span class="lineno" id="78">    78  </span>	 * @return Object - property value
+<span class="lineno" id="79">    79  </span>	 */</span>
+<span class="lineno" id="80">    80  </span>	<span class="key">public</span> <span class="key">function</span> read(prop:String):Object {
+<span class="lineno" id="81">    81  </span>		<span class="key">return</span> _so.data[prop];
+<span class="lineno" id="82">    82  </span>	}
+<span class="lineno" id="83">    83  </span>
+<span class="lineno" id="84">    84  </span>	<span class="comment doc">/**
+<span class="lineno" id="85">    85  </span>	 * destroy the shared object
+<span class="lineno" id="86">    86  </span>	 * @return Void
+<span class="lineno" id="87">    87  </span>	 */</span>
+<span class="lineno" id="88">    88  </span>	<span class="key">public</span> <span class="key">function</span> clear():Void {
+<span class="lineno" id="89">    89  </span>		_so.clear( );
+<span class="lineno" id="90">    90  </span>	}
+<span class="lineno" id="91">    91  </span>
+<span class="lineno" id="92">    92  </span>	<span class="comment doc">/**
+<span class="lineno" id="93">    93  </span>	 * get the size of the shared object in bytes.
+<span class="lineno" id="94">    94  </span>	 * @return Number
+<span class="lineno" id="95">    95  </span>	 */</span>
+<span class="lineno" id="96">    96  </span>	<span class="key">public</span> <span class="key">function</span> getSize():Number {
+<span class="lineno" id="97">    97  </span>		<span class="key">return</span> _so.getSize( );
+<span class="lineno" id="98">    98  </span>	}
+<span class="lineno" id="99">    99  </span>
+<span class="lineno" id="100">   100  </span>	<span class="comment doc">/**
+<span class="lineno" id="101">   101  </span>	 * return recursively formatted data of shared object
+<span class="lineno" id="102">   102  </span>	 * @return String
+<span class="lineno" id="103">   103  </span>	 */</span>
+<span class="lineno" id="104">   104  </span>	<span class="key">public</span> <span class="key">function</span> getData():String {
+<span class="lineno" id="105">   105  </span>		<span class="key">var</span> str:String = _name + <span class="str_const">"={\n"</span>;
+<span class="lineno" id="106">   106  </span>		<span class="key">for</span> (<span class="key">var</span> prop <span class="key">in</span> _so.data) {
+<span class="lineno" id="107">   107  </span>			str += prop + <span class="str_const">": "</span> + _so.data[prop] + <span class="str_const">"\n"</span>;
+<span class="lineno" id="108">   108  </span>		}
+<span class="lineno" id="109">   109  </span>		str += <span class="str_const">"};"</span>;
+<span class="lineno" id="110">   110  </span>		<span class="key">return</span> str;
+<span class="lineno" id="111">   111  </span>	}
+<span class="lineno" id="112">   112  </span>
+<span class="lineno" id="113">   113  </span>	<span class="comment doc">/**
+<span class="lineno" id="114">   114  </span>	 * Show FlashPlayer storage System settings.
+<span class="lineno" id="115">   115  </span>	 * @return Void
+<span class="lineno" id="116">   116  </span>	 */</span>
+<span class="lineno" id="117">   117  </span>	<span class="key">public</span> <span class="key">function</span> showSettings():Void {
+<span class="lineno" id="118">   118  </span>		System.showSettings( <span class="num_const">1</span> );	
+<span class="lineno" id="119">   119  </span>	}
+<span class="lineno" id="120">   120  </span>
+<span class="lineno" id="121">   121  </span>	<span class="comment doc">/**
+<span class="lineno" id="122">   122  </span>	 * Destroy sharedObject data and instance
+<span class="lineno" id="123">   123  </span>	 * @return Void
+<span class="lineno" id="124">   124  </span>	 */</span>
+<span class="lineno" id="125">   125  </span>	<span class="key">public</span> <span class="key">function</span> destroy():Void {
+<span class="lineno" id="126">   126  </span>		_so.data = <span class="key">null</span>;
+<span class="lineno" id="127">   127  </span>		_so.flush( );
+<span class="lineno" id="128">   128  </span>		<span class="key">delete</span> <span class="key">this</span>;
+<span class="lineno" id="129">   129  </span>		<span class="key">super</span>.destroy( );
+<span class="lineno" id="130">   130  </span>	}		
+<span class="lineno" id="131">   131  </span>}</pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.data" class="button">Package</a></li><li><a href="SO.html" title="Detail of com.sekati.data.SO API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

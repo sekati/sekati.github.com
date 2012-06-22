@@ -1,0 +1,338 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>caurina.transitions.Equations - SASAPI</title><script src="../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../index-files";
+//--></script><link href="../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../overview-summary.html" title="Overview" rel="top"/><link href="package-summary.html" title="Package caurina.transitions" rel="up"/><link href="../../caurina/transitions/properties/ColorShortcuts.html" title="Class caurina.transitions.properties.ColorShortcuts" rel="prev"/><link href="../../caurina/transitions/AuxFunctions.html" title="Class caurina.transitions.AuxFunctions" rel="next"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><h1>Class caurina.transitions.Equations</h1><div class="type_hierachy"><ul><li><strong>caurina.transitions.Equations</strong></li></ul></div><div class="type_description"></div><div class="type_indexes"><div class="method_index"><h2>Method Index</h2><div><code>new <a href="#Equations" title="public function Equations()">Equations()</a></code></div><a href="#easeInBack" title="static public function easeInBack(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInBack()</a>, <a href="#easeInBounce" title="static public function easeInBounce(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInBounce()</a>, <a href="#easeInCirc" title="static public function easeInCirc(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInCirc()</a>, <a href="#easeInCubic" title="static public function easeInCubic(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInCubic()</a>, <a href="#easeInElastic" title="static public function easeInElastic(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInElastic()</a>, <a href="#easeInExpo" title="static public function easeInExpo(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInExpo()</a>, <a href="#easeInOutBack" title="static public function easeInOutBack(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInOutBack()</a>, <a href="#easeInOutBounce" title="static public function easeInOutBounce(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInOutBounce()</a>, <a href="#easeInOutCirc" title="static public function easeInOutCirc(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInOutCirc()</a>, <a href="#easeInOutCubic" title="static public function easeInOutCubic(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInOutCubic()</a>, <a href="#easeInOutElastic" title="static public function easeInOutElastic(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInOutElastic()</a>, <a href="#easeInOutExpo" title="static public function easeInOutExpo(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInOutExpo()</a>, <a href="#easeInOutQuad" title="static public function easeInOutQuad(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInOutQuad()</a>, <a href="#easeInOutQuart" title="static public function easeInOutQuart(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInOutQuart()</a>, <a href="#easeInOutQuint" title="static public function easeInOutQuint(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInOutQuint()</a>, <a href="#easeInOutSine" title="static public function easeInOutSine(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInOutSine()</a>, <a href="#easeInQuad" title="static public function easeInQuad(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInQuad()</a>, <a href="#easeInQuart" title="static public function easeInQuart(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInQuart()</a>, <a href="#easeInQuint" title="static public function easeInQuint(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInQuint()</a>, <a href="#easeInSine" title="static public function easeInSine(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeInSine()</a>, <a href="#easeNone" title="static public function easeNone(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeNone()</a>, <a href="#easeOutBack" title="static public function easeOutBack(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutBack()</a>, <a href="#easeOutBounce" title="static public function easeOutBounce(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutBounce()</a>, <a href="#easeOutCirc" title="static public function easeOutCirc(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutCirc()</a>, <a href="#easeOutCubic" title="static public function easeOutCubic(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutCubic()</a>, <a href="#easeOutElastic" title="static public function easeOutElastic(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutElastic()</a>, <a href="#easeOutExpo" title="static public function easeOutExpo(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutExpo()</a>, <a href="#easeOutInBack" title="static public function easeOutInBack(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutInBack()</a>, <a href="#easeOutInBounce" title="static public function easeOutInBounce(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutInBounce()</a>, <a href="#easeOutInCirc" title="static public function easeOutInCirc(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutInCirc()</a>, <a href="#easeOutInCubic" title="static public function easeOutInCubic(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutInCubic()</a>, <a href="#easeOutInElastic" title="static public function easeOutInElastic(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutInElastic()</a>, <a href="#easeOutInExpo" title="static public function easeOutInExpo(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutInExpo()</a>, <a href="#easeOutInQuad" title="static public function easeOutInQuad(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutInQuad()</a>, <a href="#easeOutInQuart" title="static public function easeOutInQuart(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutInQuart()</a>, <a href="#easeOutInQuint" title="static public function easeOutInQuint(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutInQuint()</a>, <a href="#easeOutInSine" title="static public function easeOutInSine(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutInSine()</a>, <a href="#easeOutQuad" title="static public function easeOutQuad(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutQuad()</a>, <a href="#easeOutQuart" title="static public function easeOutQuart(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutQuart()</a>, <a href="#easeOutQuint" title="static public function easeOutQuint(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutQuint()</a>, <a href="#easeOutSine" title="static public function easeOutSine(t:Number, b:Number, c:Number, d:Number, p_params:Object):Number">easeOutSine()</a>, <a href="#init" title="static public function init():Void">init()</a></div></div><div class="type_details"><div class="constructor_detail_list"><h2>Constructor Detail</h2><div class="method_details"><a name="Equations"></a><h3>Equations</h3><code class="method_synopsis">public function <strong class="method_name">Equations</strong>()</code><div class="method_info"><p>
+ There's no constructor.
+	 </p></div></div></div><div class="method_detail_list"><h2>Method Detail</h2><div class="method_details alt_row"><a name="init"></a><h3>init</h3><code class="method_synopsis">static public function <strong class="method_name">init</strong>():<span class="void_name">Void</span></code><div class="method_info"><p>
+ Registers all the equations to the Tweener class, so they can be found by the direct string parameters.
+ This method doesn't actually have to be used - equations can always be referenced by their full function
+ names. But "registering" them make them available as their shorthand string names.
+	 </p></div></div><div class="method_details"><a name="easeNone"></a><h3>easeNone</h3><code class="method_synopsis">static public function <strong class="method_name">easeNone</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a simple linear tweening, with no easing
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInQuad"></a><h3>easeInQuad</h3><code class="method_synopsis">static public function <strong class="method_name">easeInQuad</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a quadratic (t^2) easing in: accelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutQuad"></a><h3>easeOutQuad</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutQuad</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a quadratic (t^2) easing out: decelerating to zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInOutQuad"></a><h3>easeInOutQuad</h3><code class="method_synopsis">static public function <strong class="method_name">easeInOutQuad</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a quadratic (t^2) easing in/out: acceleration until halfway, then deceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutInQuad"></a><h3>easeOutInQuad</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutInQuad</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a quadratic (t^2) easing out/in: deceleration until halfway, then acceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInCubic"></a><h3>easeInCubic</h3><code class="method_synopsis">static public function <strong class="method_name">easeInCubic</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a cubic (t^3) easing in: accelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutCubic"></a><h3>easeOutCubic</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutCubic</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a cubic (t^3) easing out: decelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInOutCubic"></a><h3>easeInOutCubic</h3><code class="method_synopsis">static public function <strong class="method_name">easeInOutCubic</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a cubic (t^3) easing in/out: acceleration until halfway, then deceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutInCubic"></a><h3>easeOutInCubic</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutInCubic</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a cubic (t^3) easing out/in: deceleration until halfway, then acceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInQuart"></a><h3>easeInQuart</h3><code class="method_synopsis">static public function <strong class="method_name">easeInQuart</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a quartic (t^4) easing in: accelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutQuart"></a><h3>easeOutQuart</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutQuart</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a quartic (t^4) easing out: decelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInOutQuart"></a><h3>easeInOutQuart</h3><code class="method_synopsis">static public function <strong class="method_name">easeInOutQuart</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a quartic (t^4) easing in/out: acceleration until halfway, then deceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutInQuart"></a><h3>easeOutInQuart</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutInQuart</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a quartic (t^4) easing out/in: deceleration until halfway, then acceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInQuint"></a><h3>easeInQuint</h3><code class="method_synopsis">static public function <strong class="method_name">easeInQuint</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a quintic (t^5) easing in: accelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutQuint"></a><h3>easeOutQuint</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutQuint</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a quintic (t^5) easing out: decelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInOutQuint"></a><h3>easeInOutQuint</h3><code class="method_synopsis">static public function <strong class="method_name">easeInOutQuint</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a quintic (t^5) easing in/out: acceleration until halfway, then deceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutInQuint"></a><h3>easeOutInQuint</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutInQuint</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a quintic (t^5) easing out/in: deceleration until halfway, then acceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInSine"></a><h3>easeInSine</h3><code class="method_synopsis">static public function <strong class="method_name">easeInSine</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a sinusoidal (sin(t)) easing in: accelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutSine"></a><h3>easeOutSine</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutSine</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a sinusoidal (sin(t)) easing out: decelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInOutSine"></a><h3>easeInOutSine</h3><code class="method_synopsis">static public function <strong class="method_name">easeInOutSine</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a sinusoidal (sin(t)) easing in/out: acceleration until halfway, then deceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutInSine"></a><h3>easeOutInSine</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutInSine</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a sinusoidal (sin(t)) easing out/in: deceleration until halfway, then acceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInExpo"></a><h3>easeInExpo</h3><code class="method_synopsis">static public function <strong class="method_name">easeInExpo</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for an exponential (2^t) easing in: accelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutExpo"></a><h3>easeOutExpo</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutExpo</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for an exponential (2^t) easing out: decelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInOutExpo"></a><h3>easeInOutExpo</h3><code class="method_synopsis">static public function <strong class="method_name">easeInOutExpo</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for an exponential (2^t) easing in/out: acceleration until halfway, then deceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutInExpo"></a><h3>easeOutInExpo</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutInExpo</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for an exponential (2^t) easing out/in: deceleration until halfway, then acceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInCirc"></a><h3>easeInCirc</h3><code class="method_synopsis">static public function <strong class="method_name">easeInCirc</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a circular (sqrt(1-t^2)) easing in: accelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutCirc"></a><h3>easeOutCirc</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutCirc</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a circular (sqrt(1-t^2)) easing out: decelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInOutCirc"></a><h3>easeInOutCirc</h3><code class="method_synopsis">static public function <strong class="method_name">easeInOutCirc</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a circular (sqrt(1-t^2)) easing in/out: acceleration until halfway, then deceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutInCirc"></a><h3>easeOutInCirc</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutInCirc</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a circular (sqrt(1-t^2)) easing out/in: deceleration until halfway, then acceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInElastic"></a><h3>easeInElastic</h3><code class="method_synopsis">static public function <strong class="method_name">easeInElastic</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for an elastic (exponentially decaying sine wave) easing in: accelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutElastic"></a><h3>easeOutElastic</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutElastic</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for an elastic (exponentially decaying sine wave) easing out: decelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInOutElastic"></a><h3>easeInOutElastic</h3><code class="method_synopsis">static public function <strong class="method_name">easeInOutElastic</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for an elastic (exponentially decaying sine wave) easing in/out: acceleration until halfway, then deceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutInElastic"></a><h3>easeOutInElastic</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutInElastic</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for an elastic (exponentially decaying sine wave) easing out/in: deceleration until halfway, then acceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInBack"></a><h3>easeInBack</h3><code class="method_synopsis">static public function <strong class="method_name">easeInBack</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a back (overshooting cubic easing: (s+1)*t^3 - s*t^2) easing in: accelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutBack"></a><h3>easeOutBack</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutBack</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a back (overshooting cubic easing: (s+1)*t^3 - s*t^2) easing out: decelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInOutBack"></a><h3>easeInOutBack</h3><code class="method_synopsis">static public function <strong class="method_name">easeInOutBack</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a back (overshooting cubic easing: (s+1)*t^3 - s*t^2) easing in/out: acceleration until halfway, then deceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutInBack"></a><h3>easeOutInBack</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutInBack</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a back (overshooting cubic easing: (s+1)*t^3 - s*t^2) easing out/in: deceleration until halfway, then acceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInBounce"></a><h3>easeInBounce</h3><code class="method_synopsis">static public function <strong class="method_name">easeInBounce</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a bounce (exponentially decaying parabolic bounce) easing in: accelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutBounce"></a><h3>easeOutBounce</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutBounce</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a bounce (exponentially decaying parabolic bounce) easing out: decelerating from zero velocity
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details alt_row"><a name="easeInOutBounce"></a><h3>easeInOutBounce</h3><code class="method_synopsis">static public function <strong class="method_name">easeInOutBounce</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a bounce (exponentially decaying parabolic bounce) easing in/out: acceleration until halfway, then deceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div><div class="method_details"><a name="easeOutInBounce"></a><h3>easeOutInBounce</h3><code class="method_synopsis">static public function <strong class="method_name">easeOutInBounce</strong>(t:<span class="unresolved_type_name">Number</span>, b:<span class="unresolved_type_name">Number</span>, c:<span class="unresolved_type_name">Number</span>, d:<span class="unresolved_type_name">Number</span>, p_params:<span class="unresolved_type_name">Object</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Easing equation function for a bounce (exponentially decaying parabolic bounce) easing out/in: deceleration until halfway, then acceleration
+
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>t</code></td><td>Number		Current time (in frames or seconds)
+ </td></tr><tr><td><code>b</code></td><td>Number		Starting value
+ </td></tr><tr><td><code>c</code></td><td>Number		Change needed in value
+ </td></tr><tr><td><code>d</code></td><td>Number		Expected easing duration (in frames or seconds)
+ </td></tr></table><h4>Return</h4><p class="extra_info">							Number		The correct value
+	 </p></div></div></div></div><ul class="main_nav" id="main_nav"><li><a href="../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package caurina.transitions" class="button">Package</a></li><li><span class="button nav_current">Class</span></li><li><a href="Equations.as.html" title="Source code of caurina.transitions.Equations" class="button">Source</a></li><li><a href="../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

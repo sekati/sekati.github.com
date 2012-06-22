@@ -1,0 +1,231 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../index-files";
+//--></script><link href="../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * The tween list object. Stores all of the properties and information that pertain to individual tweens.
+<span class="lineno" id="3">     3  </span> *
+<span class="lineno" id="4">     4  </span> * @author		Nate Chatellier, Zeh Fernando
+<span class="lineno" id="5">     5  </span> * @version		1.0.4
+<span class="lineno" id="6">     6  </span> */</span>
+<span class="lineno" id="7">     7  </span><span class="key">import</span> caurina.transitions.AuxFunctions;
+<span class="lineno" id="8">     8  </span>
+<span class="lineno" id="9">     9  </span><span class="key">class</span> caurina.transitions.TweenListObj {
+<span class="lineno" id="10">    10  </span>
+<span class="lineno" id="11">    11  </span>	<span class="key">public</span> <span class="key">var</span> scope					:Object;	<span class="comment">// Object affected by this tweening</span>
+<span class="lineno" id="12">    12  </span>	<span class="key">public</span> <span class="key">var</span> properties				:Object;	<span class="comment">// List of properties that are tweened (PropertyInfoObj instances)</span>
+<span class="lineno" id="13">    13  </span>		<span class="comment">// .valueStart					:Number		// Initial value of the property</span>
+<span class="lineno" id="14">    14  </span>		<span class="comment">// .valueComplete				:Number		// The value the property should have when completed</span>
+<span class="lineno" id="15">    15  </span>	<span class="key">public</span> <span class="key">var</span> timeStart				:Number;	<span class="comment">// Time when this tweening should start</span>
+<span class="lineno" id="16">    16  </span>	<span class="key">public</span> <span class="key">var</span> timeComplete				:Number;	<span class="comment">// Time when this tweening should end</span>
+<span class="lineno" id="17">    17  </span>	<span class="key">public</span> <span class="key">var</span> useFrames				:Boolean;	<span class="comment">// Whether or not to use frames instead of time</span>
+<span class="lineno" id="18">    18  </span>	<span class="key">public</span> <span class="key">var</span> transition				:Function;	<span class="comment">// Equation to control the transition animation</span>
+<span class="lineno" id="19">    19  </span>	<span class="key">public</span> <span class="key">var</span> transitionParams			:Object;	<span class="comment">// Additional parameters for the transition</span>
+<span class="lineno" id="20">    20  </span>	<span class="key">public</span> <span class="key">var</span> onStart					:Function;	<span class="comment">// Function to be executed on the object when the tween starts (once)</span>
+<span class="lineno" id="21">    21  </span>	<span class="key">public</span> <span class="key">var</span> onUpdate					:Function;	<span class="comment">// Function to be executed on the object when the tween updates (several times)</span>
+<span class="lineno" id="22">    22  </span>	<span class="key">public</span> <span class="key">var</span> onComplete				:Function;	<span class="comment">// Function to be executed on the object when the tween completes (once)</span>
+<span class="lineno" id="23">    23  </span>	<span class="key">public</span> <span class="key">var</span> onOverwrite				:Function;	<span class="comment">// Function to be executed on the object when the tween is overwritten</span>
+<span class="lineno" id="24">    24  </span>	<span class="key">public</span> <span class="key">var</span> onError  				:Function;	<span class="comment">// Function to be executed if an error is thrown when tweener exectues a callback (onComplete, onUpdate etc)</span>
+<span class="lineno" id="25">    25  </span>	<span class="key">public</span> <span class="key">var</span> onStartParams			:Array;		<span class="comment">// Array of parameters to be passed for the event</span>
+<span class="lineno" id="26">    26  </span>	<span class="key">public</span> <span class="key">var</span> onUpdateParams			:Array;		<span class="comment">// Array of parameters to be passed for the event</span>
+<span class="lineno" id="27">    27  </span>	<span class="key">public</span> <span class="key">var</span> onCompleteParams			:Array;		<span class="comment">// Array of parameters to be passed for the event</span>
+<span class="lineno" id="28">    28  </span>	<span class="key">public</span> <span class="key">var</span> onOverwriteParams		:Array;		<span class="comment">// Array of parameters to be passed for the event</span>
+<span class="lineno" id="29">    29  </span>	<span class="key">public</span> <span class="key">var</span> onStartScope				:Object;	<span class="comment">// Scope in which the event function is ran</span>
+<span class="lineno" id="30">    30  </span>	<span class="key">public</span> <span class="key">var</span> onUpdateScope			:Object;	<span class="comment">// Scope in which the event function is ran</span>
+<span class="lineno" id="31">    31  </span>	<span class="key">public</span> <span class="key">var</span> onCompleteScope			:Object;	<span class="comment">// Scope in which the event function is ran</span>
+<span class="lineno" id="32">    32  </span>	<span class="key">public</span> <span class="key">var</span> onOverwriteScope			:Object;	<span class="comment">// Scope in which the event function is ran</span>
+<span class="lineno" id="33">    33  </span>	<span class="key">public</span> <span class="key">var</span> onErrorScope				:Object;	<span class="comment">// Scope in which the event function is ran</span>
+<span class="lineno" id="34">    34  </span>	<span class="key">public</span> <span class="key">var</span> rounded					:Boolean;	<span class="comment">// Use rounded values when updating</span>
+<span class="lineno" id="35">    35  </span>	<span class="key">public</span> <span class="key">var</span> isPaused					:Boolean;	<span class="comment">// Whether or not this tween is paused</span>
+<span class="lineno" id="36">    36  </span>	<span class="key">public</span> <span class="key">var</span> timePaused				:Number;	<span class="comment">// Time when this tween was paused</span>
+<span class="lineno" id="37">    37  </span>	<span class="key">public</span> <span class="key">var</span> isCaller					:Boolean;	<span class="comment">// Whether or not this tween is a "caller" tween</span>
+<span class="lineno" id="38">    38  </span>	<span class="key">public</span> <span class="key">var</span> count					:Number;	<span class="comment">// Number of times this caller should be called</span>
+<span class="lineno" id="39">    39  </span>	<span class="key">public</span> <span class="key">var</span> timesCalled				:Number;	<span class="comment">// How many times the caller has already been called ("caller" tweens only)</span>
+<span class="lineno" id="40">    40  </span>	<span class="key">public</span> <span class="key">var</span> waitFrames				:Boolean;	<span class="comment">// Whether or not this caller should wait at least one frame for each call execution ("caller" tweens only)</span>
+<span class="lineno" id="41">    41  </span>	<span class="key">public</span> <span class="key">var</span> skipUpdates				:Number;	<span class="comment">// How many updates should be skipped (default = 0; 1 = update-skip-update-skip...)</span>
+<span class="lineno" id="42">    42  </span>	<span class="key">public</span> <span class="key">var</span> updatesSkipped			:Number;	<span class="comment">// How many updates have already been skipped</span>
+<span class="lineno" id="43">    43  </span>	<span class="key">public</span> <span class="key">var</span> hasStarted				:Boolean;	<span class="comment">// Whether or not this tween has already started</span>
+<span class="lineno" id="44">    44  </span>
+<span class="lineno" id="45">    45  </span>	<span class="comment">// ==================================================================================================================================</span>
+<span class="lineno" id="46">    46  </span>	<span class="comment">// CONSTRUCTOR function -------------------------------------------------------------------------------------------------------------</span>
+<span class="lineno" id="47">    47  </span>
+<span class="lineno" id="48">    48  </span>	<span class="comment doc">/**
+<span class="lineno" id="49">    49  </span>	 * Initializes the basic TweenListObj
+<span class="lineno" id="50">    50  </span>	 *
+<span class="lineno" id="51">    51  </span>	 * @param	p_scope				Object		Object affected by this tweening
+<span class="lineno" id="52">    52  </span>	 * @param	p_timeStart			Number		Time when this tweening should start
+<span class="lineno" id="53">    53  </span>	 * @param	p_timeComplete		Number		Time when this tweening should end
+<span class="lineno" id="54">    54  </span>	 * @param	p_useFrames			Boolean		Whether or not to use frames instead of time
+<span class="lineno" id="55">    55  </span>	 * @param	p_transition		Function	Equation to control the transition animation
+<span class="lineno" id="56">    56  </span>	 */</span>
+<span class="lineno" id="57">    57  </span>	<span class="key">function</span> TweenListObj(p_scope:Object, p_timeStart:Number, p_timeComplete:Number, p_useFrames:Boolean, p_transition:Function, p_transitionParams:Object) {
+<span class="lineno" id="58">    58  </span>		scope				=	p_scope;
+<span class="lineno" id="59">    59  </span>		timeStart			=	p_timeStart;
+<span class="lineno" id="60">    60  </span>		timeComplete		=	p_timeComplete;
+<span class="lineno" id="61">    61  </span>		useFrames			=	p_useFrames;
+<span class="lineno" id="62">    62  </span>		transition			=	p_transition;
+<span class="lineno" id="63">    63  </span>		transitionParams	=	p_transitionParams;
+<span class="lineno" id="64">    64  </span>
+<span class="lineno" id="65">    65  </span>		<span class="comment">// Other default information</span>
+<span class="lineno" id="66">    66  </span>		properties		=	<span class="key">new</span> Object();
+<span class="lineno" id="67">    67  </span>		isPaused		=	<span class="key">false</span>;
+<span class="lineno" id="68">    68  </span>		timePaused		=	undefined;
+<span class="lineno" id="69">    69  </span>		isCaller		=	<span class="key">false</span>;
+<span class="lineno" id="70">    70  </span>		updatesSkipped	=	<span class="num_const">0</span>;
+<span class="lineno" id="71">    71  </span>		timesCalled		=	<span class="num_const">0</span>;
+<span class="lineno" id="72">    72  </span>		skipUpdates 	= 	<span class="num_const">0</span>;
+<span class="lineno" id="73">    73  </span>		hasStarted		=	<span class="key">false</span>;
+<span class="lineno" id="74">    74  </span>	}
+<span class="lineno" id="75">    75  </span>
+<span class="lineno" id="76">    76  </span>
+<span class="lineno" id="77">    77  </span>	<span class="comment">// ==================================================================================================================================</span>
+<span class="lineno" id="78">    78  </span>	<span class="comment">// OTHER functions ------------------------------------------------------------------------------------------------------------------</span>
+<span class="lineno" id="79">    79  </span>
+<span class="lineno" id="80">    80  </span>	<span class="comment doc">/**
+<span class="lineno" id="81">    81  </span>	 * Clones this tweening and returns the new TweenListObj
+<span class="lineno" id="82">    82  </span>	 *
+<span class="lineno" id="83">    83  </span>	 * @param	omitEvents		Boolean			Whether or not events such as onStart (and its parameters) should be omitted
+<span class="lineno" id="84">    84  </span>	 * @return 					TweenListObj	A copy of this object
+<span class="lineno" id="85">    85  </span>	 */</span>
+<span class="lineno" id="86">    86  </span>	<span class="key">public</span> <span class="key">function</span> clone(omitEvents:Boolean):TweenListObj {
+<span class="lineno" id="87">    87  </span>		<span class="key">var</span> nTween:TweenListObj = <span class="key">new</span> TweenListObj(scope, timeStart, timeComplete, useFrames, transition, transitionParams);
+<span class="lineno" id="88">    88  </span>		nTween.properties = <span class="key">new</span> Object();
+<span class="lineno" id="89">    89  </span>		<span class="key">for</span> (<span class="key">var</span> pName:String <span class="key">in</span> properties) {
+<span class="lineno" id="90">    90  </span>			nTween.properties[pName] = properties[pName].clone();
+<span class="lineno" id="91">    91  </span>		}
+<span class="lineno" id="92">    92  </span>		nTween.skipUpdates = skipUpdates;
+<span class="lineno" id="93">    93  </span>		nTween.updatesSkipped = updatesSkipped;
+<span class="lineno" id="94">    94  </span>		<span class="key">if</span> (!omitEvents) {
+<span class="lineno" id="95">    95  </span>			nTween.onStart = onStart;
+<span class="lineno" id="96">    96  </span>			nTween.onUpdate = onUpdate;
+<span class="lineno" id="97">    97  </span>			nTween.onComplete = onComplete;
+<span class="lineno" id="98">    98  </span>			nTween.onOverwrite = onOverwrite;
+<span class="lineno" id="99">    99  </span>			nTween.onError = onError;
+<span class="lineno" id="100">   100  </span>			nTween.onStartParams = onStartParams;
+<span class="lineno" id="101">   101  </span>			nTween.onUpdateParams = onUpdateParams;
+<span class="lineno" id="102">   102  </span>			nTween.onCompleteParams = onCompleteParams;
+<span class="lineno" id="103">   103  </span>			nTween.onOverwriteParams = onOverwriteParams;
+<span class="lineno" id="104">   104  </span>			nTween.onStartScope = onStartScope;
+<span class="lineno" id="105">   105  </span>			nTween.onUpdateScope = onUpdateScope;
+<span class="lineno" id="106">   106  </span>			nTween.onCompleteScope = onCompleteScope;
+<span class="lineno" id="107">   107  </span>			nTween.onOverwriteScope = onOverwriteScope;
+<span class="lineno" id="108">   108  </span>			nTween.onErrorScope = onErrorScope;
+<span class="lineno" id="109">   109  </span>		}
+<span class="lineno" id="110">   110  </span>		nTween.rounded = rounded;
+<span class="lineno" id="111">   111  </span>		nTween.isPaused = isPaused;
+<span class="lineno" id="112">   112  </span>		nTween.timePaused = timePaused;
+<span class="lineno" id="113">   113  </span>		nTween.isCaller = isCaller;
+<span class="lineno" id="114">   114  </span>		nTween.count = count;
+<span class="lineno" id="115">   115  </span>		nTween.timesCalled = timesCalled;
+<span class="lineno" id="116">   116  </span>		nTween.waitFrames = waitFrames;
+<span class="lineno" id="117">   117  </span>		nTween.hasStarted = hasStarted;
+<span class="lineno" id="118">   118  </span>
+<span class="lineno" id="119">   119  </span>		<span class="key">return</span> nTween;
+<span class="lineno" id="120">   120  </span>	}
+<span class="lineno" id="121">   121  </span>
+<span class="lineno" id="122">   122  </span>	<span class="comment doc">/**
+<span class="lineno" id="123">   123  </span>	 * Returns this object described as a String.
+<span class="lineno" id="124">   124  </span>	 *
+<span class="lineno" id="125">   125  </span>	 * @return 					String		The description of this object.
+<span class="lineno" id="126">   126  </span>	 */</span>
+<span class="lineno" id="127">   127  </span>	<span class="key">public</span> <span class="key">function</span> toString():String {
+<span class="lineno" id="128">   128  </span>		<span class="key">var</span> returnStr:String = <span class="str_const">"\n[TweenListObj "</span>;
+<span class="lineno" id="129">   129  </span>		returnStr += <span class="str_const">"scope:"</span> + String(scope);
+<span class="lineno" id="130">   130  </span>		returnStr += <span class="str_const">", properties:"</span>;
+<span class="lineno" id="131">   131  </span>		<span class="key">var</span> isFirst:Boolean = <span class="key">true</span>;
+<span class="lineno" id="132">   132  </span>		<span class="key">for</span> (<span class="key">var</span> i:String <span class="key">in</span> properties) {
+<span class="lineno" id="133">   133  </span>			<span class="key">if</span> (!isFirst) returnStr += <span class="str_const">","</span>;
+<span class="lineno" id="134">   134  </span>			returnStr += <span class="str_const">"[name:"</span>+properties[i].name;
+<span class="lineno" id="135">   135  </span>			returnStr += <span class="str_const">",valueStart:"</span>+properties[i].valueStart;
+<span class="lineno" id="136">   136  </span>			returnStr += <span class="str_const">",valueComplete:"</span>+properties[i].valueComplete;
+<span class="lineno" id="137">   137  </span>			returnStr += <span class="str_const">"]"</span>;
+<span class="lineno" id="138">   138  </span>			isFirst = <span class="key">false</span>;
+<span class="lineno" id="139">   139  </span>		}
+<span class="lineno" id="140">   140  </span>		returnStr += <span class="str_const">", timeStart:"</span> + String(timeStart);
+<span class="lineno" id="141">   141  </span>		returnStr += <span class="str_const">", timeComplete:"</span> + String(timeComplete);
+<span class="lineno" id="142">   142  </span>		returnStr += <span class="str_const">", useFrames:"</span> + String(useFrames);
+<span class="lineno" id="143">   143  </span>		returnStr += <span class="str_const">", transition:"</span> + String(transition);
+<span class="lineno" id="144">   144  </span>		returnStr += <span class="str_const">", transitionParams:"</span> + String(transitionParams);
+<span class="lineno" id="145">   145  </span>
+<span class="lineno" id="146">   146  </span>		<span class="key">if</span> (skipUpdates)		returnStr += <span class="str_const">", skipUpdates:"</span>		+ String(skipUpdates);
+<span class="lineno" id="147">   147  </span>		<span class="key">if</span> (updatesSkipped)		returnStr += <span class="str_const">", updatesSkipped:"</span>	+ String(updatesSkipped);
+<span class="lineno" id="148">   148  </span>
+<span class="lineno" id="149">   149  </span>		<span class="key">if</span> (onStart)			returnStr += <span class="str_const">", onStart:"</span>			+ String(onStart);
+<span class="lineno" id="150">   150  </span>		<span class="key">if</span> (onUpdate)			returnStr += <span class="str_const">", onUpdate:"</span>			+ String(onUpdate);
+<span class="lineno" id="151">   151  </span>		<span class="key">if</span> (onComplete)			returnStr += <span class="str_const">", onComplete:"</span>		+ String(onComplete);
+<span class="lineno" id="152">   152  </span>		<span class="key">if</span> (onOverwrite)		returnStr += <span class="str_const">", onOverwrite:"</span>		+ String(onOverwrite);
+<span class="lineno" id="153">   153  </span>		<span class="key">if</span> (onError)		    returnStr += <span class="str_const">", onError:"</span>		    + String(onError);
+<span class="lineno" id="154">   154  </span>
+<span class="lineno" id="155">   155  </span>		<span class="key">if</span> (onStartParams)		returnStr += <span class="str_const">", onStartParams:"</span>		+ String(onStartParams);
+<span class="lineno" id="156">   156  </span>		<span class="key">if</span> (onUpdateParams)		returnStr += <span class="str_const">", onUpdateParams:"</span>	+ String(onUpdateParams);
+<span class="lineno" id="157">   157  </span>		<span class="key">if</span> (onCompleteParams)	returnStr += <span class="str_const">", onCompleteParams:"</span>	+ String(onCompleteParams);
+<span class="lineno" id="158">   158  </span>		<span class="key">if</span> (onOverwriteParams)	returnStr += <span class="str_const">", onOverwriteParams:"</span>	+ String(onOverwriteParams);
+<span class="lineno" id="159">   159  </span>
+<span class="lineno" id="160">   160  </span>		<span class="key">if</span> (onStartScope)		returnStr += <span class="str_const">", onStartScope:"</span>		+ String(onStartScope);
+<span class="lineno" id="161">   161  </span>		<span class="key">if</span> (onUpdateScope)		returnStr += <span class="str_const">", onUpdateScope:"</span>		+ String(onUpdateScope);
+<span class="lineno" id="162">   162  </span>		<span class="key">if</span> (onCompleteScope)	returnStr += <span class="str_const">", onCompleteScope:"</span>	+ String(onCompleteScope);
+<span class="lineno" id="163">   163  </span>		<span class="key">if</span> (onOverwriteScope)	returnStr += <span class="str_const">", onOverwriteScope:"</span>	+ String(onOverwriteScope);
+<span class="lineno" id="164">   164  </span>		<span class="key">if</span> (onErrorScope)		returnStr += <span class="str_const">", onErrorScope:"</span>		+ String(onErrorScope);
+<span class="lineno" id="165">   165  </span>
+<span class="lineno" id="166">   166  </span>		<span class="key">if</span> (rounded)			returnStr += <span class="str_const">", rounded:"</span>			+ String(rounded);
+<span class="lineno" id="167">   167  </span>		<span class="key">if</span> (isPaused)			returnStr += <span class="str_const">", isPaused:"</span>			+ String(isPaused);
+<span class="lineno" id="168">   168  </span>		<span class="key">if</span> (timePaused)			returnStr += <span class="str_const">", timePaused:"</span>		+ String(timePaused);
+<span class="lineno" id="169">   169  </span>		<span class="key">if</span> (isCaller)			returnStr += <span class="str_const">", isCaller:"</span>			+ String(isCaller);
+<span class="lineno" id="170">   170  </span>		<span class="key">if</span> (count)				returnStr += <span class="str_const">", count:"</span>				+ String(count);
+<span class="lineno" id="171">   171  </span>		<span class="key">if</span> (timesCalled)		returnStr += <span class="str_const">", timesCalled:"</span>		+ String(timesCalled);
+<span class="lineno" id="172">   172  </span>		<span class="key">if</span> (waitFrames)			returnStr += <span class="str_const">", waitFrames:"</span>		+ String(waitFrames);
+<span class="lineno" id="173">   173  </span>		<span class="key">if</span> (hasStarted)			returnStr += <span class="str_const">", hasStarted:"</span>		+ String(hasStarted);
+<span class="lineno" id="174">   174  </span>		
+<span class="lineno" id="175">   175  </span>		returnStr += <span class="str_const">"]\n"</span>;
+<span class="lineno" id="176">   176  </span>		<span class="key">return</span> returnStr;
+<span class="lineno" id="177">   177  </span>	}
+<span class="lineno" id="178">   178  </span>	
+<span class="lineno" id="179">   179  </span>	<span class="comment doc">/**
+<span class="lineno" id="180">   180  </span>	 * Checks if p_obj "inherits" properties from other objects, as set by the "base" property. Will create a new object, leaving others intact.
+<span class="lineno" id="181">   181  </span>	 * o_bj.base can be an object or an array of objects. Properties are collected from the first to the last element of the "base" filed, with higher
+<span class="lineno" id="182">   182  </span>	 * indexes overwritting smaller ones. Does not modify any of the passed objects, but makes a shallow copy of all properties.
+<span class="lineno" id="183">   183  </span>	 *
+<span class="lineno" id="184">   184  </span>	 * @param		p_obj		Object				Object that should be tweened: a movieclip, textfield, etc.. OR an array of objects
+<span class="lineno" id="185">   185  </span>	 * @return					Object				A new object with all properties from the p_obj and p_obj.base.
+<span class="lineno" id="186">   186  </span>	 */</span>
+<span class="lineno" id="187">   187  </span>
+<span class="lineno" id="188">   188  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> makePropertiesChain(p_obj : Object) : Object{
+<span class="lineno" id="189">   189  </span>		<span class="comment">// Is this object inheriting properties from another object?</span>
+<span class="lineno" id="190">   190  </span>		<span class="key">var</span> baseObject : Object = p_obj.base;
+<span class="lineno" id="191">   191  </span>		<span class="key">if</span>(baseObject){
+<span class="lineno" id="192">   192  </span>			<span class="comment">// object inherits. Are we inheriting from an object or an array</span>
+<span class="lineno" id="193">   193  </span>			<span class="key">var</span> chainedObject : Object = {};
+<span class="lineno" id="194">   194  </span>			<span class="key">var</span> chain : Object;
+<span class="lineno" id="195">   195  </span>			<span class="key">if</span> (baseObject <span class="key">instanceof</span> Array){
+<span class="lineno" id="196">   196  </span>				<span class="comment">// Inheritance chain is the base array</span>
+<span class="lineno" id="197">   197  </span>				chain = [];
+<span class="lineno" id="198">   198  </span>				<span class="comment">// make a shallow copy</span>
+<span class="lineno" id="199">   199  </span>				<span class="key">for</span> (<span class="key">var</span> k : Number = <span class="num_const">0</span> ; k&lt; baseObject.length; k++) chain.push(baseObject[k]);
+<span class="lineno" id="200">   200  </span>			}<span class="key">else</span>{
+<span class="lineno" id="201">   201  </span>				<span class="comment">// Only one object to be added to the array</span>
+<span class="lineno" id="202">   202  </span>				chain = [baseObject];
+<span class="lineno" id="203">   203  </span>			}
+<span class="lineno" id="204">   204  </span>			<span class="comment">// add the final object to the array, so it's properties are added last</span>
+<span class="lineno" id="205">   205  </span>			chain.push(p_obj);
+<span class="lineno" id="206">   206  </span>			<span class="key">var</span> currChainObj : Object;
+<span class="lineno" id="207">   207  </span>			<span class="comment">// Loops through each object adding it's property to the final object</span>
+<span class="lineno" id="208">   208  </span>			<span class="key">var</span> len : Number = chain.length;
+<span class="lineno" id="209">   209  </span>			<span class="key">for</span>(<span class="key">var</span> i : Number = <span class="num_const">0</span>; i &lt; len ; i ++){
+<span class="lineno" id="210">   210  </span>				<span class="key">if</span>(chain[i][<span class="str_const">"base"</span>]){
+<span class="lineno" id="211">   211  </span>					<span class="comment">// deal with recursion: watch the order! "parent" base must be concatenated first!</span>
+<span class="lineno" id="212">   212  </span>					currChainObj = AuxFunctions.concatObjects( makePropertiesChain(chain[i][<span class="str_const">"base"</span>] ), chain[i]);
+<span class="lineno" id="213">   213  </span>				}<span class="key">else</span>{
+<span class="lineno" id="214">   214  </span>					currChainObj = chain[i] ;
+<span class="lineno" id="215">   215  </span>				}
+<span class="lineno" id="216">   216  </span>				chainedObject = AuxFunctions.concatObjects(chainedObject, currChainObj );
+<span class="lineno" id="217">   217  </span>			}
+<span class="lineno" id="218">   218  </span>			<span class="key">if</span>( chainedObject[<span class="str_const">"base"</span>]){
+<span class="lineno" id="219">   219  </span>			    <span class="key">delete</span> chainedObject[<span class="str_const">"base"</span>];
+<span class="lineno" id="220">   220  </span>			}
+<span class="lineno" id="221">   221  </span>			<span class="key">return</span> chainedObject;
+<span class="lineno" id="222">   222  </span>		}<span class="key">else</span>{
+<span class="lineno" id="223">   223  </span>			<span class="comment">// No inheritance, just return the object it self</span>
+<span class="lineno" id="224">   224  </span>			<span class="key">return</span> p_obj;
+<span class="lineno" id="225">   225  </span>		}
+<span class="lineno" id="226">   226  </span>	}
+<span class="lineno" id="227">   227  </span>}
+<span class="lineno" id="228">   228  </span></pre><ul class="main_nav" id="main_nav"><li><a href="../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package caurina.transitions" class="button">Package</a></li><li><a href="TweenListObj.html" title="Detail of caurina.transitions.TweenListObj API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

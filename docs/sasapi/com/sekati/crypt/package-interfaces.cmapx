@@ -1,0 +1,4 @@
+<map id="interface_diagram" name="interface_diagram">
+<area shape="rect" href="IHash.html" title="com.sekati.crypt.IHash" alt="" coords="8,80,80,128" />
+<area shape="rect" href="ICipher.html" title="com.sekati.crypt.ICipher" alt="" coords="8,8,80,56" />
+</map>

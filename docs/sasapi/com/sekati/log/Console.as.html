@@ -1,0 +1,346 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * com.sekati.log.Console
+<span class="lineno" id="3">     3  </span> * @version 1.3.1
+<span class="lineno" id="4">     4  </span> * @author jason m horwitz | sekati.com
+<span class="lineno" id="5">     5  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="6">     6  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="7">     7  </span> */</span>
+<span class="lineno" id="8">     8  </span>
+<span class="lineno" id="9">     9  </span><span class="key">import</span> com.sekati.display.StageDisplay;
+<span class="lineno" id="10">    10  </span><span class="key">import</span> com.sekati.events.Dispatcher;
+<span class="lineno" id="11">    11  </span><span class="key">import</span> com.sekati.events.Event;
+<span class="lineno" id="12">    12  </span><span class="key">import</span> com.sekati.log.ConsoleFPSMonitor;
+<span class="lineno" id="13">    13  </span><span class="key">import</span> com.sekati.log.ConsoleItem;
+<span class="lineno" id="14">    14  </span><span class="key">import</span> com.sekati.log.ConsoleStyle;
+<span class="lineno" id="15">    15  </span><span class="key">import</span> com.sekati.log.LCBinding;
+<span class="lineno" id="16">    16  </span><span class="key">import</span> com.sekati.log.LogEvent;
+<span class="lineno" id="17">    17  </span><span class="key">import</span> com.sekati.math.MathBase;
+<span class="lineno" id="18">    18  </span><span class="key">import</span> com.sekati.ui.ContextualMenu;
+<span class="lineno" id="19">    19  </span><span class="key">import</span> com.sekati.ui.Scroll;
+<span class="lineno" id="20">    20  </span><span class="key">import</span> com.sekati.utils.ClassUtils; 
+<span class="lineno" id="21">    21  </span><span class="key">import</span> com.sekati.utils.Delegate;
+<span class="lineno" id="22">    22  </span>
+<span class="lineno" id="23">    23  </span><span class="comment doc">/**
+<span class="lineno" id="24">    24  </span> * UI Console for attaching or connecting too
+<span class="lineno" id="25">    25  </span> */</span>
+<span class="lineno" id="26">    26  </span><span class="key">class</span> com.sekati.log.Console {
+<span class="lineno" id="27">    27  </span>
+<span class="lineno" id="28">    28  </span>	<span class="comment">// core console props</span>
+<span class="lineno" id="29">    29  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _instance:Console;
+<span class="lineno" id="30">    30  </span>	<span class="key">private</span> <span class="key">var</span> _this:Console;
+<span class="lineno" id="31">    31  </span>	<span class="key">private</span> <span class="key">var</span> _cs:ConsoleStyle;
+<span class="lineno" id="32">    32  </span>	<span class="key">private</span> <span class="key">var</span> _style:Object;
+<span class="lineno" id="33">    33  </span>	<span class="comment">// ui props</span>
+<span class="lineno" id="34">    34  </span>	<span class="key">private</span> <span class="key">var</span> _console:MovieClip;
+<span class="lineno" id="35">    35  </span>	<span class="key">private</span> <span class="key">var</span> _bg:MovieClip;
+<span class="lineno" id="36">    36  </span>	<span class="key">private</span> <span class="key">var</span> _head:MovieClip;
+<span class="lineno" id="37">    37  </span>	<span class="key">private</span> <span class="key">var</span> _headBg:MovieClip;
+<span class="lineno" id="38">    38  </span>	<span class="key">private</span> <span class="key">var</span> _headTf:TextField;
+<span class="lineno" id="39">    39  </span>	<span class="key">private</span> <span class="key">var</span> _fps:MovieClip;
+<span class="lineno" id="40">    40  </span>	<span class="key">private</span> <span class="key">var</span> _holder:MovieClip;
+<span class="lineno" id="41">    41  </span>	<span class="key">private</span> <span class="key">var</span> _list:MovieClip;
+<span class="lineno" id="42">    42  </span>	<span class="key">private</span> <span class="key">var</span> _mask:MovieClip;
+<span class="lineno" id="43">    43  </span>	<span class="key">private</span> <span class="key">var</span> _scroll:Scroll;
+<span class="lineno" id="44">    44  </span>	<span class="key">private</span> <span class="key">var</span> _cmenu:ContextualMenu;
+<span class="lineno" id="45">    45  </span>	<span class="key">private</span> <span class="key">var</span> _gutter:MovieClip;
+<span class="lineno" id="46">    46  </span>	<span class="key">private</span> <span class="key">var</span> _bar:MovieClip;
+<span class="lineno" id="47">    47  </span>	<span class="key">private</span> <span class="key">var</span> _resizer:MovieClip;
+<span class="lineno" id="48">    48  </span>	<span class="key">private</span> <span class="key">var</span> _metaItem:MovieClip;
+<span class="lineno" id="49">    49  </span>	<span class="comment">// manager props</span>
+<span class="lineno" id="50">    50  </span>	<span class="key">private</span> <span class="key">var</span> _isEnabled:Boolean;
+<span class="lineno" id="51">    51  </span>	<span class="key">private</span> <span class="key">var</span> _logItems:Array;
+<span class="lineno" id="52">    52  </span>	<span class="key">private</span> <span class="key">var</span> _logIndex:Number;
+<span class="lineno" id="53">    53  </span>	<span class="key">private</span> <span class="key">var</span> _items:Array;
+<span class="lineno" id="54">    54  </span>
+<span class="lineno" id="55">    55  </span>	<span class="comment doc">/**
+<span class="lineno" id="56">    56  </span>	 * Singleton Private Constructor
+<span class="lineno" id="57">    57  </span>	 */</span>
+<span class="lineno" id="58">    58  </span>	<span class="key">private</span> <span class="key">function</span> Console() {
+<span class="lineno" id="59">    59  </span>		_this = <span class="key">this</span>;
+<span class="lineno" id="60">    60  </span>		_isEnabled = <span class="key">true</span>;
+<span class="lineno" id="61">    61  </span>		_items = <span class="key">new</span> Array( );
+<span class="lineno" id="62">    62  </span>		_cs = ConsoleStyle.getInstance( );
+<span class="lineno" id="63">    63  </span>		_style = _cs.CSS;
+<span class="lineno" id="64">    64  </span>		Dispatcher.$.addEventListener( LogEvent.onLogEVENT, Delegate.create( _this, onLogEvent ) );
+<span class="lineno" id="65">    65  </span>		Dispatcher.$.addEventListener( StageDisplay.onStageResizeEVENT, Delegate.create( _this, onStageResize ) );
+<span class="lineno" id="66">    66  </span>		LCBinding.connect( Delegate.create( _this, addItem ) );
+<span class="lineno" id="67">    67  </span>		createUI( );
+<span class="lineno" id="68">    68  </span>	}
+<span class="lineno" id="69">    69  </span>
+<span class="lineno" id="70">    70  </span>	<span class="comment doc">/**
+<span class="lineno" id="71">    71  </span>	 * Singleton Accessor
+<span class="lineno" id="72">    72  </span>	 * @return Console
+<span class="lineno" id="73">    73  </span>	 */</span>	
+<span class="lineno" id="74">    74  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> getInstance():Console {
+<span class="lineno" id="75">    75  </span>		<span class="key">if</span> (!_instance) _instance = <span class="key">new</span> Console( );
+<span class="lineno" id="76">    76  </span>		<span class="key">return</span> _instance;
+<span class="lineno" id="77">    77  </span>	}
+<span class="lineno" id="78">    78  </span>
+<span class="lineno" id="79">    79  </span>	<span class="comment doc">/**
+<span class="lineno" id="80">    80  </span>	 * shorthand singleton accessor getter
+<span class="lineno" id="81">    81  </span>	 */</span>
+<span class="lineno" id="82">    82  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> get $():Console {
+<span class="lineno" id="83">    83  </span>		<span class="key">return</span> Console.getInstance( );	
+<span class="lineno" id="84">    84  </span>	}
+<span class="lineno" id="85">    85  </span>
+<span class="lineno" id="86">    86  </span>	<span class="comment doc">/**
+<span class="lineno" id="87">    87  </span>	 * Create the core Console UI
+<span class="lineno" id="88">    88  </span>	 */</span>
+<span class="lineno" id="89">    89  </span>	<span class="key">private</span> <span class="key">function</span> createUI():Void {
+<span class="lineno" id="90">    90  </span>		_console = _cs.createClip( _level0, _style.console );
+<span class="lineno" id="91">    91  </span>		_console._x = _style.console.x;
+<span class="lineno" id="92">    92  </span>		_console._y = _style.console.y;
+<span class="lineno" id="93">    93  </span>		<span class="comment">//_console._quality = "LOW";</span>
+<span class="lineno" id="94">    94  </span>		_bg = _cs.createStyledRectangle( _console, _style.console.bg );
+<span class="lineno" id="95">    95  </span>		
+<span class="lineno" id="96">    96  </span>		_head = _cs.createClip( _console, _style.console.head );
+<span class="lineno" id="97">    97  </span>		_headBg = _cs.createStyledRectangle( _head, _style.console.head.bg );
+<span class="lineno" id="98">    98  </span>		_headTf = _cs.createStyledTextField( _head, _style.console.head.textfields.head );
+<span class="lineno" id="99">    99  </span>		
+<span class="lineno" id="100">   100  </span>		<span class="comment">// create ConsoleFPSMonitor</span>
+<span class="lineno" id="101">   101  </span>		_fps = ClassUtils.createEmptyMovieClip( com.sekati.log.ConsoleFPSMonitor, _head, _style.console.head.fps.n, {_x:_style.console.head.fps.x, _y:_style.console.head.fps.y} );		
+<span class="lineno" id="102">   102  </span>		
+<span class="lineno" id="103">   103  </span>		<span class="comment">// create core ui clip holders</span>
+<span class="lineno" id="104">   104  </span>		_holder = _cs.createPositionClip( _console, _style.console.holder );
+<span class="lineno" id="105">   105  </span>		_list = _cs.createPositionClip( _holder, _style.console.holder.list );
+<span class="lineno" id="106">   106  </span>		
+<span class="lineno" id="107">   107  </span>		<span class="comment">// create core ui clip shapes</span>
+<span class="lineno" id="108">   108  </span>		_mask = _cs.createStyledRectangle( _holder, _style.console.holder.mask );
+<span class="lineno" id="109">   109  </span>		_gutter = _cs.createStyledRectangle( _holder, _style.console.holder.gutter );
+<span class="lineno" id="110">   110  </span>		_gutter.cacheAsBitmap = <span class="key">true</span>;
+<span class="lineno" id="111">   111  </span>		_bar = _cs.createStyledRectangle( _holder, _style.console.holder.bar );
+<span class="lineno" id="112">   112  </span>		_bar.cacheAsBitmap = <span class="key">true</span>;
+<span class="lineno" id="113">   113  </span>		_bar._visible = <span class="key">false</span>;
+<span class="lineno" id="114">   114  </span>		
+<span class="lineno" id="115">   115  </span>		<span class="comment">// create resizer</span>
+<span class="lineno" id="116">   116  </span>		_resizer = _cs.createStyledTriangle( _console, _style.console.resizer );
+<span class="lineno" id="117">   117  </span>	
+<span class="lineno" id="118">   118  </span>		<span class="comment">// create the meta item</span>
+<span class="lineno" id="119">   119  </span>		_metaItem = ClassUtils.createEmptyMovieClip( com.sekati.log.ConsoleItem, _list, <span class="str_const">"metaItem"</span>, {_x:<span class="num_const">0</span>, _y:<span class="num_const">0</span>, _data:{_isMeta:<span class="key">true</span>}} );
+<span class="lineno" id="120">   120  </span>		_items.push( _metaItem );	
+<span class="lineno" id="121">   121  </span>	
+<span class="lineno" id="122">   122  </span>		<span class="comment">// set masking &amp; initialize _scroll</span>
+<span class="lineno" id="123">   123  </span>		_list.setMask( _mask );
+<span class="lineno" id="124">   124  </span>		_scroll = <span class="key">new</span> Scroll( <span class="str_const">"_y"</span>, _list, _mask, _gutter, _bar, <span class="key">true</span>, <span class="key">true</span>, <span class="key">true</span>, <span class="key">true</span>, _list );
+<span class="lineno" id="125">   125  </span>		
+<span class="lineno" id="126">   126  </span>		<span class="comment">// initialize contextMenu</span>
+<span class="lineno" id="127">   127  </span>		_cmenu = <span class="key">new</span> ContextualMenu( _console );
+<span class="lineno" id="128">   128  </span>		<span class="key">var</span> cb:Function = <span class="key">function</span>():Void {
+<span class="lineno" id="129">   129  </span>			getURL( _style.console.head.textfields.head.url, <span class="str_const">"_blank"</span> );	
+<span class="lineno" id="130">   130  </span>		};
+<span class="lineno" id="131">   131  </span>		_cmenu.addItem( _style.console.head.textfields.head.t, Delegate.create( <span class="key">this</span>, cb ), <span class="key">true</span> );
+<span class="lineno" id="132">   132  </span>		_cmenu.addItem( <span class="str_const">"Pause Console"</span>, Delegate.create( <span class="key">this</span>, toggleLogEnable ), <span class="key">true</span> );
+<span class="lineno" id="133">   133  </span>		_cmenu.addItem( <span class="str_const">"Copy Console Log"</span>, Delegate.create( <span class="key">this</span>, toClipboard ), <span class="key">true</span> );
+<span class="lineno" id="134">   134  </span>		_cmenu.addItem( <span class="str_const">"Clear Console Log"</span>, Delegate.create( <span class="key">this</span>, reset ), <span class="key">false</span> );
+<span class="lineno" id="135">   135  </span>		_cmenu.addItem( <span class="str_const">"Minimize Console"</span>, Delegate.create( <span class="key">this</span>, resize, _style.console.minW, _style.console.minH ), <span class="key">true</span> );
+<span class="lineno" id="136">   136  </span>		_cmenu.addItem( <span class="str_const">"Maximize Console"</span>, Delegate.create( <span class="key">this</span>, resize, _style.console.maxW, _style.console.maxH ), <span class="key">false</span> );
+<span class="lineno" id="137">   137  </span>		<span class="comment">// events</span>
+<span class="lineno" id="138">   138  </span>		<span class="key">if</span>(_style.console.head.isDraggable == <span class="key">true</span>) {
+<span class="lineno" id="139">   139  </span>			_head.onPress = Delegate.create( _console, startDrag, <span class="key">false</span>, _style.console.x, _style.console.y, _style.console.maxW, _style.console.maxH );
+<span class="lineno" id="140">   140  </span>			_head.onRelease = _head.onReleaseOutside = Delegate.create( _console, stopDrag );
+<span class="lineno" id="141">   141  </span>			_resizer.onPress = Delegate.create( <span class="key">this</span>, resizer_onPress );
+<span class="lineno" id="142">   142  </span>			_resizer.onRelease = _resizer.onReleaseOutside = Delegate.create( <span class="key">this</span>, resizer_onRelease );
+<span class="lineno" id="143">   143  </span>		} <span class="key">else</span> {
+<span class="lineno" id="144">   144  </span>			_resizer._visible = <span class="key">false</span>;	
+<span class="lineno" id="145">   145  </span>		}
+<span class="lineno" id="146">   146  </span>		<span class="comment">// resize console to fit swf</span>
+<span class="lineno" id="147">   147  </span>		resize( Stage.width - _style.console.x * <span class="num_const">4</span>, Stage.height - _style.console.y * <span class="num_const">4</span> );
+<span class="lineno" id="148">   148  </span>	}
+<span class="lineno" id="149">   149  </span>
+<span class="lineno" id="150">   150  </span>	<span class="comment doc">/**
+<span class="lineno" id="151">   151  </span>	 * Resizing methods
+<span class="lineno" id="152">   152  </span>	 */</span>
+<span class="lineno" id="153">   153  </span>	<span class="key">private</span> <span class="key">function</span> resizer_onPress():Void {
+<span class="lineno" id="154">   154  </span>		<span class="comment">//_resizer.startDrag (false, (_console._x+_style.console.minW), (_console._y+_style.console.minH), Stage.width-50, Stage.height-50);</span>
+<span class="lineno" id="155">   155  </span>		_resizer.startDrag( <span class="key">false</span>, (_console._x + _style.console.minW), (_console._y + _style.console.minH), _style.console.maxW, _style.console.maxH );
+<span class="lineno" id="156">   156  </span>	}
+<span class="lineno" id="157">   157  </span>
+<span class="lineno" id="158">   158  </span>	<span class="key">private</span> <span class="key">function</span> resizer_onRelease():Void {
+<span class="lineno" id="159">   159  </span>		_resizer.stopDrag( );
+<span class="lineno" id="160">   160  </span>		resize( );
+<span class="lineno" id="161">   161  </span>	}
+<span class="lineno" id="162">   162  </span>
+<span class="lineno" id="163">   163  </span>	<span class="comment doc">/**
+<span class="lineno" id="164">   164  </span>	 * Resize the Console UI.
+<span class="lineno" id="165">   165  </span>	 * @param nw (Number) optional new width
+<span class="lineno" id="166">   166  </span>	 * @param nh (Number) optional new height
+<span class="lineno" id="167">   167  </span>	 * @return Void
+<span class="lineno" id="168">   168  </span>	 */</span>
+<span class="lineno" id="169">   169  </span>	<span class="key">public</span> <span class="key">function</span> resize(nw:Number, nh:Number):Void {
+<span class="lineno" id="170">   170  </span>		<span class="key">var</span> _w:Number = (!nw) ? int( _console._xmouse ) : nw;
+<span class="lineno" id="171">   171  </span>		<span class="key">var</span> _h:Number = (!nh) ? int( _console._ymouse ) : nh;
+<span class="lineno" id="172">   172  </span>		
+<span class="lineno" id="173">   173  </span>		<span class="comment">// add constraints to sanitize resizing</span>
+<span class="lineno" id="174">   174  </span>		<span class="key">var</span> w:Number = MathBase.constrain( _w, _style.console.minW, _style.console.maxW );
+<span class="lineno" id="175">   175  </span>		<span class="key">var</span> h:Number = MathBase.constrain( _h, _style.console.minH, _style.console.maxH );
+<span class="lineno" id="176">   176  </span>		
+<span class="lineno" id="177">   177  </span>		<span class="comment">// new mask width/height</span>
+<span class="lineno" id="178">   178  </span>		<span class="key">var</span> mw:Number = w - <span class="num_const">11</span>;
+<span class="lineno" id="179">   179  </span>		<span class="key">var</span> mh:Number = h - _cs.IH;
+<span class="lineno" id="180">   180  </span>		
+<span class="lineno" id="181">   181  </span>		<span class="comment">// _bg		</span>
+<span class="lineno" id="182">   182  </span>		_bg._width = w;
+<span class="lineno" id="183">   183  </span>		_bg._height = h;
+<span class="lineno" id="184">   184  </span>		
+<span class="lineno" id="185">   185  </span>		<span class="comment">// resizer</span>
+<span class="lineno" id="186">   186  </span>		_resizer._x = _bg._width - _resizer._width;
+<span class="lineno" id="187">   187  </span>		_resizer._y = _bg._height - _resizer._height;		
+<span class="lineno" id="188">   188  </span>		
+<span class="lineno" id="189">   189  </span>		<span class="comment">// _head</span>
+<span class="lineno" id="190">   190  </span>		_headBg._width = w;
+<span class="lineno" id="191">   191  </span>		_fps._x = w - <span class="num_const">120</span>;
+<span class="lineno" id="192">   192  </span>		
+<span class="lineno" id="193">   193  </span>		<span class="comment">// _mask</span>
+<span class="lineno" id="194">   194  </span>		_mask._width = mw;
+<span class="lineno" id="195">   195  </span>		_mask._height = mh;		
+<span class="lineno" id="196">   196  </span>		
+<span class="lineno" id="197">   197  </span>		<span class="comment">// _gutter, _bar, update _scroll</span>
+<span class="lineno" id="198">   198  </span>		_gutter._x = (_bg._width - _gutter._width);
+<span class="lineno" id="199">   199  </span>		_gutter._height = (_bg._height - _headBg._height);
+<span class="lineno" id="200">   200  </span>		_bar._x = _gutter._x;
+<span class="lineno" id="201">   201  </span>		
+<span class="lineno" id="202">   202  </span>		<span class="comment">// dispatch new itemWidth to all ConsoleItems</span>
+<span class="lineno" id="203">   203  </span>		<span class="key">for</span>(<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; _items.length ; i++) {
+<span class="lineno" id="204">   204  </span>			resizeConsoleItem( i, mw );
+<span class="lineno" id="205">   205  </span>		}
+<span class="lineno" id="206">   206  </span>		_scroll.slideScroller( _gutter._height, <span class="num_const">0</span> );
+<span class="lineno" id="207">   207  </span>	}
+<span class="lineno" id="208">   208  </span>
+<span class="lineno" id="209">   209  </span>	<span class="key">private</span> <span class="key">function</span> resizeConsoleItem(itemIndex:Number, w:Number):Void {
+<span class="lineno" id="210">   210  </span>		<span class="key">var</span> item:MovieClip = _items[itemIndex];
+<span class="lineno" id="211">   211  </span>		
+<span class="lineno" id="212">   212  </span>		<span class="comment">// resize</span>
+<span class="lineno" id="213">   213  </span>		item._bg._width = w;
+<span class="lineno" id="214">   214  </span>		item._line._width = w;
+<span class="lineno" id="215">   215  </span>		item._messageTf._width = w - <span class="num_const">239</span>;
+<span class="lineno" id="216">   216  </span>		item._benchmarkTf._x = item._messageTf._x + item._messageTf._width + <span class="num_const">6</span>;
+<span class="lineno" id="217">   217  </span>		
+<span class="lineno" id="218">   218  </span>		<span class="comment">// realign</span>
+<span class="lineno" id="219">   219  </span>		<span class="key">var</span> tallestTf:TextField = (item._messageTf._height &gt; item._originTf._height) ? item._messageTf : item._originTf;
+<span class="lineno" id="220">   220  </span>		item._bg._height = tallestTf._height;
+<span class="lineno" id="221">   221  </span>		item._line._y = tallestTf._height;	
+<span class="lineno" id="222">   222  </span>		
+<span class="lineno" id="223">   223  </span>		<span class="comment">// reposition</span>
+<span class="lineno" id="224">   224  </span>		<span class="key">var</span> prevItem:MovieClip = _items[itemIndex - <span class="num_const">1</span>];
+<span class="lineno" id="225">   225  </span>		<span class="key">if</span>(prevItem) {
+<span class="lineno" id="226">   226  </span>			item._y = prevItem._y + prevItem._height;
+<span class="lineno" id="227">   227  </span>		}
+<span class="lineno" id="228">   228  </span>		
+<span class="lineno" id="229">   229  </span>		<span class="comment">// reset _style for future items</span>
+<span class="lineno" id="230">   230  </span>		<span class="key">var</span> _istyle:Object = _cs.CSS.item;
+<span class="lineno" id="231">   231  </span>		_istyle.bg.w = w;
+<span class="lineno" id="232">   232  </span>		_istyle.line.w = w;
+<span class="lineno" id="233">   233  </span>		_istyle.textfields.message.w = item._messageTf._width;
+<span class="lineno" id="234">   234  </span>		_istyle.textfields.benchmark.x = item._benchmarkTf._x;
+<span class="lineno" id="235">   235  </span>	}	
+<span class="lineno" id="236">   236  </span>
+<span class="lineno" id="237">   237  </span>	<span class="comment doc">/**
+<span class="lineno" id="238">   238  </span>	 * Add and return a new ConsoleItem
+<span class="lineno" id="239">   239  </span>	 * @param data (Object) ConsoleItem._data = {id:Number, type:String, origin:String, message:String, benchmark:Number, _isMeta:Boolean}
+<span class="lineno" id="240">   240  </span>	 * @return 	MovieClip
+<span class="lineno" id="241">   241  </span>	 */</span>
+<span class="lineno" id="242">   242  </span>	<span class="key">public</span> <span class="key">function</span> addItem(data:Object):MovieClip {
+<span class="lineno" id="243">   243  </span>		<span class="key">if</span>(_isEnabled) {
+<span class="lineno" id="244">   244  </span>			<span class="comment">// reset when new swf is presented</span>
+<span class="lineno" id="245">   245  </span>			<span class="key">if</span>(data.id == <span class="num_const">0</span>) {
+<span class="lineno" id="246">   246  </span>				reset( );
+<span class="lineno" id="247">   247  </span>				<span class="key">return</span>;	
+<span class="lineno" id="248">   248  </span>			}
+<span class="lineno" id="249">   249  </span>			<span class="key">var</span> item:MovieClip = ClassUtils.createEmptyMovieClip( com.sekati.log.ConsoleItem, _list, <span class="str_const">"consoleItem_"</span> + data.id, {_x:<span class="num_const">0</span>, _y:_list._height, _data:data} );
+<span class="lineno" id="250">   250  </span>			updateScroll( item );
+<span class="lineno" id="251">   251  </span>			_items.push( item );
+<span class="lineno" id="252">   252  </span>			<span class="key">return</span> item;
+<span class="lineno" id="253">   253  </span>		}
+<span class="lineno" id="254">   254  </span>	}
+<span class="lineno" id="255">   255  </span>
+<span class="lineno" id="256">   256  </span>	<span class="comment doc">/**
+<span class="lineno" id="257">   257  </span>	 * Update the {@link Scroll} to the last added item if we are not mousing the area.
+<span class="lineno" id="258">   258  </span>	 * @param item (MovieClip) last added item
+<span class="lineno" id="259">   259  </span>	 * @return Void
+<span class="lineno" id="260">   260  </span>	 */</span>
+<span class="lineno" id="261">   261  </span>	<span class="key">public</span> <span class="key">function</span> updateScroll(item:MovieClip):Void {
+<span class="lineno" id="262">   262  </span>		_global[<span class="str_const">"setTimeout"</span>]( _scroll, <span class="str_const">"slideContent"</span>, <span class="num_const">50</span>, item._y + item._height, <span class="num_const">0</span>.<span class="num_const">2</span> );
+<span class="lineno" id="263">   263  </span>		<span class="key">if</span>(!_scroll.isDragging( ) &amp;&amp; !_scroll.isMouseInArea( ) &amp;&amp; !_console.hitTest( _level0._xmouse, _level0._ymouse, <span class="key">false</span> )) {
+<span class="lineno" id="264">   264  </span>			_global[<span class="str_const">"setTimeout"</span>]( _scroll, <span class="str_const">"slideContent"</span>, <span class="num_const">50</span>, item._y + item._height, <span class="num_const">0</span>.<span class="num_const">2</span> );
+<span class="lineno" id="265">   265  </span>		}
+<span class="lineno" id="266">   266  </span>	}
+<span class="lineno" id="267">   267  </span>
+<span class="lineno" id="268">   268  </span>	<span class="comment doc">/**
+<span class="lineno" id="269">   269  </span>	 * Handle events from Logger and parse them to addItem
+<span class="lineno" id="270">   270  </span>	 * @param eventObj (Event)
+<span class="lineno" id="271">   271  </span>	 * @return Void
+<span class="lineno" id="272">   272  </span>	 */</span>
+<span class="lineno" id="273">   273  </span>	 
+<span class="lineno" id="274">   274  </span>	<span class="key">private</span> <span class="key">function</span> onLogEvent(eventObj:Event):Void {
+<span class="lineno" id="275">   275  </span>		<span class="key">if</span> (_isEnabled) {
+<span class="lineno" id="276">   276  </span>			<span class="comment">//trace ("eventObj{target:" + eventObj.target + ",type:" + eventObj.type + ",message:" + eventObj.data.message + "};");</span>
+<span class="lineno" id="277">   277  </span>			addItem( eventObj.data );
+<span class="lineno" id="278">   278  </span>		}
+<span class="lineno" id="279">   279  </span>	}
+<span class="lineno" id="280">   280  </span>
+<span class="lineno" id="281">   281  </span>	<span class="comment doc">/**
+<span class="lineno" id="282">   282  </span>	 * Handle Stage resize events
+<span class="lineno" id="283">   283  </span>	 * @param eventObj (Event)
+<span class="lineno" id="284">   284  </span>	 * @return Void
+<span class="lineno" id="285">   285  </span>	 */</span>
+<span class="lineno" id="286">   286  </span>	<span class="key">private</span> <span class="key">function</span> onStageResize(eventObj:Event):Void {
+<span class="lineno" id="287">   287  </span>		_style.console.maxW = Stage.width, 
+<span class="lineno" id="288">   288  </span>		_style.console.maxH = Stage.height;
+<span class="lineno" id="289">   289  </span>		resize( Stage.width, Stage.height );
+<span class="lineno" id="290">   290  </span>	}
+<span class="lineno" id="291">   291  </span>
+<span class="lineno" id="292">   292  </span>	<span class="comment doc">/**
+<span class="lineno" id="293">   293  </span>	 * Toggle Logger.enabled and contextual menu.
+<span class="lineno" id="294">   294  </span>	 * @return Void
+<span class="lineno" id="295">   295  </span>	 */</span>
+<span class="lineno" id="296">   296  </span>	<span class="key">private</span> <span class="key">function</span> toggleLogEnable():Void {
+<span class="lineno" id="297">   297  </span>		<span class="key">if</span>(_isEnabled) {
+<span class="lineno" id="298">   298  </span>			_isEnabled = <span class="key">false</span>;
+<span class="lineno" id="299">   299  </span>			_cmenu.editItem( <span class="str_const">"Pause Console"</span>, <span class="str_const">"Resume Console"</span>, Delegate.create( <span class="key">this</span>, toggleLogEnable ) );
+<span class="lineno" id="300">   300  </span>		} <span class="key">else</span> {
+<span class="lineno" id="301">   301  </span>			_isEnabled = <span class="key">true</span>;
+<span class="lineno" id="302">   302  </span>			_cmenu.editItem( <span class="str_const">"Resume Console"</span>, <span class="str_const">"Pause Console"</span>, Delegate.create( <span class="key">this</span>, toggleLogEnable ) );
+<span class="lineno" id="303">   303  </span>		}
+<span class="lineno" id="304">   304  </span>	}
+<span class="lineno" id="305">   305  </span>
+<span class="lineno" id="306">   306  </span>	<span class="comment doc">/**
+<span class="lineno" id="307">   307  </span>	 * Select all item _data and put it in clipboard
+<span class="lineno" id="308">   308  </span>	 * @return Void
+<span class="lineno" id="309">   309  </span>	 */</span>
+<span class="lineno" id="310">   310  </span>	<span class="key">public</span> <span class="key">function</span> toClipboard():Void {
+<span class="lineno" id="311">   311  </span>		System.setClipboard( toString( ) );
+<span class="lineno" id="312">   312  </span>	}
+<span class="lineno" id="313">   313  </span>
+<span class="lineno" id="314">   314  </span>	<span class="comment doc">/**
+<span class="lineno" id="315">   315  </span>	 * Return Console string data 
+<span class="lineno" id="316">   316  </span>	 * @return String
+<span class="lineno" id="317">   317  </span>	 */</span>
+<span class="lineno" id="318">   318  </span>	<span class="key">public</span> <span class="key">function</span> toString():String {
+<span class="lineno" id="319">   319  </span>		<span class="key">var</span> o:String = _style.console.head.textfields.head.t + <span class="str_const">"\t"</span> + _fps.toString( ) + <span class="str_const">"\n"</span>;
+<span class="lineno" id="320">   320  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; _items.length ; i++) {
+<span class="lineno" id="321">   321  </span>			o += <span class="str_const">"\n"</span> + _items[i].toString( );
+<span class="lineno" id="322">   322  </span>		}
+<span class="lineno" id="323">   323  </span>		<span class="key">return</span> o;	
+<span class="lineno" id="324">   324  </span>	}
+<span class="lineno" id="325">   325  </span>
+<span class="lineno" id="326">   326  </span>	<span class="key">public</span> <span class="key">function</span> reset():Void {
+<span class="lineno" id="327">   327  </span>		<span class="key">for</span>(<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; _items.length ; i++) {
+<span class="lineno" id="328">   328  </span>			_items[i].destroy( );	
+<span class="lineno" id="329">   329  </span>		}
+<span class="lineno" id="330">   330  </span>		_items = [];
+<span class="lineno" id="331">   331  </span>	}
+<span class="lineno" id="332">   332  </span>
+<span class="lineno" id="333">   333  </span>	<span class="comment doc">/**
+<span class="lineno" id="334">   334  </span>	 * Clean and destroy
+<span class="lineno" id="335">   335  </span>	 * @return Void
+<span class="lineno" id="336">   336  </span>	 */</span>
+<span class="lineno" id="337">   337  </span>	<span class="key">public</span> <span class="key">function</span> destroy():Void {
+<span class="lineno" id="338">   338  </span>		Dispatcher.$.removeEventListener( LogEvent.onLogEVENT, Delegate.create( _this, onLogEvent ) );
+<span class="lineno" id="339">   339  </span>		Dispatcher.$.removeEventListener( StageDisplay.onStageResizeEVENT, Delegate.create( _this, onStageResize ) );
+<span class="lineno" id="340">   340  </span>		LCBinding.disconnect( );
+<span class="lineno" id="341">   341  </span>		_fps.destroy( );
+<span class="lineno" id="342">   342  </span>	}
+<span class="lineno" id="343">   343  </span>}</pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.log" class="button">Package</a></li><li><a href="Console.html" title="Detail of com.sekati.log.Console API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

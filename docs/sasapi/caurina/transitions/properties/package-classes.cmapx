@@ -1,0 +1,8 @@
+<map id="class_diagram" name="class_diagram">
+<area shape="rect" href="TextShortcuts.html" title="caurina.transitions.properties.TextShortcuts" alt="" coords="17,368,121,416" />
+<area shape="rect" href="SoundShortcuts.html" title="caurina.transitions.properties.SoundShortcuts" alt="" coords="10,296,128,344" />
+<area shape="rect" href="FilterShortcuts.html" title="caurina.transitions.properties.FilterShortcuts" alt="" coords="14,224,124,272" />
+<area shape="rect" href="DisplayShortcuts.html" title="caurina.transitions.properties.DisplayShortcuts" alt="" coords="8,152,130,200" />
+<area shape="rect" href="CurveModifiers.html" title="caurina.transitions.properties.CurveModifiers" alt="" coords="14,80,124,128" />
+<area shape="rect" href="ColorShortcuts.html" title="caurina.transitions.properties.ColorShortcuts" alt="" coords="14,8,124,56" />
+</map>

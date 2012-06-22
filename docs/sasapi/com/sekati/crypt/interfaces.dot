@@ -1,0 +1,21 @@
+strict digraph interface_diagram {
+  rankdir=LR;
+  IHash[
+    label="IHash",
+    URL="IHash.html",
+    tooltip="com.sekati.crypt.IHash",
+    fontname="Verdana-Italic",
+    fontsize="9"
+    color="#2d5492"
+    shape="record"
+  ];
+  ICipher[
+    label="ICipher",
+    URL="ICipher.html",
+    tooltip="com.sekati.crypt.ICipher",
+    fontname="Verdana-Italic",
+    fontsize="9"
+    color="#2d5492"
+    shape="record"
+  ];
+}

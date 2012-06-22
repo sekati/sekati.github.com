@@ -1,0 +1,35 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>Package com.sekati.data API Documentation - SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><link href="../../../com/sekati/crypt/package-summary.html" title="Package com.sekati.crypt" rel="prev"/><link href="../../../com/sekati/load/package-summary.html" title="Package com.sekati.load" rel="next"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><h1>Package com.sekati.data</h1><table class="summary_list" summary=""><caption>Class Summary</caption><tr><td><a href="FLV.html">FLV</a></td><td>
+ FLV class to be used with <a href="../../../com/sekati/ui/FLVPlayer.html" class="class_name" title="Class com.sekati.ui.FLVPlayer">FLVPlayer</a>
+ </td></tr><tr><td><a href="Iterator.html">Iterator</a></td><td>
+ Data Array Iterator Class</td></tr><tr><td><a href="JSON.html">JSON</a></td><td> JSON (JavaScript Object Notation) Serializing/Deserializing Parser</td></tr><tr><td><a href="LoopIterator.html">LoopIterator</a></td><td>
+ Loopable Iterator Class</td></tr><tr><td><a href="SO.html">SO</a></td><td>
+ SharedObject wrapper class</td></tr><tr><td><a href="SoundCenter.html">SoundCenter</a></td><td> Centralized Sound management solves issues calling linked sounds from dll's </td></tr><tr><td><a href="XML2Object.html">XML2Object</a></td><td>
+ return an object with the content of the XML translated<br/>
+ note: a node name with "-" will be replaced with "_" for flash compatibility.
+ for example <FIRST-NAME> will become FIRST_NAME
+ If a node has more than 1 child with the same name, an array is created with the children contents
+ 
+ <pre> The object created will have <span class="key">this</span> structure:
+ 	obj {
+ 		nodeName : {
+ 			attributes : an object containing the node attributes
+ 			data : an object containing the node contents
+ 		}
+ 	}	
+ 	Usage:
+ 		<span class="key">var</span> data:Object = <span class="key">new</span> XML2Object().parseXML(myXML);
+ </pre>
+ </td></tr><tr><td><a href="XMLSA.html">XMLSA</a></td><td> XMLSA converts xml to simple object array  <pre> Usage:	_global.$c.onLoad = <span class="key">function</span>(ok){		<span class="key">if</span> (ok) loadLanguage();	}; -or- 	_global.$c.load(fv_configFile); 	onEnterFrame = <span class="key">function</span>(){ 		trace(<span class="str_const">"config : "</span> + _global.$c.getPercent() ); 		<span class="key">if</span> (_global.$c.getPercent() == <span class="num_const">100</span>){ 			<span class="key">delete</span> onEnterFrame; 			loadLanguage(); 		} 	}; </pre> </td></tr></table><h1>Class Inheritance Diagram</h1><div class="diagram"><map name="class_diagram" id="class_diagram">
+<area href="XMLSA.html" title="com.sekati.data.XMLSA" shape="rect" coords="22,440,94,488" alt=""></area>
+<area href="XML2Object.html" title="com.sekati.data.XML2Object" shape="rect" coords="11,368,105,416" alt=""></area>
+<area href="SoundCenter.html" title="com.sekati.data.SoundCenter" shape="rect" coords="9,296,107,344" alt=""></area>
+<area href="SO.html" title="com.sekati.data.SO" shape="rect" coords="22,224,94,272" alt=""></area>
+<area href="LoopIterator.html" title="com.sekati.data.LoopIterator" shape="rect" coords="157,152,253,200" alt=""></area>
+<area href="JSON.html" title="com.sekati.data.JSON" shape="rect" coords="22,80,94,128" alt=""></area>
+<area href="Iterator.html" title="com.sekati.data.Iterator" shape="rect" coords="22,152,94,200" alt=""></area>
+<area href="FLV.html" title="com.sekati.data.FLV" shape="rect" coords="22,8,94,56" alt=""></area>
+</map>
+<img src="package-classes.png" usemap="class_diagram"/></div><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><span class="button nav_current">Package</span></li><li><span class="button">Class</span></li><li><span class="button">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

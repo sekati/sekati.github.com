@@ -1,0 +1,7 @@
+<map id="class_diagram" name="class_diagram">
+<area shape="rect" href="TimeConversion.html" title="com.sekati.convert.TimeConversion" alt="" coords="9,296,126,344" />
+<area shape="rect" href="TempConversion.html" title="com.sekati.convert.TempConversion" alt="" coords="8,224,128,272" />
+<area shape="rect" href="PointConversion.html" title="com.sekati.convert.PointConversion" alt="" coords="9,152,126,200" />
+<area shape="rect" href="BoolConversion.html" title="com.sekati.convert.BoolConversion" alt="" coords="10,80,125,128" />
+<area shape="rect" href="BitConversion.html" title="com.sekati.convert.BitConversion" alt="" coords="16,8,120,56" />
+</map>

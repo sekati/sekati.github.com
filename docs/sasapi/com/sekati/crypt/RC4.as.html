@@ -1,0 +1,123 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * com.sekati.crypt.RC4
+<span class="lineno" id="3">     3  </span> * @version 1.0.5
+<span class="lineno" id="4">     4  </span> * @author jason m horwitz | sekati.com
+<span class="lineno" id="5">     5  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="6">     6  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="7">     7  </span> * 
+<span class="lineno" id="8">     8  </span> * Sourced from ascrypt for dependencies only - version 1.0, author Mika Pamu
+<span class="lineno" id="9">     9  </span> * Orginal Flash port by: Gabor Penoff - http://www.fns.hu | fns@fns.hu
+<span class="lineno" id="10">    10  </span> */</span>
+<span class="lineno" id="11">    11  </span>
+<span class="lineno" id="12">    12  </span><span class="key">import</span> com.sekati.crypt.ICipher;
+<span class="lineno" id="13">    13  </span>
+<span class="lineno" id="14">    14  </span><span class="comment doc">/**
+<span class="lineno" id="15">    15  </span> * Encrypts and decrypts an alleged RC4 hash.
+<span class="lineno" id="16">    16  </span> */</span>
+<span class="lineno" id="17">    17  </span><span class="key">class</span> com.sekati.crypt.RC4 <span class="key">implements</span> ICipher {
+<span class="lineno" id="18">    18  </span>
+<span class="lineno" id="19">    19  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> sbox:Array = <span class="key">new</span> Array( <span class="num_const">255</span> );
+<span class="lineno" id="20">    20  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> mykey:Array = <span class="key">new</span> Array( <span class="num_const">255</span> );
+<span class="lineno" id="21">    21  </span>
+<span class="lineno" id="22">    22  </span>	<span class="comment doc">/**
+<span class="lineno" id="23">    23  </span>	 * Encrypts a string with the specified key.
+<span class="lineno" id="24">    24  </span>	 * @param src (String) string to encrypt
+<span class="lineno" id="25">    25  </span>	 * @param key (String) encryption key
+<span class="lineno" id="26">    26  </span>	 * @return String
+<span class="lineno" id="27">    27  </span>	 */</span>
+<span class="lineno" id="28">    28  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> encrypt(src:String, key:String):String {
+<span class="lineno" id="29">    29  </span>		<span class="key">var</span> mtxt:Array = strToChars( src );
+<span class="lineno" id="30">    30  </span>		<span class="key">var</span> mkey:Array = strToChars( key );
+<span class="lineno" id="31">    31  </span>		<span class="key">var</span> result:Array = calculate( mtxt, mkey );
+<span class="lineno" id="32">    32  </span>		<span class="key">return</span> charsToHex( result );
+<span class="lineno" id="33">    33  </span>	}
+<span class="lineno" id="34">    34  </span>
+<span class="lineno" id="35">    35  </span>	<span class="comment doc">/**
+<span class="lineno" id="36">    36  </span>	 * Decrypts a string with the specified key.
+<span class="lineno" id="37">    37  </span>	 * @param src (String) string to decrypt
+<span class="lineno" id="38">    38  </span>	 * @param key (String) decryption key
+<span class="lineno" id="39">    39  </span>	 * @return String
+<span class="lineno" id="40">    40  </span>	 */</span>
+<span class="lineno" id="41">    41  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> decrypt(src:String, key:String):String {
+<span class="lineno" id="42">    42  </span>		<span class="key">var</span> mtxt:Array = hexToChars( src );
+<span class="lineno" id="43">    43  </span>		<span class="key">var</span> mkey:Array = strToChars( key );
+<span class="lineno" id="44">    44  </span>		<span class="key">var</span> result:Array = calculate( mtxt, mkey );
+<span class="lineno" id="45">    45  </span>		<span class="key">return</span> charsToStr( result );
+<span class="lineno" id="46">    46  </span>	}
+<span class="lineno" id="47">    47  </span>
+<span class="lineno" id="48">    48  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> initialize(pwd:Array):Void {
+<span class="lineno" id="49">    49  </span>		<span class="key">var</span> b:Number = <span class="num_const">0</span>;
+<span class="lineno" id="50">    50  </span>		<span class="key">var</span> tempSwap:Number;
+<span class="lineno" id="51">    51  </span>		<span class="key">var</span> intLength:Number = pwd.length;
+<span class="lineno" id="52">    52  </span>		<span class="key">var</span> a:Number;
+<span class="lineno" id="53">    53  </span>		<span class="key">for</span> (a = <span class="num_const">0</span>; a &lt;= <span class="num_const">255</span> ; a++) {
+<span class="lineno" id="54">    54  </span>			mykey[a] = pwd[(a % intLength)];
+<span class="lineno" id="55">    55  </span>			sbox[a] = a;
+<span class="lineno" id="56">    56  </span>		}
+<span class="lineno" id="57">    57  </span>		<span class="key">for</span> (a = <span class="num_const">0</span>; a &lt;= <span class="num_const">255</span> ; a++) {
+<span class="lineno" id="58">    58  </span>			b = (b + sbox[a] + mykey[a]) % <span class="num_const">256</span>;
+<span class="lineno" id="59">    59  </span>			tempSwap = sbox[a];
+<span class="lineno" id="60">    60  </span>			sbox[a] = sbox[b];
+<span class="lineno" id="61">    61  </span>			sbox[b] = tempSwap;
+<span class="lineno" id="62">    62  </span>		}
+<span class="lineno" id="63">    63  </span>	}
+<span class="lineno" id="64">    64  </span>
+<span class="lineno" id="65">    65  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> calculate(plaintxt:Array, psw:Array):Array {
+<span class="lineno" id="66">    66  </span>		initialize( psw );
+<span class="lineno" id="67">    67  </span>		<span class="key">var</span> i:Number = <span class="num_const">0</span>; 
+<span class="lineno" id="68">    68  </span>		<span class="key">var</span> j:Number = <span class="num_const">0</span>;
+<span class="lineno" id="69">    69  </span>		<span class="key">var</span> cipher:Array = <span class="key">new</span> Array( );
+<span class="lineno" id="70">    70  </span>		<span class="key">var</span> k:Number, temp:Number, cipherby:Number;
+<span class="lineno" id="71">    71  </span>		<span class="key">for</span> (<span class="key">var</span> a:Number = <span class="num_const">0</span>; a &lt; plaintxt.length ; a++) {
+<span class="lineno" id="72">    72  </span>			i = (i + <span class="num_const">1</span>) % <span class="num_const">256</span>;
+<span class="lineno" id="73">    73  </span>			j = (j + sbox[i]) % <span class="num_const">256</span>;
+<span class="lineno" id="74">    74  </span>			temp = sbox[i];
+<span class="lineno" id="75">    75  </span>			sbox[i] = sbox[j];
+<span class="lineno" id="76">    76  </span>			sbox[j] = temp;
+<span class="lineno" id="77">    77  </span>			<span class="key">var</span> idx:Number = (sbox[i] + sbox[j]) % <span class="num_const">256</span>;
+<span class="lineno" id="78">    78  </span>			k = sbox[idx];
+<span class="lineno" id="79">    79  </span>			cipherby = plaintxt[a] ^ k;
+<span class="lineno" id="80">    80  </span>			cipher.push( cipherby );
+<span class="lineno" id="81">    81  </span>		}
+<span class="lineno" id="82">    82  </span>		<span class="key">return</span> cipher;
+<span class="lineno" id="83">    83  </span>	}
+<span class="lineno" id="84">    84  </span>
+<span class="lineno" id="85">    85  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> charsToHex(chars:Array):String {
+<span class="lineno" id="86">    86  </span>		<span class="key">var</span> result:String = <span class="key">new</span> String( <span class="str_const">""</span> );
+<span class="lineno" id="87">    87  </span>		<span class="key">var</span> hexes:Array = <span class="key">new</span> Array( <span class="str_const">"0"</span>, <span class="str_const">"1"</span>, <span class="str_const">"2"</span>, <span class="str_const">"3"</span>, <span class="str_const">"4"</span>, <span class="str_const">"5"</span>, <span class="str_const">"6"</span>, <span class="str_const">"7"</span>, <span class="str_const">"8"</span>, <span class="str_const">"9"</span>, <span class="str_const">"a"</span>, <span class="str_const">"b"</span>, <span class="str_const">"c"</span>, <span class="str_const">"d"</span>, <span class="str_const">"e"</span>, <span class="str_const">"f"</span> );
+<span class="lineno" id="88">    88  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; chars.length ; i++) {
+<span class="lineno" id="89">    89  </span>			result += hexes[chars[i] &gt;&gt; <span class="num_const">4</span>] + hexes[chars[i] &amp; 0xf];
+<span class="lineno" id="90">    90  </span>		}
+<span class="lineno" id="91">    91  </span>		<span class="key">return</span> result;
+<span class="lineno" id="92">    92  </span>	}
+<span class="lineno" id="93">    93  </span>
+<span class="lineno" id="94">    94  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> hexToChars(hex:String):Array {
+<span class="lineno" id="95">    95  </span>		<span class="key">var</span> codes:Array = <span class="key">new</span> Array( );
+<span class="lineno" id="96">    96  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = (hex.substr( <span class="num_const">0</span>, <span class="num_const">2</span> ) == <span class="str_const">"0x"</span>) ? <span class="num_const">2</span> : <span class="num_const">0</span>; i &lt; hex.length ; i += <span class="num_const">2</span>) {
+<span class="lineno" id="97">    97  </span>			codes.push( parseInt( hex.substr( i, <span class="num_const">2</span> ), <span class="num_const">16</span> ) );
+<span class="lineno" id="98">    98  </span>		}
+<span class="lineno" id="99">    99  </span>		<span class="key">return</span> codes;
+<span class="lineno" id="100">   100  </span>	}
+<span class="lineno" id="101">   101  </span>
+<span class="lineno" id="102">   102  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> charsToStr(chars:Array):String {
+<span class="lineno" id="103">   103  </span>		<span class="key">var</span> result:String = <span class="key">new</span> String( <span class="str_const">""</span> );
+<span class="lineno" id="104">   104  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; chars.length ; i++) {
+<span class="lineno" id="105">   105  </span>			result += String.fromCharCode( chars[i] );
+<span class="lineno" id="106">   106  </span>		}
+<span class="lineno" id="107">   107  </span>		<span class="key">return</span> result;
+<span class="lineno" id="108">   108  </span>	}
+<span class="lineno" id="109">   109  </span>
+<span class="lineno" id="110">   110  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> strToChars(str:String):Array {
+<span class="lineno" id="111">   111  </span>		<span class="key">var</span> codes:Array = <span class="key">new</span> Array( );
+<span class="lineno" id="112">   112  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; str.length ; i++) {
+<span class="lineno" id="113">   113  </span>			codes.push( str.charCodeAt( i ) );
+<span class="lineno" id="114">   114  </span>		}
+<span class="lineno" id="115">   115  </span>		<span class="key">return</span> codes;
+<span class="lineno" id="116">   116  </span>	}
+<span class="lineno" id="117">   117  </span>
+<span class="lineno" id="118">   118  </span>	<span class="key">private</span> <span class="key">function</span> RC4() {
+<span class="lineno" id="119">   119  </span>	}
+<span class="lineno" id="120">   120  </span>}</pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.crypt" class="button">Package</a></li><li><a href="RC4.html" title="Detail of com.sekati.crypt.RC4 API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

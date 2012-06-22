@@ -1,0 +1,101 @@
+strict digraph class_diagram {
+  rankdir=LR;
+  TypeThrowable[
+    label="Throwable",
+    URL="Throwable.html",
+    tooltip="com.sekati.except.Throwable",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeIllegalStateException[
+    label="IllegalStateException",
+    URL="IllegalStateException.html",
+    tooltip="com.sekati.except.IllegalStateException",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeIllegalOperationException[
+    label="IllegalOperationException",
+    URL="IllegalOperationException.html",
+    tooltip="com.sekati.except.IllegalOperationException",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeIllegalArgumentException[
+    label="IllegalArgumentException",
+    URL="IllegalArgumentException.html",
+    tooltip="com.sekati.except.IllegalArgumentException",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeFatalStateException[
+    label="FatalStateException",
+    URL="FatalStateException.html",
+    tooltip="com.sekati.except.FatalStateException",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeFatalOperationException[
+    label="FatalOperationException",
+    URL="FatalOperationException.html",
+    tooltip="com.sekati.except.FatalOperationException",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeFatalException[
+    label="FatalException",
+    URL="FatalException.html",
+    tooltip="com.sekati.except.FatalException",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeFatalArgumentException[
+    label="FatalArgumentException",
+    URL="FatalArgumentException.html",
+    tooltip="com.sekati.except.FatalArgumentException",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeException[
+    label="Exception",
+    URL="Exception.html",
+    tooltip="com.sekati.except.Exception",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeCatcher[
+    label="Catcher",
+    URL="Catcher.html",
+    tooltip="com.sekati.except.Catcher",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeException -> TypeIllegalStateException;
+  TypeException -> TypeIllegalOperationException;
+  TypeException -> TypeIllegalArgumentException;
+  TypeFatalException -> TypeFatalStateException;
+  TypeFatalException -> TypeFatalOperationException;
+  TypeException -> TypeFatalException;
+  TypeFatalException -> TypeFatalArgumentException;
+  TypeThrowable -> TypeException;
+}

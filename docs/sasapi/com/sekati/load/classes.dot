@@ -1,0 +1,40 @@
+strict digraph class_diagram {
+  rankdir=LR;
+  TypeLoaderEvent[
+    label="LoaderEvent",
+    URL="LoaderEvent.html",
+    tooltip="com.sekati.load.LoaderEvent",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeLoader[
+    label="Loader",
+    URL="Loader.html",
+    tooltip="com.sekati.load.Loader",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeGraphicLoader[
+    label="GraphicLoader",
+    URL="GraphicLoader.html",
+    tooltip="com.sekati.load.GraphicLoader",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeBaseLoader[
+    label="BaseLoader",
+    URL="BaseLoader.html",
+    tooltip="com.sekati.load.BaseLoader",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeLoader -> TypeGraphicLoader;
+}

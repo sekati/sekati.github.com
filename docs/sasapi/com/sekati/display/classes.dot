@@ -1,0 +1,170 @@
+strict digraph class_diagram {
+  rankdir=LR;
+  TypeUIClip[
+    label="UIClip",
+    URL="UIClip.html",
+    tooltip="com.sekati.display.UIClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeTextDisplay[
+    label="TextDisplay",
+    URL="TextDisplay.html",
+    tooltip="com.sekati.display.TextDisplay",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeStageDisplay[
+    label="StageDisplay",
+    URL="StageDisplay.html",
+    tooltip="com.sekati.display.StageDisplay",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeProportionalClip[
+    label="ProportionalClip",
+    URL="ProportionalClip.html",
+    tooltip="com.sekati.display.ProportionalClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeLiquidYClip[
+    label="LiquidYClip",
+    URL="LiquidYClip.html",
+    tooltip="com.sekati.display.LiquidYClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeLiquidXClip[
+    label="LiquidXClip",
+    URL="LiquidXClip.html",
+    tooltip="com.sekati.display.LiquidXClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeLiquidWClip[
+    label="LiquidWClip",
+    URL="LiquidWClip.html",
+    tooltip="com.sekati.display.LiquidWClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeLiquidHClip[
+    label="LiquidHClip",
+    URL="LiquidHClip.html",
+    tooltip="com.sekati.display.LiquidHClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeLiquidClip[
+    label="LiquidClip",
+    URL="LiquidClip.html",
+    tooltip="com.sekati.display.LiquidClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeImageClip[
+    label="ImageClip",
+    URL="ImageClip.html",
+    tooltip="com.sekati.display.ImageClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeEventClip[
+    label="EventClip",
+    URL="EventClip.html",
+    tooltip="com.sekati.display.EventClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeCoreClip[
+    label="CoreClip",
+    URL="CoreClip.html",
+    tooltip="com.sekati.display.CoreClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeBitmapImageSliceClip[
+    label="BitmapImageSliceClip",
+    URL="BitmapImageSliceClip.html",
+    tooltip="com.sekati.display.BitmapImageSliceClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeBitmapImageDistributedSliceClip[
+    label="BitmapImageDistributedSliceClip",
+    URL="BitmapImageDistributedSliceClip.html",
+    tooltip="com.sekati.display.BitmapImageDistributedSliceClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeBitmapImageClip[
+    label="BitmapImageClip",
+    URL="BitmapImageClip.html",
+    tooltip="com.sekati.display.BitmapImageClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeBaseClip[
+    label="BaseClip",
+    URL="BaseClip.html",
+    tooltip="com.sekati.display.BaseClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeAbstractClip[
+    label="AbstractClip",
+    URL="AbstractClip.html",
+    tooltip="com.sekati.display.AbstractClip",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeEventClip -> TypeUIClip;
+  TypeLiquidClip -> TypeProportionalClip;
+  TypeLiquidClip -> TypeLiquidYClip;
+  TypeLiquidClip -> TypeLiquidXClip;
+  TypeLiquidClip -> TypeLiquidWClip;
+  TypeLiquidClip -> TypeLiquidHClip;
+  TypeUIClip -> TypeLiquidClip;
+  TypeBaseClip -> TypeImageClip;
+  TypeCoreClip -> TypeEventClip;
+  TypeBaseClip -> TypeCoreClip;
+  TypeBaseClip -> TypeBitmapImageSliceClip;
+  TypeBaseClip -> TypeBitmapImageDistributedSliceClip;
+  TypeBaseClip -> TypeBitmapImageClip;
+  TypeCoreClip -> TypeAbstractClip;
+}

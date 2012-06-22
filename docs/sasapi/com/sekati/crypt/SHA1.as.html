@@ -1,0 +1,108 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * com.sekati.crypt.SHA1
+<span class="lineno" id="3">     3  </span> * @version 1.0.1
+<span class="lineno" id="4">     4  </span> * @author jason m horwitz | sekati.com
+<span class="lineno" id="5">     5  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="6">     6  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="7">     7  </span> * 
+<span class="lineno" id="8">     8  </span> * Sourced from ascrypt for dependencies only - version 2.0, author Mika Pamu
+<span class="lineno" id="9">     9  </span> * Original Javascript implementation:
+<span class="lineno" id="10">    10  </span> * Secure Hash Algorithm, SHA-1, as defined in FIPS PUB 180-1
+<span class="lineno" id="11">    11  </span> * Version 2.1 Copyright Paul Johnston 2000 - 2002
+<span class="lineno" id="12">    12  </span> * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
+<span class="lineno" id="13">    13  </span> * @see &lt;a href="http://pajhome.org.uk/crypt/md5"&gt;http://pajhome.org.uk/crypt/md5&lt;/a&gt; for more info.
+<span class="lineno" id="14">    14  </span> */</span>
+<span class="lineno" id="15">    15  </span>
+<span class="lineno" id="16">    16  </span><span class="key">import</span> com.sekati.crypt.IHash;
+<span class="lineno" id="17">    17  </span>
+<span class="lineno" id="18">    18  </span><span class="comment doc">/**
+<span class="lineno" id="19">    19  </span> * Calculates the SHA1 checksum.
+<span class="lineno" id="20">    20  </span> */</span>
+<span class="lineno" id="21">    21  </span><span class="key">class</span> com.sekati.crypt.SHA1 <span class="key">implements</span> IHash {
+<span class="lineno" id="22">    22  </span>
+<span class="lineno" id="23">    23  </span>	<span class="comment doc">/**
+<span class="lineno" id="24">    24  </span>	 * Calculates the SHA1 checksum.
+<span class="lineno" id="25">    25  </span>	 * @param src (String) string to hash
+<span class="lineno" id="26">    26  </span>	 * @return String
+<span class="lineno" id="27">    27  </span>	 */</span>
+<span class="lineno" id="28">    28  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> calculate(src:String):String {
+<span class="lineno" id="29">    29  </span>		<span class="key">return</span> hex_sha1( src );
+<span class="lineno" id="30">    30  </span>	}
+<span class="lineno" id="31">    31  </span>
+<span class="lineno" id="32">    32  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> hex_sha1(src:String):String {
+<span class="lineno" id="33">    33  </span>		<span class="key">return</span> binb2hex( core_sha1( str2binb( src ), src.length * <span class="num_const">8</span> ) );
+<span class="lineno" id="34">    34  </span>	}
+<span class="lineno" id="35">    35  </span>
+<span class="lineno" id="36">    36  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> core_sha1(x:Array, len:Number):Array {
+<span class="lineno" id="37">    37  </span>		x[len &gt;&gt; <span class="num_const">5</span>] |= 0x80 &lt;&lt; (<span class="num_const">24</span> - len % <span class="num_const">32</span>);
+<span class="lineno" id="38">    38  </span>		x[((len + <span class="num_const">64</span> &gt;&gt; <span class="num_const">9</span>) &lt;&lt; <span class="num_const">4</span>) + <span class="num_const">15</span>] = len;
+<span class="lineno" id="39">    39  </span>		<span class="key">var</span> w:Array = <span class="key">new</span> Array( <span class="num_const">80</span> ), a:Number = <span class="num_const">1732584193</span>;
+<span class="lineno" id="40">    40  </span>		<span class="key">var</span> b:Number = -<span class="num_const">271733879</span>, c:Number = -<span class="num_const">1732584194</span>;
+<span class="lineno" id="41">    41  </span>		<span class="key">var</span> d:Number = <span class="num_const">271733878</span>, e:Number = -<span class="num_const">1009589776</span>;
+<span class="lineno" id="42">    42  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; x.length ; i += <span class="num_const">16</span>) {
+<span class="lineno" id="43">    43  </span>			<span class="key">var</span> olda:Number = a, oldb:Number = b;
+<span class="lineno" id="44">    44  </span>			<span class="key">var</span> oldc:Number = c, oldd:Number = d, olde:Number = e;
+<span class="lineno" id="45">    45  </span>			<span class="key">for</span> (<span class="key">var</span> j:Number = <span class="num_const">0</span>; j &lt; <span class="num_const">80</span> ; j++) {
+<span class="lineno" id="46">    46  </span>				<span class="key">if</span> (j &lt; <span class="num_const">16</span>) w[j] = x[i + j];
+<span class="lineno" id="47">    47  </span>				<span class="key">else</span> w[j] = rol( w[j - <span class="num_const">3</span>] ^ w[j - <span class="num_const">8</span>] ^ w[j - <span class="num_const">14</span>] ^ w[j - <span class="num_const">16</span>], <span class="num_const">1</span> );
+<span class="lineno" id="48">    48  </span>				<span class="key">var</span> t:Number = safe_add( safe_add( rol( a, <span class="num_const">5</span> ), sha1_ft( j, b, c, d ) ), safe_add( safe_add( e, w[j] ), sha1_kt( j ) ) );
+<span class="lineno" id="49">    49  </span>				e = d; 
+<span class="lineno" id="50">    50  </span>				d = c;
+<span class="lineno" id="51">    51  </span>				c = rol( b, <span class="num_const">30</span> );
+<span class="lineno" id="52">    52  </span>				b = a; 
+<span class="lineno" id="53">    53  </span>				a = t;
+<span class="lineno" id="54">    54  </span>			}
+<span class="lineno" id="55">    55  </span>			a = safe_add( a, olda );
+<span class="lineno" id="56">    56  </span>			b = safe_add( b, oldb );
+<span class="lineno" id="57">    57  </span>			c = safe_add( c, oldc );
+<span class="lineno" id="58">    58  </span>			d = safe_add( d, oldd );
+<span class="lineno" id="59">    59  </span>			e = safe_add( e, olde );
+<span class="lineno" id="60">    60  </span>		}
+<span class="lineno" id="61">    61  </span>		<span class="key">return</span> <span class="key">new</span> Array( a, b, c, d, e );
+<span class="lineno" id="62">    62  </span>	}
+<span class="lineno" id="63">    63  </span>
+<span class="lineno" id="64">    64  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> sha1_ft(t:Number, b:Number, c:Number, d:Number):Number {
+<span class="lineno" id="65">    65  </span>		<span class="key">if</span> (t &lt; <span class="num_const">20</span>) <span class="key">return</span> (b &amp; c) | ((~b) &amp; d);
+<span class="lineno" id="66">    66  </span>		<span class="key">if</span> (t &lt; <span class="num_const">40</span>) <span class="key">return</span> b ^ c ^ d;
+<span class="lineno" id="67">    67  </span>		<span class="key">if</span> (t &lt; <span class="num_const">60</span>) <span class="key">return</span> (b &amp; c) | (b &amp; d) | (c &amp; d);
+<span class="lineno" id="68">    68  </span>		<span class="key">return</span> b ^ c ^ d;
+<span class="lineno" id="69">    69  </span>	}
+<span class="lineno" id="70">    70  </span>
+<span class="lineno" id="71">    71  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> sha1_kt(t:Number):Number {
+<span class="lineno" id="72">    72  </span>		<span class="key">return</span> (t &lt; <span class="num_const">20</span>) ? <span class="num_const">1518500249</span> : (t &lt; <span class="num_const">40</span>) ? <span class="num_const">1859775393</span> : (t &lt; <span class="num_const">60</span>) ? -<span class="num_const">1894007588</span> : -<span class="num_const">899497514</span>;
+<span class="lineno" id="73">    73  </span>	}
+<span class="lineno" id="74">    74  </span>
+<span class="lineno" id="75">    75  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> safe_add(x:Number, y:Number):Number {
+<span class="lineno" id="76">    76  </span>		<span class="key">var</span> lsw:Number = (x &amp; 0xFFFF) + (y &amp; 0xFFFF);
+<span class="lineno" id="77">    77  </span>		<span class="key">var</span> msw:Number = (x &gt;&gt; <span class="num_const">16</span>) + (y &gt;&gt; <span class="num_const">16</span>) + (lsw &gt;&gt; <span class="num_const">16</span>);
+<span class="lineno" id="78">    78  </span>		<span class="key">return</span> (msw &lt;&lt; <span class="num_const">16</span>) | (lsw &amp; 0xFFFF);
+<span class="lineno" id="79">    79  </span>	}
+<span class="lineno" id="80">    80  </span>
+<span class="lineno" id="81">    81  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> rol(num:Number, cnt:Number):Number {
+<span class="lineno" id="82">    82  </span>		<span class="key">return</span> (num &lt;&lt; cnt) | (num &gt;&gt;&gt; (<span class="num_const">32</span> - cnt));
+<span class="lineno" id="83">    83  </span>	}
+<span class="lineno" id="84">    84  </span>
+<span class="lineno" id="85">    85  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> str2binb(str:String):Array {
+<span class="lineno" id="86">    86  </span>		<span class="key">var</span> bin:Array = <span class="key">new</span> Array( );
+<span class="lineno" id="87">    87  </span>		<span class="key">var</span> mask:Number = (<span class="num_const">1</span> &lt;&lt; <span class="num_const">8</span>) - <span class="num_const">1</span>;
+<span class="lineno" id="88">    88  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; str.length * <span class="num_const">8</span> ; i += <span class="num_const">8</span>) {
+<span class="lineno" id="89">    89  </span>			bin[i &gt;&gt; <span class="num_const">5</span>] |= (str.charCodeAt( i / <span class="num_const">8</span> ) &amp; mask) &lt;&lt; (<span class="num_const">24</span> - i % <span class="num_const">32</span>);
+<span class="lineno" id="90">    90  </span>		}
+<span class="lineno" id="91">    91  </span>		<span class="key">return</span> bin;
+<span class="lineno" id="92">    92  </span>	}
+<span class="lineno" id="93">    93  </span>
+<span class="lineno" id="94">    94  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">function</span> binb2hex(binarray:Array):String {
+<span class="lineno" id="95">    95  </span>		<span class="key">var</span> str:String = <span class="key">new</span> String( <span class="str_const">""</span> );
+<span class="lineno" id="96">    96  </span>		<span class="key">var</span> tab:String = <span class="key">new</span> String( <span class="str_const">"0123456789abcdef"</span> );
+<span class="lineno" id="97">    97  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; binarray.length * <span class="num_const">4</span> ; i++) {
+<span class="lineno" id="98">    98  </span>			str += tab.charAt( (binarray[i &gt;&gt; <span class="num_const">2</span>] &gt;&gt; ((<span class="num_const">3</span> - i % <span class="num_const">4</span>) * <span class="num_const">8</span> + <span class="num_const">4</span>)) &amp; 0xF ) + tab.charAt( (binarray[i &gt;&gt; <span class="num_const">2</span>] &gt;&gt; ((<span class="num_const">3</span> - i % <span class="num_const">4</span>) * <span class="num_const">8</span>)) &amp; 0xF );
+<span class="lineno" id="99">    99  </span>		}
+<span class="lineno" id="100">   100  </span>		<span class="key">return</span> str;
+<span class="lineno" id="101">   101  </span>	}
+<span class="lineno" id="102">   102  </span>
+<span class="lineno" id="103">   103  </span>	<span class="key">private</span> <span class="key">function</span> SHA1() {
+<span class="lineno" id="104">   104  </span>	}
+<span class="lineno" id="105">   105  </span>}</pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.crypt" class="button">Package</a></li><li><a href="SHA1.html" title="Detail of com.sekati.crypt.SHA1 API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

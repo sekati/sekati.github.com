@@ -1,0 +1,113 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>com.sekati.math.MathBase - SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><link href="package-summary.html" title="Package com.sekati.math" rel="up"/><link href="../../../com/sekati/math/Range.html" title="Class com.sekati.math.Range" rel="prev"/><link href="../../../com/sekati/math/Integer.html" title="Class com.sekati.math.Integer" rel="next"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><h1>Class com.sekati.math.MathBase</h1><div class="type_hierachy"><ul><li><strong>com.sekati.math.MathBase</strong></li></ul></div><div class="type_description"><h2>Description</h2><p>
+ Static class wrapping various Math utilities.
+ </p></div><div class="type_indexes"><div class="method_index"><h2>Method Index</h2><a href="#constrain" title="static public function constrain(val:Number, min:Number, max:Number):Number">constrain()</a>, <a href="#factorial" title="static public function factorial(n:Number):Number">factorial()</a>, <a href="#floor" title="static public function floor(val:Number, decimal:Number):Number">floor()</a>, <a href="#fuzzyEval" title="static public function fuzzyEval(n1:Number, n2:Number, precision:Number):Boolean">fuzzyEval()</a>, <a href="#getDivisors" title="static public function getDivisors(n:Number):Array">getDivisors()</a>, <a href="#isEven" title="static public function isEven(n:Number):Boolean">isEven()</a>, <a href="#isInteger" title="static public function isInteger(n:Number):Boolean">isInteger()</a>, <a href="#isNatural" title="static public function isNatural(n:Number):Boolean">isNatural()</a>, <a href="#isNegative" title="static public function isNegative(n:Number):Boolean">isNegative()</a>, <a href="#isOdd" title="static public function isOdd(n:Number):Boolean">isOdd()</a>, <a href="#isPositive" title="static public function isPositive(n:Number):Boolean">isPositive()</a>, <a href="#isPrime" title="static public function isPrime(n:Number):Boolean">isPrime()</a>, <a href="#max" title="static public function max():Number">max()</a>, <a href="#maxArray" title="static public function maxArray(a:Array):Number">maxArray()</a>, <a href="#min" title="static public function min():Number">min()</a>, <a href="#minArray" title="static public function minArray(a:Array):Number">minArray()</a>, <a href="#proportion" title="static public function proportion(x1:Number, x2:Number, y1:Number, y2:Number, x:Number):Number">proportion()</a>, <a href="#rnd" title="static public function rnd(start:Number, end:Number):Number">rnd()</a>, <a href="#round" title="static public function round(val:Number, decimal:Number):Number">round()</a>, <a href="#roundHalf" title="static public function roundHalf(val:Number):Number">roundHalf()</a>, <a href="#sanitizeFloat" title="static public function sanitizeFloat(n:Number, precision:Number):Number">sanitizeFloat()</a></div></div><div class="type_details"><div class="method_detail_list"><h2>Method Detail</h2><div class="method_details alt_row"><a name="max"></a><h3>max</h3><code class="method_synopsis">static public function <strong class="method_name">max</strong>():<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Returns the highest value of all passed arguments
+ Like Math.max() but supports any number of args passed to it
+ </p><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details"><a name="min"></a><h3>min</h3><code class="method_synopsis">static public function <strong class="method_name">min</strong>():<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Returns the lowest value of all passed arguments
+ Like Math.min() but supports any number of args passed to it
+ </p><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details alt_row"><a name="maxArray"></a><h3>maxArray</h3><code class="method_synopsis">static public function <strong class="method_name">maxArray</strong>(a:<span class="unresolved_type_name">Array</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Returns the highest value of all items in array
+ Like Math.max() but supports any number of items
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>a</code></td><td>(Array)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details"><a name="minArray"></a><h3>minArray</h3><code class="method_synopsis">static public function <strong class="method_name">minArray</strong>(a:<span class="unresolved_type_name">Array</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Returns the lowest value of all items in array
+ Like Math.min() but supports any number of items
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>a</code></td><td>(Array)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details alt_row"><a name="floor"></a><h3>floor</h3><code class="method_synopsis">static public function <strong class="method_name">floor</strong>(val:<span class="unresolved_type_name">Number</span>, decimal:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Same as Math.foor with extra argument to specify number of decimals
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>val</code></td><td>(Number)
+ </td></tr><tr><td><code>decimal</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details"><a name="round"></a><h3>round</h3><code class="method_synopsis">static public function <strong class="method_name">round</strong>(val:<span class="unresolved_type_name">Number</span>, decimal:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Round to a given amount of decimals
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>val</code></td><td>(Number)
+ </td></tr><tr><td><code>decimal</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details alt_row"><a name="roundHalf"></a><h3>roundHalf</h3><code class="method_synopsis">static public function <strong class="method_name">roundHalf</strong>(val:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Round to nearest .5
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>val</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+ <pre> Example:
+ 	trace(MathBase.roundHalf(<span class="num_const">4</span>.<span class="num_const">47</span>)); <span class="comment">// returns 4.5</span>
+ </pre>
+	 </p></div></div><div class="method_details"><a name="constrain"></a><h3>constrain</h3><code class="method_synopsis">static public function <strong class="method_name">constrain</strong>(val:<span class="unresolved_type_name">Number</span>, min:<span class="unresolved_type_name">Number</span>, max:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Will constrain a value to the defined boundaries
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>val</code></td><td>(Number)
+ </td></tr><tr><td><code>min</code></td><td>(Number)
+ </td></tr><tr><td><code>max</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+ <pre> Examples:
+ val: <span class="num_const">20</span>, <span class="num_const">2</span> to <span class="num_const">5</span>    <span class="key">this</span> will give back <span class="num_const">5</span> since <span class="num_const">5</span> is the top boundary
+ val: <span class="num_const">3</span>, <span class="num_const">2</span> to <span class="num_const">5</span>     <span class="key">this</span> will give back <span class="num_const">3</span>
+ </pre>
+	 </p></div></div><div class="method_details alt_row"><a name="proportion"></a><h3>proportion</h3><code class="method_synopsis">static public function <strong class="method_name">proportion</strong>(x1:<span class="unresolved_type_name">Number</span>, x2:<span class="unresolved_type_name">Number</span>, y1:<span class="unresolved_type_name">Number</span>, y2:<span class="unresolved_type_name">Number</span>, x:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Return the proportional value of two pairs of numbers.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>x1</code></td><td>(Number)
+ </td></tr><tr><td><code>x2</code></td><td>(Number)
+ </td></tr><tr><td><code>y1</code></td><td>(Number)
+ </td></tr><tr><td><code>y2</code></td><td>(Number)
+ </td></tr><tr><td><code>x</code></td><td>(Number) optional
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details"><a name="isPositive"></a><h3>isPositive</h3><code class="method_synopsis">static public function <strong class="method_name">isPositive</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Check if number is positive (zero is considered positive)
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+	 </p></div></div><div class="method_details alt_row"><a name="isNegative"></a><h3>isNegative</h3><code class="method_synopsis">static public function <strong class="method_name">isNegative</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Check if number is negative
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+	 </p></div></div><div class="method_details"><a name="isOdd"></a><h3>isOdd</h3><code class="method_synopsis">static public function <strong class="method_name">isOdd</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Check if number is Odd (convert to Integer if necessary)
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+	 </p></div></div><div class="method_details alt_row"><a name="isEven"></a><h3>isEven</h3><code class="method_synopsis">static public function <strong class="method_name">isEven</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Check if number is Even (convert to Integer if necessary)
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+	 </p></div></div><div class="method_details"><a name="isPrime"></a><h3>isPrime</h3><code class="method_synopsis">static public function <strong class="method_name">isPrime</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Check if number is Prime (divisible only itself and one)
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+	 </p></div></div><div class="method_details alt_row"><a name="factorial"></a><h3>factorial</h3><code class="method_synopsis">static public function <strong class="method_name">factorial</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Calculate the factorial of the integer.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number) 
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details"><a name="getDivisors"></a><h3>getDivisors</h3><code class="method_synopsis">static public function <strong class="method_name">getDivisors</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Array</span></code><div class="method_info"><p>
+ Return an array of divisors of the integer.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details alt_row"><a name="isInteger"></a><h3>isInteger</h3><code class="method_synopsis">static public function <strong class="method_name">isInteger</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Check if number is an Integer
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+	 </p></div></div><div class="method_details"><a name="isNatural"></a><h3>isNatural</h3><code class="method_synopsis">static public function <strong class="method_name">isNatural</strong>(n:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Check if number is Natural (positive Integer)
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+	 </p></div></div><div class="method_details alt_row"><a name="rnd"></a><h3>rnd</h3><code class="method_synopsis">static public function <strong class="method_name">rnd</strong>(start:<span class="unresolved_type_name">Number</span>, end:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Returns a random number inside a specific range
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>start</code></td><td>(Number)
+ </td></tr><tr><td><code>end</code></td><td>(Number)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+	 </p></div></div><div class="method_details"><a name="sanitizeFloat"></a><h3>sanitizeFloat</h3><code class="method_synopsis">static public function <strong class="method_name">sanitizeFloat</strong>(n:<span class="unresolved_type_name">Number</span>, precision:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Number</span></code><div class="method_info"><p>
+ Correct "roundoff errors" in floating point math.
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n</code></td><td>(Number)
+ </td></tr><tr><td><code>precision</code></td><td>(Number) - optional [default: returns (10000 * number) / 10000]
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Number
+ </p><h4>See Also</h4><ul class="extra_info"><li> <span class="unresolved_type_name">http://www.zeuslabs.us/2007/01/30/flash-floating-point-number-errors/</span> 
+	 </li></ul></div></div><div class="method_details alt_row"><a name="fuzzyEval"></a><h3>fuzzyEval</h3><code class="method_synopsis">static public function <strong class="method_name">fuzzyEval</strong>(n1:<span class="unresolved_type_name">Number</span>, n2:<span class="unresolved_type_name">Number</span>, precision:<span class="unresolved_type_name">Number</span>):<span class="unresolved_type_name">Boolean</span></code><div class="method_info"><p>
+ Evaluate if two numbers are nearly equal
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>n1</code></td><td>(Number)
+ </td></tr><tr><td><code>n2</code></td><td>(Number)
+ </td></tr><tr><td><code>precision</code></td><td>(Number) - optional [default: 0.00001 <diff> -0.00001]
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Boolean
+ </p><h4>See Also</h4><ul class="extra_info"><li> <span class="unresolved_type_name">http://www.zeuslabs.us/2007/01/30/flash-floating-point-number-errors/</span>
+	 </li></ul></div></div></div></div><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.math" class="button">Package</a></li><li><span class="button nav_current">Class</span></li><li><a href="MathBase.as.html" title="Source code of com.sekati.math.MathBase" class="button">Source</a></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

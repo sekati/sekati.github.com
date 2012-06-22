@@ -1,0 +1,71 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * com.sekati.utils.BitmapUtils
+<span class="lineno" id="3">     3  </span> * @version 1.0.0
+<span class="lineno" id="4">     4  </span> * @author jason m horwitz | sekati.com
+<span class="lineno" id="5">     5  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="6">     6  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="7">     7  </span> */</span>
+<span class="lineno" id="8">     8  </span> 
+<span class="lineno" id="9">     9  </span><span class="key">import</span> flash.display.BitmapData;
+<span class="lineno" id="10">    10  </span><span class="key">import</span> flash.geom.Matrix;
+<span class="lineno" id="11">    11  </span>
+<span class="lineno" id="12">    12  </span><span class="comment doc">/**
+<span class="lineno" id="13">    13  </span> * Static class wrapping variousBitmap utilities.
+<span class="lineno" id="14">    14  </span> */</span>
+<span class="lineno" id="15">    15  </span><span class="key">class</span> com.sekati.utils.BitmapUtils {
+<span class="lineno" id="16">    16  </span>
+<span class="lineno" id="17">    17  </span>	<span class="comment doc">/**
+<span class="lineno" id="18">    18  </span>	 * copy object to bitmapData object
+<span class="lineno" id="19">    19  </span>	 * @param src (MovieClip)
+<span class="lineno" id="20">    20  </span>	 * @param target (MovieClip)
+<span class="lineno" id="21">    21  </span>	 * @param deleteSource (Boolean)	
+<span class="lineno" id="22">    22  </span>	 * @param cacheAsBitmap (Boolean)	
+<span class="lineno" id="23">    23  </span>	 * @return Void
+<span class="lineno" id="24">    24  </span>	 * {@code Usage: 
+<span class="lineno" id="25">    25  </span>	 * BitmapUtils.copy(img, imgCopy, false, true); //copy to a new movieclip
+<span class="lineno" id="26">    26  </span>	 * BitmapUtils.copy(img, img, false, true);  //overwrites itself
+<span class="lineno" id="27">    27  </span>	 * }
+<span class="lineno" id="28">    28  </span>	 */</span>
+<span class="lineno" id="29">    29  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> copy(src:MovieClip, target:MovieClip, deleteSource:Boolean, cacheAsBitmap:Boolean):Void {
+<span class="lineno" id="30">    30  </span>		<span class="key">var</span> bdo:BitmapData = <span class="key">new</span> BitmapData( src._width, src._height, <span class="key">true</span>, <span class="num_const">0</span> );
+<span class="lineno" id="31">    31  </span>		target.attachBitmap( bdo, target.getNextHighestDepth( ), <span class="str_const">"auto"</span>, <span class="key">true</span> );
+<span class="lineno" id="32">    32  </span>		bdo.draw( src );
+<span class="lineno" id="33">    33  </span>		<span class="key">if</span> (deleteSource) {
+<span class="lineno" id="34">    34  </span>			src.removeMovieClip( );
+<span class="lineno" id="35">    35  </span>		}
+<span class="lineno" id="36">    36  </span>		<span class="key">if</span> (cacheAsBitmap) {
+<span class="lineno" id="37">    37  </span>			target.cacheAsBitmap = <span class="key">true</span>;
+<span class="lineno" id="38">    38  </span>		}
+<span class="lineno" id="39">    39  </span>	}
+<span class="lineno" id="40">    40  </span>
+<span class="lineno" id="41">    41  </span>	<span class="comment doc">/**
+<span class="lineno" id="42">    42  </span>	 * returns an array of pixel data from bitmap data object to post/store for later use
+<span class="lineno" id="43">    43  </span>	 * @param src (Object)
+<span class="lineno" id="44">    44  </span>	 * @param scale (Number)
+<span class="lineno" id="45">    45  </span>	 * @return Array
+<span class="lineno" id="46">    46  </span>	 */</span>	
+<span class="lineno" id="47">    47  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> getPixelData(src:Object, scale:Number):Array {
+<span class="lineno" id="48">    48  </span>		<span class="key">var</span> pixels:Array = <span class="key">new</span> Array( );
+<span class="lineno" id="49">    49  </span>		<span class="key">var</span> bitmap:BitmapData = <span class="key">new</span> BitmapData( src._width, src._height );
+<span class="lineno" id="50">    50  </span>		<span class="key">var</span> matrix:Matrix = <span class="key">new</span> Matrix( );
+<span class="lineno" id="51">    51  </span>		matrix.scale( scale, scale );
+<span class="lineno" id="52">    52  </span>		bitmap.draw( src, matrix );
+<span class="lineno" id="53">    53  </span>		<span class="key">var</span> w:Number = bitmap.width;
+<span class="lineno" id="54">    54  </span>		<span class="key">var</span> h:Number = bitmap.height;
+<span class="lineno" id="55">    55  </span>		<span class="key">var</span> tmp:String;
+<span class="lineno" id="56">    56  </span>		<span class="key">for</span> (<span class="key">var</span> a:Number = <span class="num_const">0</span>; a &lt;= w ; a++) {
+<span class="lineno" id="57">    57  </span>			<span class="key">for</span> (<span class="key">var</span> b:Number = <span class="num_const">0</span>; b &lt;= h ; b++) {
+<span class="lineno" id="58">    58  </span>				tmp = bitmap.getPixel32( a, b ).toString( <span class="num_const">16</span> );
+<span class="lineno" id="59">    59  </span>				pixels.push( tmp.substr( <span class="num_const">1</span> ) );
+<span class="lineno" id="60">    60  </span>			}
+<span class="lineno" id="61">    61  </span>		}
+<span class="lineno" id="62">    62  </span>		bitmap.dispose( );
+<span class="lineno" id="63">    63  </span>		<span class="key">return</span> pixels;
+<span class="lineno" id="64">    64  </span>	}
+<span class="lineno" id="65">    65  </span>
+<span class="lineno" id="66">    66  </span>	<span class="key">private</span> <span class="key">function</span> BitmapUtils() {
+<span class="lineno" id="67">    67  </span>	}
+<span class="lineno" id="68">    68  </span>}</pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.utils" class="button">Package</a></li><li><a href="BitmapUtils.html" title="Detail of com.sekati.utils.BitmapUtils API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

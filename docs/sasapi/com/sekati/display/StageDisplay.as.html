@@ -1,0 +1,198 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * com.sekati.display.StageDisplay
+<span class="lineno" id="3">     3  </span> * @version 1.1.5
+<span class="lineno" id="4">     4  </span> * @author jason m horwitz | sekati.com
+<span class="lineno" id="5">     5  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="6">     6  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="7">     7  </span> */</span>
+<span class="lineno" id="8">     8  </span> 
+<span class="lineno" id="9">     9  </span><span class="key">import</span> com.sekati.core.CoreObject;
+<span class="lineno" id="10">    10  </span><span class="key">import</span> com.sekati.events.Dispatcher;
+<span class="lineno" id="11">    11  </span><span class="key">import</span> com.sekati.events.Event;
+<span class="lineno" id="12">    12  </span><span class="key">import</span> com.sekati.events.FramePulse;
+<span class="lineno" id="13">    13  </span><span class="key">import</span> com.sekati.geom.Point;
+<span class="lineno" id="14">    14  </span><span class="key">import</span> com.sekati.utils.Delegate;
+<span class="lineno" id="15">    15  </span>
+<span class="lineno" id="16">    16  </span><span class="comment doc">/**
+<span class="lineno" id="17">    17  </span> * StageDisplay eases Stage interfacing with added/simplified methods and properties. 
+<span class="lineno" id="18">    18  </span> * Note {@link _fullscreen()} requires Flash Player &gt;=9.0.28
+<span class="lineno" id="19">    19  </span> */</span>
+<span class="lineno" id="20">    20  </span><span class="key">class</span> com.sekati.display.StageDisplay <span class="key">extends</span> CoreObject {
+<span class="lineno" id="21">    21  </span>
+<span class="lineno" id="22">    22  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _instance:StageDisplay;
+<span class="lineno" id="23">    23  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">var</span> onStageResizeEVENT:String = <span class="str_const">"onStageResize"</span>;
+<span class="lineno" id="24">    24  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">var</span> onStageResizeCompleteEVENT:String = <span class="str_const">"onStageResizeComplete"</span>;
+<span class="lineno" id="25">    25  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">var</span> onStageFullScreenEVENT:String = <span class="str_const">"onStageFullScreen"</span>;
+<span class="lineno" id="26">    26  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">var</span> onStageReadyEVENT:String = <span class="str_const">"onStageReady"</span>;
+<span class="lineno" id="27">    27  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _resizeDelayMs:Number = <span class="num_const">500</span>;
+<span class="lineno" id="28">    28  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _resizeIntervalId:Number;		
+<span class="lineno" id="29">    29  </span>
+<span class="lineno" id="30">    30  </span>	<span class="comment doc">/**
+<span class="lineno" id="31">    31  </span>	 * Singleton Private Constructor
+<span class="lineno" id="32">    32  </span>	 */</span>
+<span class="lineno" id="33">    33  </span>	<span class="key">private</span> <span class="key">function</span> StageDisplay() {
+<span class="lineno" id="34">    34  </span>		<span class="key">super</span>( );
+<span class="lineno" id="35">    35  </span>		Stage.addListener( <span class="key">this</span> );
+<span class="lineno" id="36">    36  </span>		FramePulse.$.addFrameListener( <span class="key">this</span> );
+<span class="lineno" id="37">    37  </span>	}
+<span class="lineno" id="38">    38  </span>
+<span class="lineno" id="39">    39  </span>	<span class="comment doc">/**
+<span class="lineno" id="40">    40  </span>	 * Singleton Accessor
+<span class="lineno" id="41">    41  </span>	 * @return StageDisplay
+<span class="lineno" id="42">    42  </span>	 */</span>
+<span class="lineno" id="43">    43  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> getInstance():StageDisplay {
+<span class="lineno" id="44">    44  </span>		<span class="key">if</span> (!_instance) _instance = <span class="key">new</span> StageDisplay( );
+<span class="lineno" id="45">    45  </span>		<span class="key">return</span> _instance;
+<span class="lineno" id="46">    46  </span>	}
+<span class="lineno" id="47">    47  </span>
+<span class="lineno" id="48">    48  </span>	<span class="comment doc">/**
+<span class="lineno" id="49">    49  </span>	 * Shorthand singleton accessor getter
+<span class="lineno" id="50">    50  </span>	 * @return StageDisplay
+<span class="lineno" id="51">    51  </span>	 */</span>
+<span class="lineno" id="52">    52  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> get $():StageDisplay {
+<span class="lineno" id="53">    53  </span>		<span class="key">return</span> StageDisplay.getInstance( );	
+<span class="lineno" id="54">    54  </span>	}
+<span class="lineno" id="55">    55  </span>
+<span class="lineno" id="56">    56  </span>	<span class="comment doc">/**
+<span class="lineno" id="57">    57  </span>	 * Stage.onResize dispatches onStageResize event.
+<span class="lineno" id="58">    58  </span>	 * @return Void 
+<span class="lineno" id="59">    59  </span>	 */</span>
+<span class="lineno" id="60">    60  </span>	 
+<span class="lineno" id="61">    61  </span>	<span class="key">public</span> <span class="key">function</span> onResize():Void {
+<span class="lineno" id="62">    62  </span>		<span class="key">if</span> (_resizeIntervalId != <span class="key">null</span>) clearResizeInt( );
+<span class="lineno" id="63">    63  </span>		_resizeIntervalId = setInterval( Delegate.create( <span class="key">this</span>, onResizeComplete ), _resizeDelayMs );
+<span class="lineno" id="64">    64  </span>		Dispatcher.$.dispatchEvent( <span class="key">new</span> Event( onStageResizeEVENT, _instance, {_width:_width, _height:_height} ) );	
+<span class="lineno" id="65">    65  </span>	}
+<span class="lineno" id="66">    66  </span>
+<span class="lineno" id="67">    67  </span>	<span class="comment doc">/**
+<span class="lineno" id="68">    68  </span>	 * Fires when an onResize event has not been fired in the time defined by {@link _resizeDelayMs}.
+<span class="lineno" id="69">    69  </span>	 * @return Void
+<span class="lineno" id="70">    70  </span>	 */</span>
+<span class="lineno" id="71">    71  </span>	<span class="key">public</span> <span class="key">function</span> onResizeComplete():Void {
+<span class="lineno" id="72">    72  </span>		trace( <span class="str_const">"@@@ onResizeComplete Fired! ("</span> + _resizeDelayMs + <span class="str_const">"ms expired since last resize)"</span> );
+<span class="lineno" id="73">    73  </span>		Dispatcher.$.dispatchEvent( <span class="key">new</span> Event( onStageResizeCompleteEVENT, _instance, {_width:_width, _height:_height} ) );
+<span class="lineno" id="74">    74  </span>		clearResizeInt( );
+<span class="lineno" id="75">    75  </span>	}	
+<span class="lineno" id="76">    76  </span>
+<span class="lineno" id="77">    77  </span>	<span class="comment doc">/**
+<span class="lineno" id="78">    78  </span>	 * Stage.onFullScreen dispatches onStageFullscreen event.
+<span class="lineno" id="79">    79  </span>	 * @return Void
+<span class="lineno" id="80">    80  </span>	 */</span>
+<span class="lineno" id="81">    81  </span>	<span class="key">public</span> <span class="key">function</span> onFullScreen(bFull:Boolean):Void {
+<span class="lineno" id="82">    82  </span>		trace( <span class="str_const">"@@@ onFullScreen Fired! ("</span> + bFull + <span class="str_const">")"</span> );
+<span class="lineno" id="83">    83  </span>		Dispatcher.$.dispatchEvent( <span class="key">new</span> Event( onStageFullScreenEVENT, _instance, {isFullscreen:bFull} ) );
+<span class="lineno" id="84">    84  </span>	}
+<span class="lineno" id="85">    85  </span>
+<span class="lineno" id="86">    86  </span>	<span class="comment doc">/**
+<span class="lineno" id="87">    87  </span>	 * Handle resizeInterval resets
+<span class="lineno" id="88">    88  </span>	 * @return Void
+<span class="lineno" id="89">    89  </span>	 */</span>
+<span class="lineno" id="90">    90  </span>	<span class="key">private</span> <span class="key">function</span> clearResizeInt():Void {
+<span class="lineno" id="91">    91  </span>		clearInterval( _resizeIntervalId );
+<span class="lineno" id="92">    92  </span>		_resizeIntervalId = <span class="key">null</span>;		
+<span class="lineno" id="93">    93  </span>	}
+<span class="lineno" id="94">    94  </span>
+<span class="lineno" id="95">    95  </span>	<span class="comment doc">/**
+<span class="lineno" id="96">    96  </span>	 * Listen to {@link com.sekati.events.FramePulse} and dispatch an onStageReadyEVENT once the Stage has initialized.
+<span class="lineno" id="97">    97  </span>	 * @return Void
+<span class="lineno" id="98">    98  </span>	 */</span>
+<span class="lineno" id="99">    99  </span>	<span class="key">private</span> <span class="key">function</span> _onEnterFrame():Void {
+<span class="lineno" id="100">   100  </span>		<span class="key">if</span> (isReady) {
+<span class="lineno" id="101">   101  </span>			FramePulse.$.removeFrameListener( <span class="key">this</span> );
+<span class="lineno" id="102">   102  </span>			Dispatcher.$.dispatchEvent( <span class="key">new</span> Event( onStageReadyEVENT, _instance, {isReady:isReady} ) );	
+<span class="lineno" id="103">   103  </span>		}
+<span class="lineno" id="104">   104  </span>	}	
+<span class="lineno" id="105">   105  </span>
+<span class="lineno" id="106">   106  </span>	<span class="comment doc">/**
+<span class="lineno" id="107">   107  </span>	 * StageDisplay.isReady getter to indicate if Stage has been fully initialized.
+<span class="lineno" id="108">   108  </span>	 * @return Boolean 
+<span class="lineno" id="109">   109  </span>	 */</span>
+<span class="lineno" id="110">   110  </span>	<span class="key">public</span> <span class="key">function</span> get isReady():Boolean {
+<span class="lineno" id="111">   111  </span>		<span class="key">return</span> (_width &gt; <span class="num_const">0</span> &amp;&amp; _height &gt; <span class="num_const">0</span>);	
+<span class="lineno" id="112">   112  </span>	}
+<span class="lineno" id="113">   113  </span>
+<span class="lineno" id="114">   114  </span>	<span class="comment doc">/**
+<span class="lineno" id="115">   115  </span>	 * Stage.width getter.
+<span class="lineno" id="116">   116  </span>	 * @return Number
+<span class="lineno" id="117">   117  </span>	 */</span>
+<span class="lineno" id="118">   118  </span>	<span class="key">public</span> <span class="key">function</span> get _width():Number {
+<span class="lineno" id="119">   119  </span>		<span class="key">return</span> Stage.width;	
+<span class="lineno" id="120">   120  </span>	}
+<span class="lineno" id="121">   121  </span>
+<span class="lineno" id="122">   122  </span>	<span class="comment doc">/**
+<span class="lineno" id="123">   123  </span>	 * Stage.height getter.
+<span class="lineno" id="124">   124  </span>	 * @return Number
+<span class="lineno" id="125">   125  </span>	 */</span>
+<span class="lineno" id="126">   126  </span>	<span class="key">public</span> <span class="key">function</span> get _height():Number {
+<span class="lineno" id="127">   127  </span>		<span class="key">return</span> Stage.height;
+<span class="lineno" id="128">   128  </span>	}
+<span class="lineno" id="129">   129  </span>
+<span class="lineno" id="130">   130  </span>	<span class="comment doc">/**
+<span class="lineno" id="131">   131  </span>	 * Stage size getter.
+<span class="lineno" id="132">   132  </span>	 * @return Point - containing right, bottom.
+<span class="lineno" id="133">   133  </span>	 */</span>
+<span class="lineno" id="134">   134  </span>	<span class="key">public</span> <span class="key">function</span> get _size():Point {
+<span class="lineno" id="135">   135  </span>		<span class="key">return</span> <span class="key">new</span> Point( _width, _height );	
+<span class="lineno" id="136">   136  </span>	}
+<span class="lineno" id="137">   137  </span>
+<span class="lineno" id="138">   138  </span>	<span class="comment doc">/**
+<span class="lineno" id="139">   139  </span>	 * Stage center _x getter.
+<span class="lineno" id="140">   140  </span>	 * @return Number
+<span class="lineno" id="141">   141  </span>	 */</span>
+<span class="lineno" id="142">   142  </span>	<span class="key">public</span> <span class="key">function</span> get _centerx():Number {
+<span class="lineno" id="143">   143  </span>		<span class="key">return</span> Math.round( _width / <span class="num_const">2</span> );
+<span class="lineno" id="144">   144  </span>	}
+<span class="lineno" id="145">   145  </span>
+<span class="lineno" id="146">   146  </span>	<span class="comment doc">/**
+<span class="lineno" id="147">   147  </span>	 * Stage center _y getter.
+<span class="lineno" id="148">   148  </span>	 * @return Number
+<span class="lineno" id="149">   149  </span>	 */</span>
+<span class="lineno" id="150">   150  </span>	<span class="key">public</span> <span class="key">function</span> get _centery():Number {
+<span class="lineno" id="151">   151  </span>		<span class="key">return</span> Math.round( _height / <span class="num_const">2</span> );
+<span class="lineno" id="152">   152  </span>	}
+<span class="lineno" id="153">   153  </span>
+<span class="lineno" id="154">   154  </span>	<span class="comment doc">/**
+<span class="lineno" id="155">   155  </span>	 * Stage center getter.
+<span class="lineno" id="156">   156  </span>	 * @return Point
+<span class="lineno" id="157">   157  </span>	 */</span>
+<span class="lineno" id="158">   158  </span>	<span class="key">public</span> <span class="key">function</span> get _center():Point {
+<span class="lineno" id="159">   159  </span>		<span class="key">return</span> <span class="key">new</span> Point( _centerx, _centery );	
+<span class="lineno" id="160">   160  </span>	}
+<span class="lineno" id="161">   161  </span>
+<span class="lineno" id="162">   162  </span>	<span class="comment doc">/**
+<span class="lineno" id="163">   163  </span>	 * Stage.displayState fullscreen getter
+<span class="lineno" id="164">   164  </span>	 * @return Boolean - true if fullscreen, false if normal.
+<span class="lineno" id="165">   165  </span>	 */</span>	 
+<span class="lineno" id="166">   166  </span>	<span class="key">public</span> <span class="key">function</span> get _fullscreen():Boolean {
+<span class="lineno" id="167">   167  </span>		<span class="key">return</span> (Stage[<span class="str_const">"displayState"</span>] == <span class="str_const">"fullScreen"</span>) ? <span class="key">true</span> : <span class="key">false</span>;
+<span class="lineno" id="168">   168  </span>	}
+<span class="lineno" id="169">   169  </span>
+<span class="lineno" id="170">   170  </span>	<span class="comment doc">/**
+<span class="lineno" id="171">   171  </span>	 * Stage.displayState fullscreen setter - dispatches "onStageFullscreen" event.
+<span class="lineno" id="172">   172  </span>	 * @param b (Boolean) true sets fullscreen, false sets normal.
+<span class="lineno" id="173">   173  </span>	 */</span>
+<span class="lineno" id="174">   174  </span>	<span class="key">public</span> <span class="key">function</span> set _fullscreen(b:Boolean):Void {
+<span class="lineno" id="175">   175  </span>		<span class="key">var</span> state:String = (!b) ? <span class="str_const">"normal"</span> : <span class="str_const">"fullScreen"</span>;
+<span class="lineno" id="176">   176  </span>		Stage[<span class="str_const">"displayState"</span>] = state;
+<span class="lineno" id="177">   177  </span>	}
+<span class="lineno" id="178">   178  </span>
+<span class="lineno" id="179">   179  </span>	<span class="comment doc">/**
+<span class="lineno" id="180">   180  </span>	 * toggle Stage.displayState between "normal" and "fullScreen".
+<span class="lineno" id="181">   181  </span>	 * @return Void
+<span class="lineno" id="182">   182  </span>	 */</span>
+<span class="lineno" id="183">   183  </span>	<span class="key">public</span> <span class="key">function</span> toggleFullScreen():Void {	
+<span class="lineno" id="184">   184  </span>		_fullscreen = !_fullscreen;
+<span class="lineno" id="185">   185  </span>	}
+<span class="lineno" id="186">   186  </span>
+<span class="lineno" id="187">   187  </span>	<span class="comment doc">/**
+<span class="lineno" id="188">   188  </span>	 * Destroy Singleton instance.
+<span class="lineno" id="189">   189  </span>	 * @return Void
+<span class="lineno" id="190">   190  </span>	 */</span>
+<span class="lineno" id="191">   191  </span>	<span class="key">public</span> <span class="key">function</span> destroy():Void {
+<span class="lineno" id="192">   192  </span>		FramePulse.$.removeFrameListener( <span class="key">this</span> );
+<span class="lineno" id="193">   193  </span>		<span class="key">super</span>.destroy( );
+<span class="lineno" id="194">   194  </span>	}
+<span class="lineno" id="195">   195  </span>}</pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.display" class="button">Package</a></li><li><a href="StageDisplay.html" title="Detail of com.sekati.display.StageDisplay API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

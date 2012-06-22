@@ -1,0 +1,117 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * com.sekati.transitions.Mot
+<span class="lineno" id="3">     3  </span> * @version 1.1.0
+<span class="lineno" id="4">     4  </span> * @author jason m horwitz | sekati.com | tendercreative.com
+<span class="lineno" id="5">     5  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="6">     6  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="7">     7  </span> */</span>
+<span class="lineno" id="8">     8  </span> 
+<span class="lineno" id="9">     9  </span><span class="key">import</span> caurina.transitions.Tweener;
+<span class="lineno" id="10">    10  </span><span class="lineno" id="11">    11  </span><span class="comment doc">/**
+<span class="lineno" id="12">    12  </span> * Mot - Motion Styling template support for {@link caurina.transitions.Tweener}
+<span class="lineno" id="13">    13  </span> * {@code Usage:
+<span class="lineno" id="14">    14  </span> * 	Tweener.addTween(myMc, { _x:500, _y:30, base:Mot.base0 } );
+<span class="lineno" id="15">    15  </span> * 	Tweener.addTween(myMc, { base:Mot.fadeOut } );
+<span class="lineno" id="16">    16  </span> * 	Tweener.addTween(myMc, { base:Mot.fadeTo(50), onComplete:myCallBackFn} );
+<span class="lineno" id="17">    17  </span> * }
+<span class="lineno" id="18">    18  </span> */</span>
+<span class="lineno" id="19">    19  </span><span class="key">class</span> com.sekati.transitions.Mot {
+<span class="lineno" id="20">    20  </span><span class="lineno" id="21">    21  </span>	<span class="comment">// easing shortcuts</span>
+<span class="lineno" id="22">    22  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">var</span> i:Object = { quint:<span class="str_const">"easeInQuint"</span>, quad:<span class="str_const">"easeInQuad"</span>, quart:<span class="str_const">"easeInQuart"</span>, expo:<span class="str_const">"easeInExpo"</span> };
+<span class="lineno" id="23">    23  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">var</span> o:Object = { quint:<span class="str_const">"easeOutQuint"</span>, quad:<span class="str_const">"easeOutQuad"</span>, quart:<span class="str_const">"easeOutQuart"</span>, expo:<span class="str_const">"easeOutExpo"</span> };
+<span class="lineno" id="24">    24  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">var</span> io:Object = { quint:<span class="str_const">"easeInOutQuint"</span>, quad:<span class="str_const">"easeInOutQuad"</span>, quart:<span class="str_const">"easeInOutQuart"</span>, expo:<span class="str_const">"easeInOutExpo"</span> };
+<span class="lineno" id="25">    25  </span>	<span class="comment">// timing shortcuts</span>
+<span class="lineno" id="26">    26  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">var</span> t:Object = {s:<span class="num_const">0</span>.<span class="num_const">3</span>, s2:<span class="num_const">0</span>.<span class="num_const">5</span>, s3:<span class="num_const">0</span>.<span class="num_const">7</span>, d:<span class="num_const">0</span>.<span class="num_const">3</span>, d2:<span class="num_const">0</span>.<span class="num_const">5</span>, d3:<span class="num_const">1</span>};
+<span class="lineno" id="27">    27  </span>	<span class="comment">// deprecated "App.mot" mc_tween2 object - kept for backwards compatability</span>
+<span class="lineno" id="28">    28  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">var</span> m:Object = {e:<span class="str_const">"easeInOutQuint"</span>, e2:<span class="str_const">"easeOutQuint"</span>, e3:<span class="str_const">"easeInOutQuad"</span>, e4:<span class="str_const">"easeOutQuad"</span>, e5:<span class="str_const">"easeInOutQuart"</span>, e6:<span class="str_const">"easeOutQuart"</span>, e7:<span class="str_const">"easeInOutExpo"</span>, e8:<span class="str_const">"easeOutExpo"</span>, s:<span class="num_const">0</span>.<span class="num_const">3</span>, s2:<span class="num_const">0</span>.<span class="num_const">5</span>, d:<span class="num_const">0</span>.<span class="num_const">5</span>};
+<span class="lineno" id="29">    29  </span>	<span class="comment">// color shortcuts</span>
+<span class="lineno" id="30">    30  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">var</span> col:Object = {b:0x000000, w:0xFFFFFF, r:0xFF0000, g:0x00FF00, b:0x0000FF, y:0xFFFF00, c:0x00FFFF, m:0xFF00FF};
+<span class="lineno" id="31">    31  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">var</span> chromo:Object = {
+<span class="lineno" id="32">    32  </span>		month:{jan:0x00D294, feb:0x26E058, mar:0xBCFF2D, apr:0xFFFF41, may:0xFFAF0B, jun:0xFF1A33, jul:0xFF1F77, aug:0xFB48BC, sep:0xBC35B7, oct:0x2463DB, nov:0x00A3FF, dec:0x00DCFF}, day:{a1:0x00D5E1, a2:0x00D294, a3:0x00CB58, a4:0x26E058, a5:0x7AF049, a6:0xBCFF2D, a7:0xFFFF22, a8:0xFFFF41, a9:0xFFFF30, a10:0xFFAF0B, a11:0xFF6E0C, a12:0xFF1A33, p1:0xFF0041, p2:0xFF1F77, p3:0xFF37B2, p4:0xFB48BC, p5:0xE638B5, p6:0xBC35B7, p7:0x7953CB, p8:0x2463DB, p9:0x0077EB, p10:0x00A3FF, p11:0x00C8FF, p12:0x00DCFF}
+<span class="lineno" id="33">    33  </span>	};
+<span class="lineno" id="34">    34  </span><span class="lineno" id="35">    35  </span>	<span class="comment">// preset templates</span>
+<span class="lineno" id="36">    36  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> get base0():Object { 
+<span class="lineno" id="37">    37  </span>		<span class="key">return</span> { time:t.s, transition:io.quint };
+<span class="lineno" id="38">    38  </span>	}
+<span class="lineno" id="39">    39  </span><span class="lineno" id="40">    40  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> get base1():Object {
+<span class="lineno" id="41">    41  </span>		<span class="key">return</span> { time:t.s, transition:io.quad };
+<span class="lineno" id="42">    42  </span>	}
+<span class="lineno" id="43">    43  </span><span class="lineno" id="44">    44  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> get base2():Object {
+<span class="lineno" id="45">    45  </span>		<span class="key">return</span> { time:t.s, transition:io.expo };
+<span class="lineno" id="46">    46  </span>	}
+<span class="lineno" id="47">    47  </span><span class="lineno" id="48">    48  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> get abase():Object {
+<span class="lineno" id="49">    49  </span>		<span class="key">return</span> {time:<span class="num_const">0</span>.<span class="num_const">5</span>, transition:o.quad };
+<span class="lineno" id="50">    50  </span>	}
+<span class="lineno" id="51">    51  </span><span class="lineno" id="52">    52  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> get abaseShort():Object {
+<span class="lineno" id="53">    53  </span>		<span class="key">return</span> {time:<span class="num_const">0</span>.<span class="num_const">3</span>, transition:o.quad };
+<span class="lineno" id="54">    54  </span>	}
+<span class="lineno" id="55">    55  </span><span class="lineno" id="56">    56  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> get abaseLong():Object {
+<span class="lineno" id="57">    57  </span>		<span class="comment">//return {time:1, transition:io.quad };</span>
+<span class="lineno" id="58">    58  </span>		<span class="key">return</span> {time:<span class="num_const">0</span>.<span class="num_const">7</span>, transition:io.quad };
+<span class="lineno" id="59">    59  </span>	}
+<span class="lineno" id="60">    60  </span><span class="lineno" id="61">    61  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> get fadeIn():Object {
+<span class="lineno" id="62">    62  </span>		<span class="key">return</span> Mot.fadeTo( <span class="num_const">100</span> );	
+<span class="lineno" id="63">    63  </span>	}
+<span class="lineno" id="64">    64  </span><span class="lineno" id="65">    65  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> get fadeOut():Object {
+<span class="lineno" id="66">    66  </span>		<span class="key">return</span> Mot.fadeTo( <span class="num_const">0</span> );	
+<span class="lineno" id="67">    67  </span>	}
+<span class="lineno" id="68">    68  </span><span class="lineno" id="69">    69  </span>	<span class="comment doc">/**
+<span class="lineno" id="70">    70  </span>	 * Return a base tween object alpha transition
+<span class="lineno" id="71">    71  </span>	 * @param a (Number)
+<span class="lineno" id="72">    72  </span>	 * @return Object
+<span class="lineno" id="73">    73  </span>	 */</span>
+<span class="lineno" id="74">    74  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> fadeTo(a:Number):Object {
+<span class="lineno" id="75">    75  </span>		<span class="key">return</span> { _alpha:a, time:t.s, transition:io.expo };	
+<span class="lineno" id="76">    76  </span>	}
+<span class="lineno" id="77">    77  </span><span class="lineno" id="78">    78  </span>	<span class="comment doc">/**
+<span class="lineno" id="79">    79  </span>	 * Return a base tween object glow transition
+<span class="lineno" id="80">    80  </span>	 * @param a (Number) alpha [0-100]
+<span class="lineno" id="81">    81  </span>	 * @param b (Number) blur [0-255]
+<span class="lineno" id="82">    82  </span>	 * @param c (Number) color [hex]
+<span class="lineno" id="83">    83  </span>	 * @param s (Number) strength [0-255]
+<span class="lineno" id="84">    84  </span>	 * @return Object
+<span class="lineno" id="85">    85  </span>	 */</span>
+<span class="lineno" id="86">    86  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> glow(a:Number, b:Number, c:Number, s:Number):Object {
+<span class="lineno" id="87">    87  </span>		<span class="key">return</span> {_Glow_alpha:a, _Glow_color:c, _Glow_quality:<span class="num_const">3</span>, _Glow_strength:s, _Glow_blurX:b, _Glow_blurY:b};	
+<span class="lineno" id="88">    88  </span>	}
+<span class="lineno" id="89">    89  </span><span class="lineno" id="90">    90  </span>	<span class="comment doc">/**
+<span class="lineno" id="91">    91  </span>	 * Create a small "burst" transition
+<span class="lineno" id="92">    92  </span>	 * @param mc (MovieClip)
+<span class="lineno" id="93">    93  </span>	 * @param c (Number) color [hex]
+<span class="lineno" id="94">    94  </span>	 * @param cb (Function) callback
+<span class="lineno" id="95">    95  </span>	 * @return Void
+<span class="lineno" id="96">    96  </span>	 */</span>	
+<span class="lineno" id="97">    97  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> burst(mc:MovieClip, c:Number, cb:Function):Void {
+<span class="lineno" id="98">    98  </span>		Tweener.addTween( mc, {_scale:<span class="num_const">10</span>, time:<span class="num_const">0</span>.<span class="num_const">3</span>, transition:Mot.o.quint} );
+<span class="lineno" id="99">    99  </span>		Tweener.addTween( mc, {_Glow_alpha:<span class="num_const">100</span>, _Glow_color:c, _Glow_quality:<span class="num_const">3</span>, _Glow_strength:<span class="num_const">10</span>, _Glow_blurX:<span class="num_const">25</span>, _Glow_blurY:<span class="num_const">25</span>, _scale:<span class="num_const">150</span>, time:<span class="num_const">0</span>.<span class="num_const">3</span>, transition:io.quad, delay:<span class="num_const">0</span>.<span class="num_const">3</span>} );
+<span class="lineno" id="100">   100  </span>		Tweener.addTween( mc, {_alpha:<span class="num_const">0</span>, _scale:<span class="num_const">50</span>, time:<span class="num_const">0</span>.<span class="num_const">5</span>, transition:Mot.o.quint, delay:<span class="num_const">0</span>.<span class="num_const">6</span>, onComplete:cb} );
+<span class="lineno" id="101">   101  </span>	}
+<span class="lineno" id="102">   102  </span><span class="lineno" id="103">   103  </span>	<span class="comment doc">/**
+<span class="lineno" id="104">   104  </span>	 * Normalize a clip
+<span class="lineno" id="105">   105  </span>	 * @param mc (MovieClip)
+<span class="lineno" id="106">   106  </span>	 * @return Void
+<span class="lineno" id="107">   107  </span>	 */</span>
+<span class="lineno" id="108">   108  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> normalize(mc:MovieClip):Void {
+<span class="lineno" id="109">   109  </span>		mc.filters = [];
+<span class="lineno" id="110">   110  </span>		mc._xscale = <span class="num_const">100</span>;
+<span class="lineno" id="111">   111  </span>		mc._yscale = <span class="num_const">100</span>;
+<span class="lineno" id="112">   112  </span>		Tweener.addTween( mc, {_color:undefined, time:<span class="num_const">0</span>} );	
+<span class="lineno" id="113">   113  </span>	}
+<span class="lineno" id="114">   114  </span><span class="lineno" id="115">   115  </span>	<span class="comment doc">/**
+<span class="lineno" id="116">   116  </span>	 * Return a base tween object color transition
+<span class="lineno" id="117">   117  </span>	 * @param c (Number)
+<span class="lineno" id="118">   118  </span>	 * @return Object
+<span class="lineno" id="119">   119  </span>	 */</span>
+<span class="lineno" id="120">   120  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> colorTo(c:Number):Object {
+<span class="lineno" id="121">   121  </span>		<span class="key">return</span> { _color:c, time:t.s2, transition:io.quint };	
+<span class="lineno" id="122">   122  </span>	}	
+<span class="lineno" id="123">   123  </span><span class="lineno" id="124">   124  </span>	<span class="comment doc">/**
+<span class="lineno" id="125">   125  </span>	 * Mot Private Constructor
+<span class="lineno" id="126">   126  </span>	 */</span>
+<span class="lineno" id="127">   127  </span>	<span class="key">private</span> <span class="key">function</span> Mot() {
+<span class="lineno" id="128">   128  </span>	}
+<span class="lineno" id="129">   129  </span>}
+<span class="lineno" id="130">   130  </span></pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.transitions" class="button">Package</a></li><li><a href="Mot.html" title="Detail of com.sekati.transitions.Mot API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

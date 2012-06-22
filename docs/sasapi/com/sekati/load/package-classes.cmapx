@@ -1,0 +1,6 @@
+<map id="class_diagram" name="class_diagram">
+<area shape="rect" href="LoaderEvent.html" title="com.sekati.load.LoaderEvent" alt="" coords="7,152,103,200" />
+<area shape="rect" href="Loader.html" title="com.sekati.load.Loader" alt="" coords="19,80,91,128" />
+<area shape="rect" href="GraphicLoader.html" title="com.sekati.load.GraphicLoader" alt="" coords="153,80,259,128" />
+<area shape="rect" href="BaseLoader.html" title="com.sekati.load.BaseLoader" alt="" coords="10,8,101,56" />
+</map>

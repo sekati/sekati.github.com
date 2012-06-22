@@ -1,0 +1,702 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="Viewport,sekati.ui.Viewport,BOTTOM_CONSTRAINT,PROPORTION_HEIGHT,PROPORTION_WIDTH,RATIO,_bb,_instance,_target,_tb,_vp,$,bottom,bottomBox,centerx,centery,height,proportionHeight,proportionWidth,ratio,top,topBox,viewport,width,x,y,destroy,getInstance,init,render" name="keywords">
+<title>sekati.ui.Viewport</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Viewport - Sekati API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Sekati API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?sekati/ui/Viewport.html&amp;sekati/ui/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Viewport</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Viewport"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">sekati.ui</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Viewport</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">Viewport <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+</table>
+<p></p>
+  Viewport provides a faux application viewport via a set of letterboxing DisplayObject's to confine content.
+  By default these are set at a 16:9 proportion and maintain the proportion to <code>Canvas.stage</code>. A
+  <code>ViewportEvent.RENDER</code> is dispatched when the Viewport is updated. This condenses <code>StageDisplay</code>
+  events and assists in liquid layouts which require a proportional relationship within a Viewport.
+  <p></p>
+<br>
+<span class="label">Example</span>
+<br><div class='listing'><pre>
+  // Note: Document class extends sekati.display.Canvas
+  // initialize the StageDisplay
+  StageDisplay.$.init( );
+  // initialize a viewport with a 25 pixel minimum footer.
+  Viewport.$.init( this, 25 );
+  Viewport.$.render( );
+  </pre></div>
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../events/ViewportEvent.html" target="">sekati.events.ViewportEvent</a>
+<br>
+<a href="../display/StageDisplay.html" target="">sekati.display.StageDisplay</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#$">$</a> : <a href="../ui/Viewport.html">Viewport</a>
+<div class="summaryTableDescription">[static][read-only]
+   Shorthand singleton accessor getter
+   </div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bottom">bottom</a> : int<div class="summaryTableDescription">[read-only]
+   Return bottom of the visible viewport.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bottomBox">bottomBox</a> : Shape<div class="summaryTableDescription">[read-only]
+   Return the bottom letterbox shape.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#centerx">centerx</a> : int<div class="summaryTableDescription">[read-only]
+   Return viewport center x position.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#centery">centery</a> : int<div class="summaryTableDescription">[read-only]
+   Return viewport center y position.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#height">height</a> : int<div class="summaryTableDescription">[read-only]
+   Return viewport height.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#proportionHeight">proportionHeight</a> : uint<div class="summaryTableDescription">[read-only]
+   Return ratio proportional height.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#proportionWidth">proportionWidth</a> : uint<div class="summaryTableDescription">[read-only]
+   Return ratio proportional width.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ratio">ratio</a> : Number<div class="summaryTableDescription">[read-only]
+   Return viewport ratio.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#top">top</a> : int<div class="summaryTableDescription">[read-only]
+   Return top of the visible viewport.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#topBox">topBox</a> : Shape<div class="summaryTableDescription">[read-only]
+   Return the top letter box shape.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#viewport">viewport</a> : Shape<div class="summaryTableDescription">[read-only]
+   Return the viewport shape.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#width">width</a> : int<div class="summaryTableDescription">[read-only]
+   Return viewport width.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#x">x</a> : int<div class="summaryTableDescription">[read-only]
+   Return viewport x position.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#y">y</a> : int<div class="summaryTableDescription">[read-only]
+   Return viewport y position.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_bb">_bb</a> : Shape<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BOTTOM_CONSTRAINT">BOTTOM_CONSTRAINT</a> : uint<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_instance">_instance</a> : <a href="../ui/Viewport.html">Viewport</a>
+<div class="summaryTableDescription">[static]</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#PROPORTION_HEIGHT">PROPORTION_HEIGHT</a> : uint<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#PROPORTION_WIDTH">PROPORTION_WIDTH</a> : uint<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#RATIO">RATIO</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_target">_target</a> : DisplayObjectContainer<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_tb">_tb</a> : Shape<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_vp">_vp</a> : Shape<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Viewport()">Viewport</a>($:SingletonEnforcer = null)</div>
+<div class="summaryTableDescription">
+   Viewport Singleton Constructor
+   </div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#destroy()">destroy</a>():void</div>
+<div class="summaryTableDescription">
+   Destroy the Viewport
+   </div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getInstance()">getInstance</a>():<a href="../ui/Viewport.html">Viewport</a>
+</div>
+<div class="summaryTableDescription">[static]
+   Singleton Accessor
+   </div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#init()">init</a>(target:DisplayObjectContainer, bottomConstraint:uint = 0, proportionWidth:uint = 16, proportionHeight:uint = 9, lbColor:int = 0x000000, vpColor:uint = 0xFFFFFF, lbVisible:Boolean = true, vpVisible:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Parameterized Viewport initialization.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#render()">render</a>(e:<a href="../events/StageEvent.html">StageEvent</a> = null):void</div>
+<div class="summaryTableDescription">
+   Update the Viewport confines and dispatch <code>ViewportEvent.RENDER</code>.</div>
+</td><td class="summaryTableOwnerCol">Viewport</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="$"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">$</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>$:<a href="../ui/Viewport.html">Viewport</a></code>&nbsp;&nbsp;[read-only]<p>
+   Shorthand singleton accessor getter
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public static function get $():<a href="../ui/Viewport.html">Viewport</a></code>
+<br>
+</div>
+<a name="_bb"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_bb</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _bb:Shape</code>
+</div>
+<a name="bottom"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bottom</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bottom:int</code>&nbsp;&nbsp;[read-only]<p>
+   Return bottom of the visible viewport.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bottom():int</code>
+<br>
+</div>
+<a name="bottomBox"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bottomBox</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bottomBox:Shape</code>&nbsp;&nbsp;[read-only]<p>
+   Return the bottom letterbox shape.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bottomBox():Shape</code>
+<br>
+</div>
+<a name="BOTTOM_CONSTRAINT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BOTTOM_CONSTRAINT</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var BOTTOM_CONSTRAINT:uint</code>
+</div>
+<a name="centerx"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">centerx</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>centerx:int</code>&nbsp;&nbsp;[read-only]<p>
+   Return viewport center x position.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get centerx():int</code>
+<br>
+</div>
+<a name="centery"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">centery</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>centery:int</code>&nbsp;&nbsp;[read-only]<p>
+   Return viewport center y position.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get centery():int</code>
+<br>
+</div>
+<a name="height"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">height</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>height:int</code>&nbsp;&nbsp;[read-only]<p>
+   Return viewport height.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get height():int</code>
+<br>
+</div>
+<a name="_instance"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_instance</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static var _instance:<a href="../ui/Viewport.html">Viewport</a></code>
+</div>
+<a name="proportionHeight"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">proportionHeight</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>proportionHeight:uint</code>&nbsp;&nbsp;[read-only]<p>
+   Return ratio proportional height.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get proportionHeight():uint</code>
+<br>
+</div>
+<a name="PROPORTION_HEIGHT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PROPORTION_HEIGHT</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var PROPORTION_HEIGHT:uint</code>
+</div>
+<a name="proportionWidth"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">proportionWidth</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>proportionWidth:uint</code>&nbsp;&nbsp;[read-only]<p>
+   Return ratio proportional width.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get proportionWidth():uint</code>
+<br>
+</div>
+<a name="PROPORTION_WIDTH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PROPORTION_WIDTH</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var PROPORTION_WIDTH:uint</code>
+</div>
+<a name="ratio"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ratio</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>ratio:Number</code>&nbsp;&nbsp;[read-only]<p>
+   Return viewport ratio.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get ratio():Number</code>
+<br>
+</div>
+<a name="RATIO"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RATIO</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var RATIO:Number</code>
+</div>
+<a name="_target"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_target</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _target:DisplayObjectContainer</code>
+</div>
+<a name="_tb"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_tb</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _tb:Shape</code>
+</div>
+<a name="top"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">top</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>top:int</code>&nbsp;&nbsp;[read-only]<p>
+   Return top of the visible viewport.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get top():int</code>
+<br>
+</div>
+<a name="topBox"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">topBox</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>topBox:Shape</code>&nbsp;&nbsp;[read-only]<p>
+   Return the top letter box shape.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get topBox():Shape</code>
+<br>
+</div>
+<a name="viewport"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">viewport</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>viewport:Shape</code>&nbsp;&nbsp;[read-only]<p>
+   Return the viewport shape.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get viewport():Shape</code>
+<br>
+</div>
+<a name="_vp"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_vp</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _vp:Shape</code>
+</div>
+<a name="width"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">width</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>width:int</code>&nbsp;&nbsp;[read-only]<p>
+   Return viewport width.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get width():int</code>
+<br>
+</div>
+<a name="x"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">x</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>x:int</code>&nbsp;&nbsp;[read-only]<p>
+   Return viewport x position.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get x():int</code>
+<br>
+</div>
+<a name="y"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">y</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>y:int</code>&nbsp;&nbsp;[read-only]<p>
+   Return viewport y position.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get y():int</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Viewport()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Viewport</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Viewport($:SingletonEnforcer = null)</code><p>
+   Viewport Singleton Constructor
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">$</span>:SingletonEnforcer</code> (default = <code>null</code>)<code></code> &mdash; SingletonEnforcer - internal to the AS file; the param prevents external instantiation without error.
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="destroy()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">destroy</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function destroy():void</code><p>
+   Destroy the Viewport
+   </p></div>
+<a name="getInstance()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getInstance</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getInstance():<a href="../ui/Viewport.html">Viewport</a></code><p>
+   Singleton Accessor
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../ui/Viewport.html">Viewport</a></code> &mdash; 
+                        Viewport
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="init()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">init</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function init(target:DisplayObjectContainer, bottomConstraint:uint = 0, proportionWidth:uint = 16, proportionHeight:uint = 9, lbColor:int = 0x000000, vpColor:uint = 0xFFFFFF, lbVisible:Boolean = true, vpVisible:Boolean = false):void</code><p>
+   Parameterized Viewport initialization.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:DisplayObjectContainer</code> &mdash;    target viewport container object.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">bottomConstraint</span>:uint</code> (default = <code>0</code>)<code></code> &mdash;  defines the minimum bottom letter-box height.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">proportionWidth</span>:uint</code> (default = <code>16</code>)<code></code> &mdash;  proportional width of the viewport.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">proportionHeight</span>:uint</code> (default = <code>9</code>)<code></code> &mdash;  proportional height of the viewport.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">lbColor</span>:int</code> (default = <code>0x000000</code>)<code></code> &mdash;    letter-box color.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">vpColor</span>:uint</code> (default = <code>0xFFFFFF</code>)<code></code> &mdash;    viewport color.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">lbVisible</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash;   display the letterbox DisplayObjects.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">vpVisible</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash;   display the viewport DisplayObject.
+   </td>
+</tr>
+</table>
+</div>
+<a name="render()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">render</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function render(e:<a href="../events/StageEvent.html">StageEvent</a> = null):void</code><p>
+   Update the Viewport confines and dispatch <code>ViewportEvent.RENDER</code>.
+   
+   </p><p><b>Note:</b> This is not a true "render" but as it is generally
+   related to liquid-layout scenarios in which the layout is "re-rendered"
+   the name is semi-appropriate.</p>
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="../events/StageEvent.html">StageEvent</a></code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Copyright &copy; 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.</center>
+</div>
+</body>
+</html>
+<!--Copyright © 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.-->

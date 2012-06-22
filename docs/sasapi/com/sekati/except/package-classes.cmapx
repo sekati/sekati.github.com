@@ -1,0 +1,12 @@
+<map id="class_diagram" name="class_diagram">
+<area shape="rect" href="Throwable.html" title="com.sekati.except.Throwable" alt="" coords="9,116,91,164" />
+<area shape="rect" href="Exception.html" title="com.sekati.except.Exception" alt="" coords="141,116,221,164" />
+<area shape="rect" href="IllegalStateException.html" title="com.sekati.except.IllegalStateException" alt="" coords="283,8,430,56" />
+<area shape="rect" href="IllegalOperationException.html" title="com.sekati.except.IllegalOperationException" alt="" coords="269,80,445,128" />
+<area shape="rect" href="IllegalArgumentException.html" title="com.sekati.except.IllegalArgumentException" alt="" coords="269,152,445,200" />
+<area shape="rect" href="FatalStateException.html" title="com.sekati.except.FatalStateException" alt="" coords="507,152,646,200" />
+<area shape="rect" href="FatalOperationException.html" title="com.sekati.except.FatalOperationException" alt="" coords="493,224,661,272" />
+<area shape="rect" href="FatalException.html" title="com.sekati.except.FatalException" alt="" coords="303,224,410,272" />
+<area shape="rect" href="FatalArgumentException.html" title="com.sekati.except.FatalArgumentException" alt="" coords="493,296,661,344" />
+<area shape="rect" href="Catcher.html" title="com.sekati.except.Catcher" alt="" coords="14,44,86,92" />
+</map>

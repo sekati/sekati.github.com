@@ -1,0 +1,408 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="ApplicationEventDispatcher,sekati.events.ApplicationEventDispatcher,$,addEventListener,dispatchEvent,getInstance,hasEventListener,removeEventListener,willTrigger" name="keywords">
+<title>sekati.events.ApplicationEventDispatcher</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'ApplicationEventDispatcher - Sekati API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Sekati API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?sekati/events/ApplicationEventDispatcher.html&amp;sekati/events/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;ApplicationEventDispatcher</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class ApplicationEventDispatcher"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">sekati.events</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public final  class ApplicationEventDispatcher</td>
+</tr>
+</table>
+<p></p>
+  ApplicationEventDispatcher provides a central dispatching & eventing singleton target for API based applications.
+  The purpose of having a centralized dispatcher is to standardized the grouping of like <i>application event</i>;
+  meaning events created and utilized by your applications which do not originate from the API or the Flash / Flex frameworks.
+  
+  <p></p>
+<br>
+<span class="label">Example</span>
+<br><div class='listing'><pre>
+  var e : FormEvent ( FormEvent.USER_SUBMIT, {name:"sekati", phone:"+1.555.555.5555" confirm:true} ); // FormEvent inherits from sekati.events.ApplicationEvent.
+  ApplicationEventDispatcher.$.dispatchEvent ( e );
+  </pre></div>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../events/ApplicationEvent.html" target="">sekati.events.ApplicationEvent</a>
+<br>flash.events.EventDispatcher</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#$">$</a> : <a href="../events/ApplicationEventDispatcher.html">ApplicationEventDispatcher</a>
+<div class="summaryTableDescription">[static][read-only]
+   Shorthand singleton accessor getter
+   </div>
+</td><td class="summaryTableOwnerCol">ApplicationEventDispatcher</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#ApplicationEventDispatcher()">ApplicationEventDispatcher</a>($:SingletonEnforcer = null, target:IEventDispatcher = null)</div>
+<div class="summaryTableDescription">
+   ApplicationEventDispatcher Singleton Constructor
+   </div>
+</td><td class="summaryTableOwnerCol">ApplicationEventDispatcher</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addEventListener()">addEventListener</a>(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = true):void</div>
+<div class="summaryTableDescription">
+   Registers an <code>ApplicationEvent</code> listener with the <code>ApplicationEventDispatcher</code> singleton so that the listener receives notification of that 
+   <code>ApplicationEvent</code> (or <code>ApplicationEvent</code> descendent).</div>
+</td><td class="summaryTableOwnerCol">ApplicationEventDispatcher</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#dispatchEvent()">dispatchEvent</a>(event:<a href="ApplicationEvent.html">ApplicationEvent</a>):Boolean</div>
+<div class="summaryTableDescription">
+   Dispatches an <code>ApplicationEvent</code> into the event flow.</div>
+</td><td class="summaryTableOwnerCol">ApplicationEventDispatcher</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getInstance()">getInstance</a>():<a href="../events/ApplicationEventDispatcher.html">ApplicationEventDispatcher</a>
+</div>
+<div class="summaryTableDescription">[static]
+   Singleton Accessor
+   </div>
+</td><td class="summaryTableOwnerCol">ApplicationEventDispatcher</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hasEventListener()">hasEventListener</a>(type:String):Boolean</div>
+<div class="summaryTableDescription">
+   Checks whether the <code>ApplicationEventDispatcher</code> has any listeners registered for a specific type of event.</div>
+</td><td class="summaryTableOwnerCol">ApplicationEventDispatcher</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeEventListener()">removeEventListener</a>(type:String, listener:Function, useCapture:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Removes a listener from the <code>ApplicationEventDispatcher</code> singleton.</div>
+</td><td class="summaryTableOwnerCol">ApplicationEventDispatcher</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#willTrigger()">willTrigger</a>(type:String):Boolean</div>
+<div class="summaryTableDescription">
+   Checks whether an event listener is registered with this <code>ApplicationEventDispatcher</code> for the specified event type.</div>
+</td><td class="summaryTableOwnerCol">ApplicationEventDispatcher</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="$"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">$</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>$:<a href="../events/ApplicationEventDispatcher.html">ApplicationEventDispatcher</a></code>&nbsp;&nbsp;[read-only]<p>
+   Shorthand singleton accessor getter
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public static function get $():<a href="../events/ApplicationEventDispatcher.html">ApplicationEventDispatcher</a></code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="ApplicationEventDispatcher()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ApplicationEventDispatcher</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function ApplicationEventDispatcher($:SingletonEnforcer = null, target:IEventDispatcher = null)</code><p>
+   ApplicationEventDispatcher Singleton Constructor
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">$</span>:SingletonEnforcer</code> (default = <code>null</code>)<code></code> &mdash; SingletonEnforcer - internal to the AS file; the param prevents external instantiation without error.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:IEventDispatcher</code> (default = <code>null</code>)<code></code> &mdash; provides the internally wrapped IEventDispatcher
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addEventListener(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = true):void</code><p>
+   Registers an <code>ApplicationEvent</code> listener with the <code>ApplicationEventDispatcher</code> singleton so that the listener receives notification of that 
+   <code>ApplicationEvent</code> (or <code>ApplicationEvent</code> descendent).
+   
+   </p><p>When you no longer need an event listener, remove it by calling <code>ApplicationEventDispatcher.$.removeEventListener()</code> otherwise, memory problems might result. Objects 
+   with registered event listeners are not automatically removed from memory because the garbage collector does not remove objects that still have references.</p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code> &mdash;     The type (name) of event.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">listener</span>:Function</code> &mdash;    The listener function that processes the event. This function must accept an <code>ApplicationEvent</code> object as its only parameter and must return nothing, 
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">useCapture</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash;   Determines whether the listener works in the capture phase or the target and bubbling phases.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">priority</span>:int</code> (default = <code>0</code>)<code></code> &mdash;    The priority level of the event listener. Priorities are designated by a 32-bit integer.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">useWeakReference</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash;  Determines whether the reference to the listener is strong or weak. A strong reference prevents your listener from being garbage-collected. A weak reference (the default) does not.
+   </td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>e.g <div class='listing'><pre></pre></div><p></p>
+</div>
+<a name="dispatchEvent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dispatchEvent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function dispatchEvent(event:<a href="ApplicationEvent.html">ApplicationEvent</a>):Boolean</code><p>
+   Dispatches an <code>ApplicationEvent</code> into the event flow. The event target is the <code>ApplicationEventDispatcher</code> singleton upon which <code>dispatchEvent()</code> is called.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">event</span>:<a href="ApplicationEvent.html">ApplicationEvent</a></code> &mdash;  The <code>ApplicationEvent</code> (or <code>ApplicationEvent</code> descendent) object dispatched into the event flow.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; Boolean  A value of <code>true</code> unless <code>preventDefault()</code> is called on the event, in which case it returns <code>false</code>.
+   </td>
+</tr>
+</table>
+</div>
+<a name="getInstance()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getInstance</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getInstance():<a href="../events/ApplicationEventDispatcher.html">ApplicationEventDispatcher</a></code><p>
+   Singleton Accessor
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../events/ApplicationEventDispatcher.html">ApplicationEventDispatcher</a></code> &mdash; 
+                        ApplicationEventDispatcher
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="hasEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hasEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function hasEventListener(type:String):Boolean</code><p>
+   Checks whether the <code>ApplicationEventDispatcher</code> has any listeners registered for a specific type of event. This allows you to determine where <code>ApplicationEventDispatcher</code> 
+   has altered handling of an event type in the event flow hierarchy. To determine whether a specific event type will actually trigger an event listener, use <code>IEventDispatcher.willTrigger()</code>.
+   
+   </p><p>The difference between <code>hasEventListener()</code> and <code>willTrigger()</code> is that <code>hasEventListener()</code> examines only the object to which it belongs, 
+   whereas <code>willTrigger()</code> examines the entire event flow for the event specified by the type parameter.</p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code> &mdash;    The type of event.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; Boolean   A value of <code>true</code> if a listener of the specified type is registered; otherwise <code>false</code>.
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="ApplicationEventDispatcher.html#willTrigger" target="">ApplicationEventDispatcher.willTrigger</a>
+</div>
+</div>
+<a name="removeEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeEventListener(type:String, listener:Function, useCapture:Boolean = false):void</code><p>
+   Removes a listener from the <code>ApplicationEventDispatcher</code> singleton. If there is no matching listener registered with the <code>ApplicationEventDispatcher</code> a call to this method has no effect.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code> &mdash;    The type of <code>ApplicationEvent</code> (or <code>ApplicationEvent</code> descendent).
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">listener</span>:Function</code> &mdash;   The listener object to remove.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">useCapture</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash;  Specifies whether the listener was registered for the capture phase or the target and bubbling phases.
+   </td>
+</tr>
+</table>
+</div>
+<a name="willTrigger()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">willTrigger</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function willTrigger(type:String):Boolean</code><p>
+   Checks whether an event listener is registered with this <code>ApplicationEventDispatcher</code> for the specified event type. This method returns <code>true</code> if an event listener is 
+   triggered during any phase of the event flow when an event of the specified type is dispatched to the <code>ApplicationEventDispatcher</code>.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code> &mdash;   The type of event.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; Boolean  A value of <code>true</code> if a listener of the specified type will be triggered; otherwise <code>false</code>.
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="ApplicationEventDispatcher.html#hasEventListener" target="">ApplicationEventDispatcher.hasEventListener</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Copyright &copy; 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.</center>
+</div>
+</body>
+</html>
+<!--Copyright © 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.-->

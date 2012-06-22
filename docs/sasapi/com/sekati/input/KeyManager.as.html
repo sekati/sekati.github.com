@@ -1,0 +1,72 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * com.sekati.input.KeyManager
+<span class="lineno" id="3">     3  </span> * @version 1.0.5
+<span class="lineno" id="4">     4  </span> * @author jason m horwitz | sekati.com
+<span class="lineno" id="5">     5  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="6">     6  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="7">     7  </span> */</span>
+<span class="lineno" id="8">     8  </span> 
+<span class="lineno" id="9">     9  </span><span class="comment">//import com.sekati.events.Dispatcher;</span>
+<span class="lineno" id="10">    10  </span><span class="key">import</span> com.sekati.log.Logger;
+<span class="lineno" id="11">    11  </span><span class="key">import</span> com.sekati.utils.Delegate;
+<span class="lineno" id="12">    12  </span>
+<span class="lineno" id="13">    13  </span><span class="comment doc">/**
+<span class="lineno" id="14">    14  </span> * Key Manager Class.
+<span class="lineno" id="15">    15  </span> */</span>
+<span class="lineno" id="16">    16  </span><span class="key">class</span> com.sekati.input.KeyManager {
+<span class="lineno" id="17">    17  </span>
+<span class="lineno" id="18">    18  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _instance:KeyManager;
+<span class="lineno" id="19">    19  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _this:KeyManager;
+<span class="lineno" id="20">    20  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _key:Object;
+<span class="lineno" id="21">    21  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _keyDownEVENT:String = <span class="str_const">"onKeyDown"</span>;
+<span class="lineno" id="22">    22  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _keyUpEVENT:String = <span class="str_const">"onKeyUp"</span>;
+<span class="lineno" id="23">    23  </span>
+<span class="lineno" id="24">    24  </span>	<span class="comment doc">/**
+<span class="lineno" id="25">    25  </span>	 * Singleton Private Constructor
+<span class="lineno" id="26">    26  </span>	 */</span>
+<span class="lineno" id="27">    27  </span>	<span class="key">private</span> <span class="key">function</span> KeyManager() {
+<span class="lineno" id="28">    28  </span>		_this = <span class="key">this</span>;
+<span class="lineno" id="29">    29  </span>		_key = <span class="key">new</span> Object( );
+<span class="lineno" id="30">    30  </span>		_key.onKeyDown = Delegate.create( _this, onKeyDown );
+<span class="lineno" id="31">    31  </span>		Key.addListener( _key );
+<span class="lineno" id="32">    32  </span>	}
+<span class="lineno" id="33">    33  </span>
+<span class="lineno" id="34">    34  </span>	<span class="key">private</span> <span class="key">function</span> onKeyDown():Void {
+<span class="lineno" id="35">    35  </span>		<span class="comment">//Dispatcher.$.dispatchEvent();	</span>
+<span class="lineno" id="36">    36  </span>		Logger.$.status(_this, <span class="str_const">"KeyDown ::: ascii:"</span> + Key.getAscii( ) + <span class="str_const">", keycode:"</span> + Key.getCode( ) );
+<span class="lineno" id="37">    37  </span>		<span class="key">if</span> ((Key.getCode( ) == Key.LEFT) &amp;&amp; (Key.getCode( ) == Key.getCode.UP)) {
+<span class="lineno" id="38">    38  </span>			<span class="comment">//trace( "HOTKEY" );</span>
+<span class="lineno" id="39">    39  </span>		}
+<span class="lineno" id="40">    40  </span>	}
+<span class="lineno" id="41">    41  </span>
+<span class="lineno" id="42">    42  </span>	<span class="key">private</span> <span class="key">function</span> onKeyUp():Void {
+<span class="lineno" id="43">    43  </span>		Logger.$.status(_this, <span class="str_const">"The ASCII code for the KeyUp is: "</span> + Key.getAscii( ) );	
+<span class="lineno" id="44">    44  </span>	}
+<span class="lineno" id="45">    45  </span>
+<span class="lineno" id="46">    46  </span>	<span class="key">public</span> <span class="key">function</span> hotKey(k:Array):Boolean {
+<span class="lineno" id="47">    47  </span>		<span class="comment">//if ((Key.isDown (Key.SHIFT) &amp;&amp; Key.isDown (Key.RIGHT)) || (Key.isDown (Key.SHIFT) &amp;&amp; Key.isDown (Key.LEFT)))</span>
+<span class="lineno" id="48">    48  </span>		<span class="key">return</span> <span class="key">false</span>;
+<span class="lineno" id="49">    49  </span>	}
+<span class="lineno" id="50">    50  </span>
+<span class="lineno" id="51">    51  </span>	<span class="comment doc">/**
+<span class="lineno" id="52">    52  </span>	 * Singleton Accessor
+<span class="lineno" id="53">    53  </span>	 * @return KeyManager
+<span class="lineno" id="54">    54  </span>	 */</span>
+<span class="lineno" id="55">    55  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> getInstance():KeyManager {
+<span class="lineno" id="56">    56  </span>		<span class="key">if</span> (!_instance) {
+<span class="lineno" id="57">    57  </span>			_instance = <span class="key">new</span> KeyManager( );
+<span class="lineno" id="58">    58  </span>		}
+<span class="lineno" id="59">    59  </span>		<span class="key">return</span> _instance;
+<span class="lineno" id="60">    60  </span>	}
+<span class="lineno" id="61">    61  </span>
+<span class="lineno" id="62">    62  </span>	<span class="comment doc">/**
+<span class="lineno" id="63">    63  </span>	 * Shorthand singleton accessor getter
+<span class="lineno" id="64">    64  </span>	 * @return KeyManager
+<span class="lineno" id="65">    65  </span>	 */</span>
+<span class="lineno" id="66">    66  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> get $():KeyManager {
+<span class="lineno" id="67">    67  </span>		<span class="key">return</span> KeyManager.getInstance( );	
+<span class="lineno" id="68">    68  </span>	}		
+<span class="lineno" id="69">    69  </span>}</pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.input" class="button">Package</a></li><li><a href="KeyManager.html" title="Detail of com.sekati.input.KeyManager API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

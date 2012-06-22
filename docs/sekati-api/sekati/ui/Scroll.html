@@ -1,0 +1,743 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="Scroll,sekati.ui.Scroll,MOVE_PERCENT,MOVE_TIME,isDragging,isMouseInArea,isScrollable,barDownHandler,barUpHandler,destroy,enterFrame,gutterClickHandler,init,mouseWheelHandler,moveAmount,moveBar,moveContent,movePercent,reset,resolvePosition,setConfines,setMouseWheel,stopScroll,updateConfines" name="keywords">
+<title>sekati.ui.Scroll</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Scroll - Sekati API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Sekati API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?sekati/ui/Scroll.html&amp;sekati/ui/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Scroll</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Scroll"); titleBar_setSubNav(true,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">sekati.ui</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Scroll</td>
+</tr>
+</table>
+<p></p>
+  Scroll provides a flexible scrollbar controller class: handling mouseWheel (PC & Mac), dynamic resizing content, external size 
+  tracking for accordian style content scrolling, slideContent method, modal ui states, proportional bar, gutter and more.
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../external/ExternalMouseWheel.html" target="">sekati.external.ExternalMouseWheel</a>
+<br>
+<a href="../events/ExternalMouseEvent.html" target="">sekati.events.ExternalMouseEvent</a>
+<br>
+<a href="http://code.google.com/p/sekati/source/browse/trunk/deploy/js/swfmouse.js" target="mm_external">http://code.google.com/p/sekati/source/browse/trunk/deploy/js/swfmouse.js</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#isDragging">isDragging</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Check if bar is being dragged.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#isMouseInArea">isMouseInArea</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Check if Mouse is in scrollable area.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#isScrollable">isScrollable</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Check if content is scrollable.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Scroll()">Scroll</a>(content:DisplayObject, scrollArea:DisplayObject, gutter:Sprite, bar:Sprite, axis:String = "y", isInit:Boolean = true, hasMouseWheel:Boolean = true, isProportionalGutter:Boolean = true, isProportionalBar:Boolean = true, ease:String = "easeOutExpo", contentSizeTracker:DisplayObject = null, friction:Number = 0.8, ratio:Number = 0.5)</div>
+<div class="summaryTableDescription">
+   Scroll Constructor
+   </div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#destroy()">destroy</a>():void</div>
+<div class="summaryTableDescription">
+   Cleanly destroy Scroll instances.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#init()">init</a>():void</div>
+<div class="summaryTableDescription">
+   Initialize scroll behavior: define confines, mouseWheel, and set scroller to rollout color state.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#moveAmount()">moveAmount</a>(amount:Number, sec:Number):void</div>
+<div class="summaryTableDescription">
+   Tween the scroll <code>_bar</code> by a certain amount.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#moveBar()">moveBar</a>(pos:Number, sec:Number):void</div>
+<div class="summaryTableDescription">
+   Tween <code>_bar</code> to position, <code>_content</code> will reposition accordingly.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#moveContent()">moveContent</a>(pos:Number, sec:Number):void</div>
+<div class="summaryTableDescription">
+   Tween to a position within the <code>_content</code>, scroll <code>_bar</code> will reposition accordingly.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#movePercent()">movePercent</a>(contentPercent:Number, sec:Number):void</div>
+<div class="summaryTableDescription">
+   Tween the scroll <code>_bar</code> by the specified percentage of the total content.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#reset()">reset</a>():void</div>
+<div class="summaryTableDescription">
+   Reset the Scroll and content positioning and reinitialize.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#stopScroll()">stopScroll</a>():void</div>
+<div class="summaryTableDescription">
+   Stop all scrolling motions
+   </div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#barDownHandler()">barDownHandler</a>(e:MouseEvent):void</div>
+<div class="summaryTableDescription">
+   Bar Press - start bar drag: register a pseudo
+   onReleaseOutside event listener on stage.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#barUpHandler()">barUpHandler</a>(e:MouseEvent):void</div>
+<div class="summaryTableDescription">
+   Bar Release - stop bar drag: unregister a pseudo
+   onReleaseOutside event listener from stage.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#enterFrame()">enterFrame</a>(e:Event):void</div>
+<div class="summaryTableDescription">
+   EnterFrame runs the core scroll logic.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#gutterClickHandler()">gutterClickHandler</a>(e:MouseEvent):void</div>
+<div class="summaryTableDescription">
+   Gutter clicks.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#mouseWheelHandler()">mouseWheelHandler</a>(e:MouseEvent):void</div>
+<div class="summaryTableDescription">
+   MouseWheel handler for <code>MouseEvent.MOUSE_WHEEL</code> or mac <code>ExternalMouseEvent.MOUSE_WHEEL</code>.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#resolvePosition()">resolvePosition</a>(pos:Number):Number</div>
+<div class="summaryTableDescription">
+   ResolvePosition insure that the scroller moves within its gutter boundaries.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setConfines()">setConfines</a>():void</div>
+<div class="summaryTableDescription">
+   Store the scrollable confines & resize the bar and gutter if necessary.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setMouseWheel()">setMouseWheel</a>():void</div>
+<div class="summaryTableDescription">
+   Initialize Mac/PC compatible MouseWheel support.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#updateConfines()">updateConfines</a>():void</div>
+<div class="summaryTableDescription">
+   Set content related confines (isloated from setConfines as this may need to be called upon content size changes).</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a><a name="protectedConstantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Constants</div>
+<table id="summaryTableProtectedConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MOVE_PERCENT">MOVE_PERCENT</a> : Number = 0.05<div class="summaryTableDescription">[static]
+   Default percentage of content to tween by in <code>move</code> methods.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MOVE_TIME">MOVE_TIME</a> : Number = 0.2<div class="summaryTableDescription">[static]
+   Default tween duration, in second, in <code>move</code> methods.</div>
+</td><td class="summaryTableOwnerCol">Scroll</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="isDragging"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isDragging</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>isDragging:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Check if bar is being dragged.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get isDragging():Boolean</code>
+<br>
+</div>
+<a name="isMouseInArea"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isMouseInArea</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>isMouseInArea:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Check if Mouse is in scrollable area.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get isMouseInArea():Boolean</code>
+<br>
+</div>
+<a name="isScrollable"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isScrollable</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>isScrollable:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Check if content is scrollable.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get isScrollable():Boolean</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Scroll()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Scroll</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Scroll(content:DisplayObject, scrollArea:DisplayObject, gutter:Sprite, bar:Sprite, axis:String = "y", isInit:Boolean = true, hasMouseWheel:Boolean = true, isProportionalGutter:Boolean = true, isProportionalBar:Boolean = true, ease:String = "easeOutExpo", contentSizeTracker:DisplayObject = null, friction:Number = 0.8, ratio:Number = 0.5)</code><p>
+   Scroll Constructor
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">content</span>:DisplayObject</code> &mdash;     The scrollable content <code>DisplayObject</code> <i>(Registered 0,0 in its container)</i>.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">scrollArea</span>:DisplayObject</code> &mdash;    The area within which the <code>content</code> is to be scrolled; usually a mask, background or overlay. Also the area within which <code>MouseWheel</code> support is active.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">gutter</span>:Sprite</code> &mdash;     The clickable, interactive "track" area for the scroll <code>bar</code> <i>(Registered axis 0 in its container)</i>.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">bar</span>:Sprite</code> &mdash;      The object which is dragged or thrown to scroll <code>content</code> inside the <code>viewArea</code> <i>(Registered axis 0 in its container)</i>.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">axis</span>:String</code> (default = "<code>y</code>")<code></code> &mdash;      The axis (must be: <code>x || y</code>) upon which to scroll.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">isInit</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash;     The (optional) initialization <code>Scroll</code> upon instantiation, otherwise <code>init()</code> must be called manually.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">hasMouseWheel</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash;   The (optional) enabling of <code>MouseWheel</code> support (both Mac & PC) of the <code>Scroll</code> instance.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">isProportionalGutter</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash;  The (optional) resizing of the gutter to match the <code>viewArea</code>'s width or height depending on <code>axis</code>.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">isProportionalBar</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash;  The (optional) resizing of the scroll <code>bar</code> to reflect the <code>viewArea</code>'s scrollable <code>content</code>.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">ease</span>:String</code> (default = "<code>easeOutExpo</code>")<code></code> &mdash;      The <code>Tweener</code> easing equation applied to <code>slideContent, slideScroller or moveScroller</code> calls.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">contentSizeTracker</span>:DisplayObject</code> (default = <code>null</code>)<code></code> &mdash;  The (optional) content size tracking object; used to calculate the viewable scroll area. For use in accordian style content where child objects of <code>content</code> visible property is toggled throwing off the scroll calculations.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">friction</span>:Number</code> (default = <code>0.8</code>)<code></code> &mdash;     The motion friction of the <code>content</code> & <code>bar</code>. Note: this does not reflect the motion of <code>slideContent, slideScroller or moveScroller</code> calls. 
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">ratio</span>:Number</code> (default = <code>0.5</code>)<code></code> &mdash;     The motion ratio of the <code>content</code> & <code>bar</code>. Note: this does not reflect the motion of <code>slideContent, slideScroller or moveScroller</code> calls.
+   </td>
+</tr>
+</table>
+<br>
+<span class="label">Throws</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code></code> &mdash; if axis is not "x" or "y" & returns without proper instantiation
+   </td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>The following code creates a new Scroll instance:
+   <div class='listing'><pre>
+   // Scroll(content, scrollArea, gutter, bar, axis, isInit, hasMouseWheel, isProportionalGutter, isProportionalBar, easingEquation, contentSizeTracker, friction, ratio); 
+   var scroll:Scroll = new Scroll( content, scrollArea, gutter, bar, "x", true, true, true, true, "easeOutQuint", null, 0.7, 0.4 );
+   </pre></div>
+   <p></p>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="barDownHandler()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">barDownHandler</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function barDownHandler(e:MouseEvent):void</code><p>
+   Bar Press - start bar drag: register a pseudo
+   onReleaseOutside event listener on stage.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:MouseEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="barUpHandler()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">barUpHandler</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function barUpHandler(e:MouseEvent):void</code><p>
+   Bar Release - stop bar drag: unregister a pseudo
+   onReleaseOutside event listener from stage.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:MouseEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="destroy()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">destroy</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function destroy():void</code><p>
+   Cleanly destroy Scroll instances.
+   </p></div>
+<a name="enterFrame()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enterFrame</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function enterFrame(e:Event):void</code><p>
+   EnterFrame runs the core scroll logic.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:Event</code></td>
+</tr>
+</table>
+</div>
+<a name="gutterClickHandler()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">gutterClickHandler</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function gutterClickHandler(e:MouseEvent):void</code><p>
+   Gutter clicks.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:MouseEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="init()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">init</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function init():void</code><p>
+   Initialize scroll behavior: define confines, mouseWheel, and set scroller to rollout color state.
+   </p></div>
+<a name="mouseWheelHandler()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">mouseWheelHandler</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function mouseWheelHandler(e:MouseEvent):void</code><p>
+   MouseWheel handler for <code>MouseEvent.MOUSE_WHEEL</code> or mac <code>ExternalMouseEvent.MOUSE_WHEEL</code>.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:MouseEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="moveAmount()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">moveAmount</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function moveAmount(amount:Number, sec:Number):void</code><p>
+   Tween the scroll <code>_bar</code> by a certain amount. Useful when scroll UI arrows are required.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">amount</span>:Number</code> &mdash;  of pixels to move: positive or negative.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">sec</span>:Number</code> &mdash;   tween duration in seconds.
+   <code>
+    _myScroll.moveAmount( -100 );
+   </code>
+   </td>
+</tr>
+</table>
+</div>
+<a name="moveBar()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">moveBar</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function moveBar(pos:Number, sec:Number):void</code><p>
+   Tween <code>_bar</code> to position, <code>_content</code> will reposition accordingly.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">pos</span>:Number</code> &mdash;  the position to slide scroller on axis.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">sec</span>:Number</code> &mdash;  the tween duration in seconds.
+   </td>
+</tr>
+</table>
+</div>
+<a name="moveContent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">moveContent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function moveContent(pos:Number, sec:Number):void</code><p>
+   Tween to a position within the <code>_content</code>, scroll <code>_bar</code> will reposition accordingly.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">pos</span>:Number</code> &mdash;  the position to slide content on axis.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">sec</span>:Number</code> &mdash;  the tween duration in seconds.
+   </td>
+</tr>
+</table>
+</div>
+<a name="movePercent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">movePercent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function movePercent(contentPercent:Number, sec:Number):void</code><p>
+   Tween the scroll <code>_bar</code> by the specified percentage of the total content.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">contentPercent</span>:Number</code> &mdash; of total content (e.g. <code>MyScroll.movePercent(.1); // increases position by 10%</code>).
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">sec</span>:Number</code> &mdash; (Number) optional tween duration in seconds
+   </td>
+</tr>
+</table>
+</div>
+<a name="reset()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">reset</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function reset():void</code><p>
+   Reset the Scroll and content positioning and reinitialize.
+   </p></div>
+<a name="resolvePosition()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">resolvePosition</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function resolvePosition(pos:Number):Number</code><p>
+   ResolvePosition insure that the scroller moves within its gutter boundaries.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">pos</span>:Number</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code></td>
+</tr>
+</table>
+</div>
+<a name="setConfines()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setConfines</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function setConfines():void</code><p>
+   Store the scrollable confines & resize the bar and gutter if necessary.
+   </p></div>
+<a name="setMouseWheel()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setMouseWheel</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function setMouseWheel():void</code><p>
+   Initialize Mac/PC compatible MouseWheel support.
+   </p></div>
+<a name="stopScroll()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stopScroll</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function stopScroll():void</code><p>
+   Stop all scrolling motions
+   </p></div>
+<a name="updateConfines()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">updateConfines</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function updateConfines():void</code><p>
+   Set content related confines (isloated from setConfines as this may need to be called upon content size changes).
+   </p></div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="MOVE_PERCENT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MOVE_PERCENT</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static const MOVE_PERCENT:Number = 0.05</code><p>
+   Default percentage of content to tween by in <code>move</code> methods.
+   </p></div>
+<a name="MOVE_TIME"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MOVE_TIME</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static const MOVE_TIME:Number = 0.2</code><p>
+   Default tween duration, in second, in <code>move</code> methods. 
+   </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Copyright &copy; 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.</center>
+</div>
+</body>
+</html>
+<!--Copyright © 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.-->

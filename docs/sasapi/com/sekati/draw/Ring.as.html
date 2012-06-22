@@ -1,0 +1,77 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * com.sekati.draw.Ring
+<span class="lineno" id="3">     3  </span> * @version 1.0.5
+<span class="lineno" id="4">     4  </span> * @author jason m horwitz | sekati.com
+<span class="lineno" id="5">     5  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="6">     6  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="7">     7  </span> */</span>
+<span class="lineno" id="8">     8  </span>
+<span class="lineno" id="9">     9  </span><span class="key">import</span> com.sekati.geom.Point;
+<span class="lineno" id="10">    10  </span>
+<span class="lineno" id="11">    11  </span><span class="comment doc">/**
+<span class="lineno" id="12">    12  </span> * Ring drawing utility.
+<span class="lineno" id="13">    13  </span> */</span>
+<span class="lineno" id="14">    14  </span><span class="key">class</span> com.sekati.draw.Ring {
+<span class="lineno" id="15">    15  </span>
+<span class="lineno" id="16">    16  </span>	<span class="comment doc">/**
+<span class="lineno" id="17">    17  </span>	 * Draw a Ring in an existing clip.
+<span class="lineno" id="18">    18  </span>	 * @param mc (Movie	Clip) target clip to draw in
+<span class="lineno" id="19">    19  </span>	 * @param p (Point) center point
+<span class="lineno" id="20">    20  </span>	 * @param outerRadius (Number) radius of outer circle
+<span class="lineno" id="21">    21  </span>	 * @param innerRadius (Number) radius of inner (cut out) circle
+<span class="lineno" id="22">    22  </span>	 * @param fillColor (Number) hex fill [default: 0x000000]
+<span class="lineno" id="23">    23  </span>	 * @param fillAlpha (Number) fill alpha transparency [default: 100]
+<span class="lineno" id="24">    24  </span>	 * @return Void
+<span class="lineno" id="25">    25  </span>	 */</span>
+<span class="lineno" id="26">    26  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> draw(mc:MovieClip, p:Point, outerRadius:Number, innerRadius:Number, fillColor:Number, fillAlpha:Number):Void {
+<span class="lineno" id="27">    27  </span>		<span class="key">var</span> fc:Number = (!fillColor) ? 0x000000 : fillColor;		
+<span class="lineno" id="28">    28  </span>		<span class="key">var</span> fa:Number = (isNaN( fillAlpha )) ? <span class="num_const">100</span> : fillAlpha;
+<span class="lineno" id="29">    29  </span>		<span class="key">var</span> x:Number = p.x;
+<span class="lineno" id="30">    30  </span>		<span class="key">var</span> y:Number = p.y;
+<span class="lineno" id="31">    31  </span>		<span class="key">var</span> r1:Number = outerRadius;
+<span class="lineno" id="32">    32  </span>		<span class="key">var</span> r2:Number = innerRadius;
+<span class="lineno" id="33">    33  </span>		<span class="key">var</span> _rad:Number = Math.PI / <span class="num_const">180</span>;
+<span class="lineno" id="34">    34  </span>		
+<span class="lineno" id="35">    35  </span>		mc.clear( );
+<span class="lineno" id="36">    36  </span>		mc.beginFill( fc, fa );
+<span class="lineno" id="37">    37  </span>		
+<span class="lineno" id="38">    38  </span>		mc.moveTo( <span class="num_const">0</span>, <span class="num_const">0</span> );
+<span class="lineno" id="39">    39  </span>		mc.lineTo( r1, <span class="num_const">0</span> );
+<span class="lineno" id="40">    40  </span>
+<span class="lineno" id="41">    41  </span>		<span class="comment">// draw the 30-degree segments</span>
+<span class="lineno" id="42">    42  </span>		<span class="key">var</span> a:Number = <span class="num_const">0</span>.<span class="num_const">268</span>;  
+<span class="lineno" id="43">    43  </span>		<span class="comment">// tan(15)</span>
+<span class="lineno" id="44">    44  </span>		<span class="key">var</span> endx:Number;
+<span class="lineno" id="45">    45  </span>		<span class="key">var</span> endy:Number;
+<span class="lineno" id="46">    46  </span>		<span class="key">var</span> ax:Number;
+<span class="lineno" id="47">    47  </span>		<span class="key">var</span> ay:Number;
+<span class="lineno" id="48">    48  </span>		<span class="key">for</span> (<span class="key">var</span> i:Number = <span class="num_const">0</span>; i &lt; <span class="num_const">12</span> ; i++) {
+<span class="lineno" id="49">    49  </span>			endx = r1 * Math.cos( (i + <span class="num_const">1</span>) * <span class="num_const">30</span> * _rad );
+<span class="lineno" id="50">    50  </span>			endy = r1 * Math.sin( (i + <span class="num_const">1</span>) * <span class="num_const">30</span> * _rad );
+<span class="lineno" id="51">    51  </span>			ax = endx + r1 * a * Math.cos( ((i + <span class="num_const">1</span>) * <span class="num_const">30</span> - <span class="num_const">90</span>) * _rad );
+<span class="lineno" id="52">    52  </span>			ay = endy + r1 * a * Math.sin( ((i + <span class="num_const">1</span>) * <span class="num_const">30</span> - <span class="num_const">90</span>) * _rad );
+<span class="lineno" id="53">    53  </span>			mc.curveTo( ax, ay, endx, endy );   
+<span class="lineno" id="54">    54  </span>		}		
+<span class="lineno" id="55">    55  </span>		
+<span class="lineno" id="56">    56  </span>		<span class="comment">// cut out middle (go in reverse)</span>
+<span class="lineno" id="57">    57  </span>		mc.moveTo( <span class="num_const">0</span>, <span class="num_const">0</span> );
+<span class="lineno" id="58">    58  </span>		mc.lineTo( r2, <span class="num_const">0</span> );		
+<span class="lineno" id="59">    59  </span>
+<span class="lineno" id="60">    60  </span>		<span class="key">for</span> (<span class="key">var</span> j:Number = <span class="num_const">12</span>; j &gt; <span class="num_const">0</span> ; j--) {
+<span class="lineno" id="61">    61  </span>			endx = r2 * Math.cos( (j - <span class="num_const">1</span>) * <span class="num_const">30</span> * _rad );
+<span class="lineno" id="62">    62  </span>			endy = r2 * Math.sin( (j - <span class="num_const">1</span>) * <span class="num_const">30</span> * _rad );
+<span class="lineno" id="63">    63  </span>			ax = endx + r2 * (<span class="num_const">0</span> - a) * Math.cos( ((j - <span class="num_const">1</span>) * <span class="num_const">30</span> - <span class="num_const">90</span>) * _rad );
+<span class="lineno" id="64">    64  </span>			ay = endy + r2 * (<span class="num_const">0</span> - a) * Math.sin( ((j - <span class="num_const">1</span>) * <span class="num_const">30</span> - <span class="num_const">90</span>) * _rad );
+<span class="lineno" id="65">    65  </span>			mc.curveTo( ax, ay, endx, endy );   
+<span class="lineno" id="66">    66  </span>		}
+<span class="lineno" id="67">    67  </span>		mc.endFill( );		
+<span class="lineno" id="68">    68  </span>		mc._x = x;
+<span class="lineno" id="69">    69  </span>		mc._y = y;		
+<span class="lineno" id="70">    70  </span>	}	
+<span class="lineno" id="71">    71  </span>
+<span class="lineno" id="72">    72  </span>	<span class="key">private</span> <span class="key">function</span> Ring() {
+<span class="lineno" id="73">    73  </span>	}
+<span class="lineno" id="74">    74  </span>}</pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.draw" class="button">Package</a></li><li><a href="Ring.html" title="Detail of com.sekati.draw.Ring API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

@@ -1,0 +1,683 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="MediaEvent,sekati.events.MediaEvent,BUFFER_EMPTY,BUFFER_FLUSH,BUFFER_FULL,COMPLETE,CUE_POINT,CUE_POINT_DISPLAY,FILE_STRUCTURE_INVALID,ID3,METADATA,NO_SUPPORTED_TRACK_FOUND,PROGRESS,REBUFFER,REBUFFER_COMPLETE,SEEK_INVALID_TIME,SEEK_NOTIFY,START,STREAM_NOT_FOUND,UNRECOGNIZED,_code,_cuePointData,_id3,_loaded,_metadata,_played,code,cuePointData,id3,loaded,metadata,played,clone" name="keywords">
+<title>sekati.events.MediaEvent</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'MediaEvent - Sekati API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Sekati API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?sekati/events/MediaEvent.html&amp;sekati/events/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;MediaEvent</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class MediaEvent"); titleBar_setSubNav(true,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">sekati.events</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class MediaEvent</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">MediaEvent <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.events.Event</td>
+</tr>
+</table>
+<p></p>
+  MediaEvent provides a base event for FLV and MP3 loading, streaming & playback.
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../media/FLV.html" target="">sekati.media.FLV</a>
+<br>
+<a href="../media/MP3.html" target="">sekati.media.MP3</a>
+<br>
+<a href="../ui/AbstractMediaPlayer.html" target="">sekati.ui.AbstractMediaPlayer</a>
+<br>
+<a href="../ui/FLVPlayer.html" target="">sekati.ui.FLVPlayer</a>
+<br>
+<a href="../ui/MP3Player.html" target="">sekati.ui.MP3Player</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#code">code</a> : String<div class="summaryTableDescription">[read-only]
+   The <code>MediaEvent</code>'s status code string.</div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#CUE_POINT">CUE_POINT</a> : String = "cuePoint"<div class="summaryTableDescription">[static] 
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#cuePointData">cuePointData</a> : Object<div class="summaryTableDescription">[read-only]
+   The <code>MediaEvent</code>'s cue point data object from the FLV <code>cuePointData.parameters['parameterName']</code>
+   Where <code>parameterName</code> is the variable name specified when cue point was created.</div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#CUE_POINT_DISPLAY">CUE_POINT_DISPLAY</a> : String = "cuePointDisplay"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#id3">id3</a> : Object<div class="summaryTableDescription">[read-only]
+   The <code>MediaEvent</code>'s ID3 data object for <code>MP3</code>'s.</div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ID3">ID3</a> : String = "id3"<div class="summaryTableDescription">[static] 
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loaded">loaded</a> : Number<div class="summaryTableDescription">[read-only]
+   The <code>MediaEvent</code>'s percent loaded.</div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#metadata">metadata</a> : Object<div class="summaryTableDescription">[read-only]
+   The <code>MediaEvent</code>'s metadata object.</div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#played">played</a> : Number<div class="summaryTableDescription">[read-only]
+   The <code>MediaEvent</code>'s percent played.</div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#REBUFFER">REBUFFER</a> : String = "rebuffer"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#REBUFFER_COMPLETE">REBUFFER_COMPLETE</a> : String = "rebufferComplete"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_code">_code</a> : String<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_cuePointData">_cuePointData</a> : Object<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_id3">_id3</a> : Object<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_loaded">_loaded</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_metadata">_metadata</a> : Object<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_played">_played</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#MediaEvent()">MediaEvent</a>(type:String, statusCode:String = null, percentLoaded:Number, percentPlayed:Number, metaData:Object = null, cuePointData:Object = null, id3:Object = null, bubbles:Boolean = true, cancelable:Boolean = false)</div>
+<div class="summaryTableDescription">
+   MediaEvent Constructor
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clone()">clone</a>():Event</div>
+<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<table id="summaryTableConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BUFFER_EMPTY">BUFFER_EMPTY</a> : String = "bufferEmpty"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BUFFER_FLUSH">BUFFER_FLUSH</a> : String = "bufferFlush"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BUFFER_FULL">BUFFER_FULL</a> : String = "bufferFull"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#COMPLETE">COMPLETE</a> : String = "complete"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#FILE_STRUCTURE_INVALID">FILE_STRUCTURE_INVALID</a> : String = "fileStructureInvalid"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#METADATA">METADATA</a> : String = "metaData"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#NO_SUPPORTED_TRACK_FOUND">NO_SUPPORTED_TRACK_FOUND</a> : String = "noSupportedTrackFound"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#PROGRESS">PROGRESS</a> : String = "progress"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#SEEK_INVALID_TIME">SEEK_INVALID_TIME</a> : String = "seekInvalidTime"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#SEEK_NOTIFY">SEEK_NOTIFY</a> : String = "seekNotify"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#START">START</a> : String = "start"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#STREAM_NOT_FOUND">STREAM_NOT_FOUND</a> : String = "streamNotFound"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#UNRECOGNIZED">UNRECOGNIZED</a> : String = "unrecognizedStatus"<div class="summaryTableDescription">[static]
+   </div>
+</td><td class="summaryTableOwnerCol">MediaEvent</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="_code"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_code</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _code:String</code>
+</div>
+<a name="code"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">code</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>code:String</code>&nbsp;&nbsp;[read-only]<p>
+   The <code>MediaEvent</code>'s status code string.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get code():String</code>
+<br>
+</div>
+<a name="CUE_POINT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">CUE_POINT</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var CUE_POINT:String = "cuePoint"</code><p> 
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../media/FLV.html" target="">sekati.media.FLV</a>
+</div>
+</div>
+<a name="_cuePointData"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_cuePointData</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _cuePointData:Object</code>
+</div>
+<a name="cuePointData"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">cuePointData</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>cuePointData:Object</code>&nbsp;&nbsp;[read-only]<p>
+   The <code>MediaEvent</code>'s cue point data object from the FLV <code>cuePointData.parameters['parameterName']</code>
+   Where <code>parameterName</code> is the variable name specified when cue point was created.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get cuePointData():Object</code>
+<br>
+</div>
+<a name="CUE_POINT_DISPLAY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">CUE_POINT_DISPLAY</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var CUE_POINT_DISPLAY:String = "cuePointDisplay"</code><p>
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../ui/FLVPlayer.html" target="">sekati.ui.FLVPlayer</a>
+</div>
+</div>
+<a name="_id3"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_id3</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _id3:Object</code>
+</div>
+<a name="id3"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">id3</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>id3:Object</code>&nbsp;&nbsp;[read-only]<p>
+   The <code>MediaEvent</code>'s ID3 data object for <code>MP3</code>'s.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get id3():Object</code>
+<br>
+</div>
+<a name="ID3"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ID3</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var ID3:String = "id3"</code><p> 
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../media/MP3.html" target="">sekati.media.MP3</a>
+</div>
+</div>
+<a name="_loaded"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_loaded</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _loaded:Number</code>
+</div>
+<a name="loaded"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loaded</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loaded:Number</code>&nbsp;&nbsp;[read-only]<p>
+   The <code>MediaEvent</code>'s percent loaded.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loaded():Number</code>
+<br>
+</div>
+<a name="_metadata"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_metadata</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _metadata:Object</code>
+</div>
+<a name="metadata"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">metadata</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>metadata:Object</code>&nbsp;&nbsp;[read-only]<p>
+   The <code>MediaEvent</code>'s metadata object.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get metadata():Object</code>
+<br>
+</div>
+<a name="_played"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_played</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _played:Number</code>
+</div>
+<a name="played"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">played</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>played:Number</code>&nbsp;&nbsp;[read-only]<p>
+   The <code>MediaEvent</code>'s percent played.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get played():Number</code>
+<br>
+</div>
+<a name="REBUFFER"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">REBUFFER</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var REBUFFER:String = "rebuffer"</code><p>
+   </p></div>
+<a name="REBUFFER_COMPLETE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">REBUFFER_COMPLETE</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var REBUFFER_COMPLETE:String = "rebufferComplete"</code><p>
+   </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="MediaEvent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MediaEvent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function MediaEvent(type:String, statusCode:String = null, percentLoaded:Number, percentPlayed:Number, metaData:Object = null, cuePointData:Object = null, id3:Object = null, bubbles:Boolean = true, cancelable:Boolean = false)</code><p>
+   MediaEvent Constructor
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">statusCode</span>:String</code> (default = <code>null</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">percentLoaded</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">percentPlayed</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">metaData</span>:Object</code> (default = <code>null</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">cuePointData</span>:Object</code> (default = <code>null</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">id3</span>:Object</code> (default = <code>null</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">bubbles</span>:Boolean</code> (default = <code>true</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">cancelable</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="clone()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clone</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function clone():Event</code><p>
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Event</code></td>
+</tr>
+</table>
+</div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="BUFFER_EMPTY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BUFFER_EMPTY</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BUFFER_EMPTY:String = "bufferEmpty"</code><p>
+   </p></div>
+<a name="BUFFER_FLUSH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BUFFER_FLUSH</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BUFFER_FLUSH:String = "bufferFlush"</code><p>
+   </p></div>
+<a name="BUFFER_FULL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BUFFER_FULL</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BUFFER_FULL:String = "bufferFull"</code><p>
+   </p></div>
+<a name="COMPLETE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">COMPLETE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const COMPLETE:String = "complete"</code><p>
+   </p></div>
+<a name="FILE_STRUCTURE_INVALID"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">FILE_STRUCTURE_INVALID</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const FILE_STRUCTURE_INVALID:String = "fileStructureInvalid"</code><p>
+   </p></div>
+<a name="METADATA"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">METADATA</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const METADATA:String = "metaData"</code><p>
+   </p></div>
+<a name="NO_SUPPORTED_TRACK_FOUND"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">NO_SUPPORTED_TRACK_FOUND</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const NO_SUPPORTED_TRACK_FOUND:String = "noSupportedTrackFound"</code><p>
+   </p></div>
+<a name="PROGRESS"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PROGRESS</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const PROGRESS:String = "progress"</code><p>
+   </p></div>
+<a name="SEEK_INVALID_TIME"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SEEK_INVALID_TIME</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const SEEK_INVALID_TIME:String = "seekInvalidTime"</code><p>
+   </p></div>
+<a name="SEEK_NOTIFY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SEEK_NOTIFY</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const SEEK_NOTIFY:String = "seekNotify"</code><p>
+   </p></div>
+<a name="START"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">START</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const START:String = "start"</code><p>
+   </p></div>
+<a name="STREAM_NOT_FOUND"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">STREAM_NOT_FOUND</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const STREAM_NOT_FOUND:String = "streamNotFound"</code><p>
+   </p></div>
+<a name="UNRECOGNIZED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">UNRECOGNIZED</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const UNRECOGNIZED:String = "unrecognizedStatus"</code><p>
+   </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Copyright &copy; 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.</center>
+</div>
+</body>
+</html>
+<!--Copyright © 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.-->

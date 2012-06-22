@@ -1,0 +1,12 @@
+strict digraph class_diagram {
+  rankdir=LR;
+  TypeKeyManager[
+    label="KeyManager",
+    URL="KeyManager.html",
+    tooltip="com.sekati.input.KeyManager",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+}

@@ -1,0 +1,430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="BrowserManager,sekati.managers.BrowserManager,MONITOR_MS,$,isMonitoring,path,pathArray,title,back,forward,getInstance,pop,push,startMonitor,stopMonitor,updateMonitor" name="keywords">
+<title>sekati.managers.BrowserManager</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'BrowserManager - Sekati API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Sekati API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?sekati/managers/BrowserManager.html&amp;sekati/managers/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;BrowserManager</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class BrowserManager"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">sekati.managers</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class BrowserManager</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">BrowserManager <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+</table>
+<p></p>
+  <p>BrowserManager provides advanced browser deeplink management to the API via URL Anchor (hash) tag & quasi-page control. Back & Forward browser 
+  button support is provided via a basic polling monitor which allows for a <i>significantly</i> simplified in-line alternative solution to
+  more complex <code>HTML/JavaScript</code> centric solutions such as SWFAddress in exchange for a very small performance trade off. In other words: 
+  this is a pure ActionScript solution to the browser "back button" question.</p>
+  
+  <p><b>Note</b>: It is important to understand the relationship between <code>BrowserManager</code> & <code>BrowserAddress</code>; baseline anchor
+  management logic can be controlled thru either class but advanced management & notification is best done via the manager.</p>
+  
+  <p>In general, BrowserManager only dispatches <code>BrowserEvent</code> events when the <i>user</i> changes the browser 
+  anchor (thru the back/forward button, manually or via <code>BrowserAddress</code>). The manager <i>intentionally</i> does not dispatch 
+  these events when the application itself changes the anchor via the BrowserManager facility; <i>however</i> if changed via javascript 
+  or actionscript wrappers such as <code>BrowserAddress</code> the <code>BrowserEvent</code> will fire.</p>
+  
+  <p></p>
+<br>
+<span class="label">Example</span>
+<br><div class='listing'><pre>
+  BrowserManager.$.addEventListener( BrowserEvent.ADDRESS_CHANGE, browserAddressChangeHandler );
+  
+  function browserAddressChangeHandler(e : BrowserEvent ) : void {
+    trace( " the browser address changed to: " + e.path + " from: " + e.previousPath );
+  }
+  </pre></div>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../core/Bootstrap.html" target="">sekati.core.Bootstrap</a>
+<br>
+<a href="../core/App.html#DEEPLINK_ENABLE" target="">sekati.core.App.DEEPLINK_ENABLE</a>
+<br>
+<a href="../external/BrowserAddress.html" target="">sekati.external.BrowserAddress</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#$">$</a> : <a href="../managers/BrowserManager.html">BrowserManager</a>
+<div class="summaryTableDescription">[static][read-only]
+   Shorthand singleton accessor getter
+   </div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#isMonitoring">isMonitoring</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Whether the manager is currently monitoring the browser for address changes or not.</div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MONITOR_MS">MONITOR_MS</a> : int = 1500<div class="summaryTableDescription">[static]
+   The amount of time (in milliseconds) between <code>BrowserAddress</code> checks.</div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#path">path</a> : String<div class="summaryTableDescription">
+   The browser anchor path.</div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#pathArray">pathArray</a> : Array<div class="summaryTableDescription">
+   The browser anchor path as an array of paths.</div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#title">title</a> : String<div class="summaryTableDescription">
+   The browser page title.</div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#BrowserManager()">BrowserManager</a>($:SingletonEnforcer = null)</div>
+<div class="summaryTableDescription">
+   BrowserManager Singleton Constructor
+   </div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#back()">back</a>():void</div>
+<div class="summaryTableDescription">
+   Move back in the browser history.</div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#forward()">forward</a>():void</div>
+<div class="summaryTableDescription">
+   Move forward in the browser history.</div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getInstance()">getInstance</a>():<a href="../managers/BrowserManager.html">BrowserManager</a>
+</div>
+<div class="summaryTableDescription">[static]
+   Singleton Accessor
+   </div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#pop()">pop</a>():void</div>
+<div class="summaryTableDescription">
+   Remove the last item from the pathArray.</div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#push()">push</a>(val:String):void</div>
+<div class="summaryTableDescription">
+   Push an item on to the pathArray.</div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#startMonitor()">startMonitor</a>():void</div>
+<div class="summaryTableDescription">
+   Start monitoring the browser address for changes.</div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#stopMonitor()">stopMonitor</a>():void</div>
+<div class="summaryTableDescription">
+   Stop monitoring the browser address for changes.</div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#updateMonitor()">updateMonitor</a>():void</div>
+<div class="summaryTableDescription">
+   Update the current (tracking) path to the current browser anchor (this prevents the 
+   BrowserManager from dispatching a <code>BrowserEvent</code> due to a address change).</div>
+</td><td class="summaryTableOwnerCol">BrowserManager</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="$"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">$</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>$:<a href="../managers/BrowserManager.html">BrowserManager</a></code>&nbsp;&nbsp;[read-only]<p>
+   Shorthand singleton accessor getter
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public static function get $():<a href="../managers/BrowserManager.html">BrowserManager</a></code>
+<br>
+</div>
+<a name="isMonitoring"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isMonitoring</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>isMonitoring:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Whether the manager is currently monitoring the browser for address changes or not.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get isMonitoring():Boolean</code>
+<br>
+</div>
+<a name="MONITOR_MS"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MONITOR_MS</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var MONITOR_MS:int = 1500</code><p>
+   The amount of time (in milliseconds) between <code>BrowserAddress</code> checks.
+   </p></div>
+<a name="path"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">path</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>path:String</code>&nbsp;&nbsp;[read-write]<p>
+   The browser anchor path.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get path():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set path(value:String):void</code>
+<br>
+</div>
+<a name="pathArray"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">pathArray</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>pathArray:Array</code>&nbsp;&nbsp;[read-write]<p>
+   The browser anchor path as an array of paths.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get pathArray():Array</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set pathArray(value:Array):void</code>
+<br>
+</div>
+<a name="title"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">title</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>title:String</code>&nbsp;&nbsp;[read-write]<p>
+   The browser page title.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get title():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set title(value:String):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="BrowserManager()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BrowserManager</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function BrowserManager($:SingletonEnforcer = null)</code><p>
+   BrowserManager Singleton Constructor
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">$</span>:SingletonEnforcer</code> (default = <code>null</code>)<code></code> &mdash; SingletonEnforcer - internal to the AS file; the param prevents external instantiation without error.
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="back()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">back</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function back():void</code><p>
+   Move back in the browser history.
+   </p></div>
+<a name="forward()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">forward</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function forward():void</code><p>
+   Move forward in the browser history.
+   </p></div>
+<a name="getInstance()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getInstance</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getInstance():<a href="../managers/BrowserManager.html">BrowserManager</a></code><p>
+   Singleton Accessor
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../managers/BrowserManager.html">BrowserManager</a></code> &mdash; 
+                        BrowserManager
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="pop()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">pop</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function pop():void</code><p>
+   Remove the last item from the pathArray.
+   </p></div>
+<a name="push()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">push</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function push(val:String):void</code><p>
+   Push an item on to the pathArray.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">val</span>:String</code></td>
+</tr>
+</table>
+</div>
+<a name="startMonitor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">startMonitor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function startMonitor():void</code><p>
+   Start monitoring the browser address for changes.
+   </p></div>
+<a name="stopMonitor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stopMonitor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function stopMonitor():void</code><p>
+   Stop monitoring the browser address for changes.
+   </p></div>
+<a name="updateMonitor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">updateMonitor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function updateMonitor():void</code><p>
+   Update the current (tracking) path to the current browser anchor (this prevents the 
+   BrowserManager from dispatching a <code>BrowserEvent</code> due to a address change).
+   </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Copyright &copy; 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.</center>
+</div>
+</body>
+</html>
+<!--Copyright © 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.-->

@@ -1,0 +1,52 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * com.sekati.utils.MovieClipUtils
+<span class="lineno" id="3">     3  </span> * @version 1.3.5
+<span class="lineno" id="4">     4  </span> * @author jason m horwitz | sekati.com
+<span class="lineno" id="5">     5  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="6">     6  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="7">     7  </span> */</span>
+<span class="lineno" id="8">     8  </span> 
+<span class="lineno" id="9">     9  </span><span class="comment doc">/**
+<span class="lineno" id="10">    10  </span> * Static class wrapping various MovieClip utilities.
+<span class="lineno" id="11">    11  </span> * @see {@link com.sekati.utils.ClassUtils}
+<span class="lineno" id="12">    12  </span> */</span>
+<span class="lineno" id="13">    13  </span><span class="key">class</span> com.sekati.utils.MovieClipUtils {
+<span class="lineno" id="14">    14  </span>
+<span class="lineno" id="15">    15  </span>	<span class="comment doc">/**
+<span class="lineno" id="16">    16  </span>	 * absolute remove movieclip
+<span class="lineno" id="17">    17  </span>	 * @param mc (MovieClip)
+<span class="lineno" id="18">    18  </span>	 * @return Void
+<span class="lineno" id="19">    19  </span>	 */</span>
+<span class="lineno" id="20">    20  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> rmClip(mc:MovieClip):Void {
+<span class="lineno" id="21">    21  </span>		mc.swapDepths( mc._parent.getNextHighestDepth( ) );
+<span class="lineno" id="22">    22  </span>		mc.removeMovieClip( );
+<span class="lineno" id="23">    23  </span>	}
+<span class="lineno" id="24">    24  </span>
+<span class="lineno" id="25">    25  </span>	<span class="comment doc">/**
+<span class="lineno" id="26">    26  </span>	 * recursively set cacheAsBitmap property on top level clip and all children
+<span class="lineno" id="27">    27  </span>	 * since var i is a string use mc[i] to refer to the mc - recurses max 256 levels
+<span class="lineno" id="28">    28  </span>	 */</span>
+<span class="lineno" id="29">    29  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> recursiveCache(mc:MovieClip):Void {
+<span class="lineno" id="30">    30  </span>		mc.cacheAsBitmap = <span class="key">true</span>;
+<span class="lineno" id="31">    31  </span>		<span class="key">for</span> (<span class="key">var</span> i <span class="key">in</span> mc) {
+<span class="lineno" id="32">    32  </span>			<span class="key">if</span> (<span class="key">typeof</span> (mc[i]) == <span class="str_const">"movieclip"</span>) {
+<span class="lineno" id="33">    33  </span>				MovieClipUtils.recursiveCache( mc[i] );
+<span class="lineno" id="34">    34  </span>			}
+<span class="lineno" id="35">    35  </span>		}
+<span class="lineno" id="36">    36  </span>	}
+<span class="lineno" id="37">    37  </span>
+<span class="lineno" id="38">    38  </span>	<span class="comment doc">/**
+<span class="lineno" id="39">    39  </span>	 * simple HitTest wrapper
+<span class="lineno" id="40">    40  </span>	 * @param mc mc (MovieClip)
+<span class="lineno" id="41">    41  </span>	 * @return Boolean
+<span class="lineno" id="42">    42  </span>	 */</span>
+<span class="lineno" id="43">    43  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> hitTest(mc:MovieClip):Boolean {
+<span class="lineno" id="44">    44  </span>		<span class="key">return</span> (mc.hitTest( _root._xmouse, _root._ymouse, <span class="key">true</span> ));
+<span class="lineno" id="45">    45  </span>	}
+<span class="lineno" id="46">    46  </span>
+<span class="lineno" id="47">    47  </span>	<span class="key">private</span> <span class="key">function</span> MovieClipUtils() {
+<span class="lineno" id="48">    48  </span>	}
+<span class="lineno" id="49">    49  </span>}</pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.utils" class="button">Package</a></li><li><a href="MovieClipUtils.html" title="Detail of com.sekati.utils.MovieClipUtils API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

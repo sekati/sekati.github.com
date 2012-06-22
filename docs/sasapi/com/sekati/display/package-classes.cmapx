@@ -1,0 +1,19 @@
+<map id="class_diagram" name="class_diagram">
+<area shape="rect" href="UIClip.html" title="com.sekati.display.UIClip" alt="" coords="567,152,639,200" />
+<area shape="rect" href="LiquidClip.html" title="com.sekati.display.LiquidClip" alt="" coords="687,152,767,200" />
+<area shape="rect" href="TextDisplay.html" title="com.sekati.display.TextDisplay" alt="" coords="13,188,103,236" />
+<area shape="rect" href="StageDisplay.html" title="com.sekati.display.StageDisplay" alt="" coords="9,116,107,164" />
+<area shape="rect" href="ProportionalClip.html" title="com.sekati.display.ProportionalClip" alt="" coords="815,8,933,56" />
+<area shape="rect" href="LiquidYClip.html" title="com.sekati.display.LiquidYClip" alt="" coords="831,80,917,128" />
+<area shape="rect" href="LiquidXClip.html" title="com.sekati.display.LiquidXClip" alt="" coords="830,152,918,200" />
+<area shape="rect" href="LiquidWClip.html" title="com.sekati.display.LiquidWClip" alt="" coords="829,224,919,272" />
+<area shape="rect" href="LiquidHClip.html" title="com.sekati.display.LiquidHClip" alt="" coords="830,296,918,344" />
+<area shape="rect" href="ImageClip.html" title="com.sekati.display.ImageClip" alt="" coords="226,116,309,164" />
+<area shape="rect" href="EventClip.html" title="com.sekati.display.EventClip" alt="" coords="434,152,511,200" />
+<area shape="rect" href="CoreClip.html" title="com.sekati.display.CoreClip" alt="" coords="231,188,303,236" />
+<area shape="rect" href="AbstractClip.html" title="com.sekati.display.AbstractClip" alt="" coords="426,224,519,272" />
+<area shape="rect" href="BitmapImageSliceClip.html" title="com.sekati.display.BitmapImageSliceClip" alt="" coords="191,260,343,308" />
+<area shape="rect" href="BitmapImageDistributedSliceClip.html" title="com.sekati.display.BitmapImageDistributedSliceClip" alt="" coords="158,332,377,380" />
+<area shape="rect" href="BitmapImageClip.html" title="com.sekati.display.BitmapImageClip" alt="" coords="205,404,330,452" />
+<area shape="rect" href="BaseClip.html" title="com.sekati.display.BaseClip" alt="" coords="22,260,94,308" />
+</map>

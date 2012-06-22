@@ -1,0 +1,51 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>com.sekati.services.AmbientOrb - SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><link href="package-summary.html" title="Package com.sekati.services" rel="up"/><link href="../../../com/sekati/services/Flink.html" title="Class com.sekati.services.Flink" rel="prev"/><link href="../../../com/sekati/remoting/RemoteEvent.html" title="Class com.sekati.remoting.RemoteEvent" rel="next"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><h1>Class com.sekati.services.AmbientOrb</h1><div class="type_hierachy"><ul><li><strong>com.sekati.services.AmbientOrb</strong></li></ul></div><div class="type_description"><h2>Description</h2><p>
+ Ambient Orb developer channel controller class
+ <pre> Usage:
+ <span class="key">var</span> orb:AmbientOrb = <span class="key">new</span> AmbientOrb(<span class="str_const">"AAA-BBB-CCC"</span>);
+ orb.config ( getColorByProp(<span class="str_const">"name"</span>,<span class="str_const">"red"</span>), getAnimByProp(<span class="str_const">"name"</span>,<span class="str_const">"heartbeat"</span>), <span class="str_const">"Orb Test"</span> );
+ </pre>
+ </p><h4>See Also</h4><ul class="extra_info"><li> <a href="http://www.ambientdevices.com/developer/Tech%20FAQ.html">http://www.ambientdevices.com/developer/Tech%20FAQ.html</a>
+ </li></ul></div><div class="type_indexes"><div class="field_index"><h2>Field Index</h2><a href="#anim" title="public anim:Array">anim</a>, <a href="#code" title="public code:Array">code</a>, <a href="#devId" title="public devId:String">devId</a>, <a href="#spectrum" title="public spectrum:Array">spectrum</a></div><div class="method_index"><h2>Method Index</h2><div><code>new <a href="#AmbientOrb" title="public function AmbientOrb(devId:String)">AmbientOrb()</a></code></div><a href="#config" title="public function config(colorId:String, animId:String, comment:String):Void">config()</a>, <a href="#getAnimByProp" title="public function getAnimByProp(prop:String, key:String):Object">getAnimByProp()</a>, <a href="#getCodeByProp" title="public function getCodeByProp(prop:String, key:String):Object">getCodeByProp()</a>, <a href="#getColorByProp" title="public function getColorByProp(prop:String, key:String):Object">getColorByProp()</a></div></div><div class="type_details"><div class="constructor_detail_list"><h2>Constructor Detail</h2><div class="method_details"><a name="AmbientOrb"></a><h3>AmbientOrb</h3><code class="method_synopsis">public function <strong class="method_name">AmbientOrb</strong>(devId:<span class="unresolved_type_name">String</span>)</code><div class="method_info"><p>
+ Constructor
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>devId</code></td><td>(String) - orb device id to be controlled by this instance
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Void
+	 </p></div></div></div><div class="field_detail_list"><h2>Field Detail</h2><a name="devId"></a><h3>devId</h3><div class="field_details"><code class="field_synopsis">public <strong class="field_name">devId</strong>:<span class="unresolved_type_name">String</span></code><div class="field_info">
+ devId getter
+ </div></div><a name="spectrum"></a><h3>spectrum</h3><div class="field_details"><code class="field_synopsis">public <strong class="field_name">spectrum</strong>:<span class="unresolved_type_name">Array</span> <em class="read_write_only">[Read Only]</em></code><div class="field_info">
+ spectrum getter
+	 </div></div><a name="anim"></a><h3>anim</h3><div class="field_details"><code class="field_synopsis">public <strong class="field_name">anim</strong>:<span class="unresolved_type_name">Array</span> <em class="read_write_only">[Read Only]</em></code><div class="field_info">
+ anim getter
+	 </div></div><a name="code"></a><h3>code</h3><div class="field_details"><code class="field_synopsis">public <strong class="field_name">code</strong>:<span class="unresolved_type_name">Array</span> <em class="read_write_only">[Read Only]</em></code><div class="field_info">
+ server code getter
+	 </div></div></div><div class="method_detail_list"><h2>Method Detail</h2><div class="method_details alt_row"><a name="getColorByProp"></a><h3>getColorByProp</h3><code class="method_synopsis">public function <strong class="method_name">getColorByProp</strong>(prop:<span class="unresolved_type_name">String</span>, key:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">Object</span></code><div class="method_info"><p>
+ locate a color object by one of its properties
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>prop</code></td><td>(String) - acceptable props: "id", "hex", "name"
+ </td></tr><tr><td><code>key</code></td><td>(String) - value to match by, e.g: "0xFF00FF"
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Object - the matched _SPECTRUM object
+ </p><h4>Throws</h4><table class="exceptions extra_info" summary=""><tr><td><span class="unresolved_type_name">Error</span></td><td>on failed match
+	 </td></tr></table></div></div><div class="method_details"><a name="getAnimByProp"></a><h3>getAnimByProp</h3><code class="method_synopsis">public function <strong class="method_name">getAnimByProp</strong>(prop:<span class="unresolved_type_name">String</span>, key:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">Object</span></code><div class="method_info"><p>
+ locate an animation by one of its properties
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>prop</code></td><td>(String) - acceptable props: "id", "name"
+ </td></tr><tr><td><code>key</code></td><td>(String) - value to match by, e.g: "slow"
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Object - the matched _ANIM object
+ </p><h4>Throws</h4><table class="exceptions extra_info" summary=""><tr><td><span class="unresolved_type_name">Error</span></td><td>on failed match
+	 </td></tr></table></div></div><div class="method_details alt_row"><a name="getCodeByProp"></a><h3>getCodeByProp</h3><code class="method_synopsis">public function <strong class="method_name">getCodeByProp</strong>(prop:<span class="unresolved_type_name">String</span>, key:<span class="unresolved_type_name">String</span>):<span class="unresolved_type_name">Object</span></code><div class="method_info"><p>
+ locate a server code by one of its properties
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>prop</code></td><td>(String) - acceptable props: "id", "desc"
+ </td></tr><tr><td><code>key</code></td><td>(String) - value to match by, e.g: "Unspecific error"
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Object - the matched _CODE object
+ </p><h4>Throws</h4><table class="exceptions extra_info" summary=""><tr><td><span class="unresolved_type_name">Error</span></td><td>on failed match
+	 </td></tr></table></div></div><div class="method_details"><a name="config"></a><h3>config</h3><code class="method_synopsis">public function <strong class="method_name">config</strong>(colorId:<span class="unresolved_type_name">String</span>, animId:<span class="unresolved_type_name">String</span>, comment:<span class="unresolved_type_name">String</span>):<span class="void_name">Void</span></code><div class="method_info"><p>
+ send new configuration to the ambient orb device id
+ </p><h4>Parameters</h4><table class="arguments extra_info" summary=""><tr><td><code>colorId</code></td><td>(String)
+ </td></tr><tr><td><code>animId</code></td><td>(String)
+ </td></tr><tr><td><code>comment</code></td><td>(String)
+ </td></tr></table><h4>Return</h4><p class="extra_info"> Void
+ </p><h4>Throws</h4><table class="exceptions extra_info" summary=""><tr><td><span class="unresolved_type_name">Error</span></td><td>if instance device id, colorId,animId params have not been set
+ <pre> Usage:
+ orb.config ( getColorByProp(<span class="str_const">"name"</span>,<span class="str_const">"red"</span>), getAnimByProp(<span class="str_const">"name"</span>,<span class="str_const">"heartbeat"</span>), <span class="str_const">"Orb Test"</span> );
+ </pre>
+	 </td></tr></table></div></div></div></div><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.services" class="button">Package</a></li><li><span class="button nav_current">Class</span></li><li><a href="AmbientOrb.as.html" title="Source code of com.sekati.services.AmbientOrb" class="button">Source</a></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

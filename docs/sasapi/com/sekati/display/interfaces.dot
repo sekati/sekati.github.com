@@ -1,0 +1,62 @@
+strict digraph interface_diagram {
+  rankdir=LR;
+  ITweenClip[
+    label="ITweenClip",
+    URL="ITweenClip.html",
+    tooltip="com.sekati.display.ITweenClip",
+    fontname="Verdana-Italic",
+    fontsize="9"
+    color="#2d5492"
+    shape="record"
+  ];
+  ILiquidClip[
+    label="ILiquidClip",
+    URL="ILiquidClip.html",
+    tooltip="com.sekati.display.ILiquidClip",
+    fontname="Verdana-Italic",
+    fontsize="9"
+    color="#2d5492"
+    shape="record"
+  ];
+  IImageClip[
+    label="IImageClip",
+    URL="IImageClip.html",
+    tooltip="com.sekati.display.IImageClip",
+    fontname="Verdana-Italic",
+    fontsize="9"
+    color="#2d5492"
+    shape="record"
+  ];
+  ICoreClip[
+    label="ICoreClip",
+    URL="ICoreClip.html",
+    tooltip="com.sekati.display.ICoreClip",
+    fontname="Verdana-Italic",
+    fontsize="9"
+    color="#2d5492"
+    shape="record"
+  ];
+  IBitmapImageClip[
+    label="IBitmapImageClip",
+    URL="IBitmapImageClip.html",
+    tooltip="com.sekati.display.IBitmapImageClip",
+    fontname="Verdana-Italic",
+    fontsize="9"
+    color="#2d5492"
+    shape="record"
+  ];
+  IBaseClip[
+    label="IBaseClip",
+    URL="IBaseClip.html",
+    tooltip="com.sekati.display.IBaseClip",
+    fontname="Verdana-Italic",
+    fontsize="9"
+    color="#2d5492"
+    shape="record"
+  ];
+  IBaseClip -> ITweenClip;
+  IBaseClip -> ILiquidClip;
+  IBaseClip -> IImageClip;
+  IBaseClip -> ICoreClip;
+  IBaseClip -> IBitmapImageClip;
+}

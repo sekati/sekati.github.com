@@ -1,0 +1,68 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>Package com.sekati.display API Documentation - SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><link href="../../../com/sekati/except/package-summary.html" title="Package com.sekati.except" rel="prev"/><link href="../../../com/sekati/effects/package-summary.html" title="Package com.sekati.effects" rel="next"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><h1>Package com.sekati.display</h1><table class="summary_list" summary=""><caption>Interface Summary</caption><tr><td><a href="IBaseClip.html">IBaseClip</a></td><td>
+ Interface describing <a href="../../../com/sekati/display/BaseClip.html" class="class_name" title="Class com.sekati.display.BaseClip">BaseClip</a> which is 
+ the foundational building block class for all subclasses to 
+ extend instead of MovieClip</td></tr><tr><td><a href="IBitmapImageClip.html">IBitmapImageClip</a></td><td>
+ Interface describing <a href="../../../com/sekati/display/CoreClip.html" class="class_name" title="Class com.sekati.display.CoreClip">CoreClip</a> which
+ is the core UI building block class for all subclasses to
+ extend instead of <a href="../../../com/sekati/display/BaseClip.html" class="class_name" title="Class com.sekati.display.BaseClip">BaseClip</a></td></tr><tr><td><a href="ICoreClip.html">ICoreClip</a></td><td>
+ Interface describing <a href="../../../com/sekati/display/CoreClip.html" class="class_name" title="Class com.sekati.display.CoreClip">CoreClip</a> which
+ is the core UI building block class for all subclasses to
+ extend instead of <a href="../../../com/sekati/display/BaseClip.html" class="class_name" title="Class com.sekati.display.BaseClip">BaseClip</a></td></tr><tr><td><a href="IImageClip.html">IImageClip</a></td><td>
+ Interface describing <a href="../../../com/sekati/display/CoreClip.html" class="class_name" title="Class com.sekati.display.CoreClip">CoreClip</a> which
+ is the core UI building block class for all subclasses to
+ extend instead of <a href="../../../com/sekati/display/BaseClip.html" class="class_name" title="Class com.sekati.display.BaseClip">BaseClip</a></td></tr><tr><td><a href="ILiquidClip.html">ILiquidClip</a></td><td>
+ Interface describing <a href="../../../com/sekati/display/LiquidClip.html" class="class_name" title="Class com.sekati.display.LiquidClip">LiquidClip</a> and its subclips which add 
+ need to respond to <a href="../../../com/sekati/display/StageDisplay.html" class="class_name" title="Class com.sekati.display.StageDisplay">StageDisplay</a> events such as onResize or 
+ onResizeComplete</td></tr><tr><td><a href="ITweenClip.html">ITweenClip</a></td><td>
+ Interface describing <span class="unresolved_type_name">com.sekati.display</span> clips which add 
+ prototypical (mc_tween2-like) tween functionality via mix-in</td></tr></table><table class="summary_list" summary=""><caption>Class Summary</caption><tr><td><a href="AbstractClip.html">AbstractClip</a></td><td>
+ Generic subclass implementation of <a href="../../../com/sekati/display/CoreClip.html" class="class_name" title="Class com.sekati.display.CoreClip">CoreClip</a> mixin</td></tr><tr><td><a href="BaseClip.html">BaseClip</a></td><td>
+ This is the foundational MovieClip class and should be
+ thought of as the main building block of the SASAPI framework</td></tr><tr><td><a href="BitmapImageClip.html">BitmapImageClip</a></td><td> BitmapImageClip - load an image, convert it to a smoothed BitmapData object available for manipulation</td></tr><tr><td><a href="BitmapImageDistributedSliceClip.html">BitmapImageDistributedSliceClip</a></td><td> BitmapImageSliceClip - load a large image, convert it to a set of smoothed BitmapData objects available  for manipulation over a series of intervals.This works around the BitmapDataObject 2880 pixel width or height limitation</td></tr><tr><td><a href="BitmapImageSliceClip.html">BitmapImageSliceClip</a></td><td> BitmapImageSliceClip - load a large image, convert it to a set of smoothed BitmapData objects available  for manipulation.This works around the BitmapDataObject 2880 pixel width or height limitation</td></tr><tr><td><a href="CoreClip.html">CoreClip</a></td><td>
+ Core UI mixin that all interface subclasses should extend 
+ instead of MovieClip for standardized UI initialization.<br><br>
+ 
+ Note</td></tr><tr><td><a href="EventClip.html">EventClip</a></td><td>
+ Event driven core Clip - recieves <a href="../../../com/sekati/events/Broadcaster.html" class="class_name" title="Class com.sekati.events.Broadcaster">Broadcaster</a> events</td></tr><tr><td><a href="ImageClip.html">ImageClip</a></td><td> ImageClip - load an image available for manipulation</td></tr><tr><td><a href="LiquidClip.html">LiquidClip</a></td><td>
+ LiquidClip - mixin for any subclass which needs to respond to <a href="../../../com/sekati/display/StageDisplay.html" class="class_name" title="Class com.sekati.display.StageDisplay">StageDisplay</a> 
+ events such as onResize, onResizeComplete or onFullScreen</td></tr><tr><td><a href="LiquidHClip.html">LiquidHClip</a></td><td>
+ LiquidHClip - scale clip to Stage.height
+ </td></tr><tr><td><a href="LiquidWClip.html">LiquidWClip</a></td><td>
+ LiquidWClip - scale clip to Stage.width
+ </td></tr><tr><td><a href="LiquidXClip.html">LiquidXClip</a></td><td>
+ LiquidXClip - maintain a right-aligned clip positioning</td></tr><tr><td><a href="LiquidYClip.html">LiquidYClip</a></td><td>
+ LiquidYClip - maintain a bottom-aligned clip positioning</td></tr><tr><td><a href="ProportionalClip.html">ProportionalClip</a></td><td> ProportionalClip </td></tr><tr><td><a href="StageDisplay.html">StageDisplay</a></td><td>
+ StageDisplay eases Stage interfacing with added/simplified methods and properties</td></tr><tr><td><a href="TextDisplay.html">TextDisplay</a></td><td>
+ TextDisplay - utilities for uniformly styling, clearing, and animating text in display clip classes</td></tr><tr><td><a href="UIClip.html">UIClip</a></td><td>
+ UIClip - any clip which needs to respond to StageResize or StageResizeComplete (delayed) events to create Liquid Layout 
+ via <span class="unresolved_type_name">com.sekati.events</span> which extends <a href="../../../com/sekati/display/EventClip.html" class="class_name" title="Class com.sekati.display.EventClip">EventClip</a> for Broadcaster event core</td></tr></table><h1>Class Inheritance Diagram</h1><div class="diagram"><map name="class_diagram" id="class_diagram">
+<area href="UIClip.html" title="com.sekati.display.UIClip" shape="rect" coords="567,152,639,200" alt=""></area>
+<area href="LiquidClip.html" title="com.sekati.display.LiquidClip" shape="rect" coords="687,152,767,200" alt=""></area>
+<area href="TextDisplay.html" title="com.sekati.display.TextDisplay" shape="rect" coords="13,188,103,236" alt=""></area>
+<area href="StageDisplay.html" title="com.sekati.display.StageDisplay" shape="rect" coords="9,116,107,164" alt=""></area>
+<area href="ProportionalClip.html" title="com.sekati.display.ProportionalClip" shape="rect" coords="815,8,933,56" alt=""></area>
+<area href="LiquidYClip.html" title="com.sekati.display.LiquidYClip" shape="rect" coords="831,80,917,128" alt=""></area>
+<area href="LiquidXClip.html" title="com.sekati.display.LiquidXClip" shape="rect" coords="830,152,918,200" alt=""></area>
+<area href="LiquidWClip.html" title="com.sekati.display.LiquidWClip" shape="rect" coords="829,224,919,272" alt=""></area>
+<area href="LiquidHClip.html" title="com.sekati.display.LiquidHClip" shape="rect" coords="830,296,918,344" alt=""></area>
+<area href="ImageClip.html" title="com.sekati.display.ImageClip" shape="rect" coords="226,116,309,164" alt=""></area>
+<area href="EventClip.html" title="com.sekati.display.EventClip" shape="rect" coords="434,152,511,200" alt=""></area>
+<area href="CoreClip.html" title="com.sekati.display.CoreClip" shape="rect" coords="231,188,303,236" alt=""></area>
+<area href="AbstractClip.html" title="com.sekati.display.AbstractClip" shape="rect" coords="426,224,519,272" alt=""></area>
+<area href="BitmapImageSliceClip.html" title="com.sekati.display.BitmapImageSliceClip" shape="rect" coords="191,260,343,308" alt=""></area>
+<area href="BitmapImageDistributedSliceClip.html" title="com.sekati.display.BitmapImageDistributedSliceClip" shape="rect" coords="158,332,377,380" alt=""></area>
+<area href="BitmapImageClip.html" title="com.sekati.display.BitmapImageClip" shape="rect" coords="205,404,330,452" alt=""></area>
+<area href="BaseClip.html" title="com.sekati.display.BaseClip" shape="rect" coords="22,260,94,308" alt=""></area>
+</map>
+<img src="package-classes.png" usemap="class_diagram"/></div><h1>Interface Inheritance Diagram</h1><div class="diagram"><map name="interface_diagram" id="interface_diagram">
+<area href="ITweenClip.html" title="com.sekati.display.ITweenClip" shape="rect" coords="154,8,242,56" alt=""></area>
+<area href="ILiquidClip.html" title="com.sekati.display.ILiquidClip" shape="rect" coords="157,80,240,128" alt=""></area>
+<area href="IImageClip.html" title="com.sekati.display.IImageClip" shape="rect" coords="154,152,242,200" alt=""></area>
+<area href="ICoreClip.html" title="com.sekati.display.ICoreClip" shape="rect" coords="160,224,237,272" alt=""></area>
+<area href="IBitmapImageClip.html" title="com.sekati.display.IBitmapImageClip" shape="rect" coords="134,296,262,344" alt=""></area>
+<area href="IBaseClip.html" title="com.sekati.display.IBaseClip" shape="rect" coords="8,152,85,200" alt=""></area>
+</map>
+<img src="package-interfaces.png" usemap="interface_diagram"/></div><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><span class="button nav_current">Package</span></li><li><span class="button">Class</span></li><li><span class="button">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

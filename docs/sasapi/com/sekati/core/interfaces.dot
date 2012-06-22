@@ -1,0 +1,12 @@
+strict digraph interface_diagram {
+  rankdir=LR;
+  CoreInterface[
+    label="CoreInterface",
+    URL="CoreInterface.html",
+    tooltip="com.sekati.core.CoreInterface",
+    fontname="Verdana-Italic",
+    fontsize="9"
+    color="#2d5492"
+    shape="record"
+  ];
+}

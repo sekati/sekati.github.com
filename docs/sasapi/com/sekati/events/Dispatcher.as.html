@@ -1,0 +1,139 @@
+<?xml version="1.0"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>SASAPI</title><script src="../../../quicknav.js" type="text/javascript"></script><script><!--
+document.quicknavBasePath="../../../index-files";
+//--></script><link href="../../../style.css" title="JavaDoc" rel="stylesheet" type="text/css"/><link href="../../../unnatural.css" title="Unnatural" rel="alternate stylesheet" type="text/css"/><link href="../../../overview-summary.html" title="Overview" rel="top"/><meta name="generator" content="http://www.badgers-in-foil.co.uk/projects/as2api/"/></head><body><pre><span class="lineno" id="1">     1  </span><span class="comment doc">/**
+<span class="lineno" id="2">     2  </span> * com.sekati.events.Dispatcher
+<span class="lineno" id="3">     3  </span> * @version 1.1.5
+<span class="lineno" id="4">     4  </span> * @author jason m horwitz | sekati.com
+<span class="lineno" id="5">     5  </span> * Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
+<span class="lineno" id="6">     6  </span> * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+<span class="lineno" id="7">     7  </span> */</span>
+<span class="lineno" id="8">     8  </span>
+<span class="lineno" id="9">     9  </span><span class="key">import</span> com.sekati.core.CoreObject;
+<span class="lineno" id="10">    10  </span><span class="key">import</span> com.sekati.events.Event;
+<span class="lineno" id="11">    11  </span><span class="key">import</span> com.sekati.events.IDispatchable;
+<span class="lineno" id="12">    12  </span><span class="key">import</span> mx.events.EventDispatcher;
+<span class="lineno" id="13">    13  </span>
+<span class="lineno" id="14">    14  </span><span class="comment doc">/**
+<span class="lineno" id="15">    15  </span> * A centralized EventDispatcher to decouple event listeners &amp; dispatchers from direct addressing.
+<span class="lineno" id="16">    16  </span> * {@code Usage:
+<span class="lineno" id="17">    17  </span> * var receiveObj:Object = {_name:"receiveObj"};
+<span class="lineno" id="18">    18  </span> * // define a generic method for the reciever object to use
+<span class="lineno" id="19">    19  </span> * function onEventReceived (event:Object):Void {
+<span class="lineno" id="20">    20  </span> * var str:String = (this._name + " received Event = { type:" + event.type + ", target:" + event.target + ", data: {");
+<span class="lineno" id="21">    21  </span> * for (var i in event.data) { str += " " + i + ":" + event.data[i] + ","; }
+<span class="lineno" id="22">    22  </span> * trace (str+" }};");
+<span class="lineno" id="23">    23  </span> * }
+<span class="lineno" id="24">    24  </span> * // add the method to our reciever object as 'testEvent'
+<span class="lineno" id="25">    25  </span> * receiveObj.testEvent = onEventReceived;
+<span class="lineno" id="26">    26  </span> * // add reciever object as an event listener for "testEvent"
+<span class="lineno" id="27">    27  </span> * Dispatcher.getInstance().addEventListener ("testEvent",receiveObj);
+<span class="lineno" id="28">    28  </span> * // define sender and data objects (optional)
+<span class="lineno" id="29">    29  </span> * var senderObj:Object = this;
+<span class="lineno" id="30">    30  </span> * var dataObj:Object = {message:"hello", someNumber:42};
+<span class="lineno" id="31">    31  </span> * // Dispatch the event to all 'testEvent' EventListeners
+<span class="lineno" id="32">    32  </span> * Dispatcher.getInstance().dispatchEvent (new Event ("testEvent", senderObj, dataObj));
+<span class="lineno" id="33">    33  </span> * }
+<span class="lineno" id="34">    34  </span> * Some excellent explanations of the AS2/3 event models and broadcasters vs dispatchers
+<span class="lineno" id="35">    35  </span> * @see &lt;a href="http://www.communitymx.com/content/article.cfm?page=1&amp;cid=76FDB"&gt;http://www.communitymx.com/content/article.cfm?page=1&amp;cid=76FDB&lt;/a&gt;
+<span class="lineno" id="36">    36  </span> * @see &lt;a href="http://www.kirupa.com/developer/actionscript/eventdispatcher.htm"&gt;http://www.kirupa.com/developer/actionscript/eventdispatcher.htm&lt;/a&gt;
+<span class="lineno" id="37">    37  </span> * @see {@link com.sekati.events.Broadcaster}
+<span class="lineno" id="38">    38  </span> */</span>
+<span class="lineno" id="39">    39  </span><span class="key">class</span> com.sekati.events.Dispatcher <span class="key">extends</span> CoreObject <span class="key">implements</span> IDispatchable {
+<span class="lineno" id="40">    40  </span>
+<span class="lineno" id="41">    41  </span>	<span class="key">private</span> <span class="key">static</span> <span class="key">var</span> _instance:Dispatcher;
+<span class="lineno" id="42">    42  </span>	<span class="key">private</span> <span class="key">var</span> _manager:Object;
+<span class="lineno" id="43">    43  </span>
+<span class="lineno" id="44">    44  </span>	<span class="comment doc">/**
+<span class="lineno" id="45">    45  </span>	 * Singleton Private Constructor: initializes centralized management of mx.events.EventDispatcher
+<span class="lineno" id="46">    46  </span>	 */</span>
+<span class="lineno" id="47">    47  </span>	<span class="key">private</span> <span class="key">function</span> Dispatcher() {
+<span class="lineno" id="48">    48  </span>		<span class="key">super</span>( );
+<span class="lineno" id="49">    49  </span>		_manager = <span class="key">new</span> Object( );
+<span class="lineno" id="50">    50  </span>		EventDispatcher.initialize( _manager );
+<span class="lineno" id="51">    51  </span>	}
+<span class="lineno" id="52">    52  </span>
+<span class="lineno" id="53">    53  </span>	<span class="comment doc">/**
+<span class="lineno" id="54">    54  </span>	 * Singleton Accessor
+<span class="lineno" id="55">    55  </span>	 * @return Dispatcher
+<span class="lineno" id="56">    56  </span>	 */</span>
+<span class="lineno" id="57">    57  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> getInstance():Dispatcher {
+<span class="lineno" id="58">    58  </span>		<span class="key">if</span> (!_instance) _instance = <span class="key">new</span> Dispatcher( );
+<span class="lineno" id="59">    59  </span>		<span class="key">return</span> _instance;
+<span class="lineno" id="60">    60  </span>	}
+<span class="lineno" id="61">    61  </span>
+<span class="lineno" id="62">    62  </span>	<span class="comment doc">/**
+<span class="lineno" id="63">    63  </span>	 * shorthand singleton accessor getter
+<span class="lineno" id="64">    64  </span>	 */</span>
+<span class="lineno" id="65">    65  </span>	<span class="key">public</span> <span class="key">static</span> <span class="key">function</span> get $():Dispatcher {
+<span class="lineno" id="66">    66  </span>		<span class="key">return</span> Dispatcher.getInstance( );	
+<span class="lineno" id="67">    67  </span>	}
+<span class="lineno" id="68">    68  </span>
+<span class="lineno" id="69">    69  </span>	<span class="comment doc">/**
+<span class="lineno" id="70">    70  </span>	 * Add the event listener to the centralized event manager
+<span class="lineno" id="71">    71  </span>	 * @param event (String) the name of the event ("click", "change", etc)
+<span class="lineno" id="72">    72  </span>	 * @param handler (Object) the function or object that should be called
+<span class="lineno" id="73">    73  </span>	 * @return Void
+<span class="lineno" id="74">    74  </span>	 */</span>
+<span class="lineno" id="75">    75  </span>	<span class="key">public</span> <span class="key">function</span> addEventListener(event:String, handler:Object):Void {
+<span class="lineno" id="76">    76  </span>		_manager.addEventListener( event, handler );
+<span class="lineno" id="77">    77  </span>	}
+<span class="lineno" id="78">    78  </span>
+<span class="lineno" id="79">    79  </span>	<span class="comment doc">/**
+<span class="lineno" id="80">    80  </span>	 * Remove the event listener from the centralized event manager
+<span class="lineno" id="81">    81  </span>	 * @param event (String) the name of the event ("click", "change", etc)
+<span class="lineno" id="82">    82  </span>	 * @param handler (Object) the function or object that should be called
+<span class="lineno" id="83">    83  </span>	 * @return Void
+<span class="lineno" id="84">    84  </span>	 */</span>
+<span class="lineno" id="85">    85  </span>	<span class="key">public</span> <span class="key">function</span> removeEventListener(event:String, handler:Object):Void {
+<span class="lineno" id="86">    86  </span>		_manager.removeEventListener( event, handler );
+<span class="lineno" id="87">    87  </span>	}
+<span class="lineno" id="88">    88  </span>
+<span class="lineno" id="89">    89  </span>	<span class="comment doc">/**
+<span class="lineno" id="90">    90  </span>	 * Dispatch the event to all listeners via the centralized event manager
+<span class="lineno" id="91">    91  </span>	 * @param e (Event) an Event or one of its subclasses describing the event
+<span class="lineno" id="92">    92  </span>	 * @return Void
+<span class="lineno" id="93">    93  </span>	 * {@code Usage:
+<span class="lineno" id="94">    94  </span>	 * Dispatcher.getInstance().dispatchEvent(new Event("myEvent", this, {foo:true, bar:false}));
+<span class="lineno" id="95">    95  </span>	 * }
+<span class="lineno" id="96">    96  </span>	 */</span>
+<span class="lineno" id="97">    97  </span>	<span class="key">public</span> <span class="key">function</span> dispatchEvent(e:Event):Void {
+<span class="lineno" id="98">    98  </span>		_manager.dispatchEvent( e );
+<span class="lineno" id="99">    99  </span>	}
+<span class="lineno" id="100">   100  </span>
+<span class="lineno" id="101">   101  </span>	<span class="comment doc">/**
+<span class="lineno" id="102">   102  </span>	 * Bubbles event up the chain. The target property is added on the route
+<span class="lineno" id="103">   103  </span>	 * and then replaced by the new target.
+<span class="lineno" id="104">   104  </span>	 * @param e (Event)
+<span class="lineno" id="105">   105  </span>	 * @return Void
+<span class="lineno" id="106">   106  </span>	 */</span>
+<span class="lineno" id="107">   107  </span>	<span class="key">public</span> <span class="key">function</span> bubbleEvent(e:Event):Void {
+<span class="lineno" id="108">   108  </span>		e.bubble( <span class="key">this</span> );
+<span class="lineno" id="109">   109  </span>		dispatchEvent( e );
+<span class="lineno" id="110">   110  </span>	}
+<span class="lineno" id="111">   111  </span>
+<span class="lineno" id="112">   112  </span>	<span class="comment doc">/**
+<span class="lineno" id="113">   113  </span>	 * Wrapper to dispatchEvent: creates an Event object and dispatchs it to all event listeners
+<span class="lineno" id="114">   114  </span>	 * {@code Usage:
+<span class="lineno" id="115">   115  </span>	 * Dispatcher.getInstance().broadcastEvent("myEvent",targetObject, {param0:value0, param1:value1, paramn:valuen});
+<span class="lineno" id="116">   116  </span>	 * }
+<span class="lineno" id="117">   117  </span>	 * @param _type (String) type of event
+<span class="lineno" id="118">   118  </span>	 * @param _target (Object) he object that dispatched this event. There is a known bug with this property: It always returns as '/'. This may be a flaw in EventDispatcher; if you need to pass the event source use {@link dispatchEvent}.
+<span class="lineno" id="119">   119  </span>	 * @param _data (Object) a transport object for any needed data
+<span class="lineno" id="120">   120  </span>	 * @return Void
+<span class="lineno" id="121">   121  </span>	 */</span>
+<span class="lineno" id="122">   122  </span>	<span class="key">public</span> <span class="key">function</span> broadcastEvent(_type:String, _target:Object, _data:Object):Void {
+<span class="lineno" id="123">   123  </span>		<span class="key">var</span> event:Event = <span class="key">new</span> Event( _type, _target, _data );
+<span class="lineno" id="124">   124  </span>		_manager.dispatchEvent( event );
+<span class="lineno" id="125">   125  </span>	}
+<span class="lineno" id="126">   126  </span>
+<span class="lineno" id="127">   127  </span>	<span class="comment doc">/**
+<span class="lineno" id="128">   128  </span>	 * Destroy singleton instance.
+<span class="lineno" id="129">   129  </span>	 * @return Void
+<span class="lineno" id="130">   130  </span>	 */</span>
+<span class="lineno" id="131">   131  </span>	<span class="key">public</span> <span class="key">function</span> destroy():Void {
+<span class="lineno" id="132">   132  </span>		<span class="key">delete</span> _manager;
+<span class="lineno" id="133">   133  </span>		<span class="key">delete</span> _instance;
+<span class="lineno" id="134">   134  </span>		<span class="key">super</span>.destroy( );
+<span class="lineno" id="135">   135  </span>	}	
+<span class="lineno" id="136">   136  </span>}</pre><ul class="main_nav" id="main_nav"><li><a href="../../../overview-summary.html" title="Overview of SASAPI" class="button">Overview</a></li><li><a href="package-summary.html" title="Overview of package com.sekati.events" class="button">Package</a></li><li><a href="Dispatcher.html" title="Detail of com.sekati.events.Dispatcher API" class="button">Class</a></li><li><span class="button nav_current">Source</span></li><li><a href="../../../index-files/index.html" title="Alpabetical index of types and members" class="button">Index</a></li></ul><div class="footer"><a href="http://www.badgers-in-foil.co.uk/projects/as2api/" title="ActionScript 2 API Documentation Generator">as2api</a></div></body></html>

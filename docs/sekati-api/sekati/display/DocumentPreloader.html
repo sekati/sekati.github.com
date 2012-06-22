@@ -1,0 +1,517 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="DocumentPreloader,sekati.display.DocumentPreloader,APPLICATION_URI,CONF_URI,introComplete,outroComplete,bytesLoaded,bytesTotal,percent,applicationHandler,configHandler,initApplication,initApplicationLoader,initDocumentPreloader,initMovieProperties,initPreloader,initUIIntro,initUIOutro,progress,resize" name="keywords">
+<title>sekati.display.DocumentPreloader</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'DocumentPreloader - Sekati API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Sekati API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?sekati/display/DocumentPreloader.html&amp;sekati/display/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;DocumentPreloader</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class DocumentPreloader"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">sekati.display</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class DocumentPreloader</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">DocumentPreloader <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.display.Sprite</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../../SekatiPreloader.html">SekatiPreloader</a></td>
+</tr>
+</table>
+<p></p>
+  The <code>DocumentPreloader</code> class is an <b>API independent shell</b> designed to load <i>Sekati API</i> <code>Document</code> driven SWF applications.
+  In other words; the <code>DocumentPreloader</code> should be extended and used as the <b>Main Document Class</b> for any <i>preloader SWF</i> use to load an 
+  API driven SWF.
+  
+  <p><b>Main</b> methods which may be overridden and customized:<ul>
+  <li><code>initUIIntro</code> - initialize the look & feel of the preloader UI: <i>must</i> set <code>introComplete = true</code> when finished.</li>
+  <li><code>initUIOutro</code> - initialize the <i>outro</i> sequence of the preloader UI: <i>must</i> set <code>outroComplete = true</code> when finished.</li>
+  </ul></p>
+  
+  <p><b>Secondary</b> methods which may be overriden and customized:<ul>
+  <li><code>initMovieProperties</code> - initialize SWF movie properties (<code>Stage, fscommand</code>, etc).</li>
+  <li><code>progress</code> -  invoked during the application loading process, you may use the properties <code>percent, bytesLoaded, bytesTotal</code></li>
+  <li><code>resize</code> - invoked when the stage initializes and resizes for liquid layout preloaders.</li>
+  </ul></p>
+  
+  <p><b>Note:</b> that the API Application SWF Bootstrap sequence will begin once the loaded API swf is added to the stage via <code>initApplication()</code>.</p>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../display/Document.html" target="">sekati.display.Document</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#APPLICATION_URI">APPLICATION_URI</a> : String<div class="summaryTableDescription">[static]
+   The API Application SWF URI to be loaded (ascertained from the <code>config.xml</code>).</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bytesLoaded">bytesLoaded</a> : Number<div class="summaryTableDescription">[read-only]
+   The number of <i>loaded</i> bytes of the Application SWF.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bytesTotal">bytesTotal</a> : Number<div class="summaryTableDescription">[read-only]
+   The number of <i>total</i> bytes of the Application SWF.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#CONF_URI">CONF_URI</a> : String<div class="summaryTableDescription">[static]
+   The <code>config.xml</code> location used by the <code>DocumentPreloader</code> and <code>Document</code> 
+   passed via <code>FlashVars</code> or defaulting to <code>xml/config.xml</code>.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#percent">percent</a> : Number<div class="summaryTableDescription">[read-only]
+   The percentage (<code>0 - 1</code> scale) of the Application SWF currently loaded.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#introComplete">introComplete</a> : Boolean<div class="summaryTableDescription">
+   Property set by <code>initUIIntro()</code> when the intro sequence completes.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#outroComplete">outroComplete</a> : Boolean<div class="summaryTableDescription">
+   Property set by <code>initUIOutro()</code> when the outro sequence completes.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#DocumentPreloader()">DocumentPreloader</a>()</div>
+<div class="summaryTableDescription">
+   DocumentPreloader Constructor
+   </div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a><a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#applicationHandler()">applicationHandler</a>(e:Event):void</div>
+<div class="summaryTableDescription">
+   The API Appliction SWF has been loaded; wait for notification from <code>initUIOutro</code> to set <code>outroComplete</code>.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#configHandler()">configHandler</a>(e:Event):void</div>
+<div class="summaryTableDescription">
+   The <code>config.xml</code> has loaded; wait for notification from <code>initUIIntro</code> to set <code>introComplete</code>.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initApplication()">initApplication</a>():void</div>
+<div class="summaryTableDescription">
+   Initialize the loaded API Application SWF.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initApplicationLoader()">initApplicationLoader</a>():void</div>
+<div class="summaryTableDescription">
+   Load the API Application SWF.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initDocumentPreloader()">initDocumentPreloader</a>(e:Event = null):void</div>
+<div class="summaryTableDescription">
+    Initializes the preloader and movie properties when the stage becomes available.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initMovieProperties()">initMovieProperties</a>():void</div>
+<div class="summaryTableDescription">
+   Initializes SWF movie properties.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initPreloader()">initPreloader</a>(e:Event = null):void</div>
+<div class="summaryTableDescription">
+    Initialize the Document Preloader UI & load the <code>config.xml</code> (invoked when the preloader SWF itself is done loading).</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initUIIntro()">initUIIntro</a>():void</div>
+<div class="summaryTableDescription">
+   Initialize the preloader <i>UI intro</i> and set <code>introComplete = true;</code> when UI has completed build up.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initUIOutro()">initUIOutro</a>():void</div>
+<div class="summaryTableDescription">
+   Initialize the preloader <i>UI outro</i> and set <code>outroComplete = true;</code> when UI has completed tear down.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#progress()">progress</a>(e:ProgressEvent):void</div>
+<div class="summaryTableDescription">
+   API Application SWF progress handler.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#resize()">resize</a>(e:Event = null):void</div>
+<div class="summaryTableDescription">
+   Stub function to invoke upon a stage resize.</div>
+</td><td class="summaryTableOwnerCol">DocumentPreloader</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="APPLICATION_URI"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">APPLICATION_URI</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var APPLICATION_URI:String</code><p>
+   The API Application SWF URI to be loaded (ascertained from the <code>config.xml</code>).
+   </p></div>
+<a name="bytesLoaded"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bytesLoaded</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bytesLoaded:Number</code>&nbsp;&nbsp;[read-only]<p>
+   The number of <i>loaded</i> bytes of the Application SWF.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bytesLoaded():Number</code>
+<br>
+</div>
+<a name="bytesTotal"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bytesTotal</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bytesTotal:Number</code>&nbsp;&nbsp;[read-only]<p>
+   The number of <i>total</i> bytes of the Application SWF.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bytesTotal():Number</code>
+<br>
+</div>
+<a name="CONF_URI"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">CONF_URI</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var CONF_URI:String</code><p>
+   The <code>config.xml</code> location used by the <code>DocumentPreloader</code> and <code>Document</code> 
+   passed via <code>FlashVars</code> or defaulting to <code>xml/config.xml</code>.
+   </p></div>
+<a name="introComplete"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">introComplete</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var introComplete:Boolean</code><p>
+   Property set by <code>initUIIntro()</code> when the intro sequence completes.
+   </p></div>
+<a name="outroComplete"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">outroComplete</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var outroComplete:Boolean</code><p>
+   Property set by <code>initUIOutro()</code> when the outro sequence completes.
+   </p></div>
+<a name="percent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">percent</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>percent:Number</code>&nbsp;&nbsp;[read-only]<p>
+   The percentage (<code>0 - 1</code> scale) of the Application SWF currently loaded.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get percent():Number</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="DocumentPreloader()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">DocumentPreloader</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function DocumentPreloader()</code><p>
+   DocumentPreloader Constructor
+   </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="applicationHandler()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">applicationHandler</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function applicationHandler(e:Event):void</code><p>
+   The API Appliction SWF has been loaded; wait for notification from <code>initUIOutro</code> to set <code>outroComplete</code>.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:Event</code></td>
+</tr>
+</table>
+</div>
+<a name="configHandler()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">configHandler</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function configHandler(e:Event):void</code><p>
+   The <code>config.xml</code> has loaded; wait for notification from <code>initUIIntro</code> to set <code>introComplete</code>.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:Event</code></td>
+</tr>
+</table>
+</div>
+<a name="initApplication()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initApplication</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initApplication():void</code><p>
+   Initialize the loaded API Application SWF.
+   
+   </p><p><b>Customization:</b> Override this method to delay API SWF initialization, and execute any visual 
+   preloader '<i>outro</i>' sequence before application initializes. If this method is not overridden, 
+   the API SWF will initialize as soon as its load completes.</p>
+   </div>
+<a name="initApplicationLoader()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initApplicationLoader</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initApplicationLoader():void</code><p>
+   Load the API Application SWF.
+   </p></div>
+<a name="initDocumentPreloader()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initDocumentPreloader</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initDocumentPreloader(e:Event = null):void</code><p>
+    Initializes the preloader and movie properties when the stage becomes available.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:Event</code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="initMovieProperties()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initMovieProperties</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initMovieProperties():void</code><p>
+   Initializes SWF movie properties.
+   
+   </p><p><b>Customization:</b> Override this method & adjust to fit your application specification.</p>
+   </div>
+<a name="initPreloader()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initPreloader</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initPreloader(e:Event = null):void</code><p>
+    Initialize the Document Preloader UI & load the <code>config.xml</code> (invoked when the preloader SWF itself is done loading).
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:Event</code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="initUIIntro()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initUIIntro</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initUIIntro():void</code><p>
+   Initialize the preloader <i>UI intro</i> and set <code>introComplete = true;</code> when UI has completed build up.
+   
+   </p><p><b>Customization:</b> Override this method to execute any custom intro code for a the visual preloader.</p>
+   </div>
+<a name="initUIOutro()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initUIOutro</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initUIOutro():void</code><p>
+   Initialize the preloader <i>UI outro</i> and set <code>outroComplete = true;</code> when UI has completed tear down.
+    
+   </p><p><b>Customization:</b> Override this method to execute any custom outro code for a visual preloader.</p>
+   </div>
+<a name="progress()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">progress</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function progress(e:ProgressEvent):void</code><p>
+   API Application SWF progress handler.
+   
+   </p><p><b>Customization:</b> Override this method to execute any custom code to visualize progress in your preloader.</p>
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:ProgressEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="resize()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">resize</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function resize(e:Event = null):void</code><p>
+   Stub function to invoke upon a stage resize.
+   
+   </p><p><b>Customization:</b> Override this method to execute any custom resize logic as the API has yet to initialize.</p>
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:Event</code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Copyright &copy; 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.</center>
+</div>
+</body>
+</html>
+<!--Copyright © 2008-2012 jason m horwitz, Sekati LLC. All Rights Reserved.-->

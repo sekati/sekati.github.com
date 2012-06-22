@@ -1,0 +1,21 @@
+strict digraph class_diagram {
+  rankdir=LR;
+  TypeMouseWheel[
+    label="MouseWheel",
+    URL="MouseWheel.html",
+    tooltip="com.sekati.external.MouseWheel",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+  TypeJsBase[
+    label="JsBase",
+    URL="JsBase.html",
+    tooltip="com.sekati.external.JsBase",
+    fontname="Verdana",
+    fontsize="9"
+    color="#729b12"
+    shape="record"
+  ];
+}
